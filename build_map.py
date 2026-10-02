@@ -1,7 +1,7 @@
 """
 Generatore della mappa HTML standalone interattiva con il design system
 Geo-Intelligence 3D (MapLibre GL, KPI strip, Aside con schede e avatar guida).
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import shutil

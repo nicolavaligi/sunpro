@@ -1,6 +1,6 @@
 # Solar Land Acquisition Crawler & Commercial Desktop App
 
-[![Author: Houdinick](https://img.shields.io/badge/Author-Houdinick-blue.svg)](https://github.com/nicolavaligi)
+[![Author: Nicola Valigi Engine System](https://img.shields.io/badge/Author-Nicola%20Valigi%20Engine%20System-blue.svg)](https://github.com/nicolavaligi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python: 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://python.org)
 [![Streamlit: Desktop App](https://img.shields.io/badge/Desktop%20UI-Streamlit-red.svg)](http://localhost:8503)
@@ -91,5 +91,5 @@ L'interfaccia si aprirà automaticamente nel browser all'indirizzo **`http://loc
 
 ## ⚖️ Licenza & Proprietà
 
-Sviluppato da **Nicola Valigi (Houdinick)**. Tutti i diritti riservati.
+Sviluppato da **Nicola Valigi Engine System**. Tutti i diritti riservati.
 Email di contatto: `305862309+nicolavaligi@users.noreply.github.com`

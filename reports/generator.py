@@ -1,7 +1,7 @@
 """
 Generatore di Dossier e Report Commerciali per l'acquisizione di terreni fotovoltaici.
 Supporta generazione PDF (ReportLab) e formattazione HTML pronta per la stampa o l'invio.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import os

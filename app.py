@@ -3,7 +3,7 @@
 Applicazione Desktop ad alte prestazioni per Land Origination Fotovoltaico.
 Design System: Glassmorphism, Modern Executive UI, Multi-layer Satellite Maps,
 Interactive Financial Analytics & Antigravity AI Copilot.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import json
@@ -43,7 +43,7 @@ from sync_to_drive import sync_prototype_to_drive
 # PAGE CONFIGURATION & LUXURY DESIGN SYSTEM
 # -------------------------------------------------------------
 st.set_page_config(
-    page_title="Solar Origination Pro™ | Houdinick",
+    page_title="Solar Origination Pro™ | Nicola Valigi Engine System",
     page_icon="☀️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -224,8 +224,8 @@ with st.sidebar:
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
         <span style="font-size: 26px;">☀️</span>
         <div>
-            <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">HOUDINICK</h3>
-            <span style="font-size: 11px; color: #059669; font-weight: 700; letter-spacing: 0.5px;">SOLAR ORIGINATION PRO™</span>
+            <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">NICOLA VALIGI</h3>
+            <span style="font-size: 10px; color: #059669; font-weight: 700; letter-spacing: 0.5px;">ENGINE SYSTEM · SOLAR PRO</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -274,7 +274,7 @@ with st.sidebar:
 
     st.markdown("""
     <div style="background: #F1F5F9; border-radius: 8px; padding: 12px; margin-top: 20px; font-size: 11px; color: #64748B;">
-        <b>Identità Progetto:</b> Houdinick<br/>
+        <b>Identità Progetto:</b> Nicola Valigi Engine System<br/>
         <b>Normativa:</b> D.Lgs. 199/2021 & DM Aree Idonee<br/>
         <b>Target:</b> 8-9 €/mq | >= 2 ha<br/>
         <b>Cabine:</b> AT/MT Enel / Terna

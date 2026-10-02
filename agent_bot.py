@@ -1,7 +1,7 @@
 """
 Google Antigravity SDK Agent per Solar Land Origination.
 Agente autonomo equipaggiato con strumenti geospaziali, calcolo CAPEX/rendita e generazione dossier.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import os
@@ -132,7 +132,7 @@ def simulate_area_feasibility(
 # -------------------------------------------------------------
 
 AGENT_SYSTEM_INSTRUCTIONS = """
-Sei l'Assistente AI Senior di Origination Terreni Fotovoltaici di Nicola Valigi (Houdinick).
+Sei l'Assistente AI Senior di Origination Terreni Fotovoltaici di Nicola Valigi Engine System.
 Operi come un esperto GIS, ingegnere energetico e analista M&A rinnovabili per il mercato italiano.
 
 Le tue capacità:

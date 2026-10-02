@@ -1,6 +1,6 @@
 # 📘 MANUALE OPERATIVO COMMERCIALE: LAND ORIGINATION FOTOVOLTAICO
 
-> **Guida strategica e operativa ad uso esclusivo di Nicola Valigi (Houdinick).**  
+> **Guida strategica e operativa ad uso esclusivo di Nicola Valigi Engine System.**  
 > Focus: Acquisizione terreni per impianti fotovoltaici a terra (Utility-Scale & Agrivoltaico) in Italia settentrionale e centrale.
 
 ---

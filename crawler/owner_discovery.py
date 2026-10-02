@@ -1,7 +1,7 @@
 """
 Modulo per il Reperimento Dati Proprietari e Lead Enrichment Commerciale.
 Supporta persone giuridiche, curatele fallimentari e persone fisiche.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 from typing import Dict, Any

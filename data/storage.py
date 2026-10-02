@@ -1,6 +1,6 @@
 """
 Modulo di persistenza SQLite per la gestione dei Lead e Aree Fotovoltaiche.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import json

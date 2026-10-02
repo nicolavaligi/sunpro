@@ -2,7 +2,7 @@
 Script di sincronizzazione ed esportazione del prototipo sul Google Drive personale.
 Crea la cartella 'Solar_Land_Origination_Prototipo' con mappe interattive, tutti i PDF dei lead,
 dati tabellari (CSV e JSON) e scorciatoia per avvio locale con un doppio click.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import shutil
@@ -77,7 +77,7 @@ cd /Users/houdinick/solar-land-acquisition-crawler
     with open(readme_drive, "w", encoding="utf-8") as f:
         f.write("""# ☀️ Solar Land Origination — Accesso Condiviso al Prototipo
 
-> **Prototipo personale di Nicola Valigi (Houdinick)**  
+> **Prototipo di Nicola Valigi Engine System**  
 > Mappatura geospaziale e qualificazione terreni per impianti fotovoltaici utility-scale & agrivoltaici in Italia (Nord e Centro).
 
 ---

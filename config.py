@@ -1,7 +1,7 @@
 """
 Configurazione centrale per Solar Land Acquisition Crawler & Desktop App.
 Parametri tecnici, normativi (D.Lgs. 199/2021) e modelli economici per il mercato italiano.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 from pathlib import Path

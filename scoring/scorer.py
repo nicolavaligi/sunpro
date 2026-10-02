@@ -2,7 +2,7 @@
 Motore di Scoring Multicriterio (0-100) per Terreni e Siti Fotovoltaici.
 Calibrazione sui criteri specificati: Aree idonee (D.Lgs 199/2021), 350m Z.I., 300m Autostrade,
 Ex-cave/discariche, vicinanza cabina AT/MT, target prezzo 8-9 €/mq, reperibilità proprietà.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 from typing import Any, Dict, Tuple

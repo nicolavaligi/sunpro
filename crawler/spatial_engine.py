@@ -2,7 +2,7 @@
 Modulo di Analisi Spaziale e Geoprocessing per Terreni Fotovoltaici.
 Gestisce i buffer normativi D.Lgs. 199/2021 (350m industriale, 300m autostrada, cave/discariche)
 e il calcolo di prossimità alle Cabine Primarie AT/MT.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import math

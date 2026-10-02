@@ -1,6 +1,6 @@
 """
 Modulo per il Reverse Geocoding Catastale Italiano e Identificazione Particelle.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 from typing import Dict, Any, Optional
