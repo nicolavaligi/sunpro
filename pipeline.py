@@ -1,7 +1,7 @@
 """
 Pipeline di elaborazione e sincronizzazione Lead per Terreni Fotovoltaici.
 Gestisce l'ingestione, l'enrichment, lo scoring e il salvataggio su SQLite.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 from typing import Dict, Any, List

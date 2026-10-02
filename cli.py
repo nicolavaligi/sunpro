@@ -1,6 +1,6 @@
 """
 Interfaccia a riga di comando (CLI) per Solar Land Acquisition Crawler.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import argparse
@@ -67,7 +67,7 @@ def make_report(lead_id: str):
     ))
 
 def main():
-    parser = argparse.ArgumentParser(description="Solar Land Acquisition CLI (Houdinick)")
+    parser = argparse.ArgumentParser(description="Solar Land Acquisition CLI (Nicola Valigi Engine System)")
     subparsers = parser.add_subparsers(dest="command")
 
     # Command: list

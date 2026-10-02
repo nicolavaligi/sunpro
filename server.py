@@ -1,7 +1,7 @@
 """
 FastAPI / Starlette ASGI Server per Geo-Intelligence 3D — Solar Land Origination.
 Serve l'interfaccia 100vh MapLibre GL 3D, gli endpoint REST e la generazione al volo dei PDF.
-Autore: Houdinick (Nicola Valigi)
+Autore: Nicola Valigi Engine System
 """
 
 import os
