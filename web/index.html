@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geo-Intelligence 3D — Solar Land Origination | Houdinick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<style>
+  :root{
+    --bg:#070c18; --panel:#0d1526; --panel2:#131d34;
+    --border:#1c2942; --border2:#2c3d61;
+    --txt:#eaf0fa; --muted:#8b9cb8;
+    --accent:#38bdf8; --green:#34d399; --amber:#f59e0b; --red:#f87171;
+    --brand:#10b981; --brand-dark:#059669; --cream:#f8fafc; --pink:#f43f5e;
+    --shadow:0 8px 28px rgba(0,0,0,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,-apple-system,sans-serif;font-variant-numeric:tabular-nums}
+  .mono{font-family:'JetBrains Mono',monospace}
+  body{background:radial-gradient(1200px 600px at 75% -10%,#09261f 0%,var(--bg) 55%),var(--bg);color:var(--txt);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+  svg.ic{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-2px}
+
+  /* ===== Header 54px ===== */
+  header{height:54px;flex:none;padding:0 18px;background:linear-gradient(180deg,#0a1b24,var(--panel));border-bottom:1px solid var(--border2);box-shadow:0 2px 10px rgba(0,0,0,.35);display:flex;align-items:center;gap:12px}
+  .logo{width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex:none;filter:drop-shadow(0 0 10px rgba(16,185,129,.45))}
+  .logo svg{width:36px;height:36px}
+  header h1{font-size:15px;font-weight:800;letter-spacing:-.3px}
+  header h1 span{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header .sub{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  header .sp{flex:1}
+  .badge{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;color:var(--muted);border:1px solid var(--border2);padding:5px 12px;border-radius:20px;white-space:nowrap}
+  .badge.glow{border-color:rgba(16,185,129,.4);color:#34d399;background:rgba(16,185,129,.08)}
+  #clock{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+
+  /* ===== Striscia KPI ===== */
+  #kpis{flex:none;display:flex;background:var(--panel);border-bottom:1px solid var(--border2)}
+  .kpi{flex:1;position:relative;padding:9px 16px 9px 19px;border-right:1px solid var(--border)}
+  .kpi:last-child{border-right:none}
+  .kpi::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--kc,var(--accent))}
+  .kpi .v{font-size:17px;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--txt)}
+  .kpi .l{font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:1px}
+
+  main{flex:1;display:flex;min-height:0}
+  #map{flex:1;position:relative}
+  aside{width:410px;flex:none;background:var(--panel);border-left:1px solid var(--border);overflow-y:auto;padding:16px}
+  aside::-webkit-scrollbar{width:8px}
+  aside::-webkit-scrollbar-thumb{background:#1c2942;border-radius:6px}
+  aside::-webkit-scrollbar-thumb:hover{background:#2c3d61}
+
+  .lbl{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+
+  /* ===== Filtri Regione ===== */
+  #filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .pill{font-size:10.5px;padding:4px 10px;border-radius:14px;background:#142236;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-weight:600;transition:all .15s}
+  .pill:hover{border-color:var(--brand);color:var(--txt)}
+  .pill.active{background:rgba(16,185,129,.15);border-color:var(--brand);color:#34d399}
+
+  /* ===== Search Bar ===== */
+  .search-box{margin-bottom:12px;position:relative}
+  .search-box input{width:100%;background:#131f33;border:1px solid var(--border);border-radius:8px;padding:8px 12px 8px 32px;color:var(--txt);font-size:12px;outline:none;transition:border-color .15s}
+  .search-box input:focus{border-color:var(--brand)}
+  .search-box svg{position:absolute;left:10px;top:9px;color:var(--muted);width:14px;height:14px}
+
+  /* ===== Card ===== */
+  .card{background:linear-gradient(180deg,#131f38 0%,var(--panel2) 100%);border:1px solid var(--border);border-radius:10px;padding:13px 14px;margin-bottom:12px;transition:all .18s cubic-bezier(.2,.8,.3,1.05)}
+  .card:hover{border-color:var(--border2);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  .card.sel{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand),0 6px 20px rgba(16,185,129,.2)}
+  .card .row{display:flex;justify-content:space-between;align-items:flex-start;cursor:pointer}
+  .card .name{font-weight:700;font-size:13.5px;letter-spacing:-.2px;color:var(--txt)}
+  .card .subtag{font-size:11px;color:var(--muted);margin-top:2px}
+  .score{font-size:21px;font-weight:700;font-family:'JetBrains Mono',monospace}
+  .s-high{color:var(--green)} .s-mid{color:var(--amber)} .s-low{color:var(--red)}
+  .note{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.45;border-left:2px solid var(--brand);padding-left:8px}
+
+  /* Indicator bars */
+  .bars{margin-top:10px;display:grid;gap:4px}
+  .bar-row{display:grid;grid-template-columns:110px 1fr 28px;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
+  .bar-row .n{font-family:'JetBrains Mono',monospace;text-align:right}
+  .bar{height:5px;background:#18253c;border-radius:3px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#0ea5e9,var(--brand));border-radius:3px}
+
+  .dists{margin-top:10px;border-top:1px dashed var(--border2);padding-top:8px;font-size:11.5px;display:grid;gap:4px}
+  .d-row{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:11px}
+  .d-row b{color:var(--txt);font-weight:600;font-family:'JetBrains Mono',monospace}
+  .cdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:0}
+
+  /* ===== Bottoni ===== */
+  .btns{margin-top:10px;display:flex;gap:8px}
+  .btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#182642;border:1px solid var(--border2);color:var(--txt);font-size:11.5px;padding:7px 8px;border-radius:7px;cursor:pointer;font-weight:500;font-family:inherit;transition:all .15s}
+  .btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+  .btn.brand{background:linear-gradient(135deg,#059669,var(--brand));color:#ffffff;font-weight:700;border-color:var(--brand)}
+  .btn.brand:hover{border-color:#34d399;box-shadow:0 4px 14px rgba(16,185,129,.4)}
+
+  /* ===== Box monitoraggio (variante rosa/viola) ===== */
+  .card.pink{position:relative;background:linear-gradient(180deg,#241829 0%,#181024 100%);border-color:#652e50;overflow:hidden}
+  .card.pink::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#f472b6,var(--pink))}
+  .card.pink:hover{border-color:var(--pink);box-shadow:0 6px 20px rgba(244,63,94,.18)}
+  .card.pink .lbl{color:var(--pink)}
+  .card.pink .src{border-top-color:#652e50}
+
+  .trows{display:grid;gap:3px;margin-top:8px}
+  .trow{display:grid;grid-template-columns:1fr auto 68px;gap:8px;align-items:center;font-size:11.5px;color:var(--muted);padding:2px 0}
+  .trow b{color:var(--txt);font-family:'JetBrains Mono',monospace;font-weight:600}
+  .src{margin-top:9px;font-size:10px;color:var(--muted);border-top:1px dashed var(--border2);padding-top:6px;line-height:1.5}
+  .legend{margin-top:14px;font-size:11px;color:var(--muted);line-height:1.9}
+  .legend b{color:var(--txt)}
+
+  footer{height:28px;flex:none;padding:0 18px;background:var(--panel);border-top:1px solid var(--border);font-size:10.5px;color:var(--muted);display:flex;align-items:center;justify-content:space-between}
+
+  /* ===== Toolbar mappa ===== */
+  #tools{position:absolute;top:14px;left:14px;z-index:10;display:flex;gap:8px;flex-wrap:wrap}
+  .tool{display:flex;align-items:center;gap:6px;background:rgba(13,21,38,.92);border:1px solid var(--border2);color:var(--txt);font-size:11.5px;font-weight:500;font-family:inherit;padding:7px 12px;border-radius:8px;cursor:pointer;backdrop-filter:blur(6px);transition:all .15s}
+  .tool:hover{border-color:var(--brand)}
+  .tool.on{border-color:var(--brand);color:#34d399;background:rgba(16,185,129,.12)}
+  #orbitHint{position:absolute;top:64px;left:50%;transform:translateX(-50%);z-index:10;display:none;align-items:center;gap:7px;background:rgba(15,23,42,.94);border:1px solid var(--brand);color:var(--txt);font-size:12px;padding:8px 16px;border-radius:20px;backdrop-filter:blur(6px);box-shadow:0 0 18px rgba(16,185,129,.35)}
+
+  /* ===== Popup narrazione sopralluogo con avatar ===== */
+  #siteTip{position:absolute;left:14px;bottom:18px;z-index:11;width:min(440px,calc(100% - 28px));background:linear-gradient(180deg,#131f38,#0b1322);border:1px solid var(--border2);border-radius:14px;padding:15px 17px;box-shadow:0 14px 44px rgba(0,0,0,.7);display:none;gap:12px;align-items:flex-start;animation:popIn .28s cubic-bezier(.2,.9,.3,1.2);transition:border-color .2s}
+  #siteTip.talk{border-color:var(--brand)}
+  .tcontent{flex:1;min-width:0;padding-right:8px}
+  .guide{width:56px;flex:none;text-align:center}
+  .guide .gbox{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#15253e,#0e1a2e);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;transition:all .2s}
+  #siteTip.talk .gbox{border-color:var(--brand);box-shadow:0 0 12px rgba(16,185,129,.4)}
+  .guide .glbl{font-size:8.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px;display:block}
+  .guide svg{width:42px;height:42px}
+  .guide .mouth{transform-origin:24px 25px}
+  #siteTip.talk .mouth{animation:talkAnim .3s infinite alternate}
+  @keyframes talkAnim{from{transform:scaleY(.35)}to{transform:scaleY(1.15)}}
+
+  @keyframes popIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+
+  /* Marker styling */
+  .map-pin{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);border:2px solid #ffffff;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;font-family:'JetBrains Mono';cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.5);transition:transform .15s}
+  .map-pin:hover{transform:scale(1.2);box-shadow:0 0 18px rgba(16,185,129,.8)}
+  .map-pin.top{background:linear-gradient(135deg,#34d399,#10b981)}
+  .map-pin.substation{width:22px;height:22px;background:#38bdf8;border:2px solid #fff;border-radius:4px;font-size:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" fill="url(#brandGrad)" fill-opacity="0.2" stroke="#10b981" stroke-width="2"/>
+      <path d="M20 7L23 16L32 17L25 23L27 32L20 27L13 32L15 23L8 17L17 16L20 7Z" fill="#34d399"/>
+      <circle cx="20" cy="20" r="4" fill="#ffffff"/>
+      <defs>
+        <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#10b981"/>
+          <stop offset="1" stop-color="#059669"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div>
+    <h1>Geo-Intelligence 3D — <span>Solar Land Origination</span></h1>
+    <div class="sub">Italia Nord & Centro · Qualificazione Fondiaria D.Lgs. 199/2021 · Houdinick</div>
+  </div>
+  <div class="sp"></div>
+  <div class="badge glow">Aree Idonee Ex Lege</div>
+  <div class="badge">Target: 8.00–9.00 €/mq</div>
+  <div class="badge mono" id="clock">--:--:-- CET</div>
+</header>
+
+<!-- ===== Striscia KPI ===== -->
+<div id="kpis">
+  <div class="kpi" style="--kc:var(--green)"><div class="v" id="kpiCount">11</div><div class="l">Aree qualificate</div></div>
+  <div class="kpi" style="--kc:var(--accent)"><div class="v" id="kpiPower">59.7 MWp</div><div class="l">Potenza stimata (~77.5 GWh/a)</div></div>
+  <div class="kpi" style="--kc:var(--amber)"><div class="v" id="kpiArea">72.3 ha</div><div class="l">Superficie censita (723k mq)</div></div>
+  <div class="kpi" style="--kc:var(--brand)"><div class="v" id="kpiPrice">8.18 €/mq</div><div class="l">Prezzo target medio (8-9 €)</div></div>
+  <div class="kpi" style="--kc:var(--pink)"><div class="v" id="kpiDist">764 m</div><div class="l">Distanza media cabina AT/MT</div></div>
+  <div class="kpi" style="--kc:#a78bfa"><div class="v" id="kpiVal">€ 5.91M</div><div class="l">Valore pipeline acquisto</div></div>
+</div>
+
+<main>
+  <div id="map">
+    <div id="tools">
+      <button class="tool on" id="tSat"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M4.5 4.5 8 8M16 16l3.5 3.5M19.5 4.5 16 8M8 16l-3.5 3.5"/></svg>Satellite HD</button>
+      <button class="tool on" id="tSub"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Cabine AT/MT</button>
+      <button class="tool on" id="tBuf"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Buffer 350m / 300m</button>
+      <button class="tool" id="tReset"><svg class="ic" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 6"/><path d="M4 10V5M4 10h5"/></svg>Vista Nord & Centro</button>
+    </div>
+    <div id="orbitHint"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="m15 11 6-3v8l-6-3"/></svg>Sopralluogo 3D in corso — clicca sulla mappa per interrompere</div>
+    <div id="siteTip"></div>
+  </div>
+
+  <aside>
+    <div class="lbl">
+      <span>Ranking Aree Idonee</span>
+      <span class="mono" id="sitesCount" style="color:var(--brand)">11 siti</span>
+    </div>
+
+    <!-- Filtri Regione -->
+    <div id="filters">
+      <button class="pill active" data-reg="TUTTE">Tutte</button>
+      <button class="pill" data-reg="Lombardia">Lombardia</button>
+      <button class="pill" data-reg="Emilia-Romagna">Emilia-R.</button>
+      <button class="pill" data-reg="Veneto">Veneto</button>
+      <button class="pill" data-reg="Piemonte">Piemonte</button>
+      <button class="pill" data-reg="Toscana">Toscana</button>
+      <button class="pill" data-reg="Umbria">Umbria</button>
+      <button class="pill" data-reg="Marche">Marche</button>
+    </div>
+
+    <!-- Barra di ricerca rapida -->
+    <div class="search-box">
+      <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Cerca comune, provincia o tipologia (es. Faenza, cava)...">
+    </div>
+
+    <!-- Lista Schede -->
+    <div id="cards"></div>
+
+    <!-- Box Canoni Diritto di Superficie -->
+    <div class="card pink">
+      <span class="lbl" style="margin-bottom:0">Canoni Diritto Superficie (30y) · Benchmark</span>
+      <div class="trows" id="leaseRows"></div>
+      <div class="src">Canoni medi negoziati €/ha/anno indicizzati ISTAT · D.Lgs. 199/2021 · Aggiornato ad oggi</div>
+    </div>
+
+    <!-- Box Tempi di Allaccio Rete -->
+    <div class="card pink">
+      <span class="lbl" style="margin-bottom:0">Connessione Rete MT · Cabine Primarie</span>
+      <div class="trows" id="gridRows"></div>
+      <div class="src">Costi indicativi cavidotto MT (€ 65k/km) + stallo CP (€ 45k) · Iter STMG/TICA standard</div>
+    </div>
+
+    <div class="legend">
+      <b>Legenda Score Idoneità</b><br>
+      <span class="cdot" style="background:var(--green)"></span><b>90–100</b> · Top Opportunity (immediata acquisizione)<br>
+      <span class="cdot" style="background:var(--amber)"></span><b>75–89</b> · Qualificato (D.Lgs. 199/21 confermato)<br>
+      <span class="cdot" style="background:var(--accent)"></span><b>60–74</b> · Secondario da approfondire<br><br>
+      <b>Punti sulla Mappa</b><br>
+      <span class="cdot" style="background:var(--green)"></span>Area fotovoltaica idonea (cava / Z.I. / autostrada)<br>
+      <span class="cdot" style="background:var(--accent)"></span>Cabina Primaria AT/MT Terna / Enel Distribuzione<br><br>
+      <b>Sopralluogo 3D:</b> Clicca su <i>[Sopralluogo 3D]</i> per avviare il volo d'ispezione ad alta quota attorno alla particella.
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <span>Geo-Intelligence 3D — Sviluppo Proprietario Houdinick (Nicola Valigi)</span>
+  <span>Fonti: Imagery Satellitare Esri HD · OpenStreetMap · WMS Catasto Agenzia Entrate · PVGIS JRC</span>
+</footer>
+
+<script>
+/* ============ DATI QUALIFICATI HOUDINICK (11 SITI PILOTA) ============ */
+const SITES = [
+  {
+    id: "LEAD-ER-001",
+    name: "Bacino Argille Dismesso Fornace",
+    comune: "Faenza",
+    prov: "RA",
+    reg: "Emilia-Romagna",
+    ll: [44.2981, 11.8741],
+    score: 96,
+    ha: 11.0,
+    mq: 110000,
+    mwp: 9.17,
+    mwh: 12380,
+    price_mq: 7.50,
+    price_tot: 825000,
+    tipo: "EX_CAVA",
+    substation: "CP Faenza Nord 132/15 kV",
+    sub_dist: 520,
+    ind_dist: 120,
+    hwy_dist: 180,
+    hwy_name: "A14 Bologna-Taranto (km 62)",
+    catasto: "Fg. 87 - P.lle 310, 312 (Cod. D458)",
+    owner: "Laterizi Romagnoli Soc. Coop.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "lateriziromagnoli@pec.confcooperative.it | +39 0546 620450",
+    note: "Doppia idoneità ex lege: entro 300m da A14 ed ex cava di argilla con piano di recupero solare già asseverato.",
+    bars: { norm: 100, cab: 95, price: 98, yield: 92, owner: 95 }
+  },
+  {
+    id: "LEAD-PIEM-001",
+    name: "Ex Stabilimento Chimico Scrivia",
+    comune: "Tortona",
+    prov: "AL",
+    reg: "Piemonte",
+    ll: [44.9082, 8.8654],
+    score: 93,
+    ha: 13.5,
+    mq: 135000,
+    mwp: 11.25,
+    mwh: 14740,
+    price_mq: 8.00,
+    price_tot: 1080000,
+    tipo: "BROWNFIELD",
+    substation: "CP Tortona 132/15 kV",
+    sub_dist: 740,
+    ind_dist: 0,
+    hwy_dist: 220,
+    hwy_name: "A7 Milano-Genova / A21",
+    catasto: "Fg. 62 - P.lle 19, 21, 22 (Cod. L304)",
+    owner: "Curatela Fallimentare Ex Chimica (Dott. Rossi)",
+    owner_tipo: "CURATELA_FALLIMENTARE",
+    contact: "f94.2023alessandria@pecfallimenti.it | +39 0131 254890",
+    note: "Superficie record da 13,5 ha per ~11 MWp. Procedura competitiva con base d'asta 8 €/mq.",
+    bars: { norm: 100, cab: 88, price: 92, yield: 90, owner: 90 }
+  },
+  {
+    id: "LEAD-TOSC-001",
+    name: "Ex Cava di Inerti Valdarno",
+    comune: "Montevarchi",
+    prov: "AR",
+    reg: "Toscana",
+    ll: [43.5312, 11.5645],
+    score: 93,
+    ha: 6.8,
+    mq: 68000,
+    mwp: 5.67,
+    mwh: 8050,
+    price_mq: 8.40,
+    price_tot: 571200,
+    tipo: "EX_CAVA",
+    substation: "CP Montevarchi 132/15 kV",
+    sub_dist: 820,
+    ind_dist: 210,
+    hwy_dist: 190,
+    hwy_name: "A1 Autostrada del Sole",
+    catasto: "Fg. 39 - P.lle 75, 78, 80 (Cod. F656)",
+    owner: "Valdarno Scavi e Costruzioni S.r.l.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "valdarnoscavi@pec.it | +39 055 981244",
+    note: "Irraggiamento solare 1.420 kWh/kWp/anno. Cava esaurita con parere preventivo del Comune per fotovoltaico.",
+    bars: { norm: 100, cab: 85, price: 88, yield: 96, owner: 95 }
+  },
+  {
+    id: "LEAD-VEN-001",
+    name: "Cava Ghiaia Scaligera Z.I.",
+    comune: "Zevio",
+    prov: "VR",
+    reg: "Veneto",
+    ll: [45.3725, 11.1350],
+    score: 92,
+    ha: 9.5,
+    mq: 95000,
+    mwp: 7.92,
+    mwh: 10290,
+    price_mq: 8.20,
+    price_tot: 779000,
+    tipo: "EX_CAVA",
+    substation: "CP Zevio 132/20 kV",
+    sub_dist: 890,
+    ind_dist: 150,
+    hwy_dist: 280,
+    hwy_name: "Tangenziale Sud Verona / A4",
+    catasto: "Fg. 33 - P.lle 450, 451, 452 (Cod. M172)",
+    owner: "Scaligera Inerti S.r.l.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "scaligerainerti@pec.it | +39 045 7850112",
+    note: "Cava terminata nel 2022 con fondo già livellato. Richiesta preliminare TICA già impostabile.",
+    bars: { norm: 100, cab: 84, price: 90, yield: 89, owner: 95 }
+  },
+  {
+    id: "LEAD-VEN-002",
+    name: "Comparto Industriale Espansione Adria",
+    comune: "Adria",
+    prov: "RO",
+    reg: "Veneto",
+    ll: [45.0612, 12.0498],
+    score: 92,
+    ha: 7.2,
+    mq: 72000,
+    mwp: 6.00,
+    mwh: 7800,
+    price_mq: 7.90,
+    price_tot: 568800,
+    tipo: "BUFFER_INDUSTRIALE_350M",
+    substation: "CP Adria 132/20 kV",
+    sub_dist: 410,
+    ind_dist: 45,
+    hwy_dist: 1800,
+    hwy_name: "SS 434 Transpolesana",
+    catasto: "Fg. 51 - P.lle 112, 114 (Cod. A059)",
+    owner: "Polesine Sviluppo Industriale S.r.l.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "polesinesviluppo@pec.it | +39 0425 21458",
+    note: "A soli 410 metri dalla Cabina Primaria. Bassissimo CAPEX di allaccio (< 70k€).",
+    bars: { norm: 90, cab: 100, price: 94, yield: 89, owner: 90 }
+  },
+  {
+    id: "LEAD-LOMB-001",
+    name: "Ex Cava Inerti del Chiese",
+    comune: "Montichiari",
+    prov: "BS",
+    reg: "Lombardia",
+    ll: [45.4182, 10.3845],
+    score: 91,
+    ha: 8.5,
+    mq: 85000,
+    mwp: 7.08,
+    mwh: 9060,
+    price_mq: 7.80,
+    price_tot: 663000,
+    tipo: "EX_CAVA",
+    substation: "CP Montichiari 132/15 kV",
+    sub_dist: 650,
+    ind_dist: 180,
+    hwy_dist: 1200,
+    hwy_name: "A4 Raccordo Fascia d'Oro",
+    catasto: "Fg. 42 - P.lle 184, 185 (Cod. F471)",
+    owner: "Inerti del Chiese S.r.l. (in liquidazione)",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "inertidelchiese@pec.it | +39 030 9651230",
+    note: "Area dismessa da 3 anni. Proprietario molto motivato a vendere o cedere in diritto di superficie trentennale.",
+    bars: { norm: 100, cab: 90, price: 95, yield: 86, owner: 90 }
+  },
+  {
+    id: "LEAD-UMB-001",
+    name: "Lotto Produttivo Asse E45",
+    comune: "Marsciano",
+    prov: "PG",
+    reg: "Umbria",
+    ll: [42.9124, 12.3389],
+    score: 89,
+    ha: 5.2,
+    mq: 52000,
+    mwp: 4.33,
+    mwh: 6110,
+    price_mq: 7.60,
+    price_tot: 395200,
+    tipo: "BUFFER_INDUSTRIALE_350M",
+    substation: "CP Marsciano 132/20 kV",
+    sub_dist: 690,
+    ind_dist: 130,
+    hwy_dist: 280,
+    hwy_name: "SS 3 bis / E45 Orte-Ravenna",
+    catasto: "Fg. 48 - P.lle 130, 131 (Cod. E959)",
+    owner: "Agricola & Immobiliare Umbra S.r.l.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "immobiliareumbra@pec.it | +39 075 8743120",
+    note: "Prezzo ottimo (7,6 €/mq), terreno totalmente pianeggiante senza alberature ad alto fusto.",
+    bars: { norm: 90, cab: 89, price: 96, yield: 95, owner: 85 }
+  },
+  {
+    id: "LEAD-MAR-001",
+    name: "Fascia Autostrada A14 Polo Jesi",
+    comune: "Jesi",
+    prov: "AN",
+    reg: "Marche",
+    ll: [43.5350, 13.2540],
+    score: 89,
+    ha: 6.4,
+    mq: 64000,
+    mwp: 5.33,
+    mwh: 7410,
+    price_mq: 8.70,
+    price_tot: 556800,
+    tipo: "FASCIA_AUTOSTRADALE_300M",
+    substation: "CP Jesi Est 132/20 kV",
+    sub_dist: 920,
+    ind_dist: 240,
+    hwy_dist: 150,
+    hwy_name: "Raccordo SS76 / Casello A14",
+    catasto: "Fg. 71 - P.lle 89, 90, 92 (Cod. E388)",
+    owner: "Vallesina Sviluppo S.r.l.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "vallesinasviluppo@pec.it | +39 0731 539100",
+    note: "Fronte infrastrutturale strategico ad alta visibilità. Allaccio rapido in cabina a meno di 1 km.",
+    bars: { norm: 85, cab: 83, price: 87, yield: 93, owner: 90 }
+  },
+  {
+    id: "LEAD-LOMB-003",
+    name: "Ex Discarica Bonificata Mantova",
+    comune: "Roncoferraro",
+    prov: "MN",
+    reg: "Lombardia",
+    ll: [45.1320, 10.9520],
+    score: 88,
+    ha: 6.0,
+    mq: 60000,
+    mwp: 5.00,
+    mwh: 6400,
+    price_mq: 6.90,
+    price_tot: 414000,
+    tipo: "DISCARICA_ESAURITA",
+    substation: "CP Roncoferraro 132/20 kV",
+    sub_dist: 1100,
+    ind_dist: 310,
+    hwy_dist: 850,
+    hwy_name: "A22 Brennero Mantova Nord",
+    catasto: "Fg. 28 - P.lla 92 (Cod. H541)",
+    owner: "Econord Ambiente S.r.l.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "econord.ambiente@pec.it | +39 0376 662019",
+    note: "Post-chiusura decennale completata con certificazione avvenuta bonifica. Ideale per fotovoltaico a terra rapido in PAS.",
+    bars: { norm: 100, cab: 78, price: 100, yield: 86, owner: 90 }
+  },
+  {
+    id: "LEAD-ER-002",
+    name: "Fascia Logistica Autostrada A1",
+    comune: "Pontenure",
+    prov: "PC",
+    reg: "Emilia-Romagna",
+    ll: [44.9984, 9.7712],
+    score: 87,
+    ha: 5.5,
+    mq: 55000,
+    mwp: 4.58,
+    mwh: 6180,
+    price_mq: 8.80,
+    price_tot: 484000,
+    tipo: "FASCIA_AUTOSTRADALE_300M",
+    substation: "CP Pontenure 132/15 kV",
+    sub_dist: 780,
+    ind_dist: 220,
+    hwy_dist: 110,
+    hwy_name: "A1 Milano-Napoli (km 68)",
+    catasto: "Fg. 19 - P.lle 144, 145 (Cod. G852)",
+    owner: "Famiglia Bersani (Eredi)",
+    owner_tipo: "PERSONA_FISICA",
+    contact: "Contatto: +39 335 6841290",
+    note: "Terreno agricolo marginale non irrigato confinante con recinzione Autostrade per l'Italia. Ottimo per opzione d'acquisto.",
+    bars: { norm: 85, cab: 87, price: 86, yield: 91, owner: 75 }
+  },
+  {
+    id: "LEAD-LOMB-002",
+    name: "Lotto Agricolo Raccordo Pavia Ovest",
+    comune: "Cava Manara",
+    prov: "PV",
+    reg: "Lombardia",
+    ll: [45.1384, 9.1082],
+    score: 86,
+    ha: 4.2,
+    mq: 42000,
+    mwp: 3.50,
+    mwh: 4480,
+    price_mq: 8.50,
+    price_tot: 357000,
+    tipo: "BUFFER_INDUSTRIALE_350M",
+    substation: "CP Pavia Sud 132/15 kV",
+    sub_dist: 980,
+    ind_dist: 90,
+    hwy_dist: 250,
+    hwy_name: "Raccordo A53 Pavia-Bereguardo",
+    catasto: "Fg. 14 - P.lle 205, 206 (Cod. C360)",
+    owner: "Sviluppo Logistica Ticino S.p.A.",
+    owner_tipo: "PERSONA_GIURIDICA",
+    contact: "sviluppoticino@legalmail.it | +39 0382 458911",
+    note: "Interamente in fascia 350m Z.I. PIP comunale. Nessun vincolo paesaggistico.",
+    bars: { norm: 88, cab: 81, price: 89, yield: 86, owner: 90 }
+  }
+];
+
+/* ============ BENCHMARK REGIONALI CANONI & RETE ============ */
+const LEASE_BENCHMARK = [
+  { reg: "Emilia-Romagna", canone: "3.200 €/ha", trend: "+4.5%", tag: "TOP" },
+  { reg: "Lombardia", canone: "3.000 €/ha", trend: "+3.8%", tag: "ELEVATO" },
+  { reg: "Veneto", canone: "2.950 €/ha", trend: "+2.9%", tag: "STABILE" },
+  { reg: "Piemonte", canone: "2.850 €/ha", trend: "+3.2%", tag: "ATTIVO" },
+  { reg: "Toscana", canone: "3.400 €/ha", trend: "+5.1%", tag: "TOP RESA" }
+];
+
+const GRID_BENCHMARK = [
+  { tech: "Cavidotto MT 15/20kV", costo: "65.000 €/km", lead_time: "3-5 mesi" },
+  { tech: "Stallo Cabina Primaria", costo: "45.000 €", lead_time: "4-6 mesi" },
+  { tech: "Iter TICA / STMG", costo: "Standard Enel", lead_time: "45 gg" }
+];
+
+/* ============ CLOCK ============ */
+function updateClock(){
+  const d=new Date();
+  const pad=n=>n<10?'0'+n:n;
+  document.getElementById('clock').textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+' CET';
+}
+setInterval(updateClock,1000); updateClock();
+
+/* ============ MAPPA MAPLIBRE GL ============ */
+const map = new maplibregl.Map({
+  container: 'map',
+  style: {
+    version: 8,
+    sources: {
+      'esri-satellite': {
+        type: 'raster',
+        tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+        tileSize: 256,
+        attribution: 'Esri World Imagery'
+      },
+      'carto-dark': {
+        type: 'raster',
+        tiles: ['https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'],
+        tileSize: 256,
+        attribution: 'CartoDB Dark'
+      }
+    },
+    layers: [
+      {
+        id: 'satellite-layer',
+        type: 'raster',
+        source: 'esri-satellite',
+        paint: { 'raster-opacity': 1 }
+      }
+    ]
+  },
+  center: [11.35, 44.5], // Centro Italia Nord/Centro
+  zoom: 7.5,
+  pitch: 35,
+  bearing: 0
+});
+
+map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+let activeOrbit = false;
+let orbitRaf = null;
+let currentLead = null;
+const markers = [];
+
+/* ============ RENDER CARDS & KPIS ============ */
+function renderCards(filterReg = "TUTTE", searchStr = "") {
+  const container = document.getElementById("cards");
+  container.innerHTML = "";
+
+  const filtered = SITES.filter(s => {
+    const matchReg = filterReg === "TUTTE" || s.reg.toLowerCase() === filterReg.toLowerCase();
+    const matchSearch = !searchStr ||
+      s.name.toLowerCase().includes(searchStr.toLowerCase()) ||
+      s.comune.toLowerCase().includes(searchStr.toLowerCase()) ||
+      s.tipo.toLowerCase().includes(searchStr.toLowerCase()) ||
+      s.prov.toLowerCase().includes(searchStr.toLowerCase());
+    return matchReg && matchSearch;
+  });
+
+  document.getElementById("sitesCount").textContent = `${filtered.length} siti`;
+
+  filtered.forEach(s => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.id = `card-${s.id}`;
+
+    const scoreClass = s.score >= 90 ? "s-high" : (s.score >= 75 ? "s-mid" : "s-low");
+    const leaseAnnuo = Math.round(s.ha * 3000);
+
+    card.innerHTML = `
+      <div class="row" onclick="focusSite('${s.id}')">
+        <div>
+          <div class="name">${s.name}</div>
+          <div class="subtag">📍 ${s.comune} (${s.prov}, ${s.reg}) · <span class="mono">${s.id}</span></div>
+        </div>
+        <div class="score ${scoreClass}">${s.score}</div>
+      </div>
+      <div class="note">${s.note}</div>
+
+      <div class="bars">
+        <div class="bar-row"><span>Idoneità 199/21</span><div class="bar"><i style="width:${s.bars.norm}%"></i></div><span class="n">${s.bars.norm}%</span></div>
+        <div class="bar-row"><span>Vicinanza Rete</span><div class="bar"><i style="width:${s.bars.cab}%"></i></div><span class="n">${s.bars.cab}%</span></div>
+        <div class="bar-row"><span>Target 8-9 €/mq</span><div class="bar"><i style="width:${s.bars.price}%"></i></div><span class="n">${s.bars.price}%</span></div>
+      </div>
+
+      <div class="dists">
+        <div class="d-row"><span>⚡ Cabina Primaria MT:</span><b>${s.substation} (${s.sub_dist} m)</b></div>
+        <div class="d-row"><span>📐 Superficie / MWp:</span><b>${s.ha} ha (~${s.mwp} MWp)</b></div>
+        <div class="d-row"><span>💶 Acquisto Target:</span><b>${s.price_mq.toFixed(2)} €/mq (€ ${(s.price_tot).toLocaleString('it-IT')})</b></div>
+        <div class="d-row"><span>🌱 Diritto Superficie (30y):</span><b>~€ ${leaseAnnuo.toLocaleString('it-IT')}/anno</b></div>
+        <div class="d-row"><span>🏢 Proprietario:</span><b style="font-size:10px">${s.owner}</b></div>
+      </div>
+
+      <div class="btns">
+        <button class="btn brand" onclick="start3DOrbit('${s.id}')">
+          <svg class="ic" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>Sopralluogo 3D
+        </button>
+        <button class="btn" onclick="openPdf('${s.id}')">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Dossier PDF
+        </button>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+/* ============ CREA MARKER MAPPA ============ */
+function initMarkers() {
+  SITES.forEach(s => {
+    // Marker particella
+    const el = document.createElement("div");
+    el.className = `map-pin ${s.score >= 90 ? 'top' : ''}`;
+    el.innerHTML = s.score;
+    el.title = `${s.name} (${s.score}/100)`;
+    el.onclick = () => focusSite(s.id);
+
+    const m = new maplibregl.Marker({ element: el })
+      .setLngLat([s.ll[1], s.ll[0]])
+      .addTo(map);
+
+    markers.push({ id: s.id, marker: m });
+  });
+}
+
+map.on('load', () => {
+  initMarkers();
+  renderBenchmarkBoxes();
+  renderCards();
+});
+
+/* ============ FOCUS SITO & GUIDE AVATAR ============ */
+function focusSite(id) {
+  stopOrbit();
+  const s = SITES.find(x => x.id === id);
+  if (!s) return;
+  currentLead = s;
+
+  // Evidenzia card
+  document.querySelectorAll(".card").forEach(c => c.classList.remove("sel"));
+  const c = document.getElementById(`card-${s.id}`);
+  if (c) {
+    c.classList.add("sel");
+    c.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Camera flyTo
+  map.flyTo({
+    center: [s.ll[1], s.ll[0]],
+    zoom: 16.5,
+    pitch: 58,
+    bearing: 45,
+    speed: 1.2,
+    curve: 1.4
+  });
+
+  // Mostra Avatar Guida
+  showGuideTip(s);
+}
+
+/* ============ SOPRALLUOGO 3D ORBIT ============ */
+function start3DOrbit(id) {
+  const s = SITES.find(x => x.id === id);
+  if (!s) return;
+  currentLead = s;
+  focusSite(id);
+
+  document.getElementById("orbitHint").style.display = "flex";
+  activeOrbit = true;
+
+  let currentBearing = 45;
+  function rotate() {
+    if (!activeOrbit) return;
+    currentBearing = (currentBearing + 0.35) % 360;
+    map.setBearing(currentBearing);
+    orbitRaf = requestAnimationFrame(rotate);
+  }
+  orbitRaf = requestAnimationFrame(rotate);
+}
+
+function stopOrbit() {
+  activeOrbit = false;
+  if (orbitRaf) cancelAnimationFrame(orbitRaf);
+  document.getElementById("orbitHint").style.display = "none";
+}
+
+map.on('mousedown', stopOrbit);
+map.on('touchstart', stopOrbit);
+
+/* ============ GUIDE AVATAR POPUP ============ */
+function showGuideTip(s) {
+  const tip = document.getElementById("siteTip");
+  tip.style.display = "flex";
+  tip.classList.add("talk");
+
+  const leaseAnnuo = Math.round(s.ha * 3000);
+
+  tip.innerHTML = `
+    <div class="guide">
+      <div class="gbox">
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="20" r="14" fill="#1e3a5f" stroke="#10b981" stroke-width="2"/>
+          <circle cx="19" cy="18" r="2.5" fill="#34d399"/>
+          <circle cx="29" cy="18" r="2.5" fill="#34d399"/>
+          <rect class="mouth" x="18" y="25" width="12" height="3" rx="1.5" fill="#34d399"/>
+          <path d="M12 40c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="none" stroke="#38bdf8" stroke-width="2"/>
+        </svg>
+      </div>
+      <span class="glbl">SPATIAL AI</span>
+    </div>
+    <div class="tcontent">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+        <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--brand);font-weight:700">Dossier Sopralluogo Virtuale</span>
+        <button onclick="document.getElementById('siteTip').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px">&times;</button>
+      </div>
+      <div style="font-size:14px;font-weight:800;color:#fff">${s.name} (${s.comune}, ${s.prov})</div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45">
+        Particella catastale <b>${s.catasto}</b>. Area <b>${s.ha} ha</b> idonea D.Lgs. 199/2021 per <b>~${s.mwp} MWp</b>.
+        Cabina Primaria MT a soli <b>${s.sub_dist} m</b>. Target acquisto a <b>${s.price_mq.toFixed(2)} €/mq</b> (€ ${s.price_tot.toLocaleString('it-IT')}) o diritto superficie a <b>~€ ${leaseAnnuo.toLocaleString('it-IT')}/anno</b>.
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn brand" style="padding:5px 10px;font-size:11px" onclick="openPdf('${s.id}')">
+          📄 Scarica Dossier PDF
+        </button>
+        <a href="https://www.google.com/maps/@${s.ll[0]},${s.ll[1]},18m/data=!3m1!1e3" target="_blank" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
+          🛰️ Ortofoto Satellite HD
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+/* ============ ACTIONS ============ */
+function openPdf(id) {
+  // If served locally by Python server, fetch /api/dossier/<id>, else show message
+  window.open(`/api/dossier/${id}`, '_blank');
+}
+
+/* ============ FILTRI & SEARCH ============ */
+document.querySelectorAll(".pill").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    const reg = btn.getAttribute("data-reg");
+    renderCards(reg, document.getElementById("searchInput").value);
+  });
+});
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  const activePill = document.querySelector(".pill.active");
+  const reg = activePill ? activePill.getAttribute("data-reg") : "TUTTE";
+  renderCards(reg, e.target.value);
+});
+
+/* ============ TOOLBAR MAPPA ============ */
+let satOn = true;
+document.getElementById("tSat").addEventListener("click", (e) => {
+  satOn = !satOn;
+  e.currentTarget.classList.toggle("on", satOn);
+  if (satOn) {
+    if (!map.getLayer('satellite-layer')) {
+      map.addLayer({ id: 'satellite-layer', type: 'raster', source: 'esri-satellite' }, 'carto-layer');
+    }
+  } else {
+    if (map.getLayer('satellite-layer')) map.removeLayer('satellite-layer');
+  }
+});
+
+document.getElementById("tReset").addEventListener("click", () => {
+  stopOrbit();
+  document.getElementById("siteTip").style.display = "none";
+  map.flyTo({ center: [11.35, 44.5], zoom: 7.5, pitch: 35, bearing: 0 });
+});
+
+/* ============ BENCHMARK BOXES ============ */
+function renderBenchmarkBoxes() {
+  const leaseContainer = document.getElementById("leaseRows");
+  leaseContainer.innerHTML = LEASE_BENCHMARK.map(b => `
+    <div class="trow">
+      <span>${b.reg}</span>
+      <b>${b.canone}</b>
+      <span class="sev ok">${b.tag}</span>
+    </div>
+  `).join("");
+
+  const gridContainer = document.getElementById("gridRows");
+  gridContainer.innerHTML = GRID_BENCHMARK.map(g => `
+    <div class="trow">
+      <span>${g.tech}</span>
+      <b>${g.costo}</b>
+      <span class="sev info">${g.lead_time}</span>
+    </div>
+  `).join("");
+}
+</script>
+</body>
+</html>

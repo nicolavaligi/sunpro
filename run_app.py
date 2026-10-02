@@ -1,33 +1,32 @@
 #!/usr/bin/env python3
 """
-Launcher per l'applicazione desktop Streamlit Solar Land Origination.
+Launcher per Geo-Intelligence 3D — Solar Land Origination (Houdinick).
+Avvia il server ASGI su http://localhost:8503 e apre l'interfaccia nel browser predefinito.
 Autore: Houdinick (Nicola Valigi)
 """
 
-import subprocess
 import sys
 import webbrowser
+import uvicorn
 from pathlib import Path
 
+# Add current dir to sys.path
+BASE_DIR = Path(__file__).resolve().parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
+from server import app
+
 def main():
-    base_dir = Path(__file__).resolve().parent
-    app_py = base_dir / "app.py"
-    venv_streamlit = base_dir / ".venv" / "bin" / "streamlit"
+    port = 8503
+    url = f"http://localhost:{port}"
+    print(f"\n☀️ ===================================================================")
+    print(f"☀️ Geo-Intelligence 3D — Solar Land Origination Platform (Houdinick)")
+    print(f"☀️ Server attivo su: {url}")
+    print(f"☀️ ===================================================================\n")
 
-    cmd = [
-        str(venv_streamlit),
-        "run",
-        str(app_py),
-        "--server.port=8503",
-        "--server.headless=false",
-        "--browser.gatherUsageStats=false"
-    ]
-
-    print(f"☀️ Avvio di Solar Land Origination su http://localhost:8503...")
-    try:
-        subprocess.run(cmd, check=True)
-    except KeyboardInterrupt:
-        print("\nApplicazione terminata.")
+    # Avvia uvicorn
+    uvicorn.run("server:app", host="0.0.0.0", port=port, reload=False, log_level="warning")
 
 if __name__ == "__main__":
     main()
