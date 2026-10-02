@@ -55,6 +55,20 @@ def sync_prototype_to_drive():
         json.dump(leads, f, indent=2, ensure_ascii=False)
     print(f"  ✓ Dati esportati: {csv_file.name} e {json_file.name}")
 
+    # 3b. Copia File KML (Google Earth), GeoJSON e Modello Finanziario
+    kml_src = Path(__file__).resolve().parent / "SunPro_Pipeline_Terreni_Fotovoltaico.kml"
+    geojson_src = Path(__file__).resolve().parent / "SunPro_Pipeline_Terreni_Fotovoltaico.geojson"
+    fin_src = Path(__file__).resolve().parent / "SunPro_Executive_Financial_Model.csv"
+
+    if kml_src.exists():
+        shutil.copy2(kml_src, target_dir / "Visualizza_Pipeline_in_Google_Earth_3D.kml")
+        print("  ✓ File KML per Google Earth 3D copiato nella cartella principale di Drive.")
+    if geojson_src.exists():
+        shutil.copy2(geojson_src, data_dir / "SunPro_Pipeline_Terreni_Fotovoltaico.geojson")
+    if fin_src.exists():
+        shutil.copy2(fin_src, data_dir / "SunPro_Executive_Financial_Model.csv")
+        print("  ✓ Modello Finanziario Esecutivo CSV copiato in Dati_e_Tabelle/.")
+
     # 4. Copia Manuale Commerciale & Script di Negoziazione
     manuale_src = Path(__file__).resolve().parent / "MANUALE_COMMERCIALE.md"
     if manuale_src.exists():
