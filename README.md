@@ -58,20 +58,45 @@ solar-land-acquisition-crawler/
 # Entra nella cartella del progetto
 cd ~/solar-land-acquisition-crawler
 
-# Elenca tutte le aree qualificate censite
-.venv/bin/python3 cli.py list
+# 1. Elenco aree con filtro score
+.venv/bin/python3 cli.py list --min-score 75
 
-# Filtra per regione (es. Emilia-Romagna o Lombardia) e score minimo
-.venv/bin/python3 cli.py list --regione Lombardia --min-score 75
+# 2. Acquisizione live nuovi lead reali dal feed di produzione B2B (Railway)
+.venv/bin/python3 cli.py harvest --max 15
 
-# Genera direttamente il Dossier Commerciale PDF di un lead
+# 3. Audit geospaziale, normativo (D.Lgs. 199/21) ed energetico (PVGIS) su coordinate GPS
+.venv/bin/python3 cli.py analyze 45.4182 10.3845 --ha 8.5
+
+# 4. Ricerca cabine primarie AT/MT e stazioni Terna/Enel nel raggio
+.venv/bin/python3 cli.py cabina 45.42 10.38 --radius 3000
+
+# 5. Interrogazione scientifica irraggiamento solare PVGIS (Commissione Europea JRC)
+.venv/bin/python3 cli.py pvgis 45.42 10.38
+
+# 6. Generazione immediata Dossier Commerciale PDF A4
 .venv/bin/python3 cli.py report LEAD-LOMB-001
 ```
 
-### 2. Avvio Applicazione Desktop
+### 2. Antigravity Agent & AI Assistant (con o senza GEMINI_API_KEY)
 ```bash
-# Esegui il launcher desktop
+# Top lead filtrati per regione e distanza dalla cabina
+.venv/bin/python3 agent_bot.py "Top lead Lombardia con cabina sotto 800 m"
+
+# Audit geospaziale da prompt naturale
+.venv/bin/python3 agent_bot.py "Analizza il sito a 45.42, 10.38 con 8.5 ha"
+
+# Harvester autonomo con rigenerazione piattaforma e sync Drive
+.venv/bin/python3 agent_bot.py "Harvest live e aggiorna il database"
+
+# Resa solare scientifica PVGIS con reverse geocoding toponomastico
+.venv/bin/python3 agent_bot.py "Irraggiamento PVGIS a Faenza"
+```
+
+### 3. Avvio Applicazione Web Geo-Intelligence 3D
+```bash
+# Avvio launcher desktop
 ./run_app.py
+```
 
 # Oppure tramite streamlit:
 .venv/bin/python3 -m streamlit run app.py --server.port=8503

@@ -1,0 +1,20 @@
+{
+  "45.42,10.38": {
+    "lat": 45.42,
+    "lon": 10.38,
+    "kwh_kwp_anno": 1350.3,
+    "kwh_m2_anno": 1743.5,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.29,11.88": {
+    "lat": 44.2856,
+    "lon": 11.8832,
+    "kwh_kwp_anno": 1331.1,
+    "kwh_m2_anno": 1715.9,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  }
+}
