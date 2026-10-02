@@ -6,6 +6,7 @@ Autore: Houdinick (Nicola Valigi)
 """
 
 import sys
+import threading
 import webbrowser
 import uvicorn
 from pathlib import Path
@@ -17,13 +18,23 @@ if str(BASE_DIR) not in sys.path:
 
 from server import app
 
+def open_browser(url: str):
+    try:
+        webbrowser.open(url)
+    except Exception:
+        pass
+
 def main():
     port = 8503
     url = f"http://localhost:{port}"
     print(f"\n☀️ ===================================================================")
     print(f"☀️ Geo-Intelligence 3D — Solar Land Origination Platform (Houdinick)")
-    print(f"☀️ Server attivo su: {url}")
+    print(f"☀️ Piattaforma attiva su: {url}")
+    print(f"☀️ Apertura browser in corso...")
     print(f"☀️ ===================================================================\n")
+
+    # Apertura browser automatica dopo 1 secondo
+    threading.Timer(1.0, open_browser, args=[url]).start()
 
     # Avvia uvicorn
     uvicorn.run("server:app", host="0.0.0.0", port=port, reload=False, log_level="warning")
