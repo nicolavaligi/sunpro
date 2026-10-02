@@ -75,7 +75,7 @@ cd /Users/houdinick/solar-land-acquisition-crawler
     # 6. README esplicativo per consultazione su Drive da qualunque dispositivo
     readme_drive = target_dir / "LEGGIMI_ACCESSO_PROTOTIPO.md"
     with open(readme_drive, "w", encoding="utf-8") as f:
-        f.write("""# ☀️ Solar Land Origination — Accesso Condiviso al Prototipo
+        f.write("""# ☀️ SunPro — Accesso Condiviso al Prototipo
 
 > **Prototipo di Nicola Valigi Engine System**  
 > Mappatura geospaziale e qualificazione terreni per impianti fotovoltaici utility-scale & agrivoltaici in Italia (Nord e Centro).

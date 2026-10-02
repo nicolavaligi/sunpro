@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================================
-# Launcher per Geo-Intelligence 3D — Solar Land Origination (Nicola Valigi Engine System)
+# Launcher per Geo-Intelligence 3D — SunPro (Nicola Valigi Engine System)
 # ==============================================================================
 
 DIR="/Users/houdinick/solar-land-acquisition-crawler"

@@ -1,5 +1,5 @@
 """
-Google Antigravity SDK Agent per Solar Land Origination.
+Google Antigravity SDK Agent per SunPro.
 Agente autonomo equipaggiato con strumenti geospaziali, calcolo CAPEX/rendita e generazione dossier.
 Autore: Nicola Valigi Engine System
 """
