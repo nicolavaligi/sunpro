@@ -1,0 +1,1050 @@
+{
+  "type": "FeatureCollection",
+  "name": "SunPro_Solar_Land_Pipeline",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.8741,
+          44.2981
+        ]
+      },
+      "properties": {
+        "id": "LEAD-ER-001",
+        "title": "Bacino Argille Dismesso Fornace Ravennate",
+        "comune": "Faenza",
+        "provincia": "Ravenna",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 11.0,
+        "mwp_stimati": 9.17,
+        "produzione_mwh_anno": 12375.0,
+        "cabina_piu_vicina": "CP Faenza Nord 132/15 kV (Enel Distribuzione)",
+        "distanza_cabina_m": 520.0,
+        "prezzo_mq_eur": 7.5,
+        "prezzo_richiesto_eur": 825000.0,
+        "score_totale": 96.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Laterizi Romagnoli Soc. Coop.",
+        "proprietario_pec": "lateriziromagnoli@pec.confcooperative.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8654,
+          44.9082
+        ]
+      },
+      "properties": {
+        "id": "LEAD-PIEM-001",
+        "title": "Ex Stabilimento Chimico e Terreni Pertinenziali",
+        "comune": "Tortona",
+        "provincia": "Alessandria",
+        "regione": "Piemonte",
+        "superficie_ha": 13.5,
+        "mwp_stimati": 11.25,
+        "produzione_mwh_anno": 14737.5,
+        "cabina_piu_vicina": "CP Tortona 132/15 kV (Enel Distribuzione)",
+        "distanza_cabina_m": 740.0,
+        "prezzo_mq_eur": 8.0,
+        "prezzo_richiesto_eur": 1080000.0,
+        "score_totale": 93.4,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Fallimento Ex Chimica Scrivia (Curatore Dott. F. Rossi)",
+        "proprietario_pec": "f94.2023alessandria@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.5645,
+          43.5312
+        ]
+      },
+      "properties": {
+        "id": "LEAD-TOSC-001",
+        "title": "Ex Cava di Inerti Valdarno e Bacino Recupero",
+        "comune": "Montevarchi",
+        "provincia": "Arezzo",
+        "regione": "Toscana",
+        "superficie_ha": 6.8,
+        "mwp_stimati": 5.67,
+        "produzione_mwh_anno": 8046.7,
+        "cabina_piu_vicina": "CP Montevarchi 132/15 kV",
+        "distanza_cabina_m": 820.0,
+        "prezzo_mq_eur": 8.4,
+        "prezzo_richiesto_eur": 571200.0,
+        "score_totale": 93.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Valdarno Scavi e Costruzioni S.r.l.",
+        "proprietario_pec": "valdarnoscavi@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.24694,
+          45.542563
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W1306185882",
+        "title": "Brownfield — Sesto San Giovanni (Milano)",
+        "comune": "Sesto San Giovanni",
+        "provincia": "Milano",
+        "regione": "Lombardia",
+        "superficie_ha": 31.41,
+        "mwp_stimati": 26.17,
+        "produzione_mwh_anno": 33503.6,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Vulcano CDS",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 2544178.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Sesto San Giovanni",
+        "proprietario_pec": "fallimento.sestosangiovanni@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.062808,
+          45.542764
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W151766490",
+        "title": "Brownfield — Ospitaletto (Brescia)",
+        "comune": "Ospitaletto",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 29.1,
+        "mwp_stimati": 24.25,
+        "produzione_mwh_anno": 31044.9,
+        "cabina_piu_vicina": "STAZIONE_AT UT Esselunga Ospitaletto",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 2357473.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Ospitaletto",
+        "proprietario_pec": "fallimento.ospitaletto@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.25322,
+          45.53925
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W203468251",
+        "title": "Brownfield — Sesto San Giovanni (Milano)",
+        "comune": "Sesto San Giovanni",
+        "provincia": "Milano",
+        "regione": "Lombardia",
+        "superficie_ha": 25.16,
+        "mwp_stimati": 20.97,
+        "produzione_mwh_anno": 26840.3,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA RISE Sesto",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 2038187.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Sesto San Giovanni",
+        "proprietario_pec": "fallimento.sestosangiovanni@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.644894,
+          45.226808
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W339104227",
+        "title": "Brownfield — Turano Lodigiano (Lodi)",
+        "comune": "Turano Lodigiano",
+        "provincia": "Lodi",
+        "regione": "Lombardia",
+        "superficie_ha": 19.85,
+        "mwp_stimati": 16.54,
+        "produzione_mwh_anno": 21169.7,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Turano centrale",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 1607575.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Turano Lodigiano",
+        "proprietario_pec": "fallimento.turanolodigiano@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.252794,
+          45.062272
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W163810956",
+        "title": "Brownfield — Broni (Pavia)",
+        "comune": "Broni",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 16.55,
+        "mwp_stimati": 13.79,
+        "produzione_mwh_anno": 17656.6,
+        "cabina_piu_vicina": "SOTTOSTAZIONE_FERROVIARIA RFI Broni",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 1340801.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Broni",
+        "proprietario_pec": "fallimento.broni@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.194319,
+          45.529768
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W141562466",
+        "title": "Brownfield — Brescia (Brescia)",
+        "comune": "Brescia",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 13.69,
+        "mwp_stimati": 11.41,
+        "produzione_mwh_anno": 14598.8,
+        "cabina_piu_vicina": "CABINA_PRIMARIA Pietra",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 1108598.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Brescia",
+        "proprietario_pec": "fallimento.brescia@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.135,
+          45.3725
+        ]
+      },
+      "properties": {
+        "id": "LEAD-VEN-001",
+        "title": "Area Cava di Ghiaia Scaligera Z.I.",
+        "comune": "Zevio",
+        "provincia": "Verona",
+        "regione": "Veneto",
+        "superficie_ha": 9.5,
+        "mwp_stimati": 7.92,
+        "produzione_mwh_anno": 10291.7,
+        "cabina_piu_vicina": "CP Zevio 132/20 kV (Enel Distribuzione)",
+        "distanza_cabina_m": 890.0,
+        "prezzo_mq_eur": 8.2,
+        "prezzo_richiesto_eur": 779000.0,
+        "score_totale": 92.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Scaligera Inerti S.r.l.",
+        "proprietario_pec": "scaligerainerti@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0498,
+          45.0612
+        ]
+      },
+      "properties": {
+        "id": "LEAD-VEN-002",
+        "title": "Comparto Industriale Espansione Adria Interporto",
+        "comune": "Adria",
+        "provincia": "Rovigo",
+        "regione": "Veneto",
+        "superficie_ha": 7.2,
+        "mwp_stimati": 6.0,
+        "produzione_mwh_anno": 7800.0,
+        "cabina_piu_vicina": "CP Adria 132/20 kV",
+        "distanza_cabina_m": 410.0,
+        "prezzo_mq_eur": 7.9,
+        "prezzo_richiesto_eur": 568800.0,
+        "score_totale": 92.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Polesine Sviluppo Industriale S.r.l.",
+        "proprietario_pec": "polesinesviluppo@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3845,
+          45.4182
+        ]
+      },
+      "properties": {
+        "id": "LEAD-LOMB-001",
+        "title": "Ex Cava di Inerti e Ghiaia Montichiari",
+        "comune": "Montichiari",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 8.5,
+        "mwp_stimati": 7.08,
+        "produzione_mwh_anno": 9066.7,
+        "cabina_piu_vicina": "CP Montichiari 132/15 kV (Enel Distribuzione)",
+        "distanza_cabina_m": 650.0,
+        "prezzo_mq_eur": 7.8,
+        "prezzo_richiesto_eur": 663000.0,
+        "score_totale": 91.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Inerti del Chiese S.r.l. (in liquidazione)",
+        "proprietario_pec": "inertidelchiese@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.252794,
+          45.062272
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W167441723",
+        "title": "Brownfield — Broni (Pavia)",
+        "comune": "Broni",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 9.69,
+        "mwp_stimati": 8.07,
+        "produzione_mwh_anno": 10333.7,
+        "cabina_piu_vicina": "CABINA_PRIMARIA Broni",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 784712.0,
+        "score_totale": 91.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Broni",
+        "proprietario_pec": "fallimento.broni@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.364092,
+          45.168635
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W201928268",
+        "title": "Brownfield — Corteolona e Genzone (Pavia)",
+        "comune": "Corteolona e Genzone",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 7.88,
+        "mwp_stimati": 6.57,
+        "produzione_mwh_anno": 8403.5,
+        "cabina_piu_vicina": "STAZIONE_AT Ecoenergia",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 638142.0,
+        "score_totale": 91.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Corteolona e Genzone",
+        "proprietario_pec": "fallimento.corteolonaegenzone@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20427,
+          45.539327
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W434743359",
+        "title": "Brownfield — Brescia (Brescia)",
+        "comune": "Brescia",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 7.83,
+        "mwp_stimati": 6.53,
+        "produzione_mwh_anno": 8356.9,
+        "cabina_piu_vicina": "CABINA_PRIMARIA Donegani",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 634603.0,
+        "score_totale": 91.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Brescia",
+        "proprietario_pec": "fallimento.brescia@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.207605,
+          45.557531
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W703098968",
+        "title": "Brownfield — Brescia (Brescia)",
+        "comune": "Brescia",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 7.29,
+        "mwp_stimati": 6.07,
+        "produzione_mwh_anno": 7775.8,
+        "cabina_piu_vicina": "CABINA_DA_CLASSIFICARE",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 590474.0,
+        "score_totale": 91.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Brescia",
+        "proprietario_pec": "fallimento.brescia@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.014988,
+          45.621636
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W168909461",
+        "title": "Brownfield — Saronno (Varese)",
+        "comune": "Saronno",
+        "provincia": "Varese",
+        "regione": "Lombardia",
+        "superficie_ha": 6.17,
+        "mwp_stimati": 5.14,
+        "produzione_mwh_anno": 6578.3,
+        "cabina_piu_vicina": "CABINA_PRIMARIA Uboldo",
+        "distanza_cabina_m": 510.0,
+        "prezzo_mq_eur": 8.1,
+        "prezzo_richiesto_eur": 499543.0,
+        "score_totale": 91.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Procedura Liquidatoria Area Saronno",
+        "proprietario_pec": "fallimento.saronno@pecfallimenti.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3389,
+          42.9124
+        ]
+      },
+      "properties": {
+        "id": "LEAD-UMB-001",
+        "title": "Lotto Adiacente Asse E45 Zona Produttiva Valle Umbra",
+        "comune": "Marsciano",
+        "provincia": "Perugia",
+        "regione": "Umbria",
+        "superficie_ha": 5.2,
+        "mwp_stimati": 4.33,
+        "produzione_mwh_anno": 6110.0,
+        "cabina_piu_vicina": "CP Marsciano 132/20 kV (Enel Distribuzione)",
+        "distanza_cabina_m": 690.0,
+        "prezzo_mq_eur": 7.6,
+        "prezzo_richiesto_eur": 395200.0,
+        "score_totale": 89.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Agricola & Immobiliare Umbra S.r.l.",
+        "proprietario_pec": "immobiliareumbra@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.254,
+          43.535
+        ]
+      },
+      "properties": {
+        "id": "LEAD-MAR-001",
+        "title": "Area Confinante Autostrada A14 e Polo Produttivo Jesi",
+        "comune": "Jesi",
+        "provincia": "Ancona",
+        "regione": "Marche",
+        "superficie_ha": 6.4,
+        "mwp_stimati": 5.33,
+        "produzione_mwh_anno": 7413.3,
+        "cabina_piu_vicina": "CP Jesi Est 132/20 kV",
+        "distanza_cabina_m": 920.0,
+        "prezzo_mq_eur": 8.7,
+        "prezzo_richiesto_eur": 556800.0,
+        "score_totale": 89.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Vallesina Sviluppo S.r.l.",
+        "proprietario_pec": "vallesinasviluppo@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.952,
+          45.132
+        ]
+      },
+      "properties": {
+        "id": "LEAD-LOMB-003",
+        "title": "Ex Discarica Bonificata Mantova Est",
+        "comune": "Roncoferraro",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 6.0,
+        "mwp_stimati": 5.0,
+        "produzione_mwh_anno": 6400.0,
+        "cabina_piu_vicina": "CP Roncoferraro 132/20 kV",
+        "distanza_cabina_m": 1100.0,
+        "prezzo_mq_eur": 6.9,
+        "prezzo_richiesto_eur": 414000.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Econord Ambiente S.r.l.",
+        "proprietario_pec": "econord.ambiente@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.473792,
+          45.281994
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W414164633",
+        "title": "Buffer Industriale 350M — Castel Goffredo (Mantova)",
+        "comune": "Castel Goffredo",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 59.53,
+        "mwp_stimati": 49.61,
+        "produzione_mwh_anno": 63496.6,
+        "cabina_piu_vicina": "STAZIONE_AT UT Fulgar",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 5059888.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Castel Goffredo S.p.A.",
+        "proprietario_pec": "info.castelgoffredo@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.158161,
+          45.557591
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W390893484",
+        "title": "Buffer Industriale 350M — Gussago (Brescia)",
+        "comune": "Gussago",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 58.58,
+        "mwp_stimati": 48.82,
+        "produzione_mwh_anno": 62487.7,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Gussago",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4979487.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Gussago S.p.A.",
+        "proprietario_pec": "info.gussago@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.473792,
+          45.281994
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W165394856",
+        "title": "Buffer Industriale 350M — Castel Goffredo (Mantova)",
+        "comune": "Castel Goffredo",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 58.47,
+        "mwp_stimati": 48.72,
+        "produzione_mwh_anno": 62363.1,
+        "cabina_piu_vicina": "CABINA_PRIMARIA Zecchini CS",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4969559.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Castel Goffredo S.p.A.",
+        "proprietario_pec": "info.castelgoffredo@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.944084,
+          45.14828
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W411981325",
+        "title": "Buffer Industriale 350M — Spinadesco (Cremona)",
+        "comune": "Spinadesco",
+        "provincia": "Cremona",
+        "regione": "Lombardia",
+        "superficie_ha": 54.84,
+        "mwp_stimati": 45.7,
+        "produzione_mwh_anno": 58498.1,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA UT Arvedi ISP",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4661570.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Spinadesco S.p.A.",
+        "proprietario_pec": "info.spinadesco@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.877372,
+          45.099381
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W775135895",
+        "title": "Buffer Industriale 350M — Ferrera Erbognone (Pavia)",
+        "comune": "Ferrera Erbognone",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 53.38,
+        "mwp_stimati": 44.48,
+        "produzione_mwh_anno": 56939.1,
+        "cabina_piu_vicina": "CABINA_DA_CLASSIFICARE",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4537334.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Ferrera Erbognone S.p.A.",
+        "proprietario_pec": "info.ferreraerbognone@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.944084,
+          45.14828
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W116519166",
+        "title": "Buffer Industriale 350M — Spinadesco (Cremona)",
+        "comune": "Spinadesco",
+        "provincia": "Cremona",
+        "regione": "Lombardia",
+        "superficie_ha": 52.39,
+        "mwp_stimati": 43.66,
+        "produzione_mwh_anno": 55884.2,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Isp Cremona",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4453269.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Spinadesco S.p.A.",
+        "proprietario_pec": "info.spinadesco@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.43456,
+          45.332484
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W162960205",
+        "title": "Buffer Industriale 350M — Montanaso Lombardo (Lodi)",
+        "comune": "Montanaso Lombardo",
+        "provincia": "Lodi",
+        "regione": "Lombardia",
+        "superficie_ha": 50.0,
+        "mwp_stimati": 41.67,
+        "produzione_mwh_anno": 53331.7,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Tavazzano Centrale",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4249872.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Montanaso Lombardo S.p.A.",
+        "proprietario_pec": "info.montanasolombardo@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.205176,
+          45.551691
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W203351763",
+        "title": "Buffer Industriale 350M — Brescia (Brescia)",
+        "comune": "Brescia",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 49.64,
+        "mwp_stimati": 41.37,
+        "produzione_mwh_anno": 52950.0,
+        "cabina_piu_vicina": "STAZIONE_AT UT Iveco BS",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 4219451.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Brescia S.p.A.",
+        "proprietario_pec": "info.brescia@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.468022,
+          45.395571
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W202536811",
+        "title": "Buffer Industriale 350M — Castiglione delle Stiviere (Mantova)",
+        "comune": "Castiglione delle Stiviere",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 46.77,
+        "mwp_stimati": 38.97,
+        "produzione_mwh_anno": 49887.6,
+        "cabina_piu_vicina": "CABINA_PRIMARIA San Pietro BS",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 3975416.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Castiglione delle Stiviere S.p.A.",
+        "proprietario_pec": "info.castiglionedellestiviere@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.836934,
+          45.144667
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W116797658",
+        "title": "Buffer Industriale 350M — Mantova (Mantova)",
+        "comune": "Mantova",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 45.43,
+        "mwp_stimati": 37.86,
+        "produzione_mwh_anno": 48454.7,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Mantova 380",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 3861236.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Mantova S.p.A.",
+        "proprietario_pec": "info.mantova@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.836934,
+          45.144667
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W412909650",
+        "title": "Buffer Industriale 350M — Mantova (Mantova)",
+        "comune": "Mantova",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 45.26,
+        "mwp_stimati": 37.71,
+        "produzione_mwh_anno": 48272.3,
+        "cabina_piu_vicina": "STAZIONE_AT_TERNA Mantova 220",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 3846700.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Mantova S.p.A.",
+        "proprietario_pec": "info.mantova@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.468022,
+          45.395571
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W414164634",
+        "title": "Buffer Industriale 350M — Castiglione delle Stiviere (Mantova)",
+        "comune": "Castiglione delle Stiviere",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 45.04,
+        "mwp_stimati": 37.54,
+        "produzione_mwh_anno": 48046.2,
+        "cabina_piu_vicina": "STAZIONE_AT UT Huntsman",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 3828680.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Castiglione delle Stiviere S.p.A.",
+        "proprietario_pec": "info.castiglionedellestiviere@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.43456,
+          45.332484
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W414164632",
+        "title": "Buffer Industriale 350M — Montanaso Lombardo (Lodi)",
+        "comune": "Montanaso Lombardo",
+        "provincia": "Lodi",
+        "regione": "Lombardia",
+        "superficie_ha": 43.04,
+        "mwp_stimati": 35.87,
+        "produzione_mwh_anno": 45908.6,
+        "cabina_piu_vicina": "STAZIONE_AT Tavazzano TAG",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 3658340.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Montanaso Lombardo S.p.A.",
+        "proprietario_pec": "info.montanasolombardo@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.799547,
+          45.17447
+        ]
+      },
+      "properties": {
+        "id": "FV-LOM-W116801402",
+        "title": "Buffer Industriale 350M — Mantova (Mantova)",
+        "comune": "Mantova",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 42.71,
+        "mwp_stimati": 35.59,
+        "produzione_mwh_anno": 45552.4,
+        "cabina_piu_vicina": "STAZIONE_AT Burgo Mantova",
+        "distanza_cabina_m": 590.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 3629959.0,
+        "score_totale": 88.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Industriale Mantova S.p.A.",
+        "proprietario_pec": "info.mantova@pec.it",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.7712,
+          44.9984
+        ]
+      },
+      "properties": {
+        "id": "LEAD-ER-002",
+        "title": "Fascia Logistica Autostrada A1 Piacenza Sud",
+        "comune": "Pontenure",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 5.5,
+        "mwp_stimati": 4.58,
+        "produzione_mwh_anno": 6187.5,
+        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
+        "distanza_cabina_m": 780.0,
+        "prezzo_mq_eur": 8.8,
+        "prezzo_richiesto_eur": 484000.0,
+        "score_totale": 87.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Famiglia Bersani (Eredi)",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1082,
+          45.1384
+        ]
+      },
+      "properties": {
+        "id": "LEAD-LOMB-002",
+        "title": "Lotto Industriale Agricolo Adiacente Tangenziale Ovest",
+        "comune": "Cava Manara",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 4.2,
+        "mwp_stimati": 3.5,
+        "produzione_mwh_anno": 4480.0,
+        "cabina_piu_vicina": "CP Pavia Sud 132/15 kV",
+        "distanza_cabina_m": 980.0,
+        "prezzo_mq_eur": 8.5,
+        "prezzo_richiesto_eur": 357000.0,
+        "score_totale": 86.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "Sviluppo Logistica Ticino S.p.A.",
+        "proprietario_pec": "sviluppoticino@legalmail.it",
+        "osm_url": null
+      }
+    }
+  ]
+}

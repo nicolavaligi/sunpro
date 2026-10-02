@@ -174,6 +174,22 @@ def build_platform():
     WEB_INDEX_HTML.write_text(html_content, encoding="utf-8")
     print(f"  ✓ index.html e web/index.html aggiornati con successo!")
 
+    # 3b. Esportazione KML (Google Earth), GeoJSON e Modello Finanziario CSV
+    from crawler.kml_exporter import export_kml_and_geojson
+    from crawler.financial_model import generate_financial_model_csv
+
+    kml_file = BASE_DIR / "SunPro_Pipeline_Terreni_Fotovoltaico.kml"
+    geojson_file = BASE_DIR / "SunPro_Pipeline_Terreni_Fotovoltaico.geojson"
+    fin_file = BASE_DIR / "SunPro_Executive_Financial_Model.csv"
+
+    export_kml_and_geojson(kml_file, geojson_file)
+    generate_financial_model_csv(fin_file)
+
+    shutil.copy2(kml_file, BASE_DIR / "web" / kml_file.name)
+    shutil.copy2(geojson_file, BASE_DIR / "web" / geojson_file.name)
+    shutil.copy2(fin_file, BASE_DIR / "web" / fin_file.name)
+    print("  ✓ KML per Google Earth, GeoJSON e Modello Finanziario CSV pronti per il download!")
+
     # 4. Sincronizzazione Drive
     print("☁️ Sincronizzazione Google Drive...")
     sync_prototype_to_drive()
