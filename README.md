@@ -1,11 +1,15 @@
-# Solar Land Acquisition Crawler & Commercial Desktop App
+# SunPro — Geo-Intelligence 3D & Solar Land Acquisition
 
 [![Author: Nicola Valigi Engine System](https://img.shields.io/badge/Author-Nicola%20Valigi%20Engine%20System-blue.svg)](https://github.com/nicolavaligi)
+[![GitHub Pages: Live](https://img.shields.io/badge/Live-GitHub%20Pages-brightgreen.svg)](https://nicolavaligi.github.io/sunpro/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python: 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://python.org)
-[![Streamlit: Desktop App](https://img.shields.io/badge/Desktop%20UI-Streamlit-red.svg)](http://localhost:8503)
+[![Web UI: Port 8503](https://img.shields.io/badge/Web%20UI-Port%208503-red.svg)](http://localhost:8503)
 
-Crawler geospaziale, motore di scoring multicriterio (0-100) conforme al **D.Lgs. 199/2021 (Aree Idonee)** e applicazione desktop con generatore automatico di **Dossier Commerciali PDF** per l'acquisizione di terreni fotovoltaici (Utility-Scale & Agrivoltaico) in Italia, con precedenza Nord e Centro.
+Piattaforma di **Geo-Intelligence 3D** per l'origination e acquisizione autonoma di terreni fotovoltaici Utility-Scale & Agrivoltaico conforme al **D.Lgs. 199/2021 (Aree Idonee)**. Include viewer satellitare 3D con volo orbitale, agente decisionale AI, estrazione catastale e generazione automatica di **Dossier Commerciali PDF**.
+
+🌐 **Demo Live Web (GitHub Pages):** [https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)
+
 
 ---
 
