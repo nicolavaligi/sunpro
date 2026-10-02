@@ -305,7 +305,7 @@ st.markdown("""
             <span class="status-chip chip-normativa">D.LGS. 199/2021 COMPLIANT</span>
             <span class="status-chip chip-drive">GOOGLE DRIVE SYNCED</span>
         </div>
-        <h1 class="hero-title">Solar Land Origination Platform</h1>
+        <h1 class="hero-title">SunPro Platform</h1>
         <p class="hero-subtitle">Mappatura geospaziale, qualificazione normativa e dossier finanziari per lo sviluppo Utility-Scale & Agrivoltaico in Italia.</p>
     </div>
     <div style="text-align: right; display: flex; gap: 12px;">

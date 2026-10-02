@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Launcher per Geo-Intelligence 3D — Solar Land Origination (Nicola Valigi Engine System).
+Launcher per Geo-Intelligence 3D — SunPro (Nicola Valigi Engine System).
 Avvia il server ASGI su http://localhost:8503 e apre l'interfaccia nel browser predefinito.
 Autore: Nicola Valigi Engine System
 """
@@ -28,7 +28,7 @@ def main():
     port = 8503
     url = f"http://localhost:{port}"
     print(f"\n☀️ ===================================================================")
-    print(f"☀️ Geo-Intelligence 3D — Solar Land Origination Platform (Nicola Valigi Engine System)")
+    print(f"☀️ Geo-Intelligence 3D — SunPro Platform (Nicola Valigi Engine System)")
     print(f"☀️ Piattaforma attiva su: {url}")
     print(f"☀️ Apertura browser in corso...")
     print(f"☀️ ===================================================================\n")
