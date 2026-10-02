@@ -132,11 +132,44 @@
 
   @keyframes popIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
 
-  /* Marker styling */
-  .map-pin{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);border:2px solid #ffffff;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;font-family:'JetBrains Mono';cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.5);transition:transform .15s}
-  .map-pin:hover{transform:scale(1.2);box-shadow:0 0 18px rgba(16,185,129,.8)}
-  .map-pin.top{background:linear-gradient(135deg,#34d399,#10b981)}
-  .map-pin.substation{width:22px;height:22px;background:#38bdf8;border:2px solid #fff;border-radius:4px;font-size:10px}
+  /* ================= MARKER STYLING (Teardrop Red Pin 3D - PNGAll Ref) ================= */
+  .map-pin-wrap {
+    width: 38px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.22s ease;
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+    user-select: none;
+    pointer-events: auto;
+  }
+  .map-pin-wrap svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+  .map-pin-wrap:hover,
+  .map-pin-wrap.hovered {
+    transform: translateY(-8px) scale(1.18);
+    filter: drop-shadow(0 12px 20px rgba(198,65,66,0.65));
+    z-index: 9999 !important;
+  }
+  .map-pin-wrap.active {
+    transform: translateY(-10px) scale(1.25);
+    filter: drop-shadow(0 14px 26px rgba(225,29,72,0.85));
+    z-index: 10000 !important;
+  }
+  .map-pin-wrap.top-lead:hover,
+  .map-pin-wrap.top-lead.hovered {
+    filter: drop-shadow(0 12px 22px rgba(245,158,11,0.75));
+  }
+  .map-pin-wrap.top-lead.active {
+    filter: drop-shadow(0 14px 28px rgba(245,158,11,0.9));
+  }
 </style>
 </head>
 <body>
@@ -231,14 +264,32 @@
     </div>
 
     <div class="legend">
-      <b>Legenda Score Idoneità</b><br>
-      <span class="cdot" style="background:var(--green)"></span><b>90–100</b> · Top Opportunity (immediata acquisizione)<br>
-      <span class="cdot" style="background:var(--amber)"></span><b>75–89</b> · Qualificato (D.Lgs. 199/21 confermato)<br>
-      <span class="cdot" style="background:var(--accent)"></span><b>60–74</b> · Secondario da approfondire<br><br>
-      <b>Punti sulla Mappa</b><br>
-      <span class="cdot" style="background:var(--green)"></span>Area fotovoltaica idonea (cava / Z.I. / autostrada)<br>
-      <span class="cdot" style="background:var(--accent)"></span>Cabina Primaria AT/MT Terna / Enel Distribuzione<br><br>
-      <b>Sopralluogo 3D:</b> Clicca su <i>[Sopralluogo 3D]</i> per avviare il volo d'ispezione ad alta quota attorno alla particella.
+      <b>Legenda Pin Terreni & Score</b><br>
+      <div style="display:flex;align-items:center;gap:10px;margin:8px 0 6px 0;">
+        <svg width="22" height="31" viewBox="0 0 100 142">
+          <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.45)"/>
+          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#E11D48"/>
+          <circle cx="50" cy="49" r="36" fill="#BE123C"/>
+          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+          <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">96</text>
+          <circle cx="50" cy="8" r="4.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.2"/>
+        </svg>
+        <div><b>90–100</b> · Top Opportunity (bordo oro)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin:6px 0 10px 0;">
+        <svg width="22" height="31" viewBox="0 0 100 142">
+          <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.45)"/>
+          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#C64142"/>
+          <circle cx="50" cy="49" r="36" fill="#B72D2D"/>
+          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+          <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">84</text>
+        </svg>
+        <div><b>75–89</b> · Qualificato D.Lgs. 199/2021</div>
+      </div>
+      <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-size:10.5px;line-height:1.4">
+        📌 <b>Puntatore ad Ago 3D</b>: calibrato su baricentro catastale reale.<br>
+        🚁 <b>Sopralluogo 3D</b>: orbita ad alta quota attorno al sito.
+      </div>
     </div>
   </aside>
 </main>
@@ -1672,25 +1723,72 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
       </div>
     `;
 
+    card.addEventListener("mouseenter", () => {
+      const pinEl = document.getElementById(`pin-${s.id}`);
+      if (pinEl && !pinEl.classList.contains("active")) {
+        pinEl.classList.add("hovered");
+      }
+    });
+    card.addEventListener("mouseleave", () => {
+      const pinEl = document.getElementById(`pin-${s.id}`);
+      if (pinEl) {
+        pinEl.classList.remove("hovered");
+      }
+    });
+
     container.appendChild(card);
+  });
+
+  // Sincronizza visibilità marker sulla mappa
+  const visibleIds = new Set(filtered.map(s => s.id));
+  markers.forEach(mObj => {
+    if (mObj.el) {
+      mObj.el.style.display = visibleIds.has(mObj.id) ? "flex" : "none";
+    }
   });
 }
 
-/* ============ CREA MARKER MAPPA ============ */
+/* ============ CREA MARKER MAPPA (TEARDROP PIN 3D - PNGAll Ref) ============ */
 function initMarkers() {
   SITES.forEach(s => {
-    // Marker particella
-    const el = document.createElement("div");
-    el.className = `map-pin ${s.score >= 90 ? 'top' : ''}`;
-    el.innerHTML = s.score;
-    el.title = `${s.name} (${s.score}/100)`;
-    el.onclick = () => focusSite(s.id);
+    const isTop = s.score >= 90;
+    // Colori calibrati sul modello originale https://www.pngall.com/pin-png/download/38365/
+    const outerColor = isTop ? "#E11D48" : "#C64142";
+    const ringColor = isTop ? "#BE123C" : "#B72D2D";
+    const badgeStroke = isTop ? 'stroke="#F59E0B" stroke-width="2.5"' : 'stroke="rgba(0,0,0,0.08)" stroke-width="1"';
+    const topAccent = isTop ? '<circle cx="50" cy="8" r="4.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.2"/>' : '';
 
-    const m = new maplibregl.Marker({ element: el })
+    const el = document.createElement("div");
+    el.className = `map-pin-wrap ${isTop ? 'top-lead' : ''}`;
+    el.id = `pin-${s.id}`;
+    el.title = `${s.name} · Score ${s.score}/100\n📍 ${s.comune} (${s.ha} ha)\n⚡ CP: ${s.substation} (${s.sub_dist} m)\n💶 Valore: € ${(s.price_tot).toLocaleString('it-IT')}`;
+    
+    el.innerHTML = `
+      <svg viewBox="0 0 100 142" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ground Contact Shadow -->
+        <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.5)"/>
+        <!-- Teardrop Pin Body -->
+        <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="${outerColor}" class="pin-body"/>
+        <!-- Concentric Bevel Ring -->
+        <circle cx="50" cy="49" r="36" fill="${ringColor}" class="pin-ring"/>
+        <!-- White Circular Inset Badge -->
+        <circle cx="50" cy="49" r="24" fill="#FFFFFF" ${badgeStroke} class="pin-badge"/>
+        <!-- Score Display -->
+        <text x="50" y="49" font-family="'JetBrains Mono', 'Segoe UI', system-ui, sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.5">${Math.round(s.score)}</text>
+        ${topAccent}
+      </svg>
+    `;
+
+    el.onclick = (e) => {
+      e.stopPropagation();
+      focusSite(s.id);
+    };
+
+    const m = new maplibregl.Marker({ element: el, anchor: 'bottom' })
       .setLngLat([s.ll[1], s.ll[0]])
       .addTo(map);
 
-    markers.push({ id: s.id, marker: m });
+    markers.push({ id: s.id, marker: m, el: el });
   });
 }
 
@@ -1706,6 +1804,11 @@ function focusSite(id) {
   const s = SITES.find(x => x.id === id);
   if (!s) return;
   currentLead = s;
+
+  // Evidenzia pin sulla mappa
+  document.querySelectorAll(".map-pin-wrap").forEach(p => p.classList.remove("active"));
+  const p = document.getElementById(`pin-${s.id}`);
+  if (p) p.classList.add("active");
 
   // Evidenzia card
   document.querySelectorAll(".card").forEach(c => c.classList.remove("sel"));
