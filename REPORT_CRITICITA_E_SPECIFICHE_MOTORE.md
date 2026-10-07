@@ -1,8 +1,8 @@
 # ☀️ SunPro Engine — Documento Tecnico-Esecutivo
-## Specifiche di Ricerca, Architettura del Motore e Report delle Criticità
+## Specifiche di Ricerca, Architettura del Motore, Valutazione Fondiaria e Report delle Criticità
 
 > **Documento ad uso interno per Soci, Sviluppatori e Partner Strategici**  
-> **Oggetto:** Origination geospaziale, qualificazione normativa e modello finanziario per terreni Fotovoltaici & Agrivoltaici Utility-Scale in Italia.  
+> **Oggetto:** Origination geospaziale, determinazione del valore di mercato dei terreni, qualificazione urbanistica e modello finanziario per impianti Fotovoltaici & Agrivoltaici Utility-Scale in Italia.  
 > **Piattaforma:** SunPro Geo-Intelligence 3D  
 > **Autore & Proprietà Intellettuale:** Nicola Valigi (Houdinick)  
 > **Data:** Ottobre 2026  
@@ -12,26 +12,29 @@
 ## 📑 Indice del Documento
 1. [Sintesi Esecutiva: Cosa fa il Motore SunPro](#1-sintesi-esecutiva)
 2. [Specifiche Tecniche di Ricerca & Filtri Applicati](#2-specifiche-tecniche-di-ricerca)
-3. [Ingegneria di Rete & Resa Energetica Scientifica](#3-ingegneria-di-rete--resa-energetica)
-4. [Algoritmo di Scoring Multicriterio (0–100)](#4-algoritmo-di-scoring-multicriterio)
-5. [Modello Finanziario & Parametri di Redditività](#5-modello-finanziario--parametri-di-redditività)
-6. [Report delle Criticità & Analisi dei Rischi (Gap Analysis)](#6-report-delle-criticità--analisi-dei-rischi)
-7. [Roadmap di Scalabilità & Consigli per i Soci](#7-roadmap-di-scalabilità--consigli-per-i-soci)
+3. [Come il Motore Determina il Valore dei Terreni: Modello Estimativo, Destinazione Urbanistica ed Esclusione Terreni Inavvicinabili](#3-come-il-motore-determina-il-valore-dei-terreni)
+4. [Ingegneria di Rete & Resa Energetica Scientifica](#4-ingegneria-di-rete--resa-energetica)
+5. [Algoritmo di Scoring Multicriterio (0–100) & Gatekeeper](#5-algoritmo-di-scoring-multicriterio)
+6. [Modello Finanziario & Parametri di Redditività a Confronto](#6-modello-finanziario--parametri-di-redditività)
+7. [Report delle Criticità & Analisi dei Rischi (Gap Analysis)](#7-report-delle-criticità--analisi-dei-rischi)
+8. [Roadmap di Scalabilità & Consigli Operativi per i Soci](#8-roadmap-di-scalabilità--consigli-per-i-soci)
 
 ---
 
 ## 1. Sintesi Esecutiva
 
-Il motore **SunPro** è una piattaforma di **Geo-Intelligence predittiva** progettata per automatizzare il lavoro più costoso, lento e rischioso dello sviluppo fotovoltaico: l'**Origination fondiaria**.
+Il motore **SunPro** è una piattaforma di **Geo-Intelligence predittiva** progettata per industrializzare e automatizzare il lavoro più costoso, lento e rischioso dello sviluppo fotovoltaico: l'**Origination fondiaria**.
 
 Invece di mandare tecnici sul territorio o consultare manualmente mappe catastali, il motore scansiona il territorio italiano e incrocia simultaneamente:
 1. **La conformità normativa ex lege** (D.Lgs. 199/2021).
-2. **La prossimità infrastrutturale alla rete elettrica** (Media e Alta Tensione).
-3. **La resa solare scientifica** della Commissione Europea (PVGIS v5.2 JRC).
-4. **I vincoli ambientali ostativi** (Rete Natura 2000 e Rischio Idrogeologico PAI).
-5. **Il modello economico-finanziario** (Acquisto vs Diritto di Superficie 30ennale).
+2. **La destinazione urbanistica reale e il valore di mercato fondiario** (VAM / ISMEA / OMI).
+3. **Il filtro gatekeeper anti-inacquistabilità** (esclusione automatica di lotti edificabili industriali > 15 €/mq).
+4. **La prossimità infrastrutturale alla rete elettrica** (2.107 Cabine Primarie ARERA/GSE con routing stradale 1,30x).
+5. **La resa solare scientifica indipendente** della Commissione Europea (PVGIS v5.2 JRC per fissi e tracker).
+6. **I vincoli ambientali ostativi** (Rete Natura 2000 ZPS/SIC e Rischio Idrogeologico PAI).
+7. **Il modello economico-finanziario** (Acquisto a 7,50–9,50 €/mq vs Diritto di Superficie 30ennale a 3.000 €/ha/anno).
 
-Il risultato finale è una pipeline di terreni già **pre-qualificati, quotati finanziariamente e pronti per l'iter autorizzativo accelerato (PAS in 60–90 giorni)**.
+Il risultato finale è una pipeline di terreni già **pre-qualificati, verificati per reale acquistabilità fondiaria, quotati finanziariamente e pronti per l'iter autorizzativo accelerato (PAS in 60–90 giorni)**.
 
 ---
 
@@ -41,14 +44,14 @@ Il crawler scarta a monte il 98% del territorio agricolo ordinario e isola esclu
 
 ### A. Dimensione Fondiaria
 * **Superficie Minima:** **$\ge 2,0$ Ettari (20.000 mq)**.  
-  *Razionale:* 2 ha è la soglia minima per giustificare i costi fissi di sviluppo, la cabina MT/AT e gli oneri autorizzativi di un impianto utility-scale (~1,6 – 2,0 MWp).
+  *Razionale:* 2 ha è la soglia minima per ammortizzare i costi fissi di sviluppo, la cabina MT/AT e gli oneri autorizzativi di un impianto utility-scale (~1,6 – 2,0 MWp).
 * **Superficie Massima Censita:** Fino a **150 Ettari (1.500.000 mq)** per parchi fotovoltaici ed agrivoltaici su larga scala.
 * **Rapporto di Densità:** Standard di mercato di **1,2 ettari per ogni 1,0 MWp** di potenza installata (compatibile sia con strutture a terra fisse che con inseguitori monoassiali).
 
 ### B. Idoneità Normativa Ex Lege (D.Lgs. 199/2021, Art. 20)
 Il motore ricerca geometricamente solo le tipologie che godono di presunzione di idoneità per legge:
-1. **Fascia Industriale:** Aree situate entro **350 metri** dal perimetro di zone industriali, artigianali o commerciali.
-2. **Corridoio Autostradale:** Aree situate entro **300 metri** dagli assi autostradali, raccordi o tangenziali primarie.
+1. **Fascia Industriale Contigua:** Aree agricole situate entro **350 metri** dal perimetro di zone industriali, artigianali o commerciali.
+2. **Corridoio Autostradale:** Aree agricole situate entro **300 metri** dagli assi autostradali, raccordi o tangenziali primarie.
 3. **Cave e Bacini Estrattivi:** Ex cave dismesse, cave in fase di ripristino o bacini chiusi.
 4. **Discariche & Siti Bonificati:** Discariche esaurite o brownfield industriali ripristinati.
 
@@ -62,7 +65,116 @@ Prima di promuovere un'area, il motore verifica l'assenza di interferenze blocca
 
 ---
 
-## 3. Ingegneria di Rete & Resa Energetica Scientifica
+## 3. Come il Motore Determina il Valore dei Terreni
+### Modello Estimativo Fondiario Reale, Destinazione Urbanistica ed Esclusione Terreni Inavvicinabili
+
+> **CHIARIMENTO FONDAMENTALE PER I SOCI & PARTNER:**  
+> Il motore SunPro **NON determina il valore del terreno sulla base della resa energetica solare**.  
+> Calcolare il prezzo del terreno moltiplicando i MWh prodotti sarebbe un errore metodologico (valutazione astratta e circolare) che porterebbe a sovrastimare i terreni e a fare offerte fuori mercato.  
+> La resa energetica PVGIS viene utilizzata **esclusivamente a valle** per calcolare i ricavi dell'energia, l'EBITDA e il tempo di recupero dell'investimento (Payback / IRR).  
+> Il valore di acquisto e il canone del terreno sono invece calcolati tramite un **Modello Estimativo Sintetico-Comparativo Immobiliare**, ancorato al **mercato fondiario reale, alla destinazione urbanistica (PRG/PGT) e alla posizione geografica**.
+
+```
+                   ┌─────────────────────────────────────────────────────────────┐
+                   │    SCANSIONE GEOSPAZIALE & CENSIMENTO DEL TERRENO           │
+                   └──────────────────────────────┬──────────────────────────────┘
+                                                  │
+                                                  ▼
+                   ┌─────────────────────────────────────────────────────────────┐
+                   │           VERIFICA DESTINAZIONE URBANISTICA (PRG/PGT)       │
+                   └──────────────────────────────┬──────────────────────────────┘
+                                                  │
+                     ┌────────────────────────────┴───────────────────────────┐
+                     ▼                                                        ▼
+         [ ZONA D EDIFICABILE ]                                   [ ZONA E AGRICOLA CONTIGUA ]
+        (Lotto industriale / PIP)                                 (Entro buffer 350m Z.I. / 300m Autostrada)
+                     │                                                        │
+         Valore di Mercato: 50–120 €/mq                           Valore Agricolo VAM/ISMEA: 2,50–5,50 €/mq
+                     │                                                        │
+                     ▼                                                        ▼
+       🛑 GATEKEEPER SUNPRO:                                    Coeff. Posizionali (Viabilità, Orografia)
+      "NON ACQUISTABILE — SCARTATO"                                           │
+   (Incompatibile con FV ground-mounted)                                      ▼
+                                                                  Valore di Mercato Ordinario: 3,00–5,80 €/mq
+                                                                              │
+                                                                              ▼
+                                                                Premio Trasformazione Energetica (+50% / +75%)
+                                                                              │
+                                                                              ▼
+                                                                  🟢 OFFERTA TARGET BANCABILE:
+                                                                  Acquisto: 7,50 – 9,50 €/mq
+                                                                  Diritto Superficie: 3.000 €/ha/anno (4x-6x affitto)
+```
+
+---
+
+### A. La Destinazione Urbanistica (PRG / PGT) e il Filtro Gatekeeper Anti-Inacquistabilità
+Il più grave errore commesso dagli sviluppatori inesperti è confondere le *«aree contigue alle zone industriali»* con i *«lotti industriali interni»*:
+
+1. **La Trappola dei Terreni in Zona D (Produttiva / PIP Edificabile):**
+   * Se un terreno ricade **all'interno del perimetro industriale/artigianale** con destinazione urbanistica Zona D ed è dotato di capacità edificatoria fondiaria, il suo valore di mercato immobiliare oscilla tra **$50,00\text{ €/mq}$ e oltre $120,00\text{ €/mq}$** (destinato a capannoni, logistica, industria).
+   * A questi prezzi, nessun impianto fotovoltaico ground-mounted utility-scale è sostenibile: l'acquisto del terreno costerebbe tra $500.000\text{ €}$ e $1.200.000\text{ €}$ ad ettaro, superando l'intero costo dell'impianto EPC!
+   * **REGOLE DEL GATEKEEPER SUNPRO:** Il modulo `crawler/land_valuation.py` rileva la destinazione urbanistica. Qualsiasi terreno con destinazione Zona D edificabile o con quotazione $> 15,00\text{ €/mq}$ viene **CATEGORICAMENTE SCARTATO** e classificato come **`NON ACQUISTABILE (SOVRASTIMATO)`**, azzerando il punteggio commerciale ed eliminandolo dai dossier.
+
+2. **L'Approccio Chirurgico di SunPro (Zona E Agricola nel Buffer 350m):**
+   * Il D.Lgs. 199/2021 (Art. 20, co. 8 lett. c-ter) qualifica come "Aree Idonee" i terreni situati **entro 350 metri** dal perimetro degli impianti industriali.
+   * SunPro intercetta geometricamente solo i terreni che a livello di Piano Regolatore Comunale (PRG/PGT) conservano la destinazione **ZONA E (Agricola Ordinaria)**.
+   * In questo modo, il terreno gode del **doppio vantaggio competitivo**:
+     * **Valore Fondiario Agricolo Contenuto:** Valutato a prezzi agricoli (non industriali).
+     * **Procedura Autorizzativa PAS Agevolata:** Idoneità per legge statale primaria grazie alla contiguità con il comparto industriale.
+
+3. **Ex Cave e Brownfield (Recupero di Passività):**
+   * Le ex cave dismesse e i siti degradati non hanno valore agricolo né residenziale. Spesso sono gravati da obblighi di ripristino morfologico o fallimenti aziendali, con valori di perizia depressi (**$2,50 – 4,50\text{ €/mq}$**).
+   * SunPro valorizza queste aree offrendo una transazione a **$7,80 – 8,10\text{ €/mq}$**, rappresentando una monetizzazione provvidenziale per curatele fallimentari ed ex cavatori.
+
+---
+
+### B. I Benchmark Fondiari di Mercato (VAM / ISMEA / OMI)
+Il valore agricolo di base ($V_{\text{agri}}$) non è un numero inventato, ma deriva dai bollettini ufficiali regionali e provinciali per seminativo irriguo / asciutto di pianura:
+
+| Regione / Macro-Area | Benchmark Agricolo VAM/ISMEA ($V_{\text{agri}}$) | Affitto Agrario Ordinario Medio | Note Fondiarie Territoriali |
+| :--- | :---: | :---: | :--- |
+| **Lombardia (Pianura Irrigua)** | **$4,80 – 5,60\text{ €/mq}$** ($48k – 56k\text{ €/ha}$) | $550 – 700\text{ €/ha/anno}$ | Massima fertilità (Cremona, Brescia, Lodi, Pavia). |
+| **Veneto (Pianura Veneta)** | **$4,40 – 5,20\text{ €/mq}$** ($44k – 52k\text{ €/ha}$) | $500 – 650\text{ €/ha/anno}$ | Seminativo irriguo (Verona, Padova, Vicenza). |
+| **Emilia-Romagna** | **$4,20 – 5,30\text{ €/mq}$** ($42k – 53k\text{ €/ha}$) | $500 – 620\text{ €/ha/anno}$ | Terreni alluvionali (Bologna, Modena, Parma). |
+| **Piemonte** | **$3,20 – 4,50\text{ €/mq}$** ($32k – 45k\text{ €/ha}$) | $450 – 550\text{ €/ha/anno}$ | Risicoltura e seminativi (Alessandria, Cuneo, Novara). |
+| **Toscana & Centro** | **$2,80 – 3,80\text{ €/mq}$** ($28k – 38k\text{ €/ha}$) | $350 – 450\text{ €/ha/anno}$ | Terreni litoranei e vallivi (Grosseto, Siena, Pisa). |
+| **Puglia, Sicilia & Sud** | **$1,80 – 2,80\text{ €/mq}$** ($18k – 28k\text{ €/ha}$) | $300 – 400\text{ €/ha/anno}$ | Valori fondiari più bassi, massima insolazione. |
+
+---
+
+### C. Coefficienti Correttivi Posizionali & Caratteristiche Fisiche
+Al valore agricolo base provinciale, il motore applica un **Coefficiente Posizionale ($C_{\text{pos}}$)** in funzione delle caratteristiche intrinseche ed estrinseche rilevate dal GIS:
+1. **Accessibilità Viaria & Autostradale:** Se il terreno confina o dista $\le 1.000\text{ m}$ da un asse viario principale o autostrada, viene applicato un incremento del **$+5\% \div +10\%$** sul valore fondiario (minori costi di cantierizzazione, movimentazione mezzi pesanti e posa cavidotto).
+2. **Contiguità a Infrastrutture Esistenti:** Se l'area è contigua ($\le 200\text{ m}$) a un polo produttivo già elettrificato, si applica un incremento del **$+5\%$** per valore di aspettativa.
+3. **Morfologia & Pendenza:** Terreni perfettamente pianeggianti (pendenza $< 3\%$) mantengono il coefficiente $1,00$; terreni con pendenze disomogenee o acclivi verso Nord subiscono una decurtazione prudenziale di stima (fino a $-15\%$) per compensare i futuri oneri di sbancamento e regimazione acque.
+
+Il **Valore di Mercato Ordinario del Fondo ($V_{\text{mercato\_agri}}$)** risulta quindi:
+$$V_{\text{mercato\_agri}} = V_{\text{agri}} \times C_{\text{pos}} \quad (\text{generalmente compreso tra } 3,00\text{ e } 5,90\text{ €/mq})$$
+
+---
+
+### D. Il Premio di Trasformazione Energetica (Target Bancabile 7,50 – 9,50 €/mq)
+Perché un proprietario agricolo dovrebbe vendere il proprio terreno a uno sviluppatore fotovoltaico se l'offerta fosse pari al valore agricolo ordinario? Non lo farebbe mai.
+
+Per sbloccare la trattativa e ottenere la firma del contratto preliminare di opzione, SunPro calcola un **Premio di Trasformazione Fondiaria del $+40\% \div +80\%$** rispetto al valore agricolo ordinario:
+$$V_{\text{target}} = \text{clamp}(V_{\text{mercato\_agri}} \times 1,60, \; 7,50\text{ €/mq}, \; 9,50\text{ €/mq})$$
+
+* **Perché funziona commercialmente:**
+  * L'agricoltore riceve un'offerta di **$75.000 – 95.000\text{ €/ettaro}$**, ovvero il **$50\% – 80\%$ in più** rispetto a quanto potrebbe mai incassare vendendo a un altro agricoltore confinante.
+  * Per il fondo d'investimento o sviluppatore EPC, un costo fondiario compreso tra **$7,50$ e $9,20\text{ €/mq}$** incide per appena l'**$8\% – 11\%$ del CAPEX totale di sviluppo**, garantendo un Payback eccellente di **6,3 – 7,1 anni** e un LCOE altamente competitivo.
+
+---
+
+### E. Il Moltiplicatore di Rendita nel Diritto di Superficie (3.000 €/ha/anno)
+Per gli sviluppatori che non intendono immobilizzare capitale nell'acquisto del terreno, SunPro modella la stipula di un **Diritto di Superficie trentennale**:
+* Canone offerto: **$3.000\text{ € / ettaro / anno}$** (pari a circa $0,30\text{ €/mq/anno}$), indicizzato ISTAT.
+* A fronte di un affitto agrario ordinario medio di **$400 – 650\text{ €/ha/anno}$**, l'offerta SunPro garantisce al proprietario un **Moltiplicatore di Rendita di 4,5x – 6,0x**:
+  * Un proprietario di 10 ettari che prima incassava $6.000\text{ €/anno}$ lordi lavorando la terra o affittandola, con SunPro ne incassa **$30.000\text{ €/anno}$ garantiti per 30 anni ($900.000\text{ €}$ complessivi)** senza alcun costo né rischio di raccolto.
+
+---
+
+## 4. Ingegneria di Rete & Resa Energetica Scientifica
 
 ### A. Database Nazionale 2.107 Cabine Primarie (ARERA / GSE)
 Il motore integra in locale l'intero dataset ufficiale italiano delle **2.107 Cabine Primarie** di tutti i distributori nazionali:
@@ -80,11 +192,11 @@ Il motore interroga l'algoritmo scientifico **PVGIS v5.2 del Joint Research Cent
 * **Configurazione a Inclinazione Fissa:** Calcola il tilt ottimale (28°–34°) e la produzione specifica ($1.250 – 1.450\text{ kWh/kWp/anno}$ al Nord/Centro).
 * **Configurazione Tracker Monoassiale (Inseguitori asse N-S con rotazione Est-Ovest):**
   * Modella l'incremento di producibilità tipico del mercato utility-scale: **$+19,2\%$ al Nord fino a $+22,0\%$ al Centro/Sud**.
-  * Consente di comparare immediatamente il maggior costo dei tracker con l'extra-ricavo energetico annuo.
+  * Consente di comparare immediatamente il maggior costo dei tracker (+70k €/MWp) con l'extra-ricavo energetico annuo.
 
 ---
 
-## 4. Algoritmo di Scoring Multicriterio (0–100)
+## 5. Algoritmo di Scoring Multicriterio (0–100) & Gatekeeper
 
 Ogni terreno analizzato riceve un punteggio deterministico ponderato su **5 pilastri chiave**:
 
@@ -92,22 +204,23 @@ Ogni terreno analizzato riceve un punteggio deterministico ponderato su **5 pila
 | :--- | :---: | :--- |
 | **1. Idoneità Normativa D.Lgs. 199/21** | **30 pt** | Cave/Discariche: 30 pt \| Entro 350m Z.I.: 26 pt \| Entro 300m Autostrada: 22 pt \| Buffer 500m: 14 pt \| Altro: 6 pt |
 | **2. Prossimità Cabina Primaria** | **25 pt** | $\le 500\text{ m}$: 25 pt \| $\le 1.000\text{ m}$: 21 pt \| $\le 1.500\text{ m}$: 16 pt \| $\le 2.500\text{ m}$: 11 pt \| $> 3.500\text{ m}$: 2 pt |
-| **3. Convenienza Economica Prezzo** | **20 pt** | Prezzo $\le 7,5\text{ €/mq}$: 20 pt \| Nel target $7,5 – 9,0\text{ €/mq}$: 18 pt \| $9 – 10\text{ €/mq}$: 11 pt \| $> 12\text{ €/mq}$: 1 pt |
+| **3. Convenienza Economica & Acquistabilità** | **20 pt** | Prezzo $\le 7,5\text{ €/mq}$: 20 pt \| Nel target $7,5 – 9,0\text{ €/mq}$: 18 pt \| $9 – 10\text{ €/mq}$: 11 pt \| $> 12\text{ €/mq}$: 1 pt \| **Lotto Zona D / Prezzo $> 15\text{ €/mq}$: 0 pt (SCARTATO)** |
 | **4. Resa Energetica & Dimensione** | **15 pt** | Insolazione regionale PVGIS (max 10 pt) + Bonus superficie (mq $\ge 100\text{k}$: +5 pt, $\ge 50\text{k}$: +4 pt, $\ge 20\text{k}$: +3 pt) |
 | **5. Reperibilità della Proprietà** | **10 pt** | PEC + Telefono verificati: 10 pt \| Solo PEC o Telefono: 8 pt \| Persona Giuridica censita: 7 pt \| Particella nota: 4 pt |
 
 ### Classi di Rating Commerciale:
-* 🟢 **TOP OPPORTUNITÀ (Score $\ge 75$):** Priorità massima, allaccio a breve raggio, conformità piena, prezzo in target.
+* 🟢 **TOP OPPORTUNITÀ (Score $\ge 75$):** Priorità massima, allaccio a breve raggio, conformità piena, prezzo in target bancabile.
 * 🟡 **QUALIFICATO (Score $60 – 74$):** Ottima area, richiede verifica su un parametro (es. distanza cabina tra 1,5 e 2 km).
 * ⚪ **SECONDARIO (Score $< 60$):** Da archiviare o tenere in pipeline di riserva.
+* 🛑 **NON ACQUISTABILE (SOVRASTIMATO):** Terreni in Zona D edificabile o con valore di mercato $> 15\text{ €/mq}$, scartati automaticamente dal sistema.
 
 ---
 
-## 5. Modello Finanziario & Parametri di Redditività
+## 6. Modello Finanziario & Parametri di Redditività
 
-Il motore confronta per ciascun terreno due strategie contrattuali:
+Il modello economico esecutivo confronta per ciascun terreno due strategie contrattuali basate su parametri standard Italia 2026:
 
-### Parametri Finanziari Standard Italia 2026:
+### Parametri Finanziari Standard Utility-Scale Italia 2026:
 * **CAPEX EPC Impianto Fisso:** $680.000\text{ €/MWp}$ (chiavi in mano, moduli, inverter, montaggio).
 * **CAPEX EPC Impianto Tracker:** $750.000\text{ €/MWp}$ ($+70.000\text{ €/MWp}$ per strutture motorizzate).
 * **Prezzo Cattura Energia PPA / Mercato:** $85,0\text{ €/MWh}$.
@@ -116,16 +229,16 @@ Il motore confronta per ciascun terreno due strategie contrattuali:
 ### Le Due Opzioni a Confronto:
 1. **Opzione Diritto di Superficie (30 Anni) — *Consigliata per Sviluppatori / Fondi*:**
    * Canone annuo benchmark: **$3.000\text{ €/ettaro/anno}$** (pari a circa $0,30\text{ €/mq/anno}$).
-   * Azzeramento del CAPEX di acquisto terreno, massimizzazione dell'IRR del progetto.
+   * Azzeramento del CAPEX di acquisto terreno, massimizzazione dell'IRR del progetto e preservazione della liquidità.
 2. **Opzione Acquisto Diretto del Terreno:**
-   * Prezzo target benchmark: **$8,0 – 9,0\text{ €/mq}$**.
-   * Payback medio dell'investimento: **$6,3 – 7,1\text{ Anni}$** (ancora più rapido con tracker grazie all'extra-ricavo annuo).
+   * Prezzo target benchmark: **$7,80 – 9,20\text{ €/mq}$**.
+   * Payback medio dell'investimento: **$6,3 – 7,1\text{ Anni}$** (ancora più rapido con tracker grazie all'extra-ricavo annuo di produzione).
 
 ---
 
-## 6. Report delle Criticità & Analisi dei Rischi (Gap Analysis)
+## 7. Report delle Criticità & Analisi dei Rischi (Gap Analysis)
 
-Di seguito sono evidenziati i **5 colli di bottiglia attuali** del processo di ricerca e le soluzioni operative per mitigarli:
+Di seguito sono evidenziati i **5 colli di bottiglia operativi** del processo di ricerca e le soluzioni concrete implementate in SunPro:
 
 ### ⚠️ Criticità 1: Capacità di Accoglienza della Cabina Primaria (Hosting Capacity)
 * **Descrizione del Rischio:** Il motore calcola con esattezza la distanza fisica e il costo del cavidotto per la cabina primaria più vicina. Tuttavia, la cabina potrebbe essere **elettricamente satura** (in congestione di rete MT per troppe domande di connessione già presentate da altri sviluppatori).
@@ -154,13 +267,13 @@ Di seguito sono evidenziati i **5 colli di bottiglia attuali** del processo di r
 
 ---
 
-## 7. Roadmap di Scalabilità & Consigli per i Soci
+## 8. Roadmap di Scalabilità & Consigli Operativi per i Soci
 
 Per trasformare la piattaforma in un generatore massivo di deal commerciali ad alto rendimento, si raccomanda il seguente piano operativo:
 
-1. **Fase Immediata (Goz-to-Market sui 36 Lead Qualificati):**
+1. **Fase Immediata (Go-to-Market sui 36 Lead Qualificati):**
    * Utilizzare i **36 Blind Teaser PDF One-Pager** generati nella cartella `blind_teasers/` per contattare sviluppatori primari (CPO, fondi rinnovabili, general contractor EPC).
-   * Proporre l'accesso ai dati completi e la stipula del preliminare fondiario solo previa firma di **NDA / Accordo di Riservatezza**.
+   * Proporre l'accesso ai dati completi e la stipula del preliminare fondiario solo previa firma di **NDA / Accordo di Riservatezza** a tutela della proprietà intellettuale.
 2. **Espansione Territoriale a Costo Zero (Nord & Centro):**
    * Sfruttare il **Database Nazionale delle 2.107 Cabine Primarie ARERA/GSE** per estendere la scansione alle regioni Toscana, Veneto, Piemonte e Puglia senza costi infrastrutturali aggiuntivi.
 3. **Budget Mirato per Visure di Chiusura:**
