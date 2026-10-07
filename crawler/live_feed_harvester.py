@@ -19,6 +19,7 @@ from config import PRIORITY_REGIONS, SURFACE_PER_MWP_MQ, CABLE_COST_PER_KM, SUBS
 from crawler.spatial_engine import haversine_distance_m, calculate_energy_and_capex
 from crawler.cadastral_resolver import estimate_belfiore
 from crawler.owner_discovery import enrich_owner_profile, generate_commercial_pitch
+from crawler.land_valuation import evaluate_land_market_value
 from scoring.scorer import calculate_site_score
 from data.storage import init_db, upsert_lead
 
@@ -135,17 +136,25 @@ def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, A
         # Calcolo Energetico e CAPEX Allaccio
         mwp, mwh, capex = calculate_energy_and_capex(superficie_mq, dist_cabina, regione)
 
-        # Benchmark economico acquisto vs diritto di superficie
-        if tipologia == "EX_CAVA":
-            prezzo_mq = 7.80
-        elif tipologia == "BROWNFIELD":
-            prezzo_mq = 8.10
-        else:
-            prezzo_mq = 8.50
+        # Valutazione Fondiaria, Destinazione Urbanistica e Gatekeeper Acquistabilità
+        val_rep = evaluate_land_market_value(
+            lead_id=str(it.get("source_id")),
+            regione=regione,
+            provincia=provincia,
+            comune=comune,
+            superficie_mq=superficie_mq,
+            tipologia=tipologia,
+            distanza_zona_industriale_m=dist_ind,
+            distanza_autostrada_m=dist_hwy
+        )
 
-        prezzo_totale = round(superficie_mq * prezzo_mq, 0)
+        if val_rep.status_acquistabilita == "NON_ACQUISTABILE_SOVRASTIMATO":
+            continue
+
+        prezzo_mq = val_rep.prezzo_acquisto_target_eur_mq
+        prezzo_totale = val_rep.prezzo_acquisto_target_totale_eur
         ha = round(superficie_mq / 10_000, 2)
-        canone_annuo = round(ha * 3000, 0)
+        canone_annuo = round(ha * val_rep.canone_diritto_superficie_eur_ha, 0)
 
         # Codice Belfiore catastale
         belfiore = estimate_belfiore(comune)
@@ -157,17 +166,17 @@ def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, A
             prop_tipo = "PERSONA_GIURIDICA"
             prop_nome = f"Compendio Estrattivo {comune} S.r.l."
             prop_pec = f"amministrazione.{comune.lower().replace(' ', '')}@pec.it"
-            prop_note = f"Area censita su OpenStreetMap ({osm_id}). Ex cava esaurita con parere di recupero fotovoltaico in PAS."
+            prop_note = f"Area censita su OpenStreetMap ({osm_id}). Ex cava esaurita con parere di recupero fotovoltaico in PAS. {val_rep.sintesi_perizia}"
         elif tipologia == "BROWNFIELD":
             prop_tipo = "CURATELA_FALLIMENTARE"
             prop_nome = f"Procedura Liquidatoria Area {comune}"
             prop_pec = f"fallimento.{comune.lower().replace(' ', '')}@pecfallimenti.it"
-            prop_note = f"Ex comparto produttivo/degradato censito su OSM ({osm_id}). Ottimo per transazione d'acquisto rapida."
+            prop_note = f"Ex comparto produttivo/degradato censito su OSM ({osm_id}). Ottimo per transazione d'acquisto rapida. {val_rep.sintesi_perizia}"
         else:
             prop_tipo = "PERSONA_GIURIDICA"
             prop_nome = f"Sviluppo Industriale {comune} S.p.A."
             prop_pec = f"info.{comune.lower().replace(' ', '')}@pec.it"
-            prop_note = f"Area contigua alla zona industriale di {comune}. Entro buffer 350m D.Lgs. 199/2021."
+            prop_note = f"Area contigua alla zona industriale di {comune}. Entro buffer 350m D.Lgs. 199/2021. {val_rep.sintesi_perizia}"
 
         lead = {
             "id": it.get("source_id"),
@@ -203,6 +212,12 @@ def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, A
             "proprietario_pec": prop_pec,
             "proprietario_telefono": f"+39 0{abs(hash(comune)) % 90 + 10} {abs(hash(prop_nome)) % 900000 + 100000}",
             "note_commerciali": prop_note,
+            "destinazione_urbanistica": val_rep.destinazione_urbanistica,
+            "valore_agricolo_base_eur_mq": val_rep.valore_agricolo_base_eur_mq,
+            "valore_mercato_ordinario_eur_mq": val_rep.valore_mercato_ordinario_eur_mq,
+            "premio_trasformazione_pct": val_rep.premio_trasformazione_pct,
+            "status_acquistabilita": val_rep.status_acquistabilita,
+            "sintesi_perizia": val_rep.sintesi_perizia,
             "stato_trattativa": "DA_CONTATTARE"
         }
 

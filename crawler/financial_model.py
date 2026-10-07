@@ -9,12 +9,16 @@ Autore: Nicola Valigi Engine System
 """
 
 import csv
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from config import DETOUR_FACTOR_GRID, TRACKER_CAPEX_EXTRA_PER_MWP, TRACKER_BOOST_DEFAULT_PCT
 from data.storage import get_all_leads
+from crawler.land_valuation import evaluate_land_market_value
 
 # Parametri standard Utility-Scale Italia 2026
 COST_PER_MWP_EUR = 680_000.0        # CAPEX EPC impianto ground-mounted fisso (€/MWp)
@@ -39,7 +43,35 @@ def generate_financial_model_csv(output_path: Path) -> Path:
         mwp = float(l.get("mwp_stimati", 0))
         mwh = float(l.get("produzione_mwh_anno", 0))
 
-        price_mq = float(l.get("prezzo_mq_eur", 8.20))
+        # Integrazione modello estimativo fondiario e destinazione urbanistica
+        dest_urb = l.get("destinazione_urbanistica")
+        val_base_agri = l.get("valore_agricolo_base_eur_mq")
+        val_ord_mq = l.get("valore_mercato_ordinario_eur_mq")
+        premio_pct = l.get("premio_trasformazione_pct")
+        status_acq = l.get("status_acquistabilita")
+        sintesi_perizia = l.get("sintesi_perizia")
+
+        if not dest_urb or not val_base_agri:
+            val_rep = evaluate_land_market_value(
+                lead_id=str(lead_id),
+                regione=reg,
+                provincia=prov,
+                comune=comune,
+                superficie_mq=mq,
+                tipologia=tipo,
+                distanza_zona_industriale_m=float(l.get("distanza_zona_industriale_m", 100)),
+                distanza_autostrada_m=float(l.get("distanza_autostrada_m", 500))
+            )
+            dest_urb = val_rep.destinazione_urbanistica
+            val_base_agri = val_rep.valore_agricolo_base_eur_mq
+            val_ord_mq = val_rep.valore_mercato_ordinario_eur_mq
+            premio_pct = val_rep.premio_trasformazione_pct
+            status_acq = val_rep.status_acquistabilita
+            sintesi_perizia = val_rep.sintesi_perizia
+            price_mq = val_rep.prezzo_acquisto_target_eur_mq
+        else:
+            price_mq = float(l.get("prezzo_mq_eur", 8.20))
+
         acquisto_terreno = float(l.get("prezzo_richiesto_eur", mq * price_mq))
         canone_annuo_affitto = ha * 3000.0
         canone_30anni = canone_annuo_affitto * 30.0
@@ -81,8 +113,17 @@ def generate_financial_model_csv(output_path: Path) -> Path:
             "Provincia": prov,
             "Regione": reg,
             "Tipologia D.Lgs. 199/21": tipo,
+            "Destinazione Urbanistica PRG": dest_urb,
+            "Status Acquistabilità": status_acq,
             "Superficie (ha)": ha,
             "Superficie (mq)": int(mq),
+            "Valore Agricolo Base VAM/ISMEA (€/mq)": val_base_agri,
+            "Valore Mercato Ordinario (€/mq)": val_ord_mq,
+            "Premio Trasformazione Fondiaria (%)": round(float(premio_pct or 0), 1),
+            "Prezzo Acquisto Target (€/mq)": price_mq,
+            "Valore Acquisto Terreno Target (€)": int(acquisto_terreno),
+            "Canone Annuo Diritto Sup. (€/anno)": int(canone_annuo_affitto),
+            "Totale Canone 30 Anni (€)": int(canone_30anni),
             "Potenza FV (MWp)": mwp,
             "Produzione Annua Fissa (MWh)": int(mwh),
             "Produzione Annua Tracker (MWh)": int(mwh_tracker),
@@ -95,10 +136,6 @@ def generate_financial_model_csv(output_path: Path) -> Path:
             "CAPEX EPC Tracker (€)": int(capex_epc_tracker),
             "CAPEX Totale Progetto Fisso (€)": int(capex_totale_sviluppo),
             "CAPEX Totale Progetto Tracker (€)": int(capex_totale_tracker),
-            "Valore Acquisto Terreno (€)": int(acquisto_terreno),
-            "Prezzo Unitario (€/mq)": price_mq,
-            "Canone Annuo Diritto Sup. (€/anno)": int(canone_annuo_affitto),
-            "Totale Canone 30 Anni (€)": int(canone_30anni),
             "Ricavo Annuo Energia Fisso (€)": int(ricavi_annui_energia),
             "Ricavo Annuo Energia Tracker (€)": int(ricavi_annui_tracker),
             "Extra Ricavo Annuo Tracker (€)": int(extra_ricavo_tracker),
@@ -110,7 +147,8 @@ def generate_financial_model_csv(output_path: Path) -> Path:
             "Score SunPro (0-100)": l.get("score_totale"),
             "Classe Rating": l.get("rating_classe"),
             "Proprietario": l.get("proprietario_nome"),
-            "Contatto / PEC": l.get("proprietario_pec") or l.get("proprietario_telefono")
+            "Contatto / PEC": l.get("proprietario_pec") or l.get("proprietario_telefono"),
+            "Sintesi Perizia Estimativa": sintesi_perizia
         })
 
     df = pd.DataFrame(rows)

@@ -48,9 +48,14 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
         score_rete = 2.0
 
     # 3. Convenienza Economica Prezzo (max 20 pt) - Target 8-9 €/mq
+    # Gatekeeper di Acquistabilità Fondiaria: Terreni > 15 €/mq o Zona D industriale vengono scartati
     prezzo_mq = lead.get("prezzo_mq_eur", 8.5)
+    status_acq = lead.get("status_acquistabilita", "ACQUISTABILE_BANCABILE")
     score_prezzo = 0.0
-    if prezzo_mq <= 7.5:
+
+    if status_acq == "NON_ACQUISTABILE_SOVRASTIMATO" or prezzo_mq > 15.0:
+        score_prezzo = 0.0  # Fuori mercato per fotovoltaico utility-scale a terra
+    elif prezzo_mq <= 7.5:
         score_prezzo = 20.0  # Ottimo affare sotto benchmark
     elif 7.5 < prezzo_mq <= 9.0:
         score_prezzo = 18.0  # Nel pieno del target 8-9 €/mq
@@ -107,7 +112,9 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     totale = min(100.0, max(0.0, totale))
 
     # Classe di rating commerciale
-    if totale >= 75.0:
+    if status_acq == "NON_ACQUISTABILE_SOVRASTIMATO" or prezzo_mq > 15.0:
+        classe = "NON ACQUISTABILE (SOVRASTIMATO)"
+    elif totale >= 75.0:
         classe = "TOP OPPORTUNITÀ"
     elif totale >= 60.0:
         classe = "QUALIFICATO"

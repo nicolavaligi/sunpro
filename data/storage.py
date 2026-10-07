@@ -58,10 +58,29 @@ def init_db():
                 fonte_origine TEXT,
                 stato_commerciale TEXT NOT NULL DEFAULT 'DA_CONTATTARE',
                 note_commerciali TEXT,
+                destinazione_urbanistica TEXT,
+                valore_agricolo_base_eur_mq REAL,
+                valore_mercato_ordinario_eur_mq REAL,
+                premio_trasformazione_pct REAL,
+                status_acquistabilita TEXT DEFAULT 'ACQUISTABILE_BANCABILE',
+                sintesi_perizia TEXT,
                 created_at TEXT,
                 updated_at TEXT
             )
         """)
+        # Migrazione dinamica per colonne di valutazione fondiaria e zoning
+        for col, col_type in [
+            ("destinazione_urbanistica", "TEXT"),
+            ("valore_agricolo_base_eur_mq", "REAL"),
+            ("valore_mercato_ordinario_eur_mq", "REAL"),
+            ("premio_trasformazione_pct", "REAL"),
+            ("status_acquistabilita", "TEXT"),
+            ("sintesi_perizia", "TEXT"),
+        ]:
+            try:
+                cursor.execute(f"ALTER TABLE leads ADD COLUMN {col} {col_type}")
+            except sqlite3.OperationalError:
+                pass
         conn.commit()
 
 def upsert_lead(lead: Dict[str, Any]):
@@ -84,7 +103,9 @@ def upsert_lead(lead: Dict[str, Any]):
                 produzione_mwh_anno, capex_allaccio_eur, score_totale, score_dettagli,
                 rating_classe, proprietario_tipo, proprietario_nome, proprietario_piva,
                 proprietario_pec, proprietario_telefono, fonte_origine, stato_commerciale,
-                note_commerciali, created_at, updated_at
+                note_commerciali, destinazione_urbanistica, valore_agricolo_base_eur_mq,
+                valore_mercato_ordinario_eur_mq, premio_trasformazione_pct, status_acquistabilita,
+                sintesi_perizia, created_at, updated_at
             ) VALUES (
                 :id, :title, :regione, :provincia, :comune, :codice_belfiore, :foglio, :particella,
                 :lat, :lng, :superficie_mq, :superficie_ha, :prezzo_richiesto_eur, :prezzo_mq_eur,
@@ -93,7 +114,9 @@ def upsert_lead(lead: Dict[str, Any]):
                 :produzione_mwh_anno, :capex_allaccio_eur, :score_totale, :score_dettagli,
                 :rating_classe, :proprietario_tipo, :proprietario_nome, :proprietario_piva,
                 :proprietario_pec, :proprietario_telefono, :fonte_origine, :stato_commerciale,
-                :note_commerciali, :created_at, :updated_at
+                :note_commerciali, :destinazione_urbanistica, :valore_agricolo_base_eur_mq,
+                :valore_mercato_ordinario_eur_mq, :premio_trasformazione_pct, :status_acquistabilita,
+                :sintesi_perizia, :created_at, :updated_at
             ) ON CONFLICT(id) DO UPDATE SET
                 title = excluded.title,
                 regione = excluded.regione,
@@ -129,6 +152,12 @@ def upsert_lead(lead: Dict[str, Any]):
                 fonte_origine = excluded.fonte_origine,
                 stato_commerciale = excluded.stato_commerciale,
                 note_commerciali = excluded.note_commerciali,
+                destinazione_urbanistica = excluded.destinazione_urbanistica,
+                valore_agricolo_base_eur_mq = excluded.valore_agricolo_base_eur_mq,
+                valore_mercato_ordinario_eur_mq = excluded.valore_mercato_ordinario_eur_mq,
+                premio_trasformazione_pct = excluded.premio_trasformazione_pct,
+                status_acquistabilita = excluded.status_acquistabilita,
+                sintesi_perizia = excluded.sintesi_perizia,
                 updated_at = excluded.updated_at
         """, {
             "id": lead["id"],
@@ -166,6 +195,12 @@ def upsert_lead(lead: Dict[str, Any]):
             "fonte_origine": lead.get("fonte_origine", "OSM_OVERPASS"),
             "stato_commerciale": lead.get("stato_commerciale", "DA_CONTATTARE"),
             "note_commerciali": lead.get("note_commerciali", ""),
+            "destinazione_urbanistica": lead.get("destinazione_urbanistica", "Zona E — Agricola"),
+            "valore_agricolo_base_eur_mq": float(lead.get("valore_agricolo_base_eur_mq") or 0),
+            "valore_mercato_ordinario_eur_mq": float(lead.get("valore_mercato_ordinario_eur_mq") or 0),
+            "premio_trasformazione_pct": float(lead.get("premio_trasformazione_pct") or 0),
+            "status_acquistabilita": lead.get("status_acquistabilita", "ACQUISTABILE_BANCABILE"),
+            "sintesi_perizia": lead.get("sintesi_perizia", ""),
             "created_at": lead.get("created_at", now),
             "updated_at": now
         })
