@@ -27,7 +27,7 @@
     "boost_tracker_pct": 19.4,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "44.91,8.87": {
     "lat": 44.9082,
@@ -39,7 +39,7 @@
     "boost_tracker_pct": 19.2,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "43.53,11.56": {
     "lat": 43.5312,
@@ -51,7 +51,7 @@
     "boost_tracker_pct": 19.5,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "45.54,9.25": {
     "lat": 45.5426,
@@ -123,7 +123,7 @@
     "boost_tracker_pct": 19.2,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "45.06,12.05": {
     "lat": 45.0612,
@@ -195,7 +195,7 @@
     "boost_tracker_pct": 19.7,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "43.53,13.25": {
     "lat": 43.535,
@@ -207,7 +207,7 @@
     "boost_tracker_pct": 19.5,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "45.13,10.95": {
     "lat": 45.132,
@@ -219,7 +219,7 @@
     "boost_tracker_pct": 19.2,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "45.28,10.47": {
     "lat": 45.282,
@@ -339,7 +339,7 @@
     "boost_tracker_pct": 19.2,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
-    "cached": false
+    "cached": true
   },
   "45.14,9.11": {
     "lat": 45.1384,
@@ -348,6 +348,318 @@
     "kwh_m2_anno": 1730.4,
     "kwh_kwp_tracker": 1593.9,
     "kwh_m2_tracker": 2062.6,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": true
+  },
+  "45.24,9.62": {
+    "lat": 45.241,
+    "lon": 9.615,
+    "kwh_kwp_anno": 1339.2,
+    "kwh_m2_anno": 1734.1,
+    "kwh_kwp_tracker": 1596.3,
+    "kwh_m2_tracker": 2067.0,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.07,12.05": {
+    "lat": 45.068,
+    "lon": 12.052,
+    "kwh_kwp_anno": 1362.6,
+    "kwh_m2_anno": 1741.3,
+    "kwh_kwp_tracker": 1624.2,
+    "kwh_m2_tracker": 2075.6,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.22,10.41": {
+    "lat": 45.215,
+    "lon": 10.412,
+    "kwh_kwp_anno": 1348.7,
+    "kwh_m2_anno": 1746.2,
+    "kwh_kwp_tracker": 1607.7,
+    "kwh_m2_tracker": 2081.5,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.42,10.18": {
+    "lat": 45.421,
+    "lon": 10.178,
+    "kwh_kwp_anno": 1346.0,
+    "kwh_m2_anno": 1741.0,
+    "kwh_kwp_tracker": 1604.5,
+    "kwh_m2_tracker": 2075.2,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.94,9.91": {
+    "lat": 44.935,
+    "lon": 9.912,
+    "kwh_kwp_anno": 1337.4,
+    "kwh_m2_anno": 1727.5,
+    "kwh_kwp_tracker": 1594.1,
+    "kwh_m2_tracker": 2059.1,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.38,10.49": {
+    "lat": 45.378,
+    "lon": 10.495,
+    "kwh_kwp_anno": 1350.1,
+    "kwh_m2_anno": 1744.6,
+    "kwh_kwp_tracker": 1609.3,
+    "kwh_m2_tracker": 2079.5,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.24,8.74": {
+    "lat": 45.245,
+    "lon": 8.742,
+    "kwh_kwp_anno": 1339.4,
+    "kwh_m2_anno": 1733.7,
+    "kwh_kwp_tracker": 1596.6,
+    "kwh_m2_tracker": 2066.5,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.19,9.78": {
+    "lat": 45.185,
+    "lon": 9.775,
+    "kwh_kwp_anno": 1342.0,
+    "kwh_m2_anno": 1733.8,
+    "kwh_kwp_tracker": 1599.7,
+    "kwh_m2_tracker": 2066.7,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.35,10.14": {
+    "lat": 45.352,
+    "lon": 10.141,
+    "kwh_kwp_anno": 1341.0,
+    "kwh_m2_anno": 1736.2,
+    "kwh_kwp_tracker": 1598.5,
+    "kwh_m2_tracker": 2069.6,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "42.78,11.12": {
+    "lat": 42.782,
+    "lon": 11.124,
+    "kwh_kwp_anno": 1513.6,
+    "kwh_m2_anno": 1924.2,
+    "kwh_kwp_tracker": 1811.8,
+    "kwh_m2_tracker": 2303.3,
+    "boost_tracker_pct": 19.7,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.32,10.07": {
+    "lat": 45.324,
+    "lon": 10.071,
+    "kwh_kwp_anno": 1348.9,
+    "kwh_m2_anno": 1747.7,
+    "kwh_kwp_tracker": 1607.9,
+    "kwh_m2_tracker": 2083.2,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.98,10.74": {
+    "lat": 44.985,
+    "lon": 10.741,
+    "kwh_kwp_anno": 1339.4,
+    "kwh_m2_anno": 1741.4,
+    "kwh_kwp_tracker": 1596.6,
+    "kwh_m2_tracker": 2075.7,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.99,10.43": {
+    "lat": 44.992,
+    "lon": 10.428,
+    "kwh_kwp_anno": 1336.0,
+    "kwh_m2_anno": 1734.4,
+    "kwh_kwp_tracker": 1592.5,
+    "kwh_m2_tracker": 2067.4,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.33,9.47": {
+    "lat": 45.334,
+    "lon": 9.471,
+    "kwh_kwp_anno": 1335.3,
+    "kwh_m2_anno": 1729.1,
+    "kwh_kwp_tracker": 1591.7,
+    "kwh_m2_tracker": 2061.1,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.73,11.94": {
+    "lat": 44.732,
+    "lon": 11.942,
+    "kwh_kwp_anno": 1344.5,
+    "kwh_m2_anno": 1731.0,
+    "kwh_kwp_tracker": 1604.0,
+    "kwh_m2_tracker": 2065.0,
+    "boost_tracker_pct": 19.3,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.89,8.68": {
+    "lat": 44.892,
+    "lon": 8.684,
+    "kwh_kwp_anno": 1329.4,
+    "kwh_m2_anno": 1713.4,
+    "kwh_kwp_tracker": 1584.6,
+    "kwh_m2_tracker": 2042.4,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "44.94,10.53": {
+    "lat": 44.935,
+    "lon": 10.528,
+    "kwh_kwp_anno": 1337.4,
+    "kwh_m2_anno": 1736.9,
+    "kwh_kwp_tracker": 1594.2,
+    "kwh_m2_tracker": 2070.4,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.12,10.53": {
+    "lat": 45.118,
+    "lon": 10.534,
+    "kwh_kwp_anno": 1339.9,
+    "kwh_m2_anno": 1736.5,
+    "kwh_kwp_tracker": 1597.1,
+    "kwh_m2_tracker": 2069.8,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.12,8.88": {
+    "lat": 45.121,
+    "lon": 8.875,
+    "kwh_kwp_anno": 1335.4,
+    "kwh_m2_anno": 1726.6,
+    "kwh_kwp_tracker": 1591.8,
+    "kwh_m2_tracker": 2058.1,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.18,11.31": {
+    "lat": 45.184,
+    "lon": 11.312,
+    "kwh_kwp_anno": 1351.9,
+    "kwh_m2_anno": 1744.3,
+    "kwh_kwp_tracker": 1611.5,
+    "kwh_m2_tracker": 2079.2,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.27,11.02": {
+    "lat": 45.271,
+    "lon": 11.015,
+    "kwh_kwp_anno": 1365.4,
+    "kwh_m2_anno": 1761.4,
+    "kwh_kwp_tracker": 1627.5,
+    "kwh_m2_tracker": 2099.5,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.28,9.87": {
+    "lat": 45.285,
+    "lon": 9.871,
+    "kwh_kwp_anno": 1343.2,
+    "kwh_m2_anno": 1741.1,
+    "kwh_kwp_tracker": 1601.1,
+    "kwh_m2_tracker": 2075.4,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.15,9.93": {
+    "lat": 45.148,
+    "lon": 9.932,
+    "kwh_kwp_anno": 1336.5,
+    "kwh_m2_anno": 1729.5,
+    "kwh_kwp_tracker": 1593.0,
+    "kwh_m2_tracker": 2061.6,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.37,10.22": {
+    "lat": 45.368,
+    "lon": 10.224,
+    "kwh_kwp_anno": 1339.2,
+    "kwh_m2_anno": 1733.5,
+    "kwh_kwp_tracker": 1596.4,
+    "kwh_m2_tracker": 2066.4,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.40,9.92": {
+    "lat": 45.398,
+    "lon": 9.924,
+    "kwh_kwp_anno": 1338.2,
+    "kwh_m2_anno": 1732.3,
+    "kwh_kwp_tracker": 1595.2,
+    "kwh_m2_tracker": 2064.9,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
+  },
+  "45.15,9.69": {
+    "lat": 45.152,
+    "lon": 9.688,
+    "kwh_kwp_anno": 1344.0,
+    "kwh_m2_anno": 1736.3,
+    "kwh_kwp_tracker": 1602.0,
+    "kwh_m2_tracker": 2069.7,
     "boost_tracker_pct": 19.2,
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",

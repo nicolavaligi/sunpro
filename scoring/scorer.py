@@ -8,28 +8,50 @@ Autore: Nicola Valigi Engine System
 from typing import Any, Dict, Tuple
 from config import PRIORITY_REGIONS, WEIGHTS
 from crawler.environmental_checker import check_environmental_constraints
+from crawler.land_suitability_filter import verify_land_cover_and_settlement
 
 def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float], str]:
     """
     Calcola il punteggio di idoneità totale (0-100) e i punteggi parziali.
     Restituisce: (score_totale, dettagli_score, classe_rating)
     """
+    # Watchdog Anti-Edifici / Anti-Capannoni / Anti-Case
+    suit = verify_land_cover_and_settlement(lead)
+    if not suit["idoneo"]:
+        return 0.0, {
+            "idoneita_normativa": 0.0,
+            "prossimita_rete": 0.0,
+            "convenienza_prezzo": 0.0,
+            "resa_e_morfologia": 0.0,
+            "reperibilita_proprieta": 0.0,
+            "screening_vincoli": "SCARTATO DAL WATCHDOG",
+            "motivo_scarto": suit["motivo_scarto"]
+        }, "SCARTATO (PRESENZA EDIFICI / TESSUTO URBANO)"
+
     # 1. Idoneità Normativa D.Lgs. 199/2021 (max 30 pt)
-    tipologia = lead.get("tipologia", "")
+    # Massima priorità a TERRENI AGRICOLI A CAMPO APERTO (Zona E) e AGRIVOLTAICO
+    tipologia = lead.get("tipologia", "").upper()
     dist_ind = lead.get("distanza_zona_industriale_m", 9999)
     dist_auto = lead.get("distanza_autostrada_m", 9999)
 
     score_normativo = 0.0
-    if "CAVA" in tipologia or "DISCARICA" in tipologia or "BROWNFIELD" in tipologia:
-        score_normativo = 30.0
+    if "AGRICOL" in tipologia or "AGRIVOLTAICO" in tipologia:
+        if dist_ind <= 350 or dist_auto <= 300:
+            score_normativo = 30.0  # Top assoluto: campo aperto privo di fabbricati in area idonea ex lege
+        elif dist_ind <= 500 or dist_auto <= 500:
+            score_normativo = 27.0
+        else:
+            score_normativo = 24.0  # Agrivoltaico avanzato su terreno agricolo aperto
+    elif "CAVA" in tipologia or "DISCARICA" in tipologia:
+        score_normativo = 28.0
+    elif "BROWNFIELD" in tipologia:
+        score_normativo = 22.0
     elif dist_ind <= 350:
         score_normativo = 26.0
     elif dist_auto <= 300:
         score_normativo = 22.0
-    elif dist_ind <= 500 or dist_auto <= 500:
-        score_normativo = 14.0
     else:
-        score_normativo = 6.0
+        score_normativo = 10.0
 
     # 2. Prossimità Cabina AT/MT (max 25 pt)
     dist_cabina = lead.get("distanza_cabina_m", 9999)
@@ -97,8 +119,8 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
         score_proprietario = 10.0
     elif prop_pec or prop_tel:
         score_proprietario = 8.0
-    elif prop_tipo in ["PERSONA_GIURIDICA", "CURATELA_FALLIMENTARE"]:
-        score_proprietario = 7.0
+    elif prop_tipo in ["AZIENDA_AGRICOLA", "SOCIETA_SEMPLICE_AGRICOLA", "PERSONA_GIURIDICA", "CURATELA_FALLIMENTARE"]:
+        score_proprietario = 7.5
     elif lead.get("particella"):
         score_proprietario = 4.0
     else:

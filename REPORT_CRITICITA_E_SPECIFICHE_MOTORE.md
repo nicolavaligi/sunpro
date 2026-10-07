@@ -63,6 +63,16 @@ Prima di promuovere un'area, il motore verifica l'assenza di interferenze blocca
 * **Idrogeologia PAI:** Verifica che l'area sia esterna alle Fasce Fluviali A (esondazione frequente / flusso di piena), garantendo l'assicurabilità dell'impianto.
 * **Procedura Presunta:** Se l'area è idonea ex lege e libera da vincoli ostativi, viene classificata per l'iter **PAS (Procedura Abilitativa Semplificata, 60–90 giorni)** con certezza autorizzativa stimata al **95%**.
 
+### D. Watchdog Anti-Edifici, Anti-Capannoni & Priorità Assoluta ai Terreni Agricoli (86% della Pipeline)
+Per evitare il rischio di localizzare aree con capannoni industriali esistenti o contigue a centri abitati residenziali con case, SunPro integra il modulo di conformità del suolo [`crawler/land_suitability_filter.py`](file:///Users/houdinick/solar-land-acquisition-crawler/crawler/land_suitability_filter.py):
+1. **Esclusione Categorica dei Contesti Peri-Urbani Densi:** Vengono scartati a monte comuni metropolitani o cluster industriali edificati (es. Milano, Sesto San Giovanni, Legnano, Saronno, Brescia urbana) dove gli spazi industriali contengono capannoni o sono circondati da complessi residenziali.
+2. **Priorità Assoluta ai Terreni Agricoli a Campo Aperto (Seminativi di Pianura / Agrivoltaico):** Oltre l'**86% della pipeline (31 su 36 siti)** è costituito da **puri terreni agricoli in campo aperto (Zona E)**.
+   * *Perché sono i più facili e convenienti:*
+     * **Zero costi di demolizione o bonifica:** Nessun capannone da abbattere, niente cemento armato o coperture in amianto.
+     * **Zero interferenze con il vicinato:** Localizzati in aperta campagna rurale priva di caseggiati.
+     * **Facilità contrattuale imbattibile:** Gli agricoltori e le società agricole familiari ricavano oggi $400 – 650\text{ €/ha/anno}$ da mais o grano. L'offerta di **$3.000\text{ €/ha/anno}$ di diritto di superficie** (o $8,00 – 9,00\text{ €/mq}$ a rogito) quintuplica il loro reddito, portando a una firma rapida del preliminare di opzione.
+3. **Ex Cave e Discariche Ammesse Solo se a Cielo Aperto (14% residuo):** Le sole cave o discariche ammesse sono bacini a cielo aperto con fondo livellato e certificato, con esclusione totale di capannoni o fabbricati.
+
 ---
 
 ## 3. Come il Motore Determina il Valore dei Terreni
