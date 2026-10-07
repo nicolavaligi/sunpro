@@ -5,12 +5,14 @@ entro un raggio specificato da coordinate GPS con calcolo esatto della distanza 
 Autore: Nicola Valigi Engine System
 """
 
+import json
 import math
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 import httpx
 
+from config import DATA_DIR, CABLE_COST_PER_KM, SUBSTATION_BAY_COST, DETOUR_FACTOR_GRID
 from crawler.spatial_engine import haversine_distance_m
-from config import CABLE_COST_PER_KM, SUBSTATION_BAY_COST, DETOUR_FACTOR_GRID
 
 # Catalogo di riferimento georeferenziato per le principali Cabine Primarie del Nord e Centro
 PRIMARY_SUBSTATIONS_CATALOG = [
@@ -124,60 +126,84 @@ def query_overpass_substations(lat: float, lng: float, radius_m: int = 3000) -> 
             continue
     return []
 
-def find_substations_around_coords(lat: float, lng: float, radius_m: int = 3000) -> List[Dict[str, Any]]:
-    """
-    Trova tutte le cabine primarie e stazioni AT entro il raggio specificato.
-    Interroga Overpass Live e combina/completa con il catalogo primario di rete.
-    """
-    found = query_overpass_substations(lat, lng, radius_m)
+NATIONAL_SUBSTATIONS_FILE = DATA_DIR / "reference" / "cabine_primarie_italia.json"
+_NATIONAL_SUBSTATIONS_CACHE = None
 
-    # Se overpass ha trovato cabine, le arricchiamo o ritorniamo
-    # Includiamo anche cabine dal catalogo di riferimento se entro il raggio
-    for cat_sub in PRIMARY_SUBSTATIONS_CATALOG:
+def get_all_substations_catalog() -> List[Dict[str, Any]]:
+    """Carica il catalogo completo di oltre 2.100 Cabine Primarie d'Italia con fallback."""
+    global _NATIONAL_SUBSTATIONS_CACHE
+    if _NATIONAL_SUBSTATIONS_CACHE is not None:
+        return _NATIONAL_SUBSTATIONS_CACHE
+
+    catalog = []
+    if NATIONAL_SUBSTATIONS_FILE.exists():
+        try:
+            with open(NATIONAL_SUBSTATIONS_FILE, "r", encoding="utf-8") as f:
+                catalog = json.load(f)
+        except Exception:
+            catalog = []
+
+    # Completa con il catalogo storico pionieri per arricchire eventuali dettagli
+    pioneer_coords = {(round(c["lat"], 3), round(c["lng"], 3)) for c in catalog}
+    for p in PRIMARY_SUBSTATIONS_CATALOG:
+        key = (round(p["lat"], 3), round(p["lng"], 3))
+        if key not in pioneer_coords:
+            catalog.append(p)
+
+    _NATIONAL_SUBSTATIONS_CACHE = catalog
+    return _NATIONAL_SUBSTATIONS_CACHE
+
+def find_substations_around_coords(lat: float, lng: float, radius_m: int = 3500) -> List[Dict[str, Any]]:
+    """
+    Trova tutte le cabine primarie e stazioni AT entro il raggio specificato (default 3.5 km).
+    Utilizza il Database Nazionale Ufficiale ARERA/GSE (oltre 2.100 cabine) ad altissima velocità.
+    """
+    catalog = get_all_substations_catalog()
+    found = []
+    closest = None
+    min_d = 9999999.0
+
+    for cat_sub in catalog:
         d = haversine_distance_m(lat, lng, cat_sub["lat"], cat_sub["lng"])
-        if d <= radius_m:
-            # Verifica che non sia già presente un doppione vicino (< 300m)
-            if not any(haversine_distance_m(f["lat"], f["lng"], cat_sub["lat"], cat_sub["lng"]) < 300 for f in found):
-                d_stradale = int(d * DETOUR_FACTOR_GRID)
-                dist_km = max(0.15, d_stradale / 1000.0)
-                capex = round((dist_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST, 0)
-                found.append({
-                    "name": cat_sub["name"],
-                    "lat": cat_sub["lat"],
-                    "lng": cat_sub["lng"],
-                    "distanza_m": int(d),
-                    "distanza_stradale_m": d_stradale,
-                    "livello_tensione": cat_sub["voltage"],
-                    "operatore": cat_sub["operator"],
-                    "capex_allaccio_stimato_eur": capex,
-                    "tipo": cat_sub["type"],
-                    "fonte": "CATALOGO_RETE_NAZIONALE_AT_MT"
-                })
+        if d < min_d:
+            min_d = d
+            closest = cat_sub
 
-    # Se ancora vuoto (raggio stretto), allarga virtualmente per restituire almeno la più vicina
-    if not found:
-        closest = None
-        min_d = 9999999.0
-        for cat_sub in PRIMARY_SUBSTATIONS_CATALOG:
-            d = haversine_distance_m(lat, lng, cat_sub["lat"], cat_sub["lng"])
-            if d < min_d:
-                min_d = d
-                closest = cat_sub
-        if closest:
-            d_stradale = int(min_d * DETOUR_FACTOR_GRID)
+        if d <= radius_m:
+            d_stradale = int(d * DETOUR_FACTOR_GRID)
             dist_km = max(0.15, d_stradale / 1000.0)
             capex = round((dist_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST, 0)
             found.append({
-                "name": closest["name"],
-                "lat": closest["lat"],
-                "lng": closest["lng"],
-                "distanza_m": int(min_d),
+                "name": cat_sub["name"],
+                "lat": cat_sub["lat"],
+                "lng": cat_sub["lng"],
+                "distanza_m": int(d),
                 "distanza_stradale_m": d_stradale,
-                "livello_tensione": closest["voltage"],
-                "operatore": closest["operator"],
+                "livello_tensione": cat_sub.get("voltage", "132/20 kV"),
+                "operatore": cat_sub.get("operator", "Distributore Locale"),
+                "codice_ac": cat_sub.get("codice_ac", ""),
                 "capex_allaccio_stimato_eur": capex,
-                "tipo": closest["type"],
-                "fonte": "CATALOGO_RETE_NAZIONALE_AT_MT (PIÙ VICINA FUORI RAGGIO)"
+                "tipo": cat_sub.get("type", "CABINA_PRIMARIA"),
+                "fonte": cat_sub.get("fonte", "DATABASE_NAZIONALE_CABINE_PRIMARIE")
             })
+
+    # Se nessuna cabina entro il raggio, restituisce la più vicina assoluta in Italia
+    if not found and closest:
+        d_stradale = int(min_d * DETOUR_FACTOR_GRID)
+        dist_km = max(0.15, d_stradale / 1000.0)
+        capex = round((dist_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST, 0)
+        found.append({
+            "name": closest["name"],
+            "lat": closest["lat"],
+            "lng": closest["lng"],
+            "distanza_m": int(min_d),
+            "distanza_stradale_m": d_stradale,
+            "livello_tensione": closest.get("voltage", "132/20 kV"),
+            "operatore": closest.get("operator", "Distributore Locale"),
+            "codice_ac": closest.get("codice_ac", ""),
+            "capex_allaccio_stimato_eur": capex,
+            "tipo": closest.get("type", "CABINA_PRIMARIA"),
+            "fonte": "DATABASE_NAZIONALE_CABINE_PRIMARIE (PIÙ VICINA FUORI RAGGIO)"
+        })
 
     return sorted(found, key=lambda x: x["distanza_m"])
