@@ -36,6 +36,17 @@ BUFFER_HIGHWAY_M = 300           # Entro 300 metri da autostrade e raccordi
 BUFFER_SUBSTATION_OPTIMAL_M = 1200 # Distanza ottimale cabina primaria (< 1,2 km)
 BUFFER_SUBSTATION_MAX_M = 3500   # Distanza massima per allaccio MT economicamente sostenibile
 
+# Fattore di tortuosità stradale reale per cavidotto MT rispetto alla linea d'aria euclidea
+DETOUR_FACTOR_GRID = 1.30        # Coeff. 1.30x lungo viabilità e servitù di passaggio pubbliche
+
+# Parametri tecnologia Inseguitori Solari (Single-Axis Tracker E-W)
+TRACKER_CAPEX_EXTRA_PER_MWP = 70_000.0  # Extra-costo EPC per strutture tracker (€/MWp)
+TRACKER_BOOST_DEFAULT_PCT = 20.0       # Guadagno medio producibilità tracker vs tilt fisso (+20%)
+
+# Cartella Teaser Ciechi Commerciali (Pre-NDA)
+BLIND_TEASERS_DIR = OUTPUT_DIR / "blind_teasers"
+BLIND_TEASERS_DIR.mkdir(parents=True, exist_ok=True)
+
 # -------------------------------------------------------------
 # REGIONI PRIORITARIE (Nord e Centro Italia)
 # -------------------------------------------------------------

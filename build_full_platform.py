@@ -12,11 +12,16 @@ from pathlib import Path
 
 from data.storage import get_all_leads
 from reports.generator import generate_pdf_dossier
+from reports.blind_teaser_generator import generate_blind_teaser_pdf
 from sync_to_drive import sync_prototype_to_drive
 
 BASE_DIR = Path(__file__).resolve().parent
 DOSSIER_PDF_DIR = BASE_DIR / "dossier_pdf"
 DOSSIER_PDF_DIR.mkdir(parents=True, exist_ok=True)
+BLIND_TEASERS_ROOT = BASE_DIR / "blind_teasers"
+BLIND_TEASERS_ROOT.mkdir(parents=True, exist_ok=True)
+WEB_BLIND_TEASERS = BASE_DIR / "web" / "blind_teasers"
+WEB_BLIND_TEASERS.mkdir(parents=True, exist_ok=True)
 INDEX_HTML = BASE_DIR / "index.html"
 WEB_INDEX_HTML = BASE_DIR / "web" / "index.html"
 
@@ -29,21 +34,28 @@ def build_platform():
     leads = get_all_leads()
     print(f"🚀 Avvio compilazione piattaforma SunPro per {len(leads)} siti qualificati...")
 
-    # 1. Generazione di tutti i PDF in dossier_pdf/
+    # 1. Generazione di tutti i PDF in dossier_pdf/ e Blind Teasers in blind_teasers/
     pdf_map = {}
-    print("📄 Generazione e verifica dossier PDF A4...")
+    teaser_map = {}
+    print("📄 Generazione e verifica dossier PDF A4 & Blind Teaser Pre-NDA...")
     for l in leads:
         lead_id = l["id"]
         comune_slug = slugify(l["comune"])
         target_name = f"dossier_{lead_id}_{comune_slug}.pdf"
         target_path = DOSSIER_PDF_DIR / target_name
         
-        # Genera il PDF
+        # Genera il Dossier Completo
         gen_path = generate_pdf_dossier(l)
         shutil.copy2(gen_path, target_path)
         pdf_map[lead_id] = f"dossier_pdf/{target_name}"
 
-    print(f"  ✓ {len(pdf_map)} PDF generati e verificati in {DOSSIER_PDF_DIR.name}/")
+        # Genera il Blind Teaser
+        teaser_path = generate_blind_teaser_pdf(l, output_dir=BLIND_TEASERS_ROOT)
+        shutil.copy2(teaser_path, WEB_BLIND_TEASERS / teaser_path.name)
+        teaser_map[lead_id] = f"blind_teasers/{teaser_path.name}"
+
+    print(f"  ✓ {len(pdf_map)} Dossier completi verificati in {DOSSIER_PDF_DIR.name}/")
+    print(f"  ✓ {len(teaser_map)} Blind Teaser Pre-NDA generati in {BLIND_TEASERS_ROOT.name}/")
 
     # 2. Strutturazione JS per SITES
     js_sites = []
