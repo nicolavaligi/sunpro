@@ -248,10 +248,12 @@ def build_pdf():
          Paragraph("Area Idonea ex lege D.Lgs. 199/2021 (Art. 20 co. 8 lett. c-ter). Rischio paesaggistico azzerato.", td_style)],
         [Paragraph("<b>Buffer Autostradale</b>", td_bold), Paragraph("Entro <b>300 metri</b> da assi autostradali", td_accent),
          Paragraph("Area Idonea ex lege D.Lgs. 199/2021 (Art. 20 co. 8 lett. c-quater). Fascia di rispetto viaria.", td_style)],
-        [Paragraph("<b>Cave & Discariche</b>", td_bold), Paragraph("Bacini dismessi, cave, brownfield", td_accent),
+        [Paragraph("<b>Cave & Discariche</b>", td_bold), Paragraph("Bacini dismessi a cielo aperto", td_accent),
          Paragraph("Idoneità primaria assoluta ex lege. Consumo di suolo zero; recupero ambientale.", td_style)],
         [Paragraph("<b>Screening Vincoli</b>", td_bold), Paragraph("Zero ZPS/SIC, Fuori PAI Fascia A", td_accent),
          Paragraph("Presunzione di iter con <b>PAS (Procedura Abilitativa Semplificata, 60–90 gg)</b> con certezza al 95%.", td_style)],
+        [Paragraph("<b>Watchdog Anti-Edifici</b>", td_bold), Paragraph("<b>Zero Capannoni / Zero Case</b>", td_accent),
+         Paragraph("Esclusione contesti urbani densi; <b>86% della pipeline costituito da veri terreni agricoli a campo aperto (Zona E)</b>.", td_style)],
     ]
     t_spec = Table(t_spec_data, colWidths=[4.0*cm, 5.0*cm, 9.0*cm])
     t_spec.setStyle(TableStyle([
@@ -302,7 +304,11 @@ def build_pdf():
         "• <b>La Selezione Chirurgica di SunPro (Zona E Agricola nel Buffer 350m):</b> Il D.Lgs. 199/2021 dichiara idonei i terreni <i>entro 350m</i> "
         "dalla zona industriale. SunPro intercetta unicamente terreni che a Piano Regolatore sono <b>ZONA E (Agricola Ordinaria)</b>: "
         "hanno costi fondiari agricoli contenuti ma godono dell'iter PAS accelerato per legge primaria!<br/>"
-        "• <b>Ex Cave & Brownfield:</b> Valori ordinari depressi da passività ambientali (2,50 – 4,00 €/mq), valorizzati con offerta target a 7,80 – 8,10 €/mq.",
+        "• <b>Priorità Assoluta ai Terreni Agricoli a Campo Aperto (86% della Pipeline):</b> "
+        "Per escludere alla radice capannoni e case, SunPro seleziona grandi compendi agricoli aperti (Zona E - seminativi irrigui / agrivoltaico). "
+        "I terreni agricoli sono l'asset più facile e conveniente: zero demolizioni, zero bonifiche, zero contenziosi. L'offerta SunPro a 3.000 €/ha/anno "
+        "garantisce all'agricoltore 4x-6x la rendita agraria ordinaria, portando alla firma rapida del preliminare.<br/>"
+        "• <b>Ex Cave & Discariche a Cielo Aperto (14% residuo):</b> Solo bacini a cielo aperto con fondo livellato, con esclusione totale di capannoni o fabbricati.",
         body_style
     ))
 

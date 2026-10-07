@@ -27,17 +27,121 @@
   </Style>
 
   <Placemark>
-    <name>Bacino Argille Dismesso Fornace Ravennate (96.0/100)</name>
+    <name>Compendio Agricolo Seminativo — Pontenure (98.0/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Bacino Argille Dismesso Fornace Ravennate</h3>
-          <p><b>ID Lead:</b> LEAD-ER-001 | <b>Località:</b> Faenza (Ravenna, Emilia-Romagna)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Agricolo Seminativo — Pontenure</h3>
+          <p><b>ID Lead:</b> FV-AGRI-PC-002 | <b>Località:</b> Pontenure (Piacenza, Emilia-Romagna)</p>
+          <p><b>Superficie:</b> 12.00 ha (120,000 mq) · <b>Potenza:</b> ~10.00 MWp (~13,500 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Pontenure 132/15 kV<br/>
+             <b>Distanza di allaccio:</b> 0 m · <b>CAPEX Allaccio:</b> € 58,000</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.92 €/mq (€ 950,400)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 36,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Bersani & Figli<br/>
+             <b>📞 Contatto / PEC:</b> bersaniagri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">98.0/100</span> (TOP OPPORTUNITÀ)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.7712,44.9984,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Seminativo di Pianura Valle Umbra — Marsciano (98.0/100)</name>
+    <styleUrl>#pin-top</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo di Pianura Valle Umbra — Marsciano</h3>
+          <p><b>ID Lead:</b> FV-AGRI-PG-001 | <b>Località:</b> Marsciano (Perugia, Umbria)</p>
+          <p><b>Superficie:</b> 16.00 ha (160,000 mq) · <b>Potenza:</b> ~13.33 MWp (~18,800 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Marsciano 132/20 kV<br/>
+             <b>Distanza di allaccio:</b> 0 m · <b>CAPEX Allaccio:</b> € 58,000</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 1,248,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 48,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Valle Tiberina S.s.<br/>
+             <b>📞 Contatto / PEC:</b> valletiberina@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">98.0/100</span> (TOP OPPORTUNITÀ)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>12.3389,42.9124,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tenuta Agricola Aperta — Turano Lodigiano (96.2/100)</name>
+    <styleUrl>#pin-top</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Tenuta Agricola Aperta — Turano Lodigiano</h3>
+          <p><b>ID Lead:</b> FV-AGRI-LO-002 | <b>Località:</b> Turano Lodigiano (Lodi, Lombardia)</p>
+          <p><b>Superficie:</b> 17.00 ha (170,000 mq) · <b>Potenza:</b> ~14.17 MWp (~18,133 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE AT Terna Turano Centrale<br/>
+             <b>Distanza di allaccio:</b> 234 m · <b>CAPEX Allaccio:</b> € 64,773</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.74 €/mq (€ 1,485,800)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 51,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Agricola Bassa Lodigiana S.s.<br/>
+             <b>📞 Contatto / PEC:</b> bassalodigiana@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">96.2/100</span> (TOP OPPORTUNITÀ)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.615,45.241,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Appezzamento Agricolo Seminativo — Cava Manara (96.2/100)</name>
+    <styleUrl>#pin-top</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Appezzamento Agricolo Seminativo — Cava Manara</h3>
+          <p><b>ID Lead:</b> FV-AGRI-PV-003 | <b>Località:</b> Cava Manara (Pavia, Lombardia)</p>
+          <p><b>Superficie:</b> 12.50 ha (125,000 mq) · <b>Potenza:</b> ~10.42 MWp (~13,333 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Pavia Sud 132/15 kV<br/>
+             <b>Distanza di allaccio:</b> 499 m · <b>CAPEX Allaccio:</b> € 87,166</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 975,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 37,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Po Ticino di Roveda S.s.<br/>
+             <b>📞 Contatto / PEC:</b> poticino.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">96.2/100</span> (TOP OPPORTUNITÀ)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.112,45.142,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bacino Argille a Cielo Aperto Fornace — Faenza (96.0/100)</name>
+    <styleUrl>#pin-top</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Bacino Argille a Cielo Aperto Fornace — Faenza</h3>
+          <p><b>ID Lead:</b> FV-CAVA-RA-001 | <b>Località:</b> Faenza (Ravenna, Emilia-Romagna)</p>
           <p><b>Superficie:</b> 11.00 ha (110,000 mq) · <b>Potenza:</b> ~9.17 MWp (~12,375 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Faenza Nord 132/15 kV (Enel Distribuzione)<br/>
-             <b>Distanza di allaccio:</b> 520 m · <b>CAPEX Allaccio:</b> € 78,800</p>
-          <p><b>💶 Valutazione Acquisto:</b> 7.50 €/mq (€ 825,000)<br/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Faenza Nord 132/15 kV<br/>
+             <b>Distanza di allaccio:</b> 0 m · <b>CAPEX Allaccio:</b> € 58,000</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 858,000)<br/>
              <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 33,000/anno</p>
           <p><b>🏢 Proprietà:</b> Laterizi Romagnoli Soc. Coop.<br/>
              <b>📞 Contatto / PEC:</b> lateriziromagnoli@pec.confcooperative.it</p>
@@ -53,47 +157,21 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Ex Stabilimento Chimico e Terreni Pertinenziali (93.4/100)</name>
+    <name>Bacino Estrattivo a Cielo Aperto Valdarno — Montevarchi (95.0/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Ex Stabilimento Chimico e Terreni Pertinenziali</h3>
-          <p><b>ID Lead:</b> LEAD-PIEM-001 | <b>Località:</b> Tortona (Alessandria, Piemonte)</p>
-          <p><b>Superficie:</b> 13.50 ha (135,000 mq) · <b>Potenza:</b> ~11.25 MWp (~14,738 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Tortona 132/15 kV (Enel Distribuzione)<br/>
-             <b>Distanza di allaccio:</b> 740 m · <b>CAPEX Allaccio:</b> € 93,100</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.00 €/mq (€ 1,080,000)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 40,500/anno</p>
-          <p><b>🏢 Proprietà:</b> Fallimento Ex Chimica Scrivia (Curatore Dott. F. Rossi)<br/>
-             <b>📞 Contatto / PEC:</b> f94.2023alessandria@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">93.4/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>8.8654,44.9082,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Ex Cava di Inerti Valdarno e Bacino Recupero (93.0/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Ex Cava di Inerti Valdarno e Bacino Recupero</h3>
-          <p><b>ID Lead:</b> LEAD-TOSC-001 | <b>Località:</b> Montevarchi (Arezzo, Toscana)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Bacino Estrattivo a Cielo Aperto Valdarno — Montevarchi</h3>
+          <p><b>ID Lead:</b> FV-CAVA-AR-001 | <b>Località:</b> Montevarchi (Arezzo, Toscana)</p>
           <p><b>Superficie:</b> 6.80 ha (68,000 mq) · <b>Potenza:</b> ~5.67 MWp (~8,047 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
           <p><b>⚡ Cabina Primaria AT/MT:</b> CP Montevarchi 132/15 kV<br/>
-             <b>Distanza di allaccio:</b> 820 m · <b>CAPEX Allaccio:</b> € 98,300</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.40 €/mq (€ 571,200)<br/>
+             <b>Distanza di allaccio:</b> 0 m · <b>CAPEX Allaccio:</b> € 58,000</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 530,400)<br/>
              <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 20,400/anno</p>
-          <p><b>🏢 Proprietà:</b> Valdarno Scavi e Costruzioni S.r.l.<br/>
+          <p><b>🏢 Proprietà:</b> Valdarno Scavi S.r.l.<br/>
              <b>📞 Contatto / PEC:</b> valdarnoscavi@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">93.0/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">95.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -105,177 +183,21 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Brownfield — Sesto San Giovanni (Milano) (92.2/100)</name>
+    <name>Area Cava di Ghiaia Livellata a Terra — Zevio (94.0/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Sesto San Giovanni (Milano)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W1306185882 | <b>Località:</b> Sesto San Giovanni (Milano, Lombardia)</p>
-          <p><b>Superficie:</b> 31.41 ha (314,096 mq) · <b>Potenza:</b> ~26.17 MWp (~33,504 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Vulcano CDS<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 2,544,178)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 94,230/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Sesto San Giovanni<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.sestosangiovanni@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>9.24694,45.542563,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Ospitaletto (Brescia) (92.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Ospitaletto (Brescia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W151766490 | <b>Località:</b> Ospitaletto (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 29.10 ha (291,046 mq) · <b>Potenza:</b> ~24.25 MWp (~31,045 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT UT Esselunga Ospitaletto<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 2,357,473)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 87,300/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Ospitaletto<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.ospitaletto@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>10.062808,45.542764,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Sesto San Giovanni (Milano) (92.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Sesto San Giovanni (Milano)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W203468251 | <b>Località:</b> Sesto San Giovanni (Milano, Lombardia)</p>
-          <p><b>Superficie:</b> 25.16 ha (251,628 mq) · <b>Potenza:</b> ~20.97 MWp (~26,840 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA RISE Sesto<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 2,038,187)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 75,480/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Sesto San Giovanni<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.sestosangiovanni@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>9.25322,45.53925,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Turano Lodigiano (Lodi) (92.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Turano Lodigiano (Lodi)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W339104227 | <b>Località:</b> Turano Lodigiano (Lodi, Lombardia)</p>
-          <p><b>Superficie:</b> 19.85 ha (198,466 mq) · <b>Potenza:</b> ~16.54 MWp (~21,170 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Turano centrale<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 1,607,575)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 59,550/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Turano Lodigiano<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.turanolodigiano@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>9.644894,45.226808,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Broni (Pavia) (92.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Broni (Pavia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W163810956 | <b>Località:</b> Broni (Pavia, Lombardia)</p>
-          <p><b>Superficie:</b> 16.55 ha (165,531 mq) · <b>Potenza:</b> ~13.79 MWp (~17,657 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> SOTTOSTAZIONE_FERROVIARIA RFI Broni<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 1,340,801)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 49,650/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Broni<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.broni@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>9.252794,45.062272,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Brescia (Brescia) (92.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Brescia (Brescia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W141562466 | <b>Località:</b> Brescia (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 13.69 ha (136,864 mq) · <b>Potenza:</b> ~11.41 MWp (~14,599 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_PRIMARIA Pietra<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 1,108,598)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 41,070/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Brescia<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.brescia@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>10.194319,45.529768,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Area Cava di Ghiaia Scaligera Z.I. (92.0/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Area Cava di Ghiaia Scaligera Z.I.</h3>
-          <p><b>ID Lead:</b> LEAD-VEN-001 | <b>Località:</b> Zevio (Verona, Veneto)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Area Cava di Ghiaia Livellata a Terra — Zevio</h3>
+          <p><b>ID Lead:</b> FV-CAVA-VR-001 | <b>Località:</b> Zevio (Verona, Veneto)</p>
           <p><b>Superficie:</b> 9.50 ha (95,000 mq) · <b>Potenza:</b> ~7.92 MWp (~10,292 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Zevio 132/20 kV (Enel Distribuzione)<br/>
-             <b>Distanza di allaccio:</b> 890 m · <b>CAPEX Allaccio:</b> € 102,850</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.20 €/mq (€ 779,000)<br/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Zevio 132/20 kV<br/>
+             <b>Distanza di allaccio:</b> 0 m · <b>CAPEX Allaccio:</b> € 58,000</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 741,000)<br/>
              <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 28,500/anno</p>
           <p><b>🏢 Proprietà:</b> Scaligera Inerti S.r.l.<br/>
              <b>📞 Contatto / PEC:</b> scaligerainerti@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.0/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">94.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -287,21 +209,73 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Comparto Industriale Espansione Adria Interporto (92.0/100)</name>
+    <name>Seminativo Aperto Corridoio A7/A21 — Tortona (93.4/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Comparto Industriale Espansione Adria Interporto</h3>
-          <p><b>ID Lead:</b> LEAD-VEN-002 | <b>Località:</b> Adria (Rovigo, Veneto)</p>
-          <p><b>Superficie:</b> 7.20 ha (72,000 mq) · <b>Potenza:</b> ~6.00 MWp (~7,800 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo Aperto Corridoio A7/A21 — Tortona</h3>
+          <p><b>ID Lead:</b> FV-AGRI-AL-002 | <b>Località:</b> Tortona (Alessandria, Piemonte)</p>
+          <p><b>Superficie:</b> 18.50 ha (185,000 mq) · <b>Potenza:</b> ~15.42 MWp (~20,196 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Tortona 132/15 kV<br/>
+             <b>Distanza di allaccio:</b> 610 m · <b>CAPEX Allaccio:</b> € 96,545</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 1,443,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 55,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Valli di Scrivia S.s.<br/>
+             <b>📞 Contatto / PEC:</b> valliscrivia@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">93.4/100</span> (TOP OPPORTUNITÀ)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>8.871,44.912,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Compendio Bonificato Pianeggiante a Terra — Roncoferraro (93.2/100)</name>
+    <styleUrl>#pin-top</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Bonificato Pianeggiante a Terra — Roncoferraro</h3>
+          <p><b>ID Lead:</b> FV-DISC-MN-001 | <b>Località:</b> Roncoferraro (Mantova, Lombardia)</p>
+          <p><b>Superficie:</b> 8.00 ha (80,000 mq) · <b>Potenza:</b> ~6.67 MWp (~8,533 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Roncoferraro 132/20 kV<br/>
+             <b>Distanza di allaccio:</b> 0 m · <b>CAPEX Allaccio:</b> € 58,000</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.24 €/mq (€ 659,200)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 24,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Econord Ambiente S.r.l.<br/>
+             <b>📞 Contatto / PEC:</b> econord.ambiente@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">93.2/100</span> (TOP OPPORTUNITÀ)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>10.952,45.132,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Compendio Agricolo di Bonifica — Adria (93.0/100)</name>
+    <styleUrl>#pin-top</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Agricolo di Bonifica — Adria</h3>
+          <p><b>ID Lead:</b> FV-AGRI-RO-001 | <b>Località:</b> Adria (Rovigo, Veneto)</p>
+          <p><b>Superficie:</b> 21.00 ha (210,000 mq) · <b>Potenza:</b> ~17.50 MWp (~22,750 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
           <p><b>⚡ Cabina Primaria AT/MT:</b> CP Adria 132/20 kV<br/>
-             <b>Distanza di allaccio:</b> 410 m · <b>CAPEX Allaccio:</b> € 71,650</p>
-          <p><b>💶 Valutazione Acquisto:</b> 7.90 €/mq (€ 568,800)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 21,600/anno</p>
-          <p><b>🏢 Proprietà:</b> Polesine Sviluppo Industriale S.r.l.<br/>
-             <b>📞 Contatto / PEC:</b> polesinesviluppo@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.0/100</span> (TOP OPPORTUNITÀ)</p>
+             <b>Distanza di allaccio:</b> 775 m · <b>CAPEX Allaccio:</b> € 110,488</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 1,638,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 63,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Società Agricola Delta Po S.s.<br/>
+             <b>📞 Contatto / PEC:</b> deltapoagri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">93.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -309,25 +283,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>12.0498,45.0612,0</coordinates>
+      <coordinates>12.052,45.068,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Ex Cava di Inerti e Ghiaia Montichiari (91.2/100)</name>
+    <name>Grande Compendio Agricolo — Asola (92.2/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Ex Cava di Inerti e Ghiaia Montichiari</h3>
-          <p><b>ID Lead:</b> LEAD-LOMB-001 | <b>Località:</b> Montichiari (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 8.50 ha (85,000 mq) · <b>Potenza:</b> ~7.08 MWp (~9,067 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Grande Compendio Agricolo — Asola</h3>
+          <p><b>ID Lead:</b> FV-AGRI-MN-001 | <b>Località:</b> Asola (Mantova, Lombardia)</p>
+          <p><b>Superficie:</b> 26.00 ha (260,000 mq) · <b>Potenza:</b> ~21.67 MWp (~27,733 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Montichiari 132/15 kV (Enel Distribuzione)<br/>
-             <b>Distanza di allaccio:</b> 650 m · <b>CAPEX Allaccio:</b> € 87,250</p>
-          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 663,000)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 25,500/anno</p>
-          <p><b>🏢 Proprietà:</b> Inerti del Chiese S.r.l. (in liquidazione)<br/>
-             <b>📞 Contatto / PEC:</b> inertidelchiese@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">91.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Asola (AC001E01238)<br/>
+             <b>Distanza di allaccio:</b> 735 m · <b>CAPEX Allaccio:</b> € 107,108</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.24 €/mq (€ 2,142,400)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 78,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Agricola Chiese S.s.<br/>
+             <b>📞 Contatto / PEC:</b> tenutachiese@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">92.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -335,25 +309,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.3845,45.4182,0</coordinates>
+      <coordinates>10.412,45.215,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Brownfield — Broni (Pavia) (91.2/100)</name>
+    <name>Terreno Agricolo Seminativo — Bagnolo Mella (89.2/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Broni (Pavia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W167441723 | <b>Località:</b> Broni (Pavia, Lombardia)</p>
-          <p><b>Superficie:</b> 9.69 ha (96,878 mq) · <b>Potenza:</b> ~8.07 MWp (~10,334 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Terreno Agricolo Seminativo — Bagnolo Mella</h3>
+          <p><b>ID Lead:</b> FV-AGRI-BS-004 | <b>Località:</b> Bagnolo Mella (Brescia, Lombardia)</p>
+          <p><b>Superficie:</b> 13.00 ha (130,000 mq) · <b>Potenza:</b> ~10.83 MWp (~13,867 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_PRIMARIA Broni<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 784,712)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 29,070/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Broni<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.broni@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">91.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Bagnolo Mella (AC001E01345)<br/>
+             <b>Distanza di allaccio:</b> 275 m · <b>CAPEX Allaccio:</b> € 68,238</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.20 €/mq (€ 1,196,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 39,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. San Michele S.s.<br/>
+             <b>📞 Contatto / PEC:</b> sanmichele.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">89.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -361,154 +335,24 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.252794,45.062272,0</coordinates>
+      <coordinates>10.178,45.421,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Brownfield — Corteolona e Genzone (Pavia) (91.2/100)</name>
+    <name>Fascia Agricola Aperta Asse SS76 — Jesi (89.0/100)</name>
     <styleUrl>#pin-top</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Corteolona e Genzone (Pavia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W201928268 | <b>Località:</b> Corteolona e Genzone (Pavia, Lombardia)</p>
-          <p><b>Superficie:</b> 7.88 ha (78,783 mq) · <b>Potenza:</b> ~6.57 MWp (~8,404 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Fascia Agricola Aperta Asse SS76 — Jesi</h3>
+          <p><b>ID Lead:</b> FV-AGRI-AN-001 | <b>Località:</b> Jesi (Ancona, Marche)</p>
+          <p><b>Superficie:</b> 15.00 ha (150,000 mq) · <b>Potenza:</b> ~12.50 MWp (~17,375 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT Ecoenergia<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 638,142)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 23,640/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Corteolona e Genzone<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.corteolonaegenzone@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">91.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>9.364092,45.168635,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Brescia (Brescia) (91.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Brescia (Brescia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W434743359 | <b>Località:</b> Brescia (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 7.83 ha (78,346 mq) · <b>Potenza:</b> ~6.53 MWp (~8,357 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_PRIMARIA Donegani<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 634,603)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 23,490/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Brescia<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.brescia@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">91.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>10.20427,45.539327,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Brescia (Brescia) (91.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Brescia (Brescia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W703098968 | <b>Località:</b> Brescia (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 7.29 ha (72,898 mq) · <b>Potenza:</b> ~6.07 MWp (~7,776 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_DA_CLASSIFICARE<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 590,474)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 21,870/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Brescia<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.brescia@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">91.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>10.207605,45.557531,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Brownfield — Saronno (Varese) (91.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Brownfield — Saronno (Varese)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W168909461 | <b>Località:</b> Saronno (Varese, Lombardia)</p>
-          <p><b>Superficie:</b> 6.17 ha (61,672 mq) · <b>Potenza:</b> ~5.14 MWp (~6,578 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_PRIMARIA Uboldo<br/>
-             <b>Distanza di allaccio:</b> 510 m · <b>CAPEX Allaccio:</b> € 78,150</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.10 €/mq (€ 499,543)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 18,510/anno</p>
-          <p><b>🏢 Proprietà:</b> Procedura Liquidatoria Area Saronno<br/>
-             <b>📞 Contatto / PEC:</b> fallimento.saronno@pecfallimenti.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">91.2/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>9.014988,45.621636,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Lotto Adiacente Asse E45 Zona Produttiva Valle Umbra (89.0/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Lotto Adiacente Asse E45 Zona Produttiva Valle Umbra</h3>
-          <p><b>ID Lead:</b> LEAD-UMB-001 | <b>Località:</b> Marsciano (Perugia, Umbria)</p>
-          <p><b>Superficie:</b> 5.20 ha (52,000 mq) · <b>Potenza:</b> ~4.33 MWp (~6,110 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Marsciano 132/20 kV (Enel Distribuzione)<br/>
-             <b>Distanza di allaccio:</b> 690 m · <b>CAPEX Allaccio:</b> € 89,850</p>
-          <p><b>💶 Valutazione Acquisto:</b> 7.60 €/mq (€ 395,200)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 15,600/anno</p>
-          <p><b>🏢 Proprietà:</b> Agricola & Immobiliare Umbra S.r.l.<br/>
-             <b>📞 Contatto / PEC:</b> immobiliareumbra@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">89.0/100</span> (TOP OPPORTUNITÀ)</p>
-          
-          <div style="margin-top:10px; font-size:11px; color:#64748b;">
-            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
-          </div>
-        </div>
-        ]]></description>
-    <Point>
-      <coordinates>12.3389,42.9124,0</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Area Confinante Autostrada A14 e Polo Produttivo Jesi (89.0/100)</name>
-    <styleUrl>#pin-top</styleUrl>
-    <description><![CDATA[
-        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Area Confinante Autostrada A14 e Polo Produttivo Jesi</h3>
-          <p><b>ID Lead:</b> LEAD-MAR-001 | <b>Località:</b> Jesi (Ancona, Marche)</p>
-          <p><b>Superficie:</b> 6.40 ha (64,000 mq) · <b>Potenza:</b> ~5.33 MWp (~7,413 MWh/a)</p>
-          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Jesi Est 132/20 kV<br/>
-             <b>Distanza di allaccio:</b> 920 m · <b>CAPEX Allaccio:</b> € 104,800</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.70 €/mq (€ 556,800)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 19,200/anno</p>
-          <p><b>🏢 Proprietà:</b> Vallesina Sviluppo S.r.l.<br/>
-             <b>📞 Contatto / PEC:</b> vallesinasviluppo@pec.it</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Jesi Z.I. 132/20 kV<br/>
+             <b>Distanza di allaccio:</b> 1,176 m · <b>CAPEX Allaccio:</b> € 144,372</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 1,170,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 45,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Esina Agricola S.s.<br/>
+             <b>📞 Contatto / PEC:</b> tenutaesina@pec.it</p>
           <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">89.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
@@ -521,21 +365,21 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Ex Discarica Bonificata Mantova Est (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Fascia Agricola Corridoio A1 — Fiorenzuola d'Arda (84.0/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Ex Discarica Bonificata Mantova Est</h3>
-          <p><b>ID Lead:</b> LEAD-LOMB-003 | <b>Località:</b> Roncoferraro (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 6.00 ha (60,000 mq) · <b>Potenza:</b> ~5.00 MWp (~6,400 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Fascia Agricola Corridoio A1 — Fiorenzuola d'Arda</h3>
+          <p><b>ID Lead:</b> FV-AGRI-PC-001 | <b>Località:</b> Fiorenzuola d'Arda (Piacenza, Emilia-Romagna)</p>
+          <p><b>Superficie:</b> 19.50 ha (195,000 mq) · <b>Potenza:</b> ~16.25 MWp (~21,938 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Roncoferraro 132/20 kV<br/>
-             <b>Distanza di allaccio:</b> 1,100 m · <b>CAPEX Allaccio:</b> € 116,500</p>
-          <p><b>💶 Valutazione Acquisto:</b> 6.90 €/mq (€ 414,000)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 18,000/anno</p>
-          <p><b>🏢 Proprietà:</b> Econord Ambiente S.r.l.<br/>
-             <b>📞 Contatto / PEC:</b> econord.ambiente@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Fiorenzuola d'Arda (AC001E01230)<br/>
+             <b>Distanza di allaccio:</b> 2,316 m · <b>CAPEX Allaccio:</b> € 240,702</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.92 €/mq (€ 1,544,400)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 58,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Val d'Arda di F.lli Pavesi S.s.<br/>
+             <b>📞 Contatto / PEC:</b> valarda.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">84.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -543,25 +387,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.952,45.132,0</coordinates>
+      <coordinates>9.912,44.935,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Castel Goffredo (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Compendio Agricolo Pianeggiante — Castiglione delle Stiviere (82.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Castel Goffredo (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W414164633 | <b>Località:</b> Castel Goffredo (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 59.53 ha (595,281 mq) · <b>Potenza:</b> ~49.61 MWp (~63,497 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Agricolo Pianeggiante — Castiglione delle Stiviere</h3>
+          <p><b>ID Lead:</b> FV-AGRI-MN-004 | <b>Località:</b> Castiglione delle Stiviere (Mantova, Lombardia)</p>
+          <p><b>Superficie:</b> 14.50 ha (145,000 mq) · <b>Potenza:</b> ~12.08 MWp (~15,467 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT UT Fulgar<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 5,059,888)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 178,590/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Castel Goffredo S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.castelgoffredo@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Castiglione delle Stiviere (AC001E01255)<br/>
+             <b>Distanza di allaccio:</b> 1,948 m · <b>CAPEX Allaccio:</b> € 209,606</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.62 €/mq (€ 1,249,900)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 43,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Agricola Colline Moreniche S.s.<br/>
+             <b>📞 Contatto / PEC:</b> collinemoreniche.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">82.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -569,25 +413,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.473792,45.281994,0</coordinates>
+      <coordinates>10.495,45.378,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Gussago (Brescia) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Grande Tenuta Agricola Seminativo — Mortara (82.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Gussago (Brescia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W390893484 | <b>Località:</b> Gussago (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 58.58 ha (585,822 mq) · <b>Potenza:</b> ~48.82 MWp (~62,488 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Grande Tenuta Agricola Seminativo — Mortara</h3>
+          <p><b>ID Lead:</b> FV-AGRI-PV-001 | <b>Località:</b> Mortara (Pavia, Lombardia)</p>
+          <p><b>Superficie:</b> 25.00 ha (250,000 mq) · <b>Potenza:</b> ~20.83 MWp (~26,667 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Gussago<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,979,487)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 175,740/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Gussago S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.gussago@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Mortara (AC001E01214)<br/>
+             <b>Distanza di allaccio:</b> 2,224 m · <b>CAPEX Allaccio:</b> € 232,928</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 1,950,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 75,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Lomellina Agricola S.s.<br/>
+             <b>📞 Contatto / PEC:</b> tenutalomellina@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">82.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -595,25 +439,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.158161,45.557591,0</coordinates>
+      <coordinates>8.742,45.245,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Castel Goffredo (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Campi Aperti Seminativi Irrigui — Pizzighettone (80.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Castel Goffredo (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W165394856 | <b>Località:</b> Castel Goffredo (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 58.47 ha (584,654 mq) · <b>Potenza:</b> ~48.72 MWp (~62,363 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Campi Aperti Seminativi Irrigui — Pizzighettone</h3>
+          <p><b>ID Lead:</b> FV-AGRI-CR-004 | <b>Località:</b> Pizzighettone (Cremona, Lombardia)</p>
+          <p><b>Superficie:</b> 14.00 ha (140,000 mq) · <b>Potenza:</b> ~11.67 MWp (~14,933 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_PRIMARIA Zecchini CS<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,969,559)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 175,410/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Castel Goffredo S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.castelgoffredo@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Pizzighettone (AC001E01184)<br/>
+             <b>Distanza di allaccio:</b> 1,312 m · <b>CAPEX Allaccio:</b> € 155,864</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.20 €/mq (€ 1,288,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 42,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Azienda Agricola Boschetto S.s.<br/>
+             <b>📞 Contatto / PEC:</b> boschettoagricola@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">80.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -621,25 +465,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.473792,45.281994,0</coordinates>
+      <coordinates>9.775,45.185,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Spinadesco (Cremona) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Seminativo Irriguo di Pianura — Manerbio (80.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Spinadesco (Cremona)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W411981325 | <b>Località:</b> Spinadesco (Cremona, Lombardia)</p>
-          <p><b>Superficie:</b> 54.84 ha (548,420 mq) · <b>Potenza:</b> ~45.70 MWp (~58,498 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo Irriguo di Pianura — Manerbio</h3>
+          <p><b>ID Lead:</b> FV-AGRI-BS-002 | <b>Località:</b> Manerbio (Brescia, Lombardia)</p>
+          <p><b>Superficie:</b> 19.00 ha (190,000 mq) · <b>Potenza:</b> ~15.83 MWp (~20,267 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA UT Arvedi ISP<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,661,570)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 164,520/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Spinadesco S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.spinadesco@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Manerbio (AC001E01253)<br/>
+             <b>Distanza di allaccio:</b> 1,424 m · <b>CAPEX Allaccio:</b> € 165,328</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.20 €/mq (€ 1,748,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 57,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Cascina Mella S.s.<br/>
+             <b>📞 Contatto / PEC:</b> cascinamella@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">80.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -647,25 +491,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.944084,45.14828,0</coordinates>
+      <coordinates>10.141,45.352,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Ferrera Erbognone (Pavia) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Compendio Estrattivo Riconvertibile — Montichiari (79.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Ferrera Erbognone (Pavia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W775135895 | <b>Località:</b> Ferrera Erbognone (Pavia, Lombardia)</p>
-          <p><b>Superficie:</b> 53.38 ha (533,804 mq) · <b>Potenza:</b> ~44.48 MWp (~56,939 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Estrattivo Riconvertibile — Montichiari</h3>
+          <p><b>ID Lead:</b> FV-CAVA-BS-001 | <b>Località:</b> Montichiari (Brescia, Lombardia)</p>
+          <p><b>Superficie:</b> 8.50 ha (85,000 mq) · <b>Potenza:</b> ~7.08 MWp (~9,067 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_DA_CLASSIFICARE<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,537,334)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 160,140/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Ferrera Erbognone S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.ferreraerbognone@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Montichiari 132/15 kV<br/>
+             <b>Distanza di allaccio:</b> 1,597 m · <b>CAPEX Allaccio:</b> € 179,946</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 663,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 25,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Inerti del Chiese S.r.l. (in liq.)<br/>
+             <b>📞 Contatto / PEC:</b> inertidelchiese@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">79.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -673,25 +517,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>8.877372,45.099381,0</coordinates>
+      <coordinates>10.3845,45.4182,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Spinadesco (Cremona) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Grande Tenuta Litoranea a Campo Aperto — Grosseto (79.0/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Spinadesco (Cremona)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W116519166 | <b>Località:</b> Spinadesco (Cremona, Lombardia)</p>
-          <p><b>Superficie:</b> 52.39 ha (523,914 mq) · <b>Potenza:</b> ~43.66 MWp (~55,884 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Grande Tenuta Litoranea a Campo Aperto — Grosseto</h3>
+          <p><b>ID Lead:</b> FV-AGRI-GR-001 | <b>Località:</b> Grosseto (Grosseto, Toscana)</p>
+          <p><b>Superficie:</b> 32.00 ha (320,000 mq) · <b>Potenza:</b> ~26.67 MWp (~37,867 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Isp Cremona<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,453,269)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 157,170/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Spinadesco S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.spinadesco@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Grosseto (AC001E00482)<br/>
+             <b>Distanza di allaccio:</b> 3,470 m · <b>CAPEX Allaccio:</b> € 338,215</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 2,496,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 96,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Maremma Solare S.s.<br/>
+             <b>📞 Contatto / PEC:</b> maremmasolare@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">79.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -699,25 +543,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.944084,45.14828,0</coordinates>
+      <coordinates>11.124,42.782,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Montanaso Lombardo (Lodi) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Tenuta a Campo Aperto per Agrivoltaico — Verolanuova (77.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Montanaso Lombardo (Lodi)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W162960205 | <b>Località:</b> Montanaso Lombardo (Lodi, Lombardia)</p>
-          <p><b>Superficie:</b> 50.00 ha (499,985 mq) · <b>Potenza:</b> ~41.67 MWp (~53,332 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Tenuta a Campo Aperto per Agrivoltaico — Verolanuova</h3>
+          <p><b>ID Lead:</b> FV-AGRI-BS-005 | <b>Località:</b> Verolanuova (Brescia, Lombardia)</p>
+          <p><b>Superficie:</b> 24.00 ha (240,000 mq) · <b>Potenza:</b> ~20.00 MWp (~25,600 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Tavazzano Centrale<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,249,872)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 150,000/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Montanaso Lombardo S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.montanasolombardo@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Bassano Bresciano (AC001E01197)<br/>
+             <b>Distanza di allaccio:</b> 2,817 m · <b>CAPEX Allaccio:</b> € 283,036</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.96 €/mq (€ 2,150,400)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 72,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Soc. Agr. Pianura Bresciana S.s.<br/>
+             <b>📞 Contatto / PEC:</b> pianurabresciana@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">77.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -725,25 +569,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.43456,45.332484,0</coordinates>
+      <coordinates>10.071,45.324,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Brescia (Brescia) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Compendio Agricolo Seminativo Aperto — Suzzara (77.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Brescia (Brescia)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W203351763 | <b>Località:</b> Brescia (Brescia, Lombardia)</p>
-          <p><b>Superficie:</b> 49.64 ha (496,406 mq) · <b>Potenza:</b> ~41.37 MWp (~52,950 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Agricolo Seminativo Aperto — Suzzara</h3>
+          <p><b>ID Lead:</b> FV-AGRI-MN-005 | <b>Località:</b> Suzzara (Mantova, Lombardia)</p>
+          <p><b>Superficie:</b> 17.00 ha (170,000 mq) · <b>Potenza:</b> ~14.17 MWp (~18,133 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT UT Iveco BS<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 4,219,451)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 148,920/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Brescia S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.brescia@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Suzzara (AC001E01229)<br/>
+             <b>Distanza di allaccio:</b> 3,139 m · <b>CAPEX Allaccio:</b> € 310,246</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.62 €/mq (€ 1,465,400)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 51,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Po Basso di Suzzara S.s.<br/>
+             <b>📞 Contatto / PEC:</b> pobasso.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">77.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -751,25 +595,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.205176,45.551691,0</coordinates>
+      <coordinates>10.741,44.985,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Castiglione delle Stiviere (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Tenuta Agricola Pianeggiante Campo Aperto — Casalmaggiore (75.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Castiglione delle Stiviere (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W202536811 | <b>Località:</b> Castiglione delle Stiviere (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 46.77 ha (467,696 mq) · <b>Potenza:</b> ~38.97 MWp (~49,888 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Tenuta Agricola Pianeggiante Campo Aperto — Casalmaggiore</h3>
+          <p><b>ID Lead:</b> FV-AGRI-CR-002 | <b>Località:</b> Casalmaggiore (Cremona, Lombardia)</p>
+          <p><b>Superficie:</b> 22.00 ha (220,000 mq) · <b>Potenza:</b> ~18.33 MWp (~23,467 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CABINA_PRIMARIA San Pietro BS<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 3,975,416)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 140,310/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Castiglione delle Stiviere S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.castiglionedellestiviere@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Sabbioneta (AC001E01233)<br/>
+             <b>Distanza di allaccio:</b> 2,111 m · <b>CAPEX Allaccio:</b> € 223,380</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.07 €/mq (€ 1,995,400)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 66,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Società Agricola Po Verde S.s.<br/>
+             <b>📞 Contatto / PEC:</b> agricolapoverde@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">75.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -777,25 +621,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.468022,45.395571,0</coordinates>
+      <coordinates>10.428,44.992,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Mantova (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Appezzamento Agricolo Pianeggiante — Montanaso Lombardo (75.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Mantova (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W116797658 | <b>Località:</b> Mantova (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 45.43 ha (454,263 mq) · <b>Potenza:</b> ~37.86 MWp (~48,455 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Appezzamento Agricolo Pianeggiante — Montanaso Lombardo</h3>
+          <p><b>ID Lead:</b> FV-AGRI-LO-003 | <b>Località:</b> Montanaso Lombardo (Lodi, Lombardia)</p>
+          <p><b>Superficie:</b> 13.00 ha (130,000 mq) · <b>Potenza:</b> ~10.83 MWp (~13,867 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Mantova 380<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 3,861,236)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 136,290/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Mantova S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.mantova@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Montanaso Lombardo (AC001E01203)<br/>
+             <b>Distanza di allaccio:</b> 2,401 m · <b>CAPEX Allaccio:</b> € 247,884</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.15 €/mq (€ 1,189,500)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 39,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. San Giorgio S.s.<br/>
+             <b>📞 Contatto / PEC:</b> sangiorgio.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">75.2/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -803,25 +647,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.836934,45.144667,0</coordinates>
+      <coordinates>9.471,45.334,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Mantova (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Macro-Tenuta Agricola di Bonifica — Ostellato (75.0/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Mantova (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W412909650 | <b>Località:</b> Mantova (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 45.26 ha (452,553 mq) · <b>Potenza:</b> ~37.71 MWp (~48,272 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Macro-Tenuta Agricola di Bonifica — Ostellato</h3>
+          <p><b>ID Lead:</b> FV-AGRI-FE-001 | <b>Località:</b> Ostellato (Ferrara, Emilia-Romagna)</p>
+          <p><b>Superficie:</b> 38.00 ha (380,000 mq) · <b>Potenza:</b> ~31.67 MWp (~42,750 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT_TERNA Mantova 220<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 3,846,700)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 135,780/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Mantova S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.mantova@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Tresignana (AC001E00826)<br/>
+             <b>Distanza di allaccio:</b> 9,410 m · <b>CAPEX Allaccio:</b> € 840,145</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 2,964,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 114,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Società Agricola Bonifiche Ferraresi Sud S.s.<br/>
+             <b>📞 Contatto / PEC:</b> bonifiche.sud@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">75.0/100</span> (TOP OPPORTUNITÀ)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -829,25 +673,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.836934,45.144667,0</coordinates>
+      <coordinates>11.942,44.732,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Castiglione delle Stiviere (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Tenuta Agricola Pianura Fraschetta — Alessandria (74.4/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Castiglione delle Stiviere (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W414164634 | <b>Località:</b> Castiglione delle Stiviere (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 45.04 ha (450,433 mq) · <b>Potenza:</b> ~37.54 MWp (~48,046 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Tenuta Agricola Pianura Fraschetta — Alessandria</h3>
+          <p><b>ID Lead:</b> FV-AGRI-AL-001 | <b>Località:</b> Alessandria (Alessandria, Piemonte)</p>
+          <p><b>Superficie:</b> 31.00 ha (310,000 mq) · <b>Potenza:</b> ~25.83 MWp (~33,842 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT UT Huntsman<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 3,828,680)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 135,120/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Castiglione delle Stiviere S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.castiglionedellestiviere@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Alessandria (AC001E01131)<br/>
+             <b>Distanza di allaccio:</b> 3,730 m · <b>CAPEX Allaccio:</b> € 360,185</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 2,418,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 93,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Fraschetta Agricola S.s.<br/>
+             <b>📞 Contatto / PEC:</b> tenutafraschetta@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">74.4/100</span> (QUALIFICATO)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -855,25 +699,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.468022,45.395571,0</coordinates>
+      <coordinates>8.684,44.892,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Montanaso Lombardo (Lodi) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Seminativo Aperto di Pianura — Viadana (73.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Montanaso Lombardo (Lodi)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W414164632 | <b>Località:</b> Montanaso Lombardo (Lodi, Lombardia)</p>
-          <p><b>Superficie:</b> 43.04 ha (430,393 mq) · <b>Potenza:</b> ~35.87 MWp (~45,909 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo Aperto di Pianura — Viadana</h3>
+          <p><b>ID Lead:</b> FV-AGRI-MN-002 | <b>Località:</b> Viadana (Mantova, Lombardia)</p>
+          <p><b>Superficie:</b> 18.00 ha (180,000 mq) · <b>Potenza:</b> ~15.00 MWp (~19,200 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT Tavazzano TAG<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 3,658,340)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 129,120/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Montanaso Lombardo S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.montanasolombardo@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Pomponesco (AC001E01232)<br/>
+             <b>Distanza di allaccio:</b> 3,744 m · <b>CAPEX Allaccio:</b> € 361,368</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.62 €/mq (€ 1,551,600)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 54,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Oglio Po di Mantovani<br/>
+             <b>📞 Contatto / PEC:</b> ogliopoagri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">73.2/100</span> (QUALIFICATO)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -881,25 +725,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.43456,45.332484,0</coordinates>
+      <coordinates>10.528,44.935,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Buffer Industriale 350M — Mantova (Mantova) (88.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Terreno Agricolo Seminativo — Marcaria (73.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Buffer Industriale 350M — Mantova (Mantova)</h3>
-          <p><b>ID Lead:</b> FV-LOM-W116801402 | <b>Località:</b> Mantova (Mantova, Lombardia)</p>
-          <p><b>Superficie:</b> 42.71 ha (427,054 mq) · <b>Potenza:</b> ~35.59 MWp (~45,552 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Terreno Agricolo Seminativo — Marcaria</h3>
+          <p><b>ID Lead:</b> FV-AGRI-MN-003 | <b>Località:</b> Marcaria (Mantova, Lombardia)</p>
+          <p><b>Superficie:</b> 15.00 ha (150,000 mq) · <b>Potenza:</b> ~12.50 MWp (~16,000 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> STAZIONE_AT Burgo Mantova<br/>
-             <b>Distanza di allaccio:</b> 590 m · <b>CAPEX Allaccio:</b> € 83,350</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 3,629,959)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 128,130/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Industriale Mantova S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> info.mantova@pec.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">88.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Redondesco (AC001E01237)<br/>
+             <b>Distanza di allaccio:</b> 5,792 m · <b>CAPEX Allaccio:</b> € 534,424</p>
+          <p><b>💶 Valutazione Acquisto:</b> 8.24 €/mq (€ 1,236,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 45,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Corte Bell'Aria S.s.<br/>
+             <b>📞 Contatto / PEC:</b> cortebellaria@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">73.2/100</span> (QUALIFICATO)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -907,25 +751,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>10.799547,45.17447,0</coordinates>
+      <coordinates>10.534,45.118,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Fascia Logistica Autostrada A1 Piacenza Sud (87.0/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Seminativo Aperto di Pianura — Ferrera Erbognone (73.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Fascia Logistica Autostrada A1 Piacenza Sud</h3>
-          <p><b>ID Lead:</b> LEAD-ER-002 | <b>Località:</b> Pontenure (Piacenza, Emilia-Romagna)</p>
-          <p><b>Superficie:</b> 5.50 ha (55,000 mq) · <b>Potenza:</b> ~4.58 MWp (~6,188 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo Aperto di Pianura — Ferrera Erbognone</h3>
+          <p><b>ID Lead:</b> FV-AGRI-PV-002 | <b>Località:</b> Ferrera Erbognone (Pavia, Lombardia)</p>
+          <p><b>Superficie:</b> 15.50 ha (155,000 mq) · <b>Potenza:</b> ~12.92 MWp (~16,533 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Pontenure 132/15 kV<br/>
-             <b>Distanza di allaccio:</b> 780 m · <b>CAPEX Allaccio:</b> € 95,700</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.80 €/mq (€ 484,000)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 16,500/anno</p>
-          <p><b>🏢 Proprietà:</b> Famiglia Bersani (Eredi)<br/>
-             <b>📞 Contatto / PEC:</b> +39 335 6841290</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">87.0/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Sannazzaro de' Burgondi (AC001E01185)<br/>
+             <b>Distanza di allaccio:</b> 4,455 m · <b>CAPEX Allaccio:</b> € 421,448</p>
+          <p><b>💶 Valutazione Acquisto:</b> 7.80 €/mq (€ 1,209,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 46,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Cascinetta di Ferrera S.s.<br/>
+             <b>📞 Contatto / PEC:</b> cascinetta.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">73.2/100</span> (QUALIFICATO)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -933,25 +777,25 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.7712,44.9984,0</coordinates>
+      <coordinates>8.875,45.121,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Lotto Industriale Agricolo Adiacente Tangenziale Ovest (86.2/100)</name>
-    <styleUrl>#pin-top</styleUrl>
+    <name>Seminativo di Pianura Campo Aperto — Legnago (71.0/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
     <description><![CDATA[
         <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
-          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Lotto Industriale Agricolo Adiacente Tangenziale Ovest</h3>
-          <p><b>ID Lead:</b> LEAD-LOMB-002 | <b>Località:</b> Cava Manara (Pavia, Lombardia)</p>
-          <p><b>Superficie:</b> 4.20 ha (42,000 mq) · <b>Potenza:</b> ~3.50 MWp (~4,480 MWh/a)</p>
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo di Pianura Campo Aperto — Legnago</h3>
+          <p><b>ID Lead:</b> FV-AGRI-VR-002 | <b>Località:</b> Legnago (Verona, Veneto)</p>
+          <p><b>Superficie:</b> 23.00 ha (230,000 mq) · <b>Potenza:</b> ~19.17 MWp (~24,917 MWh/a)</p>
           <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
-          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Pavia Sud 132/15 kV<br/>
-             <b>Distanza di allaccio:</b> 980 m · <b>CAPEX Allaccio:</b> € 108,700</p>
-          <p><b>💶 Valutazione Acquisto:</b> 8.50 €/mq (€ 357,000)<br/>
-             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 12,600/anno</p>
-          <p><b>🏢 Proprietà:</b> Sviluppo Logistica Ticino S.p.A.<br/>
-             <b>📞 Contatto / PEC:</b> sviluppoticino@legalmail.it</p>
-          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">86.2/100</span> (TOP OPPORTUNITÀ)</p>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Legnago (AC001E00842)<br/>
+             <b>Distanza di allaccio:</b> 2,711 m · <b>CAPEX Allaccio:</b> € 274,080</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.15 €/mq (€ 2,104,500)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 69,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Bassa Veronese di Bonfante<br/>
+             <b>📞 Contatto / PEC:</b> bassaveronese.agri@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">71.0/100</span> (QUALIFICATO)</p>
           
           <div style="margin-top:10px; font-size:11px; color:#64748b;">
             <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
@@ -959,7 +803,163 @@
         </div>
         ]]></description>
     <Point>
-      <coordinates>9.1082,45.1384,0</coordinates>
+      <coordinates>11.312,45.184,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grande Tenuta Agricola Seminativo — Isola della Scala (67.0/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Grande Tenuta Agricola Seminativo — Isola della Scala</h3>
+          <p><b>ID Lead:</b> FV-AGRI-VR-001 | <b>Località:</b> Isola della Scala (Verona, Veneto)</p>
+          <p><b>Superficie:</b> 27.00 ha (270,000 mq) · <b>Potenza:</b> ~22.50 MWp (~29,250 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Salizzole (AC001E00890)<br/>
+             <b>Distanza di allaccio:</b> 3,941 m · <b>CAPEX Allaccio:</b> € 378,014</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.15 €/mq (€ 2,470,500)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 81,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta Scaligera Agricola S.s.<br/>
+             <b>📞 Contatto / PEC:</b> tenutascaligera@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">67.0/100</span> (QUALIFICATO)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>11.015,45.271,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Compendio Agricolo Seminativo Irriguo — Soresina (66.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Agricolo Seminativo Irriguo — Soresina</h3>
+          <p><b>ID Lead:</b> FV-AGRI-CR-001 | <b>Località:</b> Soresina (Cremona, Lombardia)</p>
+          <p><b>Superficie:</b> 16.00 ha (160,000 mq) · <b>Potenza:</b> ~13.33 MWp (~17,067 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Castelleone (AC001E01196)<br/>
+             <b>Distanza di allaccio:</b> 6,817 m · <b>CAPEX Allaccio:</b> € 621,036</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.07 €/mq (€ 1,451,200)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 48,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Cascina Nuova di F.lli Galli S.s.<br/>
+             <b>📞 Contatto / PEC:</b> azagr.cascinanuova@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">66.2/100</span> (QUALIFICATO)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.871,45.285,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Seminativo di Pianura Contiguo Buffer Z.I. — Spinadesco (66.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo di Pianura Contiguo Buffer Z.I. — Spinadesco</h3>
+          <p><b>ID Lead:</b> FV-AGRI-CR-003 | <b>Località:</b> Spinadesco (Cremona, Lombardia)</p>
+          <p><b>Superficie:</b> 11.50 ha (115,000 mq) · <b>Potenza:</b> ~9.58 MWp (~12,267 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Acquanegra Cremonese (AC001E01183)<br/>
+             <b>Distanza di allaccio:</b> 4,436 m · <b>CAPEX Allaccio:</b> € 419,842</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.07 €/mq (€ 1,043,050)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 34,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Tenuta San Rocco di Bresciani & C.<br/>
+             <b>📞 Contatto / PEC:</b> tenutasanrocco@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">66.2/100</span> (QUALIFICATO)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.932,45.148,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grande Tenuta Agricola Seminativo — Leno (66.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Grande Tenuta Agricola Seminativo — Leno</h3>
+          <p><b>ID Lead:</b> FV-AGRI-BS-001 | <b>Località:</b> Leno (Brescia, Lombardia)</p>
+          <p><b>Superficie:</b> 28.00 ha (280,000 mq) · <b>Potenza:</b> ~23.33 MWp (~29,867 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Ghedi (AC001E01251)<br/>
+             <b>Distanza di allaccio:</b> 5,402 m · <b>CAPEX Allaccio:</b> € 501,469</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.20 €/mq (€ 2,576,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 84,000/anno</p>
+          <p><b>🏢 Proprietà:</b> Soc. Agr. Bassa Bresciana di Ferrari S.s.<br/>
+             <b>📞 Contatto / PEC:</b> bassabresciana.agr@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">66.2/100</span> (QUALIFICATO)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>10.224,45.368,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Compendio Agricolo Aperto — Orzinuovi (66.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Compendio Agricolo Aperto — Orzinuovi</h3>
+          <p><b>ID Lead:</b> FV-AGRI-BS-003 | <b>Località:</b> Orzinuovi (Brescia, Lombardia)</p>
+          <p><b>Superficie:</b> 17.50 ha (175,000 mq) · <b>Potenza:</b> ~14.58 MWp (~18,667 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Orzivecchi (AC001E01344)<br/>
+             <b>Distanza di allaccio:</b> 4,447 m · <b>CAPEX Allaccio:</b> € 420,772</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.20 €/mq (€ 1,610,000)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 52,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Azienda Agricola Oglio Sud di Rossi<br/>
+             <b>📞 Contatto / PEC:</b> az.ogliosud@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">66.2/100</span> (QUALIFICATO)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.924,45.398,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Seminativo Irriguo a Campo Aperto — Codogno (66.2/100)</name>
+    <styleUrl>#pin-qualificato</styleUrl>
+    <description><![CDATA[
+        <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #1e293b;">
+          <h3 style="margin-top:0; color:#059669; border-bottom:2px solid #10b981; padding-bottom:4px;">Seminativo Irriguo a Campo Aperto — Codogno</h3>
+          <p><b>ID Lead:</b> FV-AGRI-LO-001 | <b>Località:</b> Codogno (Lodi, Lombardia)</p>
+          <p><b>Superficie:</b> 16.50 ha (165,000 mq) · <b>Potenza:</b> ~13.75 MWp (~17,600 MWh/a)</p>
+          <hr style="border:0; border-top:1px dashed #cbd5e1;"/>
+          <p><b>⚡ Cabina Primaria AT/MT:</b> CP Casalpusterlengo (AC001E01178)<br/>
+             <b>Distanza di allaccio:</b> 4,461 m · <b>CAPEX Allaccio:</b> € 421,955</p>
+          <p><b>💶 Valutazione Acquisto:</b> 9.15 €/mq (€ 1,509,750)<br/>
+             <b>🌱 Canone Diritto Superficie (30y):</b> ~€ 49,500/anno</p>
+          <p><b>🏢 Proprietà:</b> Az. Agr. Cascina Grande di Lodi S.s.<br/>
+             <b>📞 Contatto / PEC:</b> cascinagrande.lodi@pec.it</p>
+          <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">66.2/100</span> (QUALIFICATO)</p>
+          
+          <div style="margin-top:10px; font-size:11px; color:#64748b;">
+            <i>Nicola Valigi Engine System — Conforme D.Lgs. 199/2021 (Aree Idonee)</i>
+          </div>
+        </div>
+        ]]></description>
+    <Point>
+      <coordinates>9.688,45.152,0</coordinates>
     </Point>
   </Placemark>
 </Document>
