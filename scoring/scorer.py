@@ -7,6 +7,7 @@ Autore: Nicola Valigi Engine System
 
 from typing import Any, Dict, Tuple
 from config import PRIORITY_REGIONS, WEIGHTS
+from crawler.environmental_checker import check_environmental_constraints
 
 def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float], str]:
     """
@@ -98,6 +99,9 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     else:
         score_proprietario = 2.0
 
+    # 6. Screening Vincoli Ambientali e Autorizzativi (Watchdog No-Go Zones)
+    env_audit = check_environmental_constraints(lead)
+
     # Punteggio complessivo (0-100)
     totale = round(score_normativo + score_rete + score_prezzo + score_resa + score_proprietario, 1)
     totale = min(100.0, max(0.0, totale))
@@ -115,7 +119,11 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
         "prossimita_rete": round(score_rete, 1),
         "convenienza_prezzo": round(score_prezzo, 1),
         "resa_e_morfologia": round(score_resa, 1),
-        "reperibilita_proprieta": round(score_proprietario, 1)
+        "reperibilita_proprieta": round(score_proprietario, 1),
+        "screening_vincoli": env_audit["esito_globale"],
+        "rating_ambientale": env_audit["rating_ambientale"],
+        "iter_autorizzativo": env_audit["iter_autorizzativo"],
+        "autorizzabilita_pct": env_audit["autorizzabilita_pct"]
     }
 
     return totale, dettagli, classe

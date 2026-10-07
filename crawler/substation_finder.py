@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import httpx
 
 from crawler.spatial_engine import haversine_distance_m
-from config import CABLE_COST_PER_KM, SUBSTATION_BAY_COST
+from config import CABLE_COST_PER_KM, SUBSTATION_BAY_COST, DETOUR_FACTOR_GRID
 
 # Catalogo di riferimento georeferenziato per le principali Cabine Primarie del Nord e Centro
 PRIMARY_SUBSTATIONS_CATALOG = [
@@ -102,8 +102,9 @@ def query_overpass_substations(lat: float, lng: float, radius_m: int = 3000) -> 
                         volt = format_voltage_str(tags.get("voltage"))
                         operator = tags.get("operator", "Distributore Locale (DSO)")
 
-                        # Stima CAPEX allaccio
-                        dist_km = max(0.15, dist / 1000.0)
+                        # Stima CAPEX allaccio con fattore di tortuosità stradale (1.30x)
+                        dist_stradale_m = int(dist * DETOUR_FACTOR_GRID)
+                        dist_km = max(0.15, dist_stradale_m / 1000.0)
                         capex = round((dist_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST, 0)
 
                         results.append({
@@ -111,6 +112,7 @@ def query_overpass_substations(lat: float, lng: float, radius_m: int = 3000) -> 
                             "lat": round(c_lat, 5),
                             "lng": round(c_lng, 5),
                             "distanza_m": int(dist),
+                            "distanza_stradale_m": dist_stradale_m,
                             "livello_tensione": volt,
                             "operatore": operator,
                             "capex_allaccio_stimato_eur": capex,
@@ -136,13 +138,15 @@ def find_substations_around_coords(lat: float, lng: float, radius_m: int = 3000)
         if d <= radius_m:
             # Verifica che non sia già presente un doppione vicino (< 300m)
             if not any(haversine_distance_m(f["lat"], f["lng"], cat_sub["lat"], cat_sub["lng"]) < 300 for f in found):
-                dist_km = max(0.15, d / 1000.0)
+                d_stradale = int(d * DETOUR_FACTOR_GRID)
+                dist_km = max(0.15, d_stradale / 1000.0)
                 capex = round((dist_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST, 0)
                 found.append({
                     "name": cat_sub["name"],
                     "lat": cat_sub["lat"],
                     "lng": cat_sub["lng"],
                     "distanza_m": int(d),
+                    "distanza_stradale_m": d_stradale,
                     "livello_tensione": cat_sub["voltage"],
                     "operatore": cat_sub["operator"],
                     "capex_allaccio_stimato_eur": capex,
@@ -160,13 +164,15 @@ def find_substations_around_coords(lat: float, lng: float, radius_m: int = 3000)
                 min_d = d
                 closest = cat_sub
         if closest:
-            dist_km = max(0.15, min_d / 1000.0)
+            d_stradale = int(min_d * DETOUR_FACTOR_GRID)
+            dist_km = max(0.15, d_stradale / 1000.0)
             capex = round((dist_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST, 0)
             found.append({
                 "name": closest["name"],
                 "lat": closest["lat"],
                 "lng": closest["lng"],
                 "distanza_m": int(min_d),
+                "distanza_stradale_m": d_stradale,
                 "livello_tensione": closest["voltage"],
                 "operatore": closest["operator"],
                 "capex_allaccio_stimato_eur": capex,

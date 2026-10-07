@@ -16,6 +16,7 @@ from config import (
     BUFFER_HIGHWAY_M,
     BUFFER_INDUSTRIAL_M,
     CABLE_COST_PER_KM,
+    DETOUR_FACTOR_GRID,
     MIN_SURFACE_MQ,
     PRIORITY_REGIONS,
     SUBSTATION_BAY_COST,
@@ -46,7 +47,7 @@ def calculate_energy_and_capex(
     Calcola:
     - MWp stimati installabili (regola 1,2 ha/MWp)
     - Produzione stimata MWh/anno (basata su irraggiamento regionale)
-    - CAPEX stimato per connessione di rete (cavidotto MT + stallo)
+    - CAPEX stimato per connessione di rete (cavidotto MT con fattore di tortuosità stradale 1.30x + stallo)
     """
     mwp = superficie_mq / SURFACE_PER_MWP_MQ
     reg_info = PRIORITY_REGIONS.get(regione, {"insolazione_kwh_kwp": 1300})
@@ -55,8 +56,9 @@ def calculate_energy_and_capex(
     # MWh/anno = MWp * insolazione (kWh/kWp)
     produzione_mwh = mwp * insolazione
 
-    # CAPEX connessione rete MT: cavidotto interrato + stallo cabina primaria
-    distanza_km = max(0.2, distanza_cabina_m / 1000.0)
+    # CAPEX connessione rete MT con fattore di tortuosità stradale lungo viabilità pubblica
+    distanza_stradale_m = distanza_cabina_m * DETOUR_FACTOR_GRID
+    distanza_km = max(0.2, distanza_stradale_m / 1000.0)
     capex_connessione = (distanza_km * CABLE_COST_PER_KM) + SUBSTATION_BAY_COST
 
     return round(mwp, 2), round(produzione_mwh, 1), round(capex_connessione, 0)

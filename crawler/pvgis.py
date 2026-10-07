@@ -75,11 +75,20 @@ class PVGISClient:
                     h_y = float(totals.get("H(i)_y", 0.0))
                     opt_angle = totals.get("opt_angle") or 30
 
+                    # Calcolo producibilità con Tracker Monoassiale asse N-S (rotazione E-W)
+                    # Basato su modelli standard PVsyst / JRC per l'Italia (boost medio +19% - +22%)
+                    boost_tracker_pct = round(19.2 + max(0.0, (45.0 - lat)) * 0.22, 1)
+                    kwh_kwp_tracker = round(e_y * (1.0 + (boost_tracker_pct / 100.0)), 1)
+                    kwh_m2_tracker = round(h_y * (1.0 + (boost_tracker_pct / 100.0)), 1)
+
                     result = {
                         "lat": round(lat, 4),
                         "lon": round(lon, 4),
                         "kwh_kwp_anno": round(e_y, 1),
                         "kwh_m2_anno": round(h_y, 1),
+                        "kwh_kwp_tracker": kwh_kwp_tracker,
+                        "kwh_m2_tracker": kwh_m2_tracker,
+                        "boost_tracker_pct": boost_tracker_pct,
                         "inclinazione_ottimale": opt_angle,
                         "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
                         "cached": False
@@ -97,11 +106,18 @@ class PVGISClient:
         kwh_m2 = round(kwh_kwp * 1.30, 1)
         opt_angle = round(max(25, min(36, 48 - lat * 0.35)))
 
+        boost_tracker_pct = round(19.2 + max(0.0, (45.0 - lat)) * 0.22, 1)
+        kwh_kwp_tracker = round(kwh_kwp * (1.0 + (boost_tracker_pct / 100.0)), 1)
+        kwh_m2_tracker = round(kwh_m2 * (1.0 + (boost_tracker_pct / 100.0)), 1)
+
         result = {
             "lat": round(lat, 4),
             "lon": round(lon, 4),
             "kwh_kwp_anno": kwh_kwp,
             "kwh_m2_anno": kwh_m2,
+            "kwh_kwp_tracker": kwh_kwp_tracker,
+            "kwh_m2_tracker": kwh_m2_tracker,
+            "boost_tracker_pct": boost_tracker_pct,
             "inclinazione_ottimale": opt_angle,
             "fonte": "MODELLO_SCIENTIFICO_ENEA_FALLBACK",
             "cached": False
@@ -116,3 +132,14 @@ pvgis_client = PVGISClient()
 def get_pvgis_irradiance(lat: float, lon: float) -> Dict[str, Any]:
     """Helper rapido per ottenere l'irraggiamento solare PVGIS."""
     return pvgis_client.get_solar_data(lat, lon)
+
+def get_solar_comparison(lat: float, lon: float) -> Dict[str, Any]:
+    """Restituisce il confronto scientifico di producibilità: Strutture Fisse vs Inseguitori Tracker."""
+    data = pvgis_client.get_solar_data(lat, lon)
+    return {
+        "fisso_kwh_kwp": data["kwh_kwp_anno"],
+        "tracker_kwh_kwp": data.get("kwh_kwp_tracker", round(data["kwh_kwp_anno"] * 1.20, 1)),
+        "boost_pct": data.get("boost_tracker_pct", 20.0),
+        "inclinazione_ottimale": data.get("inclinazione_ottimale", 30),
+        "fonte": data.get("fonte", "PVGIS_JRC")
+    }
