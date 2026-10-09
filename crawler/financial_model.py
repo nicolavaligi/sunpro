@@ -1,3 +1,12 @@
+# ==============================================================================
+# PROPRIETARY AND CONFIDENTIAL — NICOLA VALIGI (HOUDINICK)
+# SunPro Geo-Intelligence 3D — Nicola Valigi Engine System
+# Copyright (c) 2026 Nicola Valigi. All Rights Reserved.
+# Autore & Titolare Esclusivo della Proprietà Intellettuale: Nicola Valigi (Houdinick)
+# Email: 305862309+nicolavaligi@users.noreply.github.com | GitHub: nicolavaligi
+# 
+# Vietata la riproduzione, copia o appropriazione non autorizzata (L. 633/1941).
+# ==============================================================================
 """
 Financial & Investment Model Exporter per SunPro (Nicola Valigi Engine System).
 Genera il modello economico esecutivo completo per sviluppatori, EPC e fondi di investimento:
@@ -5,7 +14,7 @@ Genera il modello economico esecutivo completo per sviluppatori, EPC e fondi di 
 - OPEX stimato e canone diritto di superficie trentennale
 - Ricavi annui vendita energia e producibilità PVGIS
 - LCOE e metriche finanziarie per ogni singolo terreno censito
-Autore: Nicola Valigi Engine System
+Autore & Titolare IP: Nicola Valigi (Houdinick)
 """
 
 import csv

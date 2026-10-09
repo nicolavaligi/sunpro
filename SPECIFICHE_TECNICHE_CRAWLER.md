@@ -1,13 +1,15 @@
 # ☀️ Specifiche Tecniche del Crawler & Motore di Land Origination SunPro
 ## Architettura Geospaziale, Watchdog del Suolo, Modello Estimativo Fondiario e Routing Elettrico
 
-> **Documento Tecnico Ufficiale di Specifica**  
+> **⚠️ DOCUMENTO PROPRIETARIO & CONFIDENZIALE — PROPRIETÀ INTELLETTUALE DI NICOLA VALIGI**  
 > **Oggetto:** Origination geospaziale, qualificazione urbanistica, perizia estimativa e calcolo infrastrutturale per impianti Fotovoltaici & Agrivoltaici Utility-Scale in Italia.  
 > **Piattaforma:** SunPro Geo-Intelligence 3D  
-> **Autore & Proprietà Intellettuale:** Nicola Valigi (Houdinick)  
+> **Autore & Titolare Esclusivo IP:** Nicola Valigi (Houdinick)  
+> **Email Ufficiale:** `305862309+nicolavaligi@users.noreply.github.com` | GitHub: [`nicolavaligi`](https://github.com/nicolavaligi)  
 > **Versione:** 2.4 (Aggiornata con i moduli Watchdog Suolo & Land Valuation — Ottobre 2026)  
+> **Tutela Legale:** Protetto ai sensi della Legge 633/1941 e Direttiva UE 2009/24/CE. Vietata la riproduzione o l'appropriazione senza licenza scritta.  
 > **Live Demo:** [https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)  
-> **Repository Locale:** [`solar-land-acquisition-crawler`](file:///Users/houdinick/solar-land-acquisition-crawler)
+> **Repository Locale:** [`solar-land-acquisition-crawler`](file:///Users/houdinick/solar-land-acquisition-crawler)  
 
 ---
 
@@ -239,5 +241,11 @@ La pipeline attiva comprende **36 lotti reali censiti nel Nord e Centro Italia**
 
 ---
 
+### ⚖️ Note Legali & Proprietà Intellettuale
+* **Titolare dei Diritti:** Nicola Valigi (`Houdinick`)
+* **Email:** `305862309+nicolavaligi@users.noreply.github.com`
+* **Licenza:** Proprietaria e Confidenziale (Tutti i diritti riservati).
+* **Avviso:** La presente specifica tecnica e la formulazione matematica dei parametri del crawler costituiscono opera dell'ingegno tutelata ex L. 633/1941. Vietata ogni forma di riproduzione o sfruttamento commerciale non autorizzato.
+
 *Documento ufficiale di specifiche di progetto redatto per SunPro Geo-Intelligence 3D.*  
-*Proprietà Intellettuale & Copyright © 2026 Nicola Valigi (Houdinick). Tutti i diritti riservati.*
+*Copyright © 2026 Nicola Valigi (Houdinick). Tutti i diritti riservati.*

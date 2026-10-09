@@ -1,7 +1,9 @@
 # 📘 MANUALE OPERATIVO COMMERCIALE: LAND ORIGINATION FOTOVOLTAICO
 
-> **Guida strategica e operativa ad uso esclusivo di Nicola Valigi Engine System.**  
-> Focus: Acquisizione terreni per impianti fotovoltaici a terra (Utility-Scale & Agrivoltaico) in Italia settentrionale e centrale.
+> **⚠️ DOCUMENTO CONFIDENZIALE & PROPRIETARIO — NICOLA VALIGI (HOUDINICK)**  
+> **Autore & Titolare Esclusivo IP:** Nicola Valigi (Houdinick)  
+> **Email:** `305862309+nicolavaligi@users.noreply.github.com` | GitHub: [`nicolavaligi`](https://github.com/nicolavaligi)  
+> Guida strategica e operativa riservata per l'origination di terreni per impianti fotovoltaici a terra (Utility-Scale & Agrivoltaico). Protetto ai sensi della Legge 633/1941.
 
 ---
 
@@ -91,3 +93,11 @@ La normativa italiana vigente individua specifiche categorie territoriali come *
       ↓
 6. ROGITO DEFINITIVO O ATTO DIRITTO DI SUPERFICIE
 ```
+
+---
+
+### ⚖️ Proprietà Intellettuale & Copyright
+* **Titolare:** Nicola Valigi (`Houdinick`)
+* **Email:** `305862309+nicolavaligi@users.noreply.github.com`
+* **Licenza:** Riservata e Confidenziale.
+* Tutti i diritti riservati © 2026 Nicola Valigi. Vietata qualsiasi appropriazione, riproduzione o cessione non autorizzata.

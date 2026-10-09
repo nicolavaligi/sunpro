@@ -1,8 +1,17 @@
+# ==============================================================================
+# PROPRIETARY AND CONFIDENTIAL — NICOLA VALIGI (HOUDINICK)
+# SunPro Geo-Intelligence 3D — Nicola Valigi Engine System
+# Copyright (c) 2026 Nicola Valigi. All Rights Reserved.
+# Autore & Titolare Esclusivo della Proprietà Intellettuale: Nicola Valigi (Houdinick)
+# Email: 305862309+nicolavaligi@users.noreply.github.com | GitHub: nicolavaligi
+# 
+# Vietata la riproduzione, copia o appropriazione non autorizzata (L. 633/1941).
+# ==============================================================================
 """
 Modulo di Analisi Spaziale e Geoprocessing per Terreni Fotovoltaici.
 Gestisce i buffer normativi D.Lgs. 199/2021 (350m industriale, 300m autostrada, cave/discariche)
 e il calcolo di prossimità alle Cabine Primarie AT/MT.
-Autore: Nicola Valigi Engine System
+Autore & Titolare IP: Nicola Valigi (Houdinick)
 """
 
 import math

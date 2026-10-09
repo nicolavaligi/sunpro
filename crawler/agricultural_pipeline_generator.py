@@ -1,3 +1,12 @@
+# ==============================================================================
+# PROPRIETARY AND CONFIDENTIAL — NICOLA VALIGI (HOUDINICK)
+# SunPro Geo-Intelligence 3D — Nicola Valigi Engine System
+# Copyright (c) 2026 Nicola Valigi. All Rights Reserved.
+# Autore & Titolare Esclusivo della Proprietà Intellettuale: Nicola Valigi (Houdinick)
+# Email: 305862309+nicolavaligi@users.noreply.github.com | GitHub: nicolavaligi
+# 
+# Vietata la riproduzione, copia o appropriazione non autorizzata (L. 633/1941).
+# ==============================================================================
 """
 Modulo di Generazione e Riqualificazione Pipeline Agricola SunPro (Nicola Valigi Engine System).
 Sostituisce i siti industriali urbanizzati e complessi edilizi con autentici
@@ -8,6 +17,7 @@ Caratteristiche garantite:
 2. Contesti rurali e peri-industriali conformi D.Lgs. 199/2021 (buffer 350m Z.I., 300m autostrada, cabine <1.5 km).
 3. Interlocutori ideali: Aziende Agricole, Società Semplici o proprietari terrieri unici.
 4. Modello economico: rendita 4x-6x rispetto all'affitto agrario (3.000 €/ha/anno o 8,00-9,00 €/mq acquisto).
+Autore & Titolare IP: Nicola Valigi (Houdinick)
 """
 
 import sys

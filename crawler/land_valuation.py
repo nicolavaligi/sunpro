@@ -1,3 +1,12 @@
+# ==============================================================================
+# PROPRIETARY AND CONFIDENTIAL — NICOLA VALIGI (HOUDINICK)
+# SunPro Geo-Intelligence 3D — Nicola Valigi Engine System
+# Copyright (c) 2026 Nicola Valigi. All Rights Reserved.
+# Autore & Titolare Esclusivo della Proprietà Intellettuale: Nicola Valigi (Houdinick)
+# Email: 305862309+nicolavaligi@users.noreply.github.com | GitHub: nicolavaligi
+# 
+# Vietata la riproduzione, copia o appropriazione non autorizzata (L. 633/1941).
+# ==============================================================================
 """
 Land Valuation & Zoning Gatekeeper Module per SunPro (Nicola Valigi Engine System).
 Determina il valore fondiario dei terreni sulla base di:
@@ -8,7 +17,7 @@ Determina il valore fondiario dei terreni sulla base di:
 5. Modello del Premio di Trasformazione Energetica (+40% - +80% su valore agricolo per target 7.50 - 9.50 €/mq)
 6. Moltiplicatore di Rendita Agraria (Canone Diritto di Superficie 3.000 €/ha/anno vs affitto agrario ordinario)
 
-Autore: Nicola Valigi Engine System
+Autore & Titolare IP: Nicola Valigi (Houdinick)
 """
 
 from dataclasses import dataclass

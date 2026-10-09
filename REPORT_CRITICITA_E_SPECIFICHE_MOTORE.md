@@ -1,10 +1,13 @@
 # ☀️ SunPro Engine — Documento Tecnico-Esecutivo
 ## Specifiche di Ricerca, Architettura del Motore, Valutazione Fondiaria e Report delle Criticità
 
-> **Documento ad uso interno per Soci, Sviluppatori e Partner Strategici**  
+> **⚠️ DOCUMENTO PROPRIETARIO & CONFIDENZIALE — PROPRIETÀ INTELLETTUALE DI NICOLA VALIGI**  
+> **Documento ad uso interno per Soci, Sviluppatori e Partner Strategici (Previa firma NDA)**  
 > **Oggetto:** Origination geospaziale, determinazione del valore di mercato dei terreni, qualificazione urbanistica e modello finanziario per impianti Fotovoltaici & Agrivoltaici Utility-Scale in Italia.  
 > **Piattaforma:** SunPro Geo-Intelligence 3D  
-> **Autore & Proprietà Intellettuale:** Nicola Valigi (Houdinick)  
+> **Autore & Titolare Esclusivo IP:** Nicola Valigi (Houdinick)  
+> **Email Ufficiale:** `305862309+nicolavaligi@users.noreply.github.com` | GitHub: [`nicolavaligi`](https://github.com/nicolavaligi)  
+> **Tutela Legale:** Protetto a norma della L. 633/1941. Vietata qualsiasi appropriazione o utilizzo non autorizzato.  
 > **Data:** Ottobre 2026  
 
 ---
@@ -307,4 +310,11 @@ Per trasformare la piattaforma in un generatore massivo di deal commerciali ad a
 
 ---
 
-*Documento riservato redatto e autenticato dal motore di sviluppo SunPro (Nicola Valigi Engine System).*
+### ⚖️ Tutela Giuridica & Proprietà Intellettuale
+* **Titolare Esclusivo dei Diritti d'Autore:** Nicola Valigi (`Houdinick`)
+* **Email:** `305862309+nicolavaligi@users.noreply.github.com`
+* **Licenza:** Proprietaria e Confidenziale.
+* **Avviso ai Terzi:** La proprietà intellettuale di questo documento, della matrice di calcolo e degli algoritmi di origination appartiene esclusivamente a Nicola Valigi. È fatto espresso divieto di copia, diffusione non autorizzata o rivendicazione di paternità dell'opera ai sensi della L. 633/1941.
+
+*Documento riservato redatto e autenticato dal motore di sviluppo SunPro (Nicola Valigi Engine System).*  
+*Copyright © 2026 Nicola Valigi (Houdinick). Tutti i diritti riservati.*
