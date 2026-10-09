@@ -1,8 +1,17 @@
+# ==============================================================================
+# PROPRIETARY AND CONFIDENTIAL — NICOLA VALIGI (HOUDINICK)
+# SunPro Geo-Intelligence 3D — Nicola Valigi Engine System
+# Copyright (c) 2026 Nicola Valigi. All Rights Reserved.
+# Autore & Titolare Esclusivo della Proprietà Intellettuale: Nicola Valigi (Houdinick)
+# Email: 305862309+nicolavaligi@users.noreply.github.com | GitHub: nicolavaligi
+# 
+# Vietata la riproduzione, copia o appropriazione non autorizzata (L. 633/1941).
+# ==============================================================================
 """
 Modulo PVGIS Client per SunPro (Nicola Valigi Engine System).
 Interroga l'API scientifica PVGIS della Commissione Europea (JRC)
 per estrarre l'irraggiamento solare reale (kWh/m2/anno) e la resa specifica (kWh/kWp/anno).
-Autore: Nicola Valigi Engine System
+Autore & Titolare IP: Nicola Valigi (Houdinick)
 """
 
 import json

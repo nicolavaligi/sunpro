@@ -1,10 +1,15 @@
 # SunPro — Geo-Intelligence 3D & Solar Land Acquisition
 
-[![Author: Nicola Valigi Engine System](https://img.shields.io/badge/Author-Nicola%20Valigi%20Engine%20System-blue.svg)](https://github.com/nicolavaligi)
+[![Author: Nicola Valigi (Houdinick)](https://img.shields.io/badge/Author-Nicola%20Valigi%20%28Houdinick%29-blue.svg)](https://github.com/nicolavaligi)
 [![GitHub Pages: Live](https://img.shields.io/badge/Live-GitHub%20Pages-brightgreen.svg)](https://nicolavaligi.github.io/sunpro/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: Proprietary & Confidential](https://img.shields.io/badge/License-Proprietary%20%26%20Confidential-red.svg)](LICENSE)
+[![Intellectual Property: Nicola Valigi](https://img.shields.io/badge/IP%20Owner-Nicola%20Valigi-emerald.svg)](LICENSE)
 [![Python: 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://python.org)
 [![Web UI: Port 8503](https://img.shields.io/badge/Web%20UI-Port%208503-red.svg)](http://localhost:8503)
+
+> **⚠️ AVVISO LEGALE DI PROPRIETÀ INTELLETTUALE & RISERVATEZZA**  
+> L'architettura software, gli algoritmi di scoring geospaziale, il modello estimativo fondiario, i dataset e la documentazione tecnica di **SunPro** sono di **esclusiva proprietà intellettuale di Nicola Valigi (Houdinick)**.  
+> Qualsiasi copia non autorizzata, riproduzione, alterazione delle note d'autore o appropriazione indebita, totale o parziale, è severamente vietata e perseguibile a norma di legge (L. 633/1941, Direttiva UE 2009/24/CE e Trattati Internazionali WIPO).
 
 Piattaforma di **Geo-Intelligence 3D** per l'origination e acquisizione autonoma di terreni fotovoltaici Utility-Scale & Agrivoltaico conforme al **D.Lgs. 199/2021 (Aree Idonee)**. Include viewer satellitare 3D con volo orbitale, agente decisionale AI, estrazione catastale e generazione automatica di **Dossier Commerciali PDF**.
 
@@ -118,9 +123,13 @@ L'interfaccia si aprirà automaticamente nel browser all'indirizzo **`http://loc
 4. **Inserimento & Scansione Nuove Aree:**
    - Form rapido per inserire coordinate e parametri di un nuovo terreno, con scoring e calcolo energetico istantaneo.
 
----
+## ⚖️ Proprietà Intellettuale, Copyright & Licenza
 
-## ⚖️ Licenza & Proprietà
+Tutti i diritti di proprietà intellettuale, i marchi, gli algoritmi di ricerca geospaziale, il modello di stima fondiaria comparativa, i database e il codice sorgente appartengono **in via esclusiva e incondizionata a Nicola Valigi (Houdinick)**.
 
-Sviluppato da **Nicola Valigi Engine System**. Tutti i diritti riservati.
-Email di contatto: `305862309+nicolavaligi@users.noreply.github.com`
+* **Autore & Titolare IP:** Nicola Valigi (`Houdinick`)
+* **Email Ufficiale:** `305862309+nicolavaligi@users.noreply.github.com`
+* **Account GitHub:** [`nicolavaligi`](https://github.com/nicolavaligi)
+* **Licenza:** Proprietaria & Confidenziale (consultare il file [`LICENSE`](LICENSE)).
+
+> © 2026 Nicola Valigi. Tutti i diritti riservati. Vietata la riproduzione o utilizzazione economica senza licenza scritta.

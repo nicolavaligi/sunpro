@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
-  <name>SunPro — Pipeline Terreni Fotovoltaici (Nicola Valigi Engine System)</name>
-  <description>Mappatura e qualificazione aree idonee D.Lgs. 199/2021 con allaccio Cabine Primarie AT/MT.</description>
+  <name>SunPro — Pipeline Terreni Fotovoltaici (Proprietà Nicola Valigi - Houdinick)</name>
+  <description>Proprietà Intellettuale Esclusiva di Nicola Valigi (Houdinick) — Nicola Valigi Engine System. Copyright (c) 2026 Nicola Valigi. Tutti i diritti riservati. Mappatura e qualificazione aree idonee D.Lgs. 199/2021.</description>
 
   <!-- Stili Marker KML -->
   <Style id="pin-top">

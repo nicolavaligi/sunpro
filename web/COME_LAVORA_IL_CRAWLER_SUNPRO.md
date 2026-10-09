@@ -1,11 +1,14 @@
 # ☀️ SunPro Geo-Intelligence 3D — Come Lavora il Crawler
 ## Documento Ufficiale di Funzionamento, Architettura e Pipeline di Land Origination
 
+> **⚠️ DOCUMENTO PROPRIETARIO & CONFIDENZIALE — PROPRIETÀ INTELLETTUALE DI NICOLA VALIGI**  
+> **Autore & Titolare IP:** Nicola Valigi (Houdinick)  
+> **Email Ufficiale:** `305862309+nicolavaligi@users.noreply.github.com` | GitHub: [`nicolavaligi`](https://github.com/nicolavaligi)  
 > **Piattaforma:** SunPro Geo-Intelligence 3D  
 > **URL Live:** [https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)  
-> **Autore & Proprietà Intellettuale:** Nicola Valigi (Houdinick)  
 > **Repository Locale:** [`solar-land-acquisition-crawler`](file:///Users/houdinick/solar-land-acquisition-crawler)  
 > **Versione Motore:** 2.4 (Aggiornata con Watchdog Anti-Edifici, Gatekeeper Fondiario e Dataset 2.107 Cabine ARERA)  
+> **Tutela Legale:** Protetto a norma della L. 633/1941 sul Diritto d'Autore e della Direttiva UE 2009/24/CE. È fatto espresso divieto a terzi di appropriarsi dei contenuti, riprodurre l'architettura o rimuovere la presente nota d'autore.  
 > **Data:** Ottobre 2026  
 
 ---
@@ -235,5 +238,11 @@ La pipeline qualificata comprende **36 opportunità reali censite nel Nord e Cen
 
 ---
 
+### ⚖️ Note Legali & Tutela della Proprietà Intellettuale
+* **Titolare Esclusivo dei Diritti d'Autore:** Nicola Valigi (Houdinick)
+* **Email Ufficiale:** `305862309+nicolavaligi@users.noreply.github.com`
+* **Licenza:** Proprietaria e Confidenziale.
+* **Clausola di Tutela:** Il presente documento, i dati analitici, il modello estimativo zonale e le formule parametriche costituiscono opera dell'ingegno di Nicola Valigi protetta ai sensi della Legge 633/1941. Qualsiasi utilizzo non autorizzato, riproduzione anche parziale, cessione o appropriazione da parte di terzi è vietata ed è perseguibile civilmente e penalmente.
+
 *Documento tecnico ufficiale redatto per SunPro Geo-Intelligence 3D.*  
-*Proprietà Intellettuale & Copyright © 2026 Nicola Valigi (Houdinick). Tutti i diritti riservati.*
+*Copyright © 2026 Nicola Valigi (Houdinick). Tutti i diritti riservati.*

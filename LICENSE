@@ -1,0 +1,53 @@
+PROPRIETARY AND CONFIDENTIAL SOFTWARE LICENSE AGREEMENT
+==============================================================================
+SUNPRO GEO-INTELLIGENCE 3D (NICOLA VALIGI ENGINE SYSTEM)
+Copyright (c) 2026 Nicola Valigi (Houdinick). All Rights Reserved.
+==============================================================================
+
+AUTHOR, SOLE CREATOR & EXCLUSIVE INTELLECTUAL PROPERTY OWNER:
+Nicola Valigi (Houdinick)
+GitHub: https://github.com/nicolavaligi
+Email: 305862309+nicolavaligi@users.noreply.github.com
+
+1. INTELLECTUAL PROPERTY OWNERSHIP AND ATTRIBUTION NOTICE
+------------------------------------------------------------------------------
+All source code, algorithmic logic, geospatial pipelines, multi-criteria scoring
+models, cadastral resolution routines, land valuation methodologies, financial
+simulations, database ingestion scripts, web interfaces, visual assets, dossiers,
+blind teasers, and technical documentation contained in this repository and its
+associated deliverables are the exclusive, proprietary intellectual property of 
+Nicola Valigi.
+
+This software, its design patterns, mathematical formulas, and underlying logic 
+are protected by Italian Copyright Law (Legge 22 aprile 1941, n. 633 e ss.mm.ii.), 
+European Union Directives on the Legal Protection of Computer Programs (Directive 
+2009/24/EC) and Databases (Directive 96/9/EC), and International Treaties including 
+the Berne Convention and the WIPO Copyright Treaty.
+
+2. STRICT PROHIBITION OF UNAUTHORIZED USE, COPYING & DISTRIBUTION
+------------------------------------------------------------------------------
+Under no circumstances may any part of this software, documentation, or dataset be:
+a) Copied, modified, cloned, reproduced, or published without the express, prior 
+   written consent and contractual license granted personally by Nicola Valigi.
+b) Re-branded, white-labeled, re-attributed, or claimed by any third party, 
+   corporation, developer, consultancy, fund, or broker.
+c) Used directly or indirectly for commercial land origination, broker transactions, 
+   development fees, or investment activities without a formal commercial license 
+   or mandate agreement executed with Nicola Valigi.
+d) Reverse-engineered, decompiled, disassembled, or utilized to train external AI, 
+   machine learning, or automated scrapers without written permission.
+
+3. INTEGRITY OF COPYRIGHT AND ATTRIBUTION WATERMARKS
+------------------------------------------------------------------------------
+All copyright notices, digital watermarks, author identifiers ("Nicola Valigi", 
+"Houdinick", "Nicola Valigi Engine System"), and metadata signatures embedded 
+within the code, comments, documentation, and user interfaces must remain intact 
+and unaltered at all times. Removal, obfuscation, or tampering with these notices 
+constitutes a direct violation of copyright laws and moral rights of the author.
+
+4. INQUIRIES & LICENSING
+------------------------------------------------------------------------------
+For licensing inquiries, institutional partnerships, or commercial authorization, 
+contact directly:
+Nicola Valigi (Houdinick)
+GitHub: https://github.com/nicolavaligi/sunpro
