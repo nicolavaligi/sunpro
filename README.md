@@ -8,8 +8,10 @@
 
 Piattaforma di **Geo-Intelligence 3D** per l'origination e acquisizione autonoma di terreni fotovoltaici Utility-Scale & Agrivoltaico conforme al **D.Lgs. 199/2021 (Aree Idonee)**. Include viewer satellitare 3D con volo orbitale, agente decisionale AI, estrazione catastale e generazione automatica di **Dossier Commerciali PDF**.
 
-🌐 **Demo Live Web (GitHub Pages):** [https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)
-
+🌐 **Demo Live Web (GitHub Pages):** [https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)  
+📘 **Documento Ufficiale Motore:** [Come Lavora il Crawler SunPro (Architettura & Pipeline)](COME_LAVORA_IL_CRAWLER_SUNPRO.md)  
+📑 **Specifiche Tecniche:** [Specifiche Tecniche del Crawler](SPECIFICHE_TECNICHE_CRAWLER.md)  
+📊 **Report Esecutivo & Criticità:** [Report Criticità & Specifiche Motore](REPORT_CRITICITA_E_SPECIFICHE_MOTORE.md)
 
 ---
 
