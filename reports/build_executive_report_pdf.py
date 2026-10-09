@@ -234,8 +234,55 @@ def build_pdf():
     ))
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 2: SPECIFICHE TECNICHE ====================
-    story.append(Paragraph("2. Specifiche Tecniche di Ricerca & Filtri Territoriali", h1_style))
+    # ==================== SEZIONE 2: EVOLUZIONE DALLA RELEASE INIZIALE ====================
+    story.append(Paragraph("2. Evoluzione del Motore: Cosa è Cambiato dalla Release Iniziale (v1.0 vs v2.4)", h1_style))
+    story.append(Paragraph(
+        "Dalla release prototipale v1.0 all'attuale release industriale v2.4, il motore SunPro ha subito un'evoluzione "
+        "radicale su tutti i pilastri tecnici, eliminando i fattori di rischio che causano il fallimento dei progetti fotovoltaici:",
+        body_style
+    ))
+    t_evo_data = [
+        [Paragraph("Ambito / Pilastro", th_style), Paragraph("Release Iniziale (v1.0)", th_style),
+         Paragraph("Release Attuale (v2.4)", th_style), Paragraph("Impatto Strategico & Rischio Azzerato", th_style)],
+        [Paragraph("<b>Composizione Suolo</b>", td_bold),
+         Paragraph("Misto generico (inclusi lotti peri-urbani a rischio edifici)", td_style),
+         Paragraph("<b>86,1% Seminativi Puri in Zona E</b> + Watchdog Suolo", td_accent),
+         Paragraph("<b>Zero costi di demolizione o bonifica</b>; 100% campo aperto immediatamente cantierabile con pali infissi.", td_style)],
+        [Paragraph("<b>Destinazione Urbanistica</b>", td_bold),
+         Paragraph("Nessun controllo PRG (rischio acquisto lotti industriali Zona D)", td_style),
+         Paragraph("<b>Gatekeeper Urbanistico</b>: scarto lotti Zona D (> 15 €/mq)", td_accent),
+         Paragraph("Esclusi lotti industriali/PIP da 50–120 €/mq che renderebbero insostenibile il CAPEX a terra.", td_style)],
+        [Paragraph("<b>Modello Estimativo</b>", td_bold),
+         Paragraph("Stima forfettaria o derivata circolarmente da resa MWh", td_style),
+         Paragraph("<b>Modello Immobiliare Comparativo</b> (VAM / ISMEA / OMI)", td_accent),
+         Paragraph("Disaccoppiamento totale: prezzo ancorato ai benchmark provinciali reali (target <b>7,50–9,50 €/mq</b> o <b>3.000 €/ha/a</b>).", td_style)],
+        [Paragraph("<b>Ingegneria di Rete</b>", td_bold),
+         Paragraph("Distanze euclidee rettilinee su pochi punti cabina generici", td_style),
+         Paragraph("<b>DB 2.107 Cabine Primarie ARERA</b> + Routing 1,30x", td_accent),
+         Paragraph("Lookup istantaneo (<1ms); tortuosità stradale reale per stima CAPEX allaccio MT inattaccabile in due diligence.", td_style)],
+        [Paragraph("<b>Resa Energetica & Tracker</b>", td_bold),
+         Paragraph("Coefficienti statici forfettari; solo tilt fisso", td_style),
+         Paragraph("<b>PVGIS v5.2 JRC</b>: Fisso vs <b>Tracker Monoassiale (+20%)</b>", td_accent),
+         Paragraph("Dati scientifici Commissione UE; extra-CAPEX tracker ammortizzato in <3,5 anni con PPA a 85 €/MWh.", td_style)],
+        [Paragraph("<b>Commercial Kit Pre-NDA</b>", td_bold),
+         Paragraph("Solo report locali interni grezzi con dati sensibili esposti", td_style),
+         Paragraph("<b>36 Blind Teaser PDF One-Pager</b> + 36 Dossier completi", td_accent),
+         Paragraph("Avvio immediato del cold outreach verso fondi ed EPC tutelando al 100% l'IP prima della stipula dell'NDA.", td_style)],
+    ]
+    t_evo = Table(t_evo_data, colWidths=[3.5*cm, 4.3*cm, 4.8*cm, 5.4*cm])
+    t_evo.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#0F172A')),
+        ('BOX', (0,0), (-1,-1), 0.5, colors.HexColor('#CBD5E1')),
+        ('INNERGRID', (0,0), (-1,-1), 0.5, colors.HexColor('#E2E8F0')),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ('TOPPADDING', (0,0), (-1,-1), 2.2),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2.2),
+    ]))
+    story.append(t_evo)
+    story.append(Spacer(1, 6))
+
+    # ==================== SEZIONE 3: SPECIFICHE TECNICHE ====================
+    story.append(Paragraph("3. Specifiche Tecniche di Ricerca & Filtri Territoriali", h1_style))
     t_spec_data = [
         [Paragraph("Parametro", th_style), Paragraph("Soglia / Requisito Applicato", th_style), Paragraph("Razionale Tecnico & Impatto di Business", th_style)],
         [Paragraph("<b>Superficie Minima</b>", td_bold), Paragraph("&ge; <b>2,0 Ettari (20.000 mq)</b>", td_accent),
@@ -267,8 +314,8 @@ def build_pdf():
     story.append(t_spec)
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 3: MODELLO ESTIMATIVO FONDIARIO ====================
-    story.append(Paragraph("3. Come il Motore Determina il Valore del Terreno (Risposta Tecnica per i Soci)", h1_style))
+    # ==================== SEZIONE 4: MODELLO ESTIMATIVO FONDIARIO ====================
+    story.append(Paragraph("4. Come il Motore Determina il Valore del Terreno (Risposta Tecnica per i Soci)", h1_style))
     
     # Box di Chiarimento Fondamentale
     clarification_box = [
@@ -355,8 +402,8 @@ def build_pdf():
     ))
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 4: RETE E PVGIS ====================
-    story.append(Paragraph("4. Ingegneria di Rete & Resa Energetica Scientifica", h1_style))
+    # ==================== SEZIONE 5: RETE E PVGIS ====================
+    story.append(Paragraph("5. Ingegneria di Rete & Resa Energetica Scientifica", h1_style))
     story.append(Paragraph(
         "• <b>Database Nazionale 2.107 Cabine Primarie ARERA / GSE:</b> Integrato in locale per tutti i distributori italiani "
         "(<i>E-Distribuzione, Unareti, Areti, Ireti, Inrete, V-Reti, Edyna, Set</i>). Lookup spaziale in <b>1 millisecondo</b>.<br/>"
@@ -368,8 +415,8 @@ def build_pdf():
     ))
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 5: SCORING ====================
-    story.append(Paragraph("5. Algoritmo di Scoring Multicriterio (0–100) & Gatekeeper", h1_style))
+    # ==================== SEZIONE 6: SCORING ====================
+    story.append(Paragraph("6. Algoritmo di Scoring Multicriterio (0–100) & Gatekeeper", h1_style))
     t_score_data = [
         [Paragraph("Pilastro", th_style), Paragraph("Peso Max", th_style), Paragraph("Regole di Attribuzione Punteggio", th_style)],
         [Paragraph("<b>1. Idoneità Normativa D.Lgs. 199/21</b>", td_bold), Paragraph("<b>30 pt</b>", td_accent),
@@ -401,8 +448,8 @@ def build_pdf():
     ))
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 6: MODELLO FINANZIARIO ====================
-    story.append(Paragraph("6. Modello Finanziario & Redditività a Confronto", h1_style))
+    # ==================== SEZIONE 7: MODELLO FINANZIARIO ====================
+    story.append(Paragraph("7. Modello Finanziario & Redditività a Confronto", h1_style))
     t_fin_data = [
         [Paragraph("Parametro Economico", th_style), Paragraph("Scenario Diritto di Superficie (30 Anni)", th_style), Paragraph("Scenario Acquisto Diretto", th_style)],
         [Paragraph("<b>Costo Fondiario</b>", td_bold), Paragraph("<b>€ 3.000 / ha / anno</b> (~0,30 €/mq/anno)", td_accent),
@@ -430,8 +477,8 @@ def build_pdf():
     story.append(t_fin)
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 7: CRITICITÀ ====================
-    story.append(Paragraph("7. Report delle Criticità & Analisi dei Rischi (Gap Analysis)", h1_style))
+    # ==================== SEZIONE 8: CRITICITÀ ====================
+    story.append(Paragraph("8. Report delle Criticità & Analisi dei Rischi (Gap Analysis)", h1_style))
     def make_criticity_card(num, title, risk, impact, mitigation):
         card_data = [
             [Paragraph(f"⚠️ CRITICITÀ {num}: {title.upper()}", alert_box_title)],
