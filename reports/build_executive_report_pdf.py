@@ -537,8 +537,8 @@ def build_pdf():
     ))
     story.append(Spacer(1, 6))
 
-    # ==================== SEZIONE 8: ROADMAP ====================
-    story.append(Paragraph("8. Roadmap di Scalabilità & Consigli per i Soci", h1_style))
+    # ==================== SEZIONE 9: ROADMAP ====================
+    story.append(Paragraph("9. Roadmap di Scalabilità & Consigli per i Soci", h1_style))
     story.append(Paragraph("1. <b>Go-to-Market Immediato sui 36 Lead Qualificati:</b> Utilizzare i 36 <i>Blind Teaser PDF One-Pager</i> per avviare il cold outreach confidenziale verso sviluppatori ed EPC primari (Ewiva, Atlante, Electra, Renantis, Sonnedix).", bullet_style))
     story.append(Paragraph("2. <b>Tutela del Valore tramite NDA:</b> Rilasciare i dati catastali completi e l'identità del proprietario solo previa sottoscrizione dell'Accordo di Riservatezza / LOI con Nicola Valigi.", bullet_style))
     story.append(Paragraph("3. <b>Espansione Territoriale a Costo Zero:</b> Sfruttare il nuovo database nazionale di 2.107 Cabine Primarie per estendere il crawler a Toscana, Piemonte, Veneto e Puglia senza spendere in licenze esterne.", bullet_style))
