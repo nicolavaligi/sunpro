@@ -11,13 +11,14 @@
 
 ## 📑 Indice del Documento
 1. [Sintesi Esecutiva: Cosa fa il Motore SunPro](#1-sintesi-esecutiva)
-2. [Specifiche Tecniche di Ricerca & Filtri Applicati](#2-specifiche-tecniche-di-ricerca)
-3. [Come il Motore Determina il Valore dei Terreni: Modello Estimativo, Destinazione Urbanistica ed Esclusione Terreni Inavvicinabili](#3-come-il-motore-determina-il-valore-dei-terreni)
-4. [Ingegneria di Rete & Resa Energetica Scientifica](#4-ingegneria-di-rete--resa-energetica)
-5. [Algoritmo di Scoring Multicriterio (0–100) & Gatekeeper](#5-algoritmo-di-scoring-multicriterio)
-6. [Modello Finanziario & Parametri di Redditività a Confronto](#6-modello-finanziario--parametri-di-redditività)
-7. [Report delle Criticità & Analisi dei Rischi (Gap Analysis)](#7-report-delle-criticità--analisi-dei-rischi)
-8. [Roadmap di Scalabilità & Consigli Operativi per i Soci](#8-roadmap-di-scalabilità--consigli-per-i-soci)
+2. [Evoluzione del Motore: Cosa è Cambiato dalla Release Iniziale (v1.0 vs v2.4)](#2-evoluzione-del-motore-cosa-è-cambiato-dalla-release-iniziale)
+3. [Specifiche Tecniche di Ricerca & Filtri Applicati](#3-specifiche-tecniche-di-ricerca)
+4. [Come il Motore Determina il Valore dei Terreni: Modello Estimativo, Destinazione Urbanistica ed Esclusione Terreni Inavvicinabili](#4-come-il-motore-determina-il-valore-dei-terreni)
+5. [Ingegneria di Rete & Resa Energetica Scientifica](#5-ingegneria-di-rete--resa-energetica)
+6. [Algoritmo di Scoring Multicriterio (0–100) & Gatekeeper](#6-algoritmo-di-scoring-multicriterio)
+7. [Modello Finanziario & Parametri di Redditività a Confronto](#7-modello-finanziario--parametri-di-redditività)
+8. [Report delle Criticità & Analisi dei Rischi (Gap Analysis)](#8-report-delle-criticità--analisi-dei-rischi)
+9. [Roadmap di Scalabilità & Consigli Operativi per i Soci](#9-roadmap-di-scalabilità--consigli-per-i-soci)
 
 ---
 
@@ -38,7 +39,22 @@ Il risultato finale è una pipeline di terreni già **pre-qualificati, verificat
 
 ---
 
-## 2. Specifiche Tecniche di Ricerca
+## 2. Evoluzione del Motore: Cosa è Cambiato dalla Release Iniziale (v1.0 vs v2.4)
+
+Dalla prima release prototipale (v1.0) all'attuale versione industriale (v2.4), SunPro è stato radicalmente riprogettato per azzerare ogni rischio di insostenibilità tecnica ed economica:
+
+| Ambito / Pilastro | Release Iniziale (v1.0) | Release Attuale (v2.4 — Ottobre 2026) | Impatto Strategico & Rischio Azzerato |
+| :--- | :--- | :--- | :--- |
+| **Composizione del Suolo** | Misto indifferenziato (inclusi lotti peri-urbani ed ex industriali a rischio edifici) | **86,1% Terreni Agricoli Puri in Campo Aperto (Zona E) & Agrivoltaico** (31/36 lotti) | **Zero costi di demolizione o bonifica**; 100% campo aperto immediatamente cantierabile con pali infissi. |
+| **Destinazione Urbanistica** | Nessun controllo PRG (rischio acquisto lotti industriali Zona D) | **Gatekeeper Urbanistico**: scarto categorico di lotti Zona D ($> 15\text{ €/mq}$) | Esclusi lotti industriali/PIP da 50–120 €/mq che renderebbero fallimentare il CAPEX a terra. |
+| **Modello Estimativo Fondiario** | Stima forfettaria o derivata circolarmente dalla resa MWh solari | **Modello Immobiliare Comparativo Reale** (VAM / ISMEA / OMI 2025–2026) | Prezzi bancabili: acquisto target **7,50–9,50 €/mq** o Diritto di Superficie a **3.000 €/ha/anno** (4,5x–6x affitto agrario). |
+| **Ingegneria di Rete & Cabine MT** | Distanze euclidee rettilinee su pochi punti cabina generici | **Database Nazionale di 2.107 Cabine Primarie ARERA/GSE** (<1ms lookup) + **Routing 1,30x** | Stima CAPEX cavidotto MT (€ 65k/km + € 45k stallo) ineccepibile in due diligence tecnica. |
+| **Resa Energetica & Tracker** | Coefficienti statici generici; solo tilt fisso | **PVGIS v5.2 JRC**: Fisso vs **Tracker Monoassiale (+19,2% al Nord, +22,0% al Centro/Sud)** | Resa scientifica certificata; extra-CAPEX tracker (+70k €/MWp) ammortizzato in <3,5 anni con PPA a 85 €/MWh. |
+| **Commercial Kit Pre-NDA** | Solo report locali interni grezzi con dati esposti | **36 Blind Teaser PDF One-Pager** + 36 Dossier Tecnici Integrali + Modello CSV + KML 3D | Possibilità di avviare trattative confidenziali immediate con sviluppatori tutelando al 100% l'IP prima dell'NDA. |
+
+---
+
+## 3. Specifiche Tecniche di Ricerca
 
 Il crawler scarta a monte il 98% del territorio agricolo ordinario e isola esclusivamente le aree che presentano i requisiti di fattibilità tecnica e normativa:
 
