@@ -76,8 +76,8 @@ Sono esclusi categoricamente dal crawler i territori comunali densamente edifica
 Qualsiasi censimento contenente attributi relativi a fabbricati stabili viene scartato:
 * *Parole chiave di scarto immediato:* `CAPANNONE`, `FABBRICATO`, `EDIFICIO`, `TETTO`, `COPERTURA`, `DEPOSITO_COPERTO`, `MAGAZZINO`, `RESIDENZIALE`, `CIVILE_ABITAZIONE`, `CORTE_URBANA`, `BORGO`.
 
-### C. Svolta di Portfolio: Terreni Agricoli Aperti (86,1% della Pipeline)
-Oltre l'**86% dei siti qualificati (31 su 36 lotti)** è costituito da **Terreni Agricoli Puri in Campo Aperto (Zona E) e Agrivoltaico Avanzato**:
+### C. Svolta di Portfolio: Terreni Agricoli Aperti (91,1% della Pipeline)
+Oltre il **91% dei siti qualificati (51 su 56 lotti)** è costituito da **Terreni Agricoli Puri in Campo Aperto (Zona E) e Agrivoltaico Avanzato**, con priorità strategica assegnata ai **corridoi autostradali (≤ 300m ex lege D.Lgs. 199/2021 c. 8-ter)**:
 * **Zero Costi di Demolizione/Bonifica:** Assenza di macerie, fondazioni o manufatti da abbattere; cantierizzazione immediata con pali infissi nel terreno.
 * **Zero Conflitti Territoriali:** Nessuna adiacenza con abitazioni civili, eliminando il rischio di comitati locali o ricorsi al TAR.
 * **Semplicità Contrattuale & Elevata Redditività per il Coltivatore:**  
@@ -210,16 +210,17 @@ Ogni compendio analizzato riceve un punteggio deterministico calcolato su **5 pi
 
 ## 8. Pipeline Dati, Deliverable & Formati di Esportazione
 
-La pipeline attiva comprende **36 lotti reali censiti nel Nord e Centro Italia**:
-* **Superficie Totale:** **651,8 Ettari** (6.518.000 mq).
-* **Potenza Complessiva Stimata:** **543,2 MWp** ($\sim 710\text{ GWh/anno}$).
-* **Prezzo Medio Target:** **8,42 €/mq** (€ 54.92M pipeline acquisto).
-* **Composizione del Portfolio:** **86,1% Seminativi Agricoli di Pianura (Zona E) & Agrivoltaico**, 11,1% Ex Cave a cielo aperto, 2,8% Discariche ripristinate.
+La pipeline attiva comprende **56 lotti reali censiti nel Nord e Centro Italia**, prioritizzati sui corridoi autostradali (A1, A4, A14, A21, A22, A7, A35):
+* **Superficie Totale:** **1.182,8 Ettari** (11.828.000 mq).
+* **Potenza Complessiva Stimata:** **985,7 MWp** ($\sim 1.292\text{ GWh/anno}$).
+* **Prezzo Medio Target:** **8,40 €/mq** (€ 99.34M pipeline acquisto).
+* **Composizione del Portfolio:** **91,1% Seminativi Agricoli di Pianura (Zona E) & Agrivoltaico**, 7,1% Ex Cave a cielo aperto, 1,8% Discariche ripristinate.
+* **Presidio Autostradale:** **32 compendi situati nel corridoio autostradale $\le 300\text{ m}$**.
 
 ### Deliverable Generati Automaticamente dal Sistema:
-1. **36 Blind Commercial Teaser PDF A4 (Pre-NDA):**  
+1. **56 Blind Commercial Teaser PDF A4 (Pre-NDA):**  
    Archiviati in [`blind_teasers/`](file:///Users/houdinick/solar-land-acquisition-crawler/blind_teasers). Documenti sintetici ad uso commerciale privi di dati anagrafici e particellari, concepiti per la presentazione a fondi ed EPC prima della stipula dell'NDA.
-2. **36 Dossier Tecnici Integrali PDF A4:**  
+2. **56 Dossier Tecnici Integrali PDF A4:**  
    Archiviati in [`dossier_pdf/`](file:///Users/houdinick/solar-land-acquisition-crawler/dossier_pdf). Compendi esaustivi comprensivi di dati catastali, proprietari, contatti diretti, schede PVGIS e routing cavidotto.
 3. **Modello Finanziario Comparativo (CSV):**  
    File [`SunPro_Executive_Financial_Model.csv`](file:///Users/houdinick/solar-land-acquisition-crawler/SunPro_Executive_Financial_Model.csv) contenente la comparazione completa tra configurazione Fissa e Tracker per ciascun lead.

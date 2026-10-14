@@ -48,12 +48,12 @@ Dalla prima release prototipale (v1.0) all'attuale versione industriale (v2.4), 
 
 | Ambito / Pilastro | Release Iniziale (v1.0) | Release Attuale (v2.4 — Ottobre 2026) | Impatto Strategico & Rischio Azzerato |
 | :--- | :--- | :--- | :--- |
-| **Composizione del Suolo** | Misto indifferenziato (inclusi lotti peri-urbani ed ex industriali a rischio edifici) | **86,1% Terreni Agricoli Puri in Campo Aperto (Zona E) & Agrivoltaico** (31/36 lotti) | **Zero costi di demolizione o bonifica**; 100% campo aperto immediatamente cantierabile con pali infissi. |
+| **Composizione del Suolo** | Misto indifferenziato (inclusi lotti peri-urbani ed ex industriali a rischio edifici) | **91,1% Terreni Agricoli Puri in Campo Aperto (Zona E) & Agrivoltaico** (51/56 lotti), con priorità corridoi autostradali | **Zero costi di demolizione o bonifica**; 100% campo aperto immediatamente cantierabile con pali infissi. |
 | **Destinazione Urbanistica** | Nessun controllo PRG (rischio acquisto lotti industriali Zona D) | **Gatekeeper Urbanistico**: scarto categorico di lotti Zona D ($> 15\text{ €/mq}$) | Esclusi lotti industriali/PIP da 50–120 €/mq che renderebbero fallimentare il CAPEX a terra. |
 | **Modello Estimativo Fondiario** | Stima forfettaria o derivata circolarmente dalla resa MWh solari | **Modello Immobiliare Comparativo Reale** (VAM / ISMEA / OMI 2025–2026) | Prezzi bancabili: acquisto target **7,50–9,50 €/mq** o Diritto di Superficie a **3.000 €/ha/anno** (4,5x–6x affitto agrario). |
 | **Ingegneria di Rete & Cabine MT** | Distanze euclidee rettilinee su pochi punti cabina generici | **Database Nazionale di 2.107 Cabine Primarie ARERA/GSE** (<1ms lookup) + **Routing 1,30x** | Stima CAPEX cavidotto MT (€ 65k/km + € 45k stallo) ineccepibile in due diligence tecnica. |
 | **Resa Energetica & Tracker** | Coefficienti statici generici; solo tilt fisso | **PVGIS v5.2 JRC**: Fisso vs **Tracker Monoassiale (+19,2% al Nord, +22,0% al Centro/Sud)** | Resa scientifica certificata; extra-CAPEX tracker (+70k €/MWp) ammortizzato in <3,5 anni con PPA a 85 €/MWh. |
-| **Commercial Kit Pre-NDA** | Solo report locali interni grezzi con dati esposti | **36 Blind Teaser PDF One-Pager** + 36 Dossier Tecnici Integrali + Modello CSV + KML 3D | Possibilità di avviare trattative confidenziali immediate con sviluppatori tutelando al 100% l'IP prima dell'NDA. |
+| **Commercial Kit Pre-NDA** | Solo report locali interni grezzi con dati esposti | **56 Blind Teaser PDF One-Pager** + 56 Dossier Tecnici Integrali + Modello CSV + KML 3D | Possibilità di avviare trattative confidenziali immediate con sviluppatori tutelando al 100% l'IP prima dell'NDA. |
 
 ---
 
@@ -82,10 +82,10 @@ Prima di promuovere un'area, il motore verifica l'assenza di interferenze blocca
 * **Idrogeologia PAI:** Verifica che l'area sia esterna alle Fasce Fluviali A (esondazione frequente / flusso di piena), garantendo l'assicurabilità dell'impianto.
 * **Procedura Presunta:** Se l'area è idonea ex lege e libera da vincoli ostativi, viene classificata per l'iter **PAS (Procedura Abilitativa Semplificata, 60–90 giorni)** con certezza autorizzativa stimata al **95%**.
 
-### D. Watchdog Anti-Edifici, Anti-Capannoni & Priorità Assoluta ai Terreni Agricoli (86% della Pipeline)
+### D. Watchdog Anti-Edifici, Anti-Capannoni & Priorità Assoluta ai Terreni Agricoli (91% della Pipeline)
 Per evitare il rischio di localizzare aree con capannoni industriali esistenti o contigue a centri abitati residenziali con case, SunPro integra il modulo di conformità del suolo [`crawler/land_suitability_filter.py`](file:///Users/houdinick/solar-land-acquisition-crawler/crawler/land_suitability_filter.py):
 1. **Esclusione Categorica dei Contesti Peri-Urbani Densi:** Vengono scartati a monte comuni metropolitani o cluster industriali edificati (es. Milano, Sesto San Giovanni, Legnano, Saronno, Brescia urbana) dove gli spazi industriali contengono capannoni o sono circondati da complessi residenziali.
-2. **Priorità Assoluta ai Terreni Agricoli a Campo Aperto (Seminativi di Pianura / Agrivoltaico):** Oltre l'**86% della pipeline (31 su 36 siti)** è costituito da **puri terreni agricoli in campo aperto (Zona E)**.
+2. **Priorità Assoluta ai Terreni Agricoli a Campo Aperto & Corridoi Autostradali:** Oltre il **91% della pipeline (51 su 56 siti)** è costituito da **puri terreni agricoli in campo aperto (Zona E)**, con speciale focus sui corridoi autostradali $\le 300\text{ m}$.
    * *Perché sono i più facili e convenienti:*
      * **Zero costi di demolizione o bonifica:** Nessun capannone da abbattere, niente cemento armato o coperture in amianto.
      * **Zero interferenze con il vicinato:** Localizzati in aperta campagna rurale priva di caseggiati.
@@ -300,8 +300,8 @@ Di seguito sono evidenziati i **5 colli di bottiglia operativi** del processo di
 
 Per trasformare la piattaforma in un generatore massivo di deal commerciali ad alto rendimento, si raccomanda il seguente piano operativo:
 
-1. **Fase Immediata (Go-to-Market sui 36 Lead Qualificati):**
-   * Utilizzare i **36 Blind Teaser PDF One-Pager** generati nella cartella `blind_teasers/` per contattare sviluppatori primari (CPO, fondi rinnovabili, general contractor EPC).
+1. **Fase Immediata (Go-to-Market sui 56 Lead Qualificati):**
+   * Utilizzare i **56 Blind Teaser PDF One-Pager** generati nella cartella `blind_teasers/` per contattare sviluppatori primari (CPO, fondi rinnovabili, general contractor EPC), dando priorità ai corridoi autostradali.
    * Proporre l'accesso ai dati completi e la stipula del preliminare fondiario solo previa firma di **NDA / Accordo di Riservatezza** a tutela della proprietà intellettuale.
 2. **Espansione Territoriale a Costo Zero (Nord & Centro):**
    * Sfruttare il **Database Nazionale delle 2.107 Cabine Primarie ARERA/GSE** per estendere la scansione alle regioni Toscana, Veneto, Piemonte e Puglia senza costi infrastrutturali aggiuntivi.

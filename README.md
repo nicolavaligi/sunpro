@@ -22,13 +22,12 @@ Piattaforma di **Geo-Intelligence 3D** per l'origination e acquisizione autonoma
 
 ## 🎯 Criteri di Qualificazione & Target Operativo
 
-- **Superficie Minima:** >= **2 ettari (20.000 mq)** continua o accorpabile.
-- **Target Prezzo:** **8,00 – 9,00 €/mq** (o canone diritto di superficie 30 anni @ 2.800–3.500 €/ha/anno).
-- **Buffer Zone Industriali:** Entro **350 metri** da insediamenti industriali, artigianali o commerciali (PIP/D.I.).
-- **Fascia Autostradale:** Entro **300 metri** dall'asse di autostrade e raccordi viari principali.
-- **Tipologie Prioritarie:** Ex cave esaurite/dismesse, miniere, discariche bonificate, siti industriali brownfield.
-- **Connessione Rete:** Prossimità metrica a Cabine Primarie AT/MT (Terna / Enel Distribuzione DSO) entro 1,5–3 km con stima CAPEX di elettrodotto.
-- **Regioni Prioritarie:** Lombardia, Veneto, Emilia-Romagna, Piemonte, Toscana, Umbria, Marche.
+- **Superficie Minima & Economie di Scala:** >= **2 ettari (20.000 mq)** fino a **34 ettari** per compendio utility-scale.
+- **Priorità Assoluta Corridoi Autostradali:** Entro **300 metri** dall'asse delle autostrade principali (A1, A4, A14, A21, A22, A7, A35) ex lege **D.Lgs. 199/2021 (Art. 20 c. 8-ter)** con iter PAS accelerato (60-90 gg).
+- **Watchdog del Suolo & Land Cover:** Scarto categorico di capannoni industriali e manufatti (91,1% terreni agricoli a campo aperto in Zona E e agrivoltaico).
+- **Target Prezzo & Valutazione Fondiaria:** **7,50 – 9,50 €/mq** o Diritto di Superficie trentennale a **3.000 €/ha/anno** (scarto Zona D edificabile $>15\text{ €/mq}$).
+- **Ingegneria di Rete:** Prossimità metrica alle **2.107 Cabine Primarie Nazionali ARERA/GSE** con routing cavidotto 1.30x (tortuosità stradale reale).
+- **Regioni Coperte:** Lombardia, Veneto, Emilia-Romagna, Piemonte, Toscana, Umbria, Marche.
 
 ---
 
