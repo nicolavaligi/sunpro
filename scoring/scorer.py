@@ -36,19 +36,23 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
 
     score_normativo = 0.0
     if "AGRICOL" in tipologia or "AGRIVOLTAICO" in tipologia:
-        if dist_ind <= 350 or dist_auto <= 300:
-            score_normativo = 30.0  # Top assoluto: campo aperto privo di fabbricati in area idonea ex lege
-        elif dist_ind <= 500 or dist_auto <= 500:
-            score_normativo = 27.0
+        if dist_auto <= 300:
+            score_normativo = 30.0  # Top assoluto: corridoio autostradale ex lege D.Lgs. 199/2021 art. 20 c. 8-ter
+        elif dist_ind <= 350:
+            score_normativo = 29.0  # Fascia industriale 350m
+        elif dist_auto <= 500:
+            score_normativo = 28.0  # Corridoio autostradale esteso 500m
+        elif dist_ind <= 500:
+            score_normativo = 26.0
         else:
             score_normativo = 24.0  # Agrivoltaico avanzato su terreno agricolo aperto
     elif "CAVA" in tipologia or "DISCARICA" in tipologia:
-        score_normativo = 28.0
+        score_normativo = 27.0
     elif "BROWNFIELD" in tipologia:
         score_normativo = 22.0
-    elif dist_ind <= 350:
-        score_normativo = 26.0
     elif dist_auto <= 300:
+        score_normativo = 24.0
+    elif dist_ind <= 350:
         score_normativo = 22.0
     else:
         score_normativo = 10.0
@@ -96,14 +100,18 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     # Normalizzazione insolazione: 1200->6pt, 1450->10pt
     score_insolazione = min(10.0, max(5.0, (insolazione - 1200) / 25.0 + 5.0))
 
-    # Bonus superficie (minimo 2 ha = 20.000 mq)
+    # Bonus superficie (minimo 2 ha = 20.000 mq - economie di scala utility-scale)
     mq = lead.get("superficie_mq", 20000)
-    if mq >= 100_000:
-        score_dimensione = 5.0
+    if mq >= 250_000:
+        score_dimensione = 5.0  # Mega utility scale (>= 25 ha, > 20 MWp)
+    elif mq >= 180_000:
+        score_dimensione = 4.5  # Large utility scale (>= 18 ha, > 15 MWp)
+    elif mq >= 100_000:
+        score_dimensione = 4.0  # Mid-large scale (>= 10 ha, > 8 MWp)
     elif mq >= 50_000:
-        score_dimensione = 4.0
+        score_dimensione = 3.0  # Standard utility scale (>= 5 ha, > 4 MWp)
     elif mq >= 20_000:
-        score_dimensione = 3.0
+        score_dimensione = 2.0  # Taglia minima bancabile (>= 2 ha, ~1.7 MWp)
     else:
         score_dimensione = 0.0
 
@@ -152,7 +160,9 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
         "screening_vincoli": env_audit["esito_globale"],
         "rating_ambientale": env_audit["rating_ambientale"],
         "iter_autorizzativo": env_audit["iter_autorizzativo"],
-        "autorizzabilita_pct": env_audit["autorizzabilita_pct"]
+        "autorizzabilita_pct": env_audit["autorizzabilita_pct"],
+        "corridoio_autostradale": dist_auto <= 300,
+        "distanza_autostrada_m": dist_auto
     }
 
     return totale, dettagli, classe

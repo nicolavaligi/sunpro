@@ -448,6 +448,240 @@ MASTER_CLEAN_LEADS_DATA = [
         "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
         "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
         "note_commerciali": "17 ettari a campo aperto seminativo irriguo. Zero caseggiati, vicinanza diretta a Cabina Primaria Suzzara."
+    },
+
+    # ==================== 8. CORRIDOIO AUTOSTRADALE A1 MILANO - NAPOLI ====================
+    {
+        "id": "FV-AGRI-A1-001",
+        "title": "Compendio Agricolo Pianeggiante A1 — Casalpusterlengo",
+        "regione": "Lombardia", "provincia": "Lodi", "comune": "Casalpusterlengo",
+        "lat": 45.1810, "lng": 9.6420, "superficie_mq": 260_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 220, "distanza_autostrada_m": 180, "nome_autostrada": "A1 Milano-Napoli (km 48 - Casalpusterlengo)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "26 ha a campo aperto seminativo irriguo a mais. Zero fabbricati né alberature. 180m da A1, idoneità ex lege garantita."
+    },
+    {
+        "id": "FV-AGRI-A1-002",
+        "title": "Tenuta Agricola Seminativo Corridoio A1 — Fidenza",
+        "regione": "Emilia-Romagna", "provincia": "Parma", "comune": "Fidenza",
+        "lat": 44.8560, "lng": 10.0520, "superficie_mq": 290_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 190, "distanza_autostrada_m": 210, "nome_autostrada": "A1 Milano-Bologna (km 90 - Fidenza)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "29 ha accorpati in aperta campagna padana. Piena idoneità agrivoltaico tracker monoassiale a 210m da A1."
+    },
+    {
+        "id": "FV-AGRI-A1-003",
+        "title": "Seminativo Irriguo di Pianura A1 — Fontevivo",
+        "regione": "Emilia-Romagna", "provincia": "Parma", "comune": "Fontevivo",
+        "lat": 44.8600, "lng": 10.1880, "superficie_mq": 210_000,
+        "tipologia": "TERRENO_AGRICOLO_IDONEO",
+        "distanza_zona_industriale_m": 150, "distanza_autostrada_m": 170, "nome_autostrada": "A1 Milano-Napoli (km 103 - Parma Ovest)",
+        "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "21 ettari di seminativo irriguo di pianura, terreno orizzontale a 170m dall'asse A1, CP Fontevivo a 1 km."
+    },
+    {
+        "id": "FV-AGRI-A1-004",
+        "title": "Fondo Agricolo Pianeggiante Valdarno A1 — Terranuova Bracciolini",
+        "regione": "Toscana", "provincia": "Arezzo", "comune": "Terranuova Bracciolini",
+        "lat": 43.5450, "lng": 11.5920, "superficie_mq": 190_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 160, "distanza_autostrada_m": 210, "nome_autostrada": "A1 Milano-Napoli (km 336 - Valdarno)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "19 ettari pianeggianti fondo-valle Arno, insolazione toscana eccellente (1.420 kWh/kWp). Contiguo ad A1 (210m)."
+    },
+
+    # ==================== 9. CORRIDOIO AUTOSTRADALE A4 TORINO - TRIESTE ====================
+    {
+        "id": "FV-AGRI-A4-001",
+        "title": "Mega Compendio Agricolo Pianura Aperta A4 — Santhià",
+        "regione": "Piemonte", "provincia": "Vercelli", "comune": "Santhià",
+        "lat": 45.3690, "lng": 8.1920, "superficie_mq": 340_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 250, "distanza_autostrada_m": 190, "nome_autostrada": "A4 Torino-Milano (km 54 - Santhià)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "34 ettari in un unico lotto continuo a campo aperto. Top assoluto per scala (28.3 MWp) a 190m da A4."
+    },
+    {
+        "id": "FV-AGRI-A4-002",
+        "title": "Seminativo Irriguo Corridoio A4 — Galliate",
+        "regione": "Piemonte", "provincia": "Novara", "comune": "Galliate",
+        "lat": 45.4740, "lng": 8.7180, "superficie_mq": 220_000,
+        "tipologia": "TERRENO_AGRICOLO_IDONEO",
+        "distanza_zona_industriale_m": 190, "distanza_autostrada_m": 230, "nome_autostrada": "A4 Torino-Milano (km 96 - Novara Est)",
+        "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "22 ha seminativi pianeggianti a 230m da A4. Allaccio record a CP Galliate (380m) con CAPEX minimo."
+    },
+    {
+        "id": "FV-AGRI-A4-003",
+        "title": "Seminativo Pianeggiante Asse A4 — Calcinato",
+        "regione": "Lombardia", "provincia": "Brescia", "comune": "Calcinato",
+        "lat": 45.4620, "lng": 10.4180, "superficie_mq": 250_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 170, "distanza_autostrada_m": 220, "nome_autostrada": "A4 Milano-Venezia (km 239 - Lonato)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "25 ettari seminativo aperto. Prossimità ad A4 (220m) e CP Calcinato (1,2 km)."
+    },
+    {
+        "id": "FV-AGRI-A4-004",
+        "title": "Tenuta Agricola Corridoio A4 — Sommacampagna",
+        "regione": "Veneto", "provincia": "Verona", "comune": "Sommacampagna",
+        "lat": 45.4010, "lng": 10.8120, "superficie_mq": 270_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 210, "distanza_autostrada_m": 250, "nome_autostrada": "A4 Torino-Trieste (km 271 - Sommacampagna)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "27 ettari ad alta vocazione agrivoltaica, orografia perfettamente piana a ridosso dell'asse A4 (250m)."
+    },
+    {
+        "id": "FV-AGRI-A4-005",
+        "title": "Compendio Seminativo Bassa Vicentina A4 — Gambellara",
+        "regione": "Veneto", "provincia": "Vicenza", "comune": "Gambellara",
+        "lat": 45.4460, "lng": 11.3580, "superficie_mq": 230_000,
+        "tipologia": "TERRENO_AGRICOLO_IDONEO",
+        "distanza_zona_industriale_m": 160, "distanza_autostrada_m": 190, "nome_autostrada": "A4 Milano-Venezia (km 312 - Montebello)",
+        "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "23 ha seminativi aperti a 190m da A4. Zero demolizioni, CP Gambellara a soli 810m."
+    },
+
+    # ==================== 10. CORRIDOIO AUTOSTRADALE A14 BOLOGNA - TARANTO ====================
+    {
+        "id": "FV-AGRI-A14-001",
+        "title": "Tenuta Agricola Romagnola A14 — Forlì",
+        "regione": "Emilia-Romagna", "provincia": "Forlì-Cesena", "comune": "Forlì",
+        "lat": 44.2480, "lng": 12.0150, "superficie_mq": 280_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 220, "distanza_autostrada_m": 200, "nome_autostrada": "A14 Bologna-Taranto (km 81 - Forlì)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "28 ettari seminativi contigui, perfetta giacitura piana lungo A14 (200m). CP Forlì a 1 km."
+    },
+    {
+        "id": "FV-AGRI-A14-002",
+        "title": "Seminativo Aperto Corridoio A14 — Longiano",
+        "regione": "Emilia-Romagna", "provincia": "Forlì-Cesena", "comune": "Longiano",
+        "lat": 44.0780, "lng": 12.3320, "superficie_mq": 220_000,
+        "tipologia": "TERRENO_AGRICOLO_IDONEO",
+        "distanza_zona_industriale_m": 170, "distanza_autostrada_m": 220, "nome_autostrada": "A14 Bologna-Taranto (km 111 - Valle del Rubicone)",
+        "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "22 ha seminativo irriguo tra Cesena e Rimini, 220m da A14, CP Longiano a 970m, iter PAS accelerato."
+    },
+
+    # ==================== 11. CORRIDOIO AUTOSTRADALE A21 TORINO - BRESCIA ====================
+    {
+        "id": "FV-AGRI-A21-001",
+        "title": "Grande Tenuta Agricola A21 — Felizzano",
+        "regione": "Piemonte", "provincia": "Alessandria", "comune": "Felizzano",
+        "lat": 44.9210, "lng": 8.4480, "superficie_mq": 290_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 200, "distanza_autostrada_m": 220, "nome_autostrada": "A21 Torino-Piacenza (km 63 - Felizzano)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "29 ha seminativi pianeggianti aperti, adiacenza A21 (220m) e CP Felizzano a soli 675m."
+    },
+    {
+        "id": "FV-AGRI-A21-002",
+        "title": "Compendio Agricolo Pianura Padana A21 — Piacenza Est",
+        "regione": "Emilia-Romagna", "provincia": "Piacenza", "comune": "Piacenza",
+        "lat": 45.0420, "lng": 9.7420, "superficie_mq": 320_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 190, "distanza_autostrada_m": 180, "nome_autostrada": "A21 Torino-Brescia (km 168 - Piacenza Est)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "32 ettari di seminativo irriguo a campo aperto. 180m da A21, CP Piacenza Est a 1.047m."
+    },
+    {
+        "id": "FV-AGRI-A21-003",
+        "title": "Seminativo Irriguo di Pianura — Manerbio A21",
+        "regione": "Lombardia", "provincia": "Brescia", "comune": "Manerbio",
+        "lat": 45.3580, "lng": 10.1420, "superficie_mq": 260_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 160, "distanza_autostrada_m": 210, "nome_autostrada": "A21 Torino-Brescia (km 218 - Manerbio)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "26 ettari a campo aperto seminativo irriguo. 210m da A21, CP Manerbio a 750m."
+    },
+
+    # ==================== 12. CORRIDOIO AUTOSTRADALE A22 MODENA - BRENNERO ====================
+    {
+        "id": "FV-AGRI-A22-001",
+        "title": "Tenuta Agricola Pianeggiante A22 — Nogarole Rocca",
+        "regione": "Veneto", "provincia": "Verona", "comune": "Nogarole Rocca",
+        "lat": 45.2830, "lng": 10.8910, "superficie_mq": 310_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 190, "distanza_autostrada_m": 220, "nome_autostrada": "A22 Brennero-Modena (km 243 - Nogarole Rocca)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "31 ha seminativo veronese lungo A22 (220m), CP Nogarole Rocca a soli 556m con CAPEX allaccio record."
+    },
+    {
+        "id": "FV-AGRI-A22-002",
+        "title": "Seminativo Padano Asse A22 — Campogalliano",
+        "regione": "Emilia-Romagna", "provincia": "Modena", "comune": "Campogalliano",
+        "lat": 44.6510, "lng": 10.8520, "superficie_mq": 250_000,
+        "tipologia": "TERRENO_AGRICOLO_IDONEO",
+        "distanza_zona_industriale_m": 210, "distanza_autostrada_m": 240, "nome_autostrada": "A22 Brennero-Modena (km 309 - Campogalliano)",
+        "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "25 ettari pianeggianti, a ridosso intersezione A1/A22 (240m da A22), CP Campogalliano a 946m."
+    },
+
+    # ==================== 13. CORRIDOIO AUTOSTRADALE A7 MILANO - GENOVA ====================
+    {
+        "id": "FV-AGRI-A7-001",
+        "title": "Compendio Seminativo Irriguo A7 — Casei Gerola / Voghera",
+        "regione": "Lombardia", "provincia": "Pavia", "comune": "Casei Gerola",
+        "lat": 45.0120, "lng": 9.0020, "superficie_mq": 300_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 190, "distanza_autostrada_m": 180, "nome_autostrada": "A7 Milano-Genova (km 51 - Casei Gerola)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "30 ettari pianeggianti adiacenti A7 (180m), seminativo cerealicolo a campo aperto, CP Voghera a 990m."
+    },
+    {
+        "id": "FV-AGRI-A7-002",
+        "title": "Seminativo Padano Aperto A7 — Tortona",
+        "regione": "Piemonte", "provincia": "Alessandria", "comune": "Tortona",
+        "lat": 44.9180, "lng": 8.8720, "superficie_mq": 260_000,
+        "tipologia": "TERRENO_AGRICOLO_IDONEO",
+        "distanza_zona_industriale_m": 160, "distanza_autostrada_m": 200, "nome_autostrada": "A7 Milano-Genova (km 65 - Tortona)",
+        "proprietario_tipo": "AZIENDA_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "26 ha seminativi a campo aperto, zero manufatti, 200m da A7, CP Tortona a 1,2 km."
+    },
+
+    # ==================== 14. CORRIDOIO AUTOSTRADALE A35 BREBEMI ====================
+    {
+        "id": "FV-AGRI-A35-001",
+        "title": "Seminativo Irriguo di Pianura A35 — Caravaggio",
+        "regione": "Lombardia", "provincia": "Bergamo", "comune": "Caravaggio",
+        "lat": 45.4980, "lng": 9.6450, "superficie_mq": 270_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 170, "distanza_autostrada_m": 160, "nome_autostrada": "A35 BreBeMi (km 22 - Caravaggio)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "27 ettari seminativo irriguo a mais in fascia 160m da BreBeMi. CP Mozzanica a 2,5 km."
+    },
+    {
+        "id": "FV-AGRI-A35-002",
+        "title": "Grande Tenuta Agricola Asse A35 — Calcio",
+        "regione": "Lombardia", "provincia": "Bergamo", "comune": "Calcio",
+        "lat": 45.5120, "lng": 9.8250, "superficie_mq": 290_000,
+        "tipologia": "AGRIVOLTAICO_AVANZATO",
+        "distanza_zona_industriale_m": 210, "distanza_autostrada_m": 190, "nome_autostrada": "A35 BreBeMi (km 38 - Calcio)",
+        "proprietario_tipo": "SOCIETA_SEMPLICE_AGRICOLA", "proprietario_nome": "",
+        "proprietario_piva": "", "proprietario_pec": "", "proprietario_telefono": "",
+        "note_commerciali": "29 ha perfettamente pianeggianti in aperta campagna, 190m da A35 BreBeMi, CP Calcio a 945m."
     }
 ]
 
