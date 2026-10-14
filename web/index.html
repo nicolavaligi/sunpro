@@ -185,9 +185,9 @@
   .map-pin-wrap.shortlist:hover,
   .map-pin-wrap.shortlist.hovered,
   .map-pin-wrap.shortlist.active {
-    filter: drop-shadow(0 14px 24px rgba(245,158,11,0.9));
+    filter: drop-shadow(0 14px 24px rgba(37,99,235,0.95));
   }
-  .card.shortlist { border-color: #b45309; }
+  .card.shortlist { border-color: #2563eb; }
 </style>
 </head>
 <body>
@@ -251,7 +251,7 @@
     <!-- Filtri Regione & Corridoio Autostradale -->
     <div id="filters">
       <button class="pill active" data-reg="TUTTE">Tutte</button>
-      <button class="pill" data-reg="SHORTLIST" style="border-color:#f59e0b;color:#fbbf24;font-weight:700">★ Shortlist visura</button>
+      <button class="pill" data-reg="SHORTLIST" style="border-color:#2563eb;color:#60a5fa;font-weight:700">★ Shortlist visura</button>
       <button class="pill" data-reg="AUTOSTRADE" style="border-color:#10b981;color:#34d399;font-weight:700">🛣️ Autostrade (≤300m)</button>
       <button class="pill" data-reg="Lombardia">Lombardia</button>
       <button class="pill" data-reg="Emilia-Romagna">Emilia-R.</button>
@@ -290,12 +290,13 @@
       <div style="display:flex;align-items:center;gap:10px;margin:8px 0 6px 0;">
         <svg width="22" height="31" viewBox="0 0 100 142">
           <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.45)"/>
-          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#F59E0B"/>
-          <circle cx="50" cy="49" r="36" fill="#B45309"/>
-          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="#10B981" stroke-width="3"/>
+          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#2563EB"/>
+          <circle cx="50" cy="49" r="36" fill="#1E3A8A"/>
+          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="#38BDF8" stroke-width="3"/>
           <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">88</text>
+          <circle cx="50" cy="8" r="4.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.2"/>
         </svg>
-        <div><b>Shortlist visura</b> · 22 siti, pin oro. Entro 300 m, almeno 15 ha, prezzo fino a 9,50 €/mq, cabina utile, score almeno 80.</div>
+        <div><b>Shortlist visura</b> · 22 siti, pin blu. Entro 300 m, almeno 15 ha, prezzo fino a 9,50 €/mq, cabina utile, score almeno 80.</div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin:8px 0 6px 0;">
         <svg width="22" height="31" viewBox="0 0 100 142">
@@ -2482,7 +2483,7 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
     const isHighwayCorridor = s.hwy_dist <= 300;
 
     const shortBadge = isShortlist(s) ?
-      `<span style="margin-left:6px;background:rgba(245,158,11,0.18);color:#fbbf24;border:1px solid #f59e0b;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">★ SHORTLIST VISURA</span>` : '';
+      `<span style="margin-left:6px;background:rgba(37,99,235,0.2);color:#93c5fd;border:1px solid #2563eb;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">★ SHORTLIST VISURA</span>` : '';
     const hwyBadge = isHighwayCorridor ?
       `<span style="margin-left:6px;background:rgba(16,185,129,0.18);color:#34d399;border:1px solid #10b981;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">🛣️ EX LEGE ≤300m</span>` : '';
     
@@ -2563,13 +2564,13 @@ function initMarkers() {
     const isTop = s.score >= 90;
     const short = isShortlist(s);
     // Colori calibrati sul modello originale https://www.pngall.com/pin-png/download/38365/
-    const outerColor = short ? "#F59E0B" : (isTop ? "#E11D48" : "#C64142");
-    const ringColor = short ? "#B45309" : (isTop ? "#BE123C" : "#B72D2D");
+    const outerColor = short ? "#2563EB" : (isTop ? "#E11D48" : "#C64142");
+    const ringColor = short ? "#1E3A8A" : (isTop ? "#BE123C" : "#B72D2D");
     const badgeStroke = short
-      ? 'stroke="#10B981" stroke-width="3"'
+      ? 'stroke="#38BDF8" stroke-width="3"'
       : (isTop ? 'stroke="#F59E0B" stroke-width="2.5"' : 'stroke="rgba(0,0,0,0.08)" stroke-width="1"');
     const topAccent = short
-      ? '<circle cx="50" cy="8" r="4.5" fill="#10B981" stroke="#FFFFFF" stroke-width="1.2"/>'
+      ? '<circle cx="50" cy="8" r="4.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.2"/>'
       : (isTop ? '<circle cx="50" cy="8" r="4.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.2"/>' : '');
 
     const el = document.createElement("div");
