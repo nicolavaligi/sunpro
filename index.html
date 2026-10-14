@@ -233,6 +233,7 @@
       <button class="tool on" id="tSat"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M4.5 4.5 8 8M16 16l3.5 3.5M19.5 4.5 16 8M8 16l-3.5 3.5"/></svg>Satellite HD</button>
       <button class="tool on" id="tSub"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Cabine AT/MT</button>
       <button class="tool on" id="tBuf"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Buffer 350m / 300m</button>
+      <button class="tool" id="tAgri" title="Seminativi entro 300 m da autostrade e Pedemontana, Lombardia e Veneto"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22V10"/><path d="M12 10c2-4 6-4 8-2-3 0-5 2-8 2z"/><path d="M12 13c-2-4-6-4-8-2 3 0 5 2 8 2z"/></svg>Suoli attigui</button>
       <button class="tool" id="tReset"><svg class="ic" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 6"/><path d="M4 10V5M4 10h5"/></svg>Reset Vista</button>
       <button class="tool" onclick="downloadKml()" title="Scarica file KML per Google Earth 3D"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Google Earth (KML)</button>
       <button class="tool" onclick="downloadFinancialCsv()" title="Scarica Modello Finanziario Esecutivo CSV"><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Modello Finanziario (CSV)</button>
@@ -321,7 +322,8 @@
       </div>
       <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-size:10.5px;line-height:1.4">
         📌 <b>Puntatore ad Ago 3D</b>: calibrato su baricentro catastale reale.<br>
-        🚁 <b>Sopralluogo 3D</b>: orbita ad alta quota attorno al sito.
+        🚁 <b>Sopralluogo 3D</b>: orbita ad alta quota attorno al sito.<br>
+        <span style="color:#4ade80">■</span> <b>Suoli attigui</b>: seminativi nella fascia di 300 m da autostrada o Pedemontana. Lombardia da DUSAF 2015, Veneto da OpenStreetMap. Si accendono dal pulsante in mappa.
       </div>
     </div>
   </aside>
@@ -2824,6 +2826,49 @@ document.getElementById("tSat").addEventListener("click", (e) => {
   } else {
     if (map.getLayer('satellite-layer')) map.removeLayer('satellite-layer');
   }
+});
+
+let agriOn = false;
+let agriLoaded = false;
+document.getElementById("tAgri").addEventListener("click", async (e) => {
+  agriOn = !agriOn;
+  e.currentTarget.classList.toggle("on", agriOn);
+  if (agriOn && !agriLoaded) {
+    const response = await fetch("terreni_attigui_lombardia_veneto.geojson");
+    const data = await response.json();
+    map.addSource("attigui", { type: "geojson", data });
+    map.addLayer({
+      id: "attigui-fill",
+      type: "fill",
+      source: "attigui",
+      filter: ["==", ["get", "layer"], "seminativo"],
+      paint: { "fill-color": "#4ade80", "fill-opacity": 0.5, "fill-outline-color": "#14532d" }
+    });
+    map.addLayer({
+      id: "attigui-axis",
+      type: "line",
+      source: "attigui",
+      filter: ["==", ["get", "layer"], "opera"],
+      paint: { "line-color": "#fb923c", "line-width": 2.5, "line-opacity": 0.9 }
+    });
+    map.on("click", "attigui-fill", (event) => {
+      const prop = event.features[0].properties;
+      new maplibregl.Popup({ closeButton: true, maxWidth: "280px" })
+        .setLngLat(event.lngLat)
+        .setHTML(
+          `<b>${prop.classe}</b><br>${prop.regione} · ${prop.opera}<br>` +
+          `<b>${prop.ettari_fascia} ha</b> nella fascia di 300 m<br>` +
+          `<span style="color:#64748b">Fonte: ${prop.fonte} · codice ${prop.codice}</span>`
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "attigui-fill", () => { map.getCanvas().style.cursor = "pointer"; });
+    map.on("mouseleave", "attigui-fill", () => { map.getCanvas().style.cursor = ""; });
+    agriLoaded = true;
+  }
+  ["attigui-fill", "attigui-axis"].forEach((id) => {
+    if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", agriOn ? "visible" : "none");
+  });
 });
 
 document.getElementById("tReset").addEventListener("click", () => {
