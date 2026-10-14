@@ -31,6 +31,7 @@ ENV/
 output/*.pdf
 output/*.csv
 data/cache/
+data/crawler_checkpoints.db
 .cache/
 .DS_Store
 
