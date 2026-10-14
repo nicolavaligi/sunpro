@@ -246,7 +246,7 @@ def build_pdf():
          Paragraph("Release Attuale (v2.4)", th_style), Paragraph("Impatto Strategico & Rischio Azzerato", th_style)],
         [Paragraph("<b>Composizione Suolo</b>", td_bold),
          Paragraph("Misto generico (inclusi lotti peri-urbani a rischio edifici)", td_style),
-         Paragraph("<b>86,1% Seminativi Puri in Zona E</b> + Watchdog Suolo", td_accent),
+         Paragraph("<b>91,1% Seminativi Puri in Zona E</b> + Watchdog Suolo", td_accent),
          Paragraph("<b>Zero costi di demolizione o bonifica</b>; 100% campo aperto immediatamente cantierabile con pali infissi.", td_style)],
         [Paragraph("<b>Destinazione Urbanistica</b>", td_bold),
          Paragraph("Nessun controllo PRG (rischio acquisto lotti industriali Zona D)", td_style),
@@ -266,7 +266,7 @@ def build_pdf():
          Paragraph("Dati scientifici Commissione UE; extra-CAPEX tracker ammortizzato in <3,5 anni con PPA a 85 €/MWh.", td_style)],
         [Paragraph("<b>Commercial Kit Pre-NDA</b>", td_bold),
          Paragraph("Solo report locali interni grezzi con dati sensibili esposti", td_style),
-         Paragraph("<b>36 Blind Teaser PDF One-Pager</b> + 36 Dossier completi", td_accent),
+         Paragraph("<b>56 Blind Teaser PDF One-Pager</b> + 56 Dossier completi", td_accent),
          Paragraph("Avvio immediato del cold outreach verso fondi ed EPC tutelando al 100% l'IP prima della stipula dell'NDA.", td_style)],
     ]
     t_evo = Table(t_evo_data, colWidths=[3.5*cm, 4.3*cm, 4.8*cm, 5.4*cm])
@@ -539,7 +539,7 @@ def build_pdf():
 
     # ==================== SEZIONE 9: ROADMAP ====================
     story.append(Paragraph("9. Roadmap di Scalabilità & Consigli per i Soci", h1_style))
-    story.append(Paragraph("1. <b>Go-to-Market Immediato sui 36 Lead Qualificati:</b> Utilizzare i 36 <i>Blind Teaser PDF One-Pager</i> per avviare il cold outreach confidenziale verso sviluppatori ed EPC primari (Ewiva, Atlante, Electra, Renantis, Sonnedix).", bullet_style))
+    story.append(Paragraph("1. <b>Go-to-Market Immediato sui 56 Lead Qualificati:</b> Utilizzare i 56 <i>Blind Teaser PDF One-Pager</i> per avviare il cold outreach confidenziale verso sviluppatori ed EPC primari (Ewiva, Atlante, Electra, Renantis, Sonnedix), dando priorità ai corridoi autostradali (A1, A4, A14, A21, A22, A7, A35).", bullet_style))
     story.append(Paragraph("2. <b>Tutela del Valore tramite NDA:</b> Rilasciare i dati catastali completi e l'identità del proprietario solo previa sottoscrizione dell'Accordo di Riservatezza / LOI con Nicola Valigi.", bullet_style))
     story.append(Paragraph("3. <b>Espansione Territoriale a Costo Zero:</b> Sfruttare il nuovo database nazionale di 2.107 Cabine Primarie per estendere il crawler a Toscana, Piemonte, Veneto e Puglia senza spendere in licenze esterne.", bullet_style))
     story.append(Paragraph("4. <b>Micro-Budget per Chiusura Deal:</b> Allocare un fondo prepagato di circa 100 € - 200 € in crediti API catastali (es. Openapi.it) da utilizzare unicamente per scaricare le visure ufficiali sui deal con trattativa avviata.", bullet_style))
