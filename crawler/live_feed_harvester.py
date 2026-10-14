@@ -22,6 +22,7 @@ from crawler.owner_discovery import enrich_owner_profile, generate_commercial_pi
 from crawler.land_valuation import evaluate_land_market_value
 from scoring.scorer import calculate_site_score
 from data.storage import init_db, upsert_lead
+from crawler.engine import AsyncScraperEngine, CheckpointManager
 
 API_KEY = "hn_tenders_test_key_001"
 FEED_URL = "https://houdinick-data-api-production.up.railway.app/api/v1/feed"
@@ -69,16 +70,41 @@ def min_distance_to_highway(lat: float, lng: float) -> Tuple[float, str]:
     # Approssimazione geometrica interpolata
     return round(min(min_dist, 2500.0), 0), best_hwy
 
-def fetch_live_feed_items(limit: int = 250, since_seq: int = 0) -> List[Dict[str, Any]]:
-    """Estrae record dal feed B2B su Railway."""
-    url = f"{FEED_URL}?since_seq={since_seq}&limit={limit}"
-    req = urllib.request.Request(
-        url,
-        headers={"X-API-Key": API_KEY, "User-Agent": "SunPro-Harvester/1.0"}
-    )
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        data = json.loads(resp.read().decode())
-        return data.get("items", [])
+def fetch_live_feed_items(limit: int = 250, since_seq: Optional[int] = None, use_checkpoint: bool = True) -> List[Dict[str, Any]]:
+    """Estrae record dal feed B2B su Railway utilizzando il motore asincrono resiliente di SunPro."""
+    import asyncio
+
+    chk = CheckpointManager()
+    effective_seq = since_seq
+    if effective_seq is None and use_checkpoint:
+        effective_seq, _ = chk.get_cursor("houdinick_solar_feed")
+    elif effective_seq is None:
+        effective_seq = 0
+
+    url = f"{FEED_URL}?since_seq={effective_seq}&limit={limit}"
+
+    async def _fetch():
+        async with AsyncScraperEngine(concurrency=4, default_rps=5.0) as engine:
+            data = await engine.fetch_json(url, headers={"X-API-Key": API_KEY})
+            if data and isinstance(data, dict):
+                items = data.get("items", [])
+                if items and use_checkpoint:
+                    max_seq = max([it.get("seq", effective_seq) for it in items], default=effective_seq)
+                    chk.update_cursor("houdinick_solar_feed", last_sequence=max_seq)
+                return items
+            return []
+
+    try:
+        return asyncio.run(_fetch())
+    except Exception as exc:
+        print(f"⚠️ Fallback su urllib per errore engine: {exc}")
+        req = urllib.request.Request(
+            url,
+            headers={"X-API-Key": API_KEY, "User-Agent": "SunPro-Harvester/1.0"}
+        )
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = json.loads(resp.read().decode())
+            return data.get("items", [])
 
 def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, Any]]:
     """

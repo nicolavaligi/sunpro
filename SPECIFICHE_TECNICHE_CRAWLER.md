@@ -22,6 +22,7 @@
 6. [Simulazione Energetica Indipendente PVGIS v5.2 JRC (Fisso vs Tracker)](#6-simulazione-energetica-pvgis-jrc)
 7. [Algoritmo di Scoring Multicriterio (0–100) & Classi di Rating](#7-algoritmo-di-scoring-multicriterio)
 8. [Pipeline Dati, Deliverable & Formati di Esportazione](#8-pipeline-dati--deliverable)
+   - [8.1 Motore di Crawling Asincrono Resiliente](#81-motore-di-crawling-asincrono-resiliente-crawlerenginepy)
 9. [Roadmap Evolutiva del Motore](#9-roadmap-evolutiva)
 
 ---
@@ -228,6 +229,16 @@ La pipeline attiva comprende **56 lotti reali censiti nel Nord e Centro Italia**
    File [`SunPro_Pipeline_Terreni_Fotovoltaico.kml`](file:///Users/houdinick/solar-land-acquisition-crawler/SunPro_Pipeline_Terreni_Fotovoltaico.kml) con perimetri, quote e vettori di allaccio per sopralluoghi virtuali 3D.
 5. **Dashboard Web Interattiva (Demo Live):**  
    File [`index.html`](file:///Users/houdinick/solar-land-acquisition-crawler/index.html) pubblicato e consultabile pubblicamente su GitHub Pages all'indirizzo [https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/).
+
+### 8.1 Motore di Crawling Asincrono Resiliente (`crawler/engine.py`)
+Per garantire scalabilità, elevata cadenza di harvesting e totale resilienza ai blocchi di rete o rate limit dei geoportali, il sistema integra un motore di scraping nativo e asincrono:
+* **Architettura Asincrona `httpx` & `asyncio`**: Gestione del pool di connessioni HTTP persistenti con keep-alive e multiplexing concorrente controllato tramite `asyncio.Semaphore`.
+* **Retry Esponenziale con Full Jitter**: Algoritmo matematico $T_{\text{delay}} = \text{Uniform}(0, \min(T_{\text{max}}, T_{\text{base}} \cdot M^{\text{attempt}}))$ con rispetto immediato dell'header HTTP `Retry-After` per prevenire il thundering herd.
+* **Rotazione Header & User-Agent Realistici**: Pool dinamico di browser desktop moderni (Chrome, Safari, Firefox, Edge) corredati dai corrispondenti header `Sec-Ch-Ua`, `Sec-Ch-Ua-Platform` e localizzazione `it-IT`.
+* **Token-Bucket Domain Rate Limiter**: Rate limiter a secchio di token indipendente per ciascun host per rispettare le policy di cortesia e prevenire ban IP.
+* **Checkpoint & Cursore Incrementale (SQLite)**: Database locale dedicato (`data/crawler_checkpoints.db`) per tracciare gli URL visitati, gli hash SHA-256 e i cursori di avanzamento (`since_seq`), garantendo la ripresa immediata da interruzione a zero duplicati.
+* **Doppia Interfaccia (Async/Sync)**: Supporta `AsyncScraperEngine` per pipeline asincrone ad alto throughput e `SyncScraperEngine` come adapter sincrono drop-in per script batch.
+* **Suite di Test Unitari Certificata**: Testata in [`tests/test_crawler_engine.py`](file:///Users/houdinick/solar-land-acquisition-crawler/tests/test_crawler_engine.py) (8/8 test superati).
 
 ---
 

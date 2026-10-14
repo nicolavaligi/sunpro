@@ -42,15 +42,20 @@ solar-land-acquisition-crawler/
 ├── run_app.py                  # Script launcher rapido per desktop
 ├── pipeline.py                 # Pipeline di calcolo energetico, catastale e scoring
 ├── crawler/
+│   ├── engine.py               # Motore asincrono resiliente (httpx, jitter backoff, rate limiter, SQLite checkpoint)
+│   ├── live_feed_harvester.py  # Harvesting automatico B2B da endpoint di produzione con cursor tracking
 │   ├── spatial_engine.py       # Buffer 350m/300m, Overpass API, calcolo CAPEX rete
 │   ├── cadastral_resolver.py   # WMS Catasto, codici Belfiore e coordinate
 │   └── owner_discovery.py      # Estrazione dati proprietario, PEC, P.IVA e pitch script
+├── tests/
+│   └── test_crawler_engine.py  # Test suite unitaria 8/8 superati
 ├── scoring/
 │   └── scorer.py               # Algoritmo multicriterio 0-100 pesato
 ├── reports/
 │   └── generator.py            # Generatore ReportLab PDF (A4) ed HTML per commerciali
 ├── data/
 │   ├── storage.py              # Database SQLite persistente (solar_land_leads.db)
+│   └── crawler_checkpoints.db  # Checkpoint e stato incrementale crawling (SQLite)
 ├── MANUALE_COMMERCIALE.md      # Guida strategica e script di trattativa
 └── README.md
 ```
