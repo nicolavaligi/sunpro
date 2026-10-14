@@ -211,18 +211,19 @@ Ogni compendio riceve un punteggio deterministico calcolato su **5 pilastri pond
 
 ## 7. Deliverable & Pipeline Attiva di SunPro
 
-La pipeline qualificata comprende **36 opportunità reali censite nel Nord e Centro Italia**:
-* **Superficie Complessiva:** **651,8 Ettari** (6.518.000 mq).
-* **Potenza Stimata:** **543,2 MWp** ($\sim 710\text{ GWh/anno}$).
-* **Composizione del Portfolio:** **86,1% Seminativi Agricoli di Pianura (Zona E) & Agrivoltaico**, 11,1% Ex Cave a cielo aperto, 2,8% Discariche ripristinate.
-* **Prezzo Medio Target:** **8,42 €/mq** (€ 54.92M pipeline acquisto).
+La pipeline qualificata comprende **56 opportunità reali censite nel Nord e Centro Italia**, con forte prioritizzazione sui **corridoi autostradali (D.Lgs. 199/2021 c. 8-ter)** e taglie utility-scale ad elevata economia di scala:
+* **Superficie Complessiva:** **1.182,8 Ettari** (11.828.000 mq).
+* **Potenza Stimata:** **985,7 MWp** ($\sim 1.292\text{ GWh/anno}$).
+* **Composizione del Portfolio:** **91,1% Seminativi Agricoli di Pianura (Zona E) & Agrivoltaico Avanzato**, 7,1% Ex Cave a cielo aperto, 1,8% Discariche ripristinate.
+* **Corridoi Autostradali (≤300m):** **32 compendi strategici** adiacenti ad A1, A4, A14, A21, A22, A7, A35 con presunzione legale di idoneità PAS (60–90 gg).
+* **Prezzo Medio Target:** **8,40 €/mq** (€ 99,34M pipeline complessiva di acquisto).
 
 ### Asset e Deliverable Generati Automaticamente:
-1. **36 Blind Commercial Teaser PDF A4 (Pre-NDA):** Archiviati in [`blind_teasers/`](file:///Users/houdinick/solar-land-acquisition-crawler/blind_teasers). One-pager confidenziali privi di dati particellari per l'outreach verso fondi ed EPC prima della stipula dell'NDA.
-2. **36 Dossier Tecnici Integrali PDF A4:** Archiviati in [`dossier_pdf/`](file:///Users/houdinick/solar-land-acquisition-crawler/dossier_pdf). Compendi con dati catastali, proprietari, contatti diretti, schede PVGIS e routing cabina.
-3. **Modello Finanziario Comparativo (CSV):** File [`SunPro_Executive_Financial_Model.csv`](file:///Users/houdinick/solar-land-acquisition-crawler/SunPro_Executive_Financial_Model.csv) con comparazione Fissa vs Tracker per ogni lead.
+1. **56 Blind Commercial Teaser PDF A4 (Pre-NDA):** Archiviati in [`blind_teasers/`](file:///Users/houdinick/solar-land-acquisition-crawler/blind_teasers). One-pager confidenziali privi di dati particellari per l'outreach verso fondi ed EPC prima della stipula dell'NDA.
+2. **56 Dossier Tecnici Integrali PDF A4:** Archiviati in [`dossier_pdf/`](file:///Users/houdinick/solar-land-acquisition-crawler/dossier_pdf). Compendi con dati catastali, proprietari, contatti diretti, schede PVGIS e routing cabina.
+3. **Modello Finanziario Comparativo (CSV):** File [`SunPro_Executive_Financial_Model.csv`](file:///Users/houdinick/solar-land-acquisition-crawler/SunPro_Executive_Financial_Model.csv) con comparazione Fissa vs Tracker per ciascun lead.
 4. **Export 3D per Google Earth Pro (KML):** File [`SunPro_Pipeline_Terreni_Fotovoltaico.kml`](file:///Users/houdinick/solar-land-acquisition-crawler/SunPro_Pipeline_Terreni_Fotovoltaico.kml) per visualizzazione orografica 3D.
-5. **Dashboard Web Interattiva (Demo Live):** File [`index.html`](file:///Users/houdinick/solar-land-acquisition-crawler/index.html) pubblicato e consultabile pubblicamente su GitHub Pages: **[https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)**.
+5. **Dashboard Web Interattiva (Demo Live):** File [`index.html`](file:///Users/houdinick/solar-land-acquisition-crawler/index.html) pubblicato e consultabile pubblicamente su GitHub Pages: **[https://nicolavaligi.github.io/sunpro/](https://nicolavaligi.github.io/sunpro/)**, arricchito con filtro rapido "🛣️ Autostrade (≤300m)" e badge dimensionali.
 
 ---
 
