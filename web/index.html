@@ -1,0 +1,2902 @@
+<!-- =============================================================================
+  PROPRIETARY & CONFIDENTIAL — SUNPRO GEO-INTELLIGENCE 3D
+  Autore & Titolare Esclusivo Proprietà Intellettuale: Nicola Valigi (Houdinick)
+  Email: 305862309+nicolavaligi@users.noreply.github.com | GitHub: nicolavaligi
+  Copyright (c) 2026 Nicola Valigi. All Rights Reserved.
+  Vietata qualsiasi appropriazione, copia o riproduzione non autorizzata (L. 633/1941).
+============================================================================= -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geo-Intelligence 3D — SunPro | Nicola Valigi Engine System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<style>
+  :root{
+    --bg:#070c18; --panel:#0d1526; --panel2:#131d34;
+    --border:#1c2942; --border2:#2c3d61;
+    --txt:#eaf0fa; --muted:#8b9cb8;
+    --accent:#38bdf8; --green:#34d399; --amber:#f59e0b; --red:#f87171;
+    --brand:#10b981; --brand-dark:#059669; --cream:#f8fafc; --pink:#f43f5e;
+    --shadow:0 8px 28px rgba(0,0,0,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',system-ui,-apple-system,sans-serif;font-variant-numeric:tabular-nums}
+  .mono{font-family:'JetBrains Mono',monospace}
+  body{background:radial-gradient(1200px 600px at 75% -10%,#09261f 0%,var(--bg) 55%),var(--bg);color:var(--txt);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+  svg.ic{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-2px}
+
+  /* ===== Header 54px ===== */
+  header{height:54px;flex:none;padding:0 18px;background:linear-gradient(180deg,#0a1b24,var(--panel));border-bottom:1px solid var(--border2);box-shadow:0 2px 10px rgba(0,0,0,.35);display:flex;align-items:center;gap:12px}
+  .logo{width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex:none;filter:drop-shadow(0 0 10px rgba(16,185,129,.45))}
+  .logo svg{width:36px;height:36px}
+  header h1{font-size:15px;font-weight:800;letter-spacing:-.3px}
+  header h1 span{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header .sub{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  header .sp{flex:1}
+  .badge{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;color:var(--muted);border:1px solid var(--border2);padding:5px 12px;border-radius:20px;white-space:nowrap}
+  .badge.glow{border-color:rgba(16,185,129,.4);color:#34d399;background:rgba(16,185,129,.08)}
+  #clock{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+
+  /* ===== Striscia KPI ===== */
+  #kpis{flex:none;display:flex;background:var(--panel);border-bottom:1px solid var(--border2)}
+  .kpi{flex:1;position:relative;padding:9px 16px 9px 19px;border-right:1px solid var(--border)}
+  .kpi:last-child{border-right:none}
+  .kpi::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--kc,var(--accent))}
+  .kpi .v{font-size:17px;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--txt)}
+  .kpi .l{font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:1px}
+
+  main{flex:1;display:flex;min-height:0}
+  #map{flex:1;position:relative}
+  aside{width:410px;flex:none;background:var(--panel);border-left:1px solid var(--border);overflow-y:auto;padding:16px}
+  aside::-webkit-scrollbar{width:8px}
+  aside::-webkit-scrollbar-thumb{background:#1c2942;border-radius:6px}
+  aside::-webkit-scrollbar-thumb:hover{background:#2c3d61}
+
+  .lbl{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+
+  /* ===== Filtri Regione ===== */
+  #filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .pill{font-size:10.5px;padding:4px 10px;border-radius:14px;background:#142236;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-weight:600;transition:all .15s}
+  .pill:hover{border-color:var(--brand);color:var(--txt)}
+  .pill.active{background:rgba(16,185,129,.15);border-color:var(--brand);color:#34d399}
+
+  /* ===== Search Bar ===== */
+  .search-box{margin-bottom:12px;position:relative}
+  .search-box input{width:100%;background:#131f33;border:1px solid var(--border);border-radius:8px;padding:8px 12px 8px 32px;color:var(--txt);font-size:12px;outline:none;transition:border-color .15s}
+  .search-box input:focus{border-color:var(--brand)}
+  .search-box svg{position:absolute;left:10px;top:9px;color:var(--muted);width:14px;height:14px}
+
+  /* ===== Card ===== */
+  .card{background:linear-gradient(180deg,#131f38 0%,var(--panel2) 100%);border:1px solid var(--border);border-radius:10px;padding:13px 14px;margin-bottom:12px;transition:all .18s cubic-bezier(.2,.8,.3,1.05)}
+  .card:hover{border-color:var(--border2);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  .card.sel{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand),0 6px 20px rgba(16,185,129,.2)}
+  .card .row{display:flex;justify-content:space-between;align-items:flex-start;cursor:pointer}
+  .card .name{font-weight:700;font-size:13.5px;letter-spacing:-.2px;color:var(--txt)}
+  .card .subtag{font-size:11px;color:var(--muted);margin-top:2px}
+  .score{font-size:21px;font-weight:700;font-family:'JetBrains Mono',monospace}
+  .s-high{color:var(--green)} .s-mid{color:var(--amber)} .s-low{color:var(--red)}
+  .note{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.45;border-left:2px solid var(--brand);padding-left:8px}
+
+  /* Indicator bars */
+  .bars{margin-top:10px;display:grid;gap:4px}
+  .bar-row{display:grid;grid-template-columns:110px 1fr 28px;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
+  .bar-row .n{font-family:'JetBrains Mono',monospace;text-align:right}
+  .bar{height:5px;background:#18253c;border-radius:3px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#0ea5e9,var(--brand));border-radius:3px}
+
+  .dists{margin-top:10px;border-top:1px dashed var(--border2);padding-top:8px;font-size:11.5px;display:grid;gap:4px}
+  .d-row{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:11px}
+  .d-row b{color:var(--txt);font-weight:600;font-family:'JetBrains Mono',monospace}
+  .cdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:0}
+
+  /* ===== Bottoni ===== */
+  .btns{margin-top:10px;display:flex;gap:8px}
+  .btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#182642;border:1px solid var(--border2);color:var(--txt);font-size:11.5px;padding:7px 8px;border-radius:7px;cursor:pointer;font-weight:500;font-family:inherit;transition:all .15s}
+  .btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+  .btn.brand{background:linear-gradient(135deg,#059669,var(--brand));color:#ffffff;font-weight:700;border-color:var(--brand)}
+  .btn.brand:hover{border-color:#34d399;box-shadow:0 4px 14px rgba(16,185,129,.4)}
+
+  /* ===== Box monitoraggio (variante rosa/viola) ===== */
+  .card.pink{position:relative;background:linear-gradient(180deg,#241829 0%,#181024 100%);border-color:#652e50;overflow:hidden}
+  .card.pink::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#f472b6,var(--pink))}
+  .card.pink:hover{border-color:var(--pink);box-shadow:0 6px 20px rgba(244,63,94,.18)}
+  .card.pink .lbl{color:var(--pink)}
+  .card.pink .src{border-top-color:#652e50}
+
+  .trows{display:grid;gap:3px;margin-top:8px}
+  .trow{display:grid;grid-template-columns:1fr auto 68px;gap:8px;align-items:center;font-size:11.5px;color:var(--muted);padding:2px 0}
+  .trow b{color:var(--txt);font-family:'JetBrains Mono',monospace;font-weight:600}
+  .src{margin-top:9px;font-size:10px;color:var(--muted);border-top:1px dashed var(--border2);padding-top:6px;line-height:1.5}
+  .legend{margin-top:14px;font-size:11px;color:var(--muted);line-height:1.9}
+  .legend b{color:var(--txt)}
+
+  footer{height:28px;flex:none;padding:0 18px;background:var(--panel);border-top:1px solid var(--border);font-size:10.5px;color:var(--muted);display:flex;align-items:center;justify-content:space-between}
+
+  /* ===== Toolbar mappa ===== */
+  #tools{position:absolute;top:14px;left:14px;z-index:10;display:flex;gap:8px;flex-wrap:wrap}
+  .tool{display:flex;align-items:center;gap:6px;background:rgba(13,21,38,.92);border:1px solid var(--border2);color:var(--txt);font-size:11.5px;font-weight:500;font-family:inherit;padding:7px 12px;border-radius:8px;cursor:pointer;backdrop-filter:blur(6px);transition:all .15s}
+  .tool:hover{border-color:var(--brand)}
+  .tool.on{border-color:var(--brand);color:#34d399;background:rgba(16,185,129,.12)}
+  #orbitHint{position:absolute;top:64px;left:50%;transform:translateX(-50%);z-index:10;display:none;align-items:center;gap:7px;background:rgba(15,23,42,.94);border:1px solid var(--brand);color:var(--txt);font-size:12px;padding:8px 16px;border-radius:20px;backdrop-filter:blur(6px);box-shadow:0 0 18px rgba(16,185,129,.35)}
+
+  /* ===== Popup narrazione sopralluogo con avatar ===== */
+  #siteTip{position:absolute;left:14px;bottom:18px;z-index:11;width:min(440px,calc(100% - 28px));background:linear-gradient(180deg,#131f38,#0b1322);border:1px solid var(--border2);border-radius:14px;padding:15px 17px;box-shadow:0 14px 44px rgba(0,0,0,.7);display:none;gap:12px;align-items:flex-start;animation:popIn .28s cubic-bezier(.2,.9,.3,1.2);transition:border-color .2s}
+  #siteTip.talk{border-color:var(--brand)}
+  .tcontent{flex:1;min-width:0;padding-right:8px}
+  .guide{width:56px;flex:none;text-align:center}
+  .guide .gbox{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#15253e,#0e1a2e);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;transition:all .2s}
+  #siteTip.talk .gbox{border-color:var(--brand);box-shadow:0 0 12px rgba(16,185,129,.4)}
+  .guide .glbl{font-size:8.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px;display:block}
+  .guide svg{width:42px;height:42px}
+  .guide .mouth{transform-origin:24px 25px}
+  #siteTip.talk .mouth{animation:talkAnim .3s infinite alternate}
+  @keyframes talkAnim{from{transform:scaleY(.35)}to{transform:scaleY(1.15)}}
+
+  @keyframes popIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+
+  /* ================= MARKER STYLING (Teardrop Red Pin 3D - PNGAll Ref) ================= */
+  .map-pin-wrap {
+    width: 38px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.22s ease;
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+    user-select: none;
+    pointer-events: auto;
+  }
+  .map-pin-wrap svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+  .map-pin-wrap:hover,
+  .map-pin-wrap.hovered {
+    transform: translateY(-8px) scale(1.18);
+    filter: drop-shadow(0 12px 20px rgba(198,65,66,0.65));
+    z-index: 9999 !important;
+  }
+  .map-pin-wrap.active {
+    transform: translateY(-10px) scale(1.25);
+    filter: drop-shadow(0 14px 26px rgba(225,29,72,0.85));
+    z-index: 10000 !important;
+  }
+  .map-pin-wrap.top-lead:hover,
+  .map-pin-wrap.top-lead.hovered {
+    filter: drop-shadow(0 12px 22px rgba(245,158,11,0.75));
+  }
+  .map-pin-wrap.top-lead.active {
+    filter: drop-shadow(0 14px 28px rgba(245,158,11,0.9));
+  }
+  .map-pin-wrap.shortlist {
+    width: 46px;
+    height: 64px;
+    z-index: 6;
+  }
+  .map-pin-wrap.shortlist:hover,
+  .map-pin-wrap.shortlist.hovered,
+  .map-pin-wrap.shortlist.active {
+    filter: drop-shadow(0 14px 24px rgba(37,99,235,0.95));
+  }
+  .card.shortlist { border-color: #2563eb; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" fill="url(#brandGrad)" fill-opacity="0.2" stroke="#10b981" stroke-width="2"/>
+      <path d="M20 7L23 16L32 17L25 23L27 32L20 27L13 32L15 23L8 17L17 16L20 7Z" fill="#34d399"/>
+      <circle cx="20" cy="20" r="4" fill="#ffffff"/>
+      <defs>
+        <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#10b981"/>
+          <stop offset="1" stop-color="#059669"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div>
+    <h1>Geo-Intelligence 3D — <span>SunPro</span></h1>
+    <div class="sub">Italia Nord & Centro · Qualificazione Fondiaria D.Lgs. 199/2021 · Nicola Valigi Engine System</div>
+  </div>
+  <div class="sp"></div>
+  <a href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" class="badge glow" style="text-decoration:none; cursor:pointer;" title="Documento Ufficiale: Come Lavora il Crawler">📘 Come Lavora il Crawler</a>
+  <div class="badge">Aree Idonee Ex Lege</div>
+  <div class="badge">Target: 8.00–9.00 €/mq</div>
+  <div class="badge mono" id="clock">--:--:-- CET</div>
+</header>
+
+<!-- ===== Striscia KPI ===== -->
+<div id="kpis">
+  <div class="kpi" style="--kc:var(--green)"><div class="v" id="kpiCount">56</div><div class="l">Aree qualificate</div></div>
+  <div class="kpi" style="--kc:var(--accent)"><div class="v" id="kpiPower">985.7 MWp</div><div class="l">Potenza stimata (~1292 GWh/a)</div></div>
+  <div class="kpi" style="--kc:var(--amber)"><div class="v" id="kpiArea">1182.8 ha</div><div class="l">Superficie censita (11828k mq)</div></div>
+  <div class="kpi" style="--kc:var(--brand)"><div class="v" id="kpiPrice">8.40 €/mq</div><div class="l">Prezzo target medio (8-9 €)</div></div>
+  <div class="kpi" style="--kc:var(--pink)"><div class="v" id="kpiDist">1945 m</div><div class="l">Distanza media cabina AT/MT</div></div>
+  <div class="kpi" style="--kc:#a78bfa"><div class="v" id="kpiVal">€ 99.34M</div><div class="l">Valore pipeline acquisto</div></div>
+</div>
+
+<main>
+  <div id="map">
+    <div id="tools">
+      <button class="tool on" id="tSat"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M4.5 4.5 8 8M16 16l3.5 3.5M19.5 4.5 16 8M8 16l-3.5 3.5"/></svg>Satellite HD</button>
+      <button class="tool on" id="tSub"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Cabine AT/MT</button>
+      <button class="tool on" id="tBuf"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Buffer 350m / 300m</button>
+      <button class="tool" id="tAgri" title="Seminativi entro 300 m da autostrade e Pedemontana, Lombardia e Veneto"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22V10"/><path d="M12 10c2-4 6-4 8-2-3 0-5 2-8 2z"/><path d="M12 13c-2-4-6-4-8-2 3 0 5 2 8 2z"/></svg>Suoli attigui</button>
+      <button class="tool" id="tReset"><svg class="ic" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 6"/><path d="M4 10V5M4 10h5"/></svg>Reset Vista</button>
+      <button class="tool" onclick="downloadKml()" title="Scarica file KML per Google Earth 3D"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Google Earth (KML)</button>
+      <button class="tool" onclick="downloadFinancialCsv()" title="Scarica Modello Finanziario Esecutivo CSV"><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Modello Finanziario (CSV)</button>
+      <a class="tool" href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" style="text-decoration:none;" title="Apri documento: Come Lavora il Crawler SunPro"><svg class="ic" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Doc Crawler</a>
+    </div>
+    <div id="orbitHint"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="m15 11 6-3v8l-6-3"/></svg>Sopralluogo 3D in corso — clicca sulla mappa per interrompere</div>
+    <div id="siteTip"></div>
+  </div>
+
+  <aside>
+    <div class="lbl">
+      <span>Ranking Aree Idonee</span>
+      <span class="mono" id="sitesCount" style="color:var(--brand)">36 siti</span>
+    </div>
+
+    <!-- Filtri Regione & Corridoio Autostradale -->
+    <div id="filters">
+      <button class="pill active" data-reg="TUTTE">Tutte</button>
+      <button class="pill" data-reg="SHORTLIST" style="border-color:#2563eb;color:#60a5fa;font-weight:700">★ Shortlist visura</button>
+      <button class="pill" data-reg="AUTOSTRADE" style="border-color:#10b981;color:#34d399;font-weight:700">🛣️ Autostrade (≤300m)</button>
+      <button class="pill" data-reg="Lombardia">Lombardia</button>
+      <button class="pill" data-reg="Emilia-Romagna">Emilia-R.</button>
+      <button class="pill" data-reg="Veneto">Veneto</button>
+      <button class="pill" data-reg="Piemonte">Piemonte</button>
+      <button class="pill" data-reg="Toscana">Toscana</button>
+      <button class="pill" data-reg="Umbria">Umbria</button>
+      <button class="pill" data-reg="Marche">Marche</button>
+    </div>
+
+    <!-- Barra di ricerca rapida -->
+    <div class="search-box">
+      <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Cerca comune, provincia o tipologia (es. Faenza, cava)...">
+    </div>
+
+    <!-- Lista Schede -->
+    <div id="cards"></div>
+
+    <!-- Box Canoni Diritto di Superficie -->
+    <div class="card pink">
+      <span class="lbl" style="margin-bottom:0">Canoni Diritto Superficie (30y) · Benchmark</span>
+      <div class="trows" id="leaseRows"></div>
+      <div class="src">Canoni medi negoziati €/ha/anno indicizzati ISTAT · D.Lgs. 199/2021 · Aggiornato ad oggi</div>
+    </div>
+
+    <!-- Box Tempi di Allaccio Rete -->
+    <div class="card pink">
+      <span class="lbl" style="margin-bottom:0">Connessione Rete MT · Cabine Primarie</span>
+      <div class="trows" id="gridRows"></div>
+      <div class="src">Costi indicativi cavidotto MT (€ 65k/km) + stallo CP (€ 45k) · Iter STMG/TICA standard</div>
+    </div>
+
+    <div class="legend">
+      <b>Legenda Pin Terreni & Score</b><br>
+      <div style="display:flex;align-items:center;gap:10px;margin:8px 0 6px 0;">
+        <svg width="22" height="31" viewBox="0 0 100 142">
+          <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.45)"/>
+          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#2563EB"/>
+          <circle cx="50" cy="49" r="36" fill="#1E3A8A"/>
+          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="#38BDF8" stroke-width="3"/>
+          <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">88</text>
+          <circle cx="50" cy="8" r="4.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.2"/>
+        </svg>
+        <div><b>Shortlist visura</b> · 22 siti, pin blu. Entro 300 m, almeno 15 ha, prezzo fino a 9,50 €/mq, cabina utile, score almeno 80.</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin:8px 0 6px 0;">
+        <svg width="22" height="31" viewBox="0 0 100 142">
+          <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.45)"/>
+          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#E11D48"/>
+          <circle cx="50" cy="49" r="36" fill="#BE123C"/>
+          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2.5"/>
+          <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">96</text>
+          <circle cx="50" cy="8" r="4.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.2"/>
+        </svg>
+        <div><b>90–100</b> · Top Opportunity (bordo oro)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin:6px 0 10px 0;">
+        <svg width="22" height="31" viewBox="0 0 100 142">
+          <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.45)"/>
+          <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="#C64142"/>
+          <circle cx="50" cy="49" r="36" fill="#B72D2D"/>
+          <circle cx="50" cy="49" r="24" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+          <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">84</text>
+        </svg>
+        <div><b>75–89</b> · Qualificato D.Lgs. 199/2021</div>
+      </div>
+      <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-size:10.5px;line-height:1.4">
+        📌 <b>Puntatore ad Ago 3D</b>: calibrato su baricentro catastale reale.<br>
+        🚁 <b>Sopralluogo 3D</b>: orbita ad alta quota attorno al sito.<br>
+        <span style="color:#4ade80">■</span> <b>Suoli attigui</b>: seminativi nella fascia di 300 m da autostrada o Pedemontana. Lombardia da DUSAF 2015, Veneto da OpenStreetMap. Si accendono dal pulsante in mappa.
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <span>Proprietà Intellettuale & Algoritmi Esclusivi © 2026 <b>Nicola Valigi (Houdinick)</b> · Tutti i diritti riservati</span>
+  <span>Fonti: Imagery Satellitare Esri HD · OpenStreetMap · WMS Catasto Agenzia Entrate · PVGIS JRC</span>
+</footer>
+
+<script>
+// ==============================================================================
+// PROPRIETARY AND CONFIDENTIAL — NICOLA VALIGI ENGINE SYSTEM
+// Piattaforma: SunPro Geo-Intelligence 3D
+// Autore & Titolare Esclusivo della Proprietà Intellettuale: Nicola Valigi (Houdinick)
+// Copyright (c) 2026 Nicola Valigi. Tutti i diritti riservati.
+// Qualsiasi riproduzione, copia, alterazione o appropriazione del codice, degli
+// algoritmi o dei dataset è severamente vietata ai sensi della Legge 633/1941.
+// ==============================================================================
+console.log("%c ☀️ SUNPRO GEO-INTELLIGENCE 3D %c PROPRIETÀ INTELLETTUALE ESCLUSIVA DI NICOLA VALIGI (HOUDINICK) \\nCopyright (c) 2026. Tutti i diritti riservati. Algoritmi e dataset proprietari.",
+  "background:#10b981;color:#070c18;font-weight:900;font-size:12px;padding:4px 8px;border-radius:4px;",
+  "color:#38bdf8;font-weight:700;font-size:11px;");
+
+/* ============ DATI QUALIFICATI NICOLA VALIGI ENGINE SYSTEM (56 SITI REALI) ============ */
+const SITES = [
+  {
+    "id": "FV-AGRI-PC-002",
+    "name": "Compendio Agricolo Seminativo — Pontenure",
+    "comune": "Pontenure",
+    "prov": "PI",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.9984,
+      9.7712
+    ],
+    "score": 97.0,
+    "ha": 12.0,
+    "mq": 120000,
+    "mwp": 10.0,
+    "mwh": 13500,
+    "price_mq": 7.92,
+    "price_tot": 950400,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Pontenure 132/15 kV",
+    "sub_dist": 0,
+    "ind_dist": 180,
+    "hwy_dist": 190,
+    "hwy_name": "A1 Milano-Napoli / SS 9",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "12 ettari in campo aperto confinanti con viabilità di servizio. CP Pontenure a 780 metri. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 100,
+      "price": 90,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-PG-001",
+    "name": "Seminativo di Pianura Valle Umbra — Marsciano",
+    "comune": "Marsciano",
+    "prov": "PE",
+    "reg": "Umbria",
+    "ll": [
+      42.9124,
+      12.3389
+    ],
+    "score": 97.0,
+    "ha": 16.0,
+    "mq": 160000,
+    "mwp": 13.33,
+    "mwh": 18800,
+    "price_mq": 7.8,
+    "price_tot": 1248000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Marsciano 132/20 kV",
+    "sub_dist": 0,
+    "ind_dist": 110,
+    "hwy_dist": 280,
+    "hwy_name": "SS 3 bis / E45 Orte-Ravenna",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "16 ettari perfettamente pianeggianti a campo aperto. CP Marsciano a 690 metri. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 100,
+      "price": 90,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A4-002",
+    "name": "Seminativo Irriguo Corridoio A4 — Galliate",
+    "comune": "Galliate",
+    "prov": "NO",
+    "reg": "Piemonte",
+    "ll": [
+      45.474,
+      8.718
+    ],
+    "score": 96.9,
+    "ha": 22.0,
+    "mq": 220000,
+    "mwp": 18.33,
+    "mwh": 24016,
+    "price_mq": 7.8,
+    "price_tot": 1716000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Galliate (AC001E01311)",
+    "sub_dist": 380,
+    "ind_dist": 190,
+    "hwy_dist": 230,
+    "hwy_name": "A4 Torino-Milano (km 96 - Novara Est)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "22 ha seminativi pianeggianti a 230m da A4. Allaccio record a CP Galliate (380m) con CAPEX minimo. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 100,
+      "price": 90,
+      "yield": 92,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-PV-003",
+    "name": "Appezzamento Agricolo Seminativo — Cava Manara",
+    "comune": "Cava Manara",
+    "prov": "PA",
+    "reg": "Lombardia",
+    "ll": [
+      45.142,
+      9.112
+    ],
+    "score": 95.2,
+    "ha": 12.5,
+    "mq": 125000,
+    "mwp": 10.42,
+    "mwh": 13333,
+    "price_mq": 7.8,
+    "price_tot": 975000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Pavia Sud 132/15 kV",
+    "sub_dist": 499,
+    "ind_dist": 110,
+    "hwy_dist": 290,
+    "hwy_name": "Raccordo A53 Bereguardo-Pavia",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Seminativo in campo aperto contiguo al raccordo autostradale (buffer 300m idoneo ex lege). Zero fabbricati. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 100,
+      "price": 90,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-LO-002",
+    "name": "Tenuta Agricola Aperta — Turano Lodigiano",
+    "comune": "Turano Lodigiano",
+    "prov": "LO",
+    "reg": "Lombardia",
+    "ll": [
+      45.241,
+      9.615
+    ],
+    "score": 94.2,
+    "ha": 17.0,
+    "mq": 170000,
+    "mwp": 14.17,
+    "mwh": 18133,
+    "price_mq": 8.74,
+    "price_tot": 1485800,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "STAZIONE AT Terna Turano Centrale",
+    "sub_dist": 234,
+    "ind_dist": 210,
+    "hwy_dist": 500,
+    "hwy_name": "Autostrada A1 Milano-Napoli",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "Campo aperto seminativo privo di manufatti. Fronte corridoio A1 ideale per autorizzazione ex lege. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 100,
+      "price": 90,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-CAVA-RA-001",
+    "name": "Bacino Argille a Cielo Aperto Fornace — Faenza",
+    "comune": "Faenza",
+    "prov": "RA",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.2981,
+      11.8741
+    ],
+    "score": 94.0,
+    "ha": 11.0,
+    "mq": 110000,
+    "mwp": 9.17,
+    "mwh": 12375,
+    "price_mq": 7.8,
+    "price_tot": 858000,
+    "tipo": "EX_CAVA",
+    "substation": "CP Faenza Nord 132/15 kV",
+    "sub_dist": 0,
+    "ind_dist": 120,
+    "hwy_dist": 180,
+    "hwy_name": "A14 Bologna-Taranto (km 62)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "PERSONA_GIURIDICA",
+    "contact": "",
+    "note": "Bacino di cava a cielo aperto esaurito e livellato. Nessun capannone né edificio. Suolo: Area estrattiva a cielo aperto, fondo pianeggiante o gradonato, zero fabbricati. Facilità acquisizione: ELEVATA (Transazione con ex cavatore/curatela).",
+    "bars": {
+      "norm": 90,
+      "cab": 100,
+      "price": 90,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A22-002",
+    "name": "Seminativo Padano Asse A22 — Campogalliano",
+    "comune": "Campogalliano",
+    "prov": "MO",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.651,
+      10.852
+    ],
+    "score": 94.0,
+    "ha": 25.0,
+    "mq": 250000,
+    "mwp": 20.83,
+    "mwh": 28125,
+    "price_mq": 8.91,
+    "price_tot": 2227500,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Campogalliano (AC011E00007)",
+    "sub_dist": 946,
+    "ind_dist": 210,
+    "hwy_dist": 240,
+    "hwy_name": "A22 Brennero-Modena (km 309 - Campogalliano)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "25 ettari pianeggianti, a ridosso intersezione A1/A22 (240m da A22), CP Campogalliano a 946m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 100,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A1-004",
+    "name": "Fondo Agricolo Pianeggiante Valdarno A1 — Terranuova Bracciolini",
+    "comune": "Terranuova Bracciolini",
+    "prov": "AR",
+    "reg": "Toscana",
+    "ll": [
+      43.545,
+      11.592
+    ],
+    "score": 93.5,
+    "ha": 19.0,
+    "mq": 190000,
+    "mwp": 15.83,
+    "mwh": 22483,
+    "price_mq": 7.8,
+    "price_tot": 1482000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Terranuova Bracciolini (AC001E00517)",
+    "sub_dist": 759,
+    "ind_dist": 160,
+    "hwy_dist": 210,
+    "hwy_name": "A1 Milano-Napoli (km 336 - Valdarno)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "19 ettari pianeggianti fondo-valle Arno, insolazione toscana eccellente (1.420 kWh/kWp). Contiguo ad A1 (210m). Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A14-002",
+    "name": "Seminativo Aperto Corridoio A14 — Longiano",
+    "comune": "Longiano",
+    "prov": "FO",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.078,
+      12.332
+    ],
+    "score": 93.5,
+    "ha": 22.0,
+    "mq": 220000,
+    "mwp": 18.33,
+    "mwh": 24750,
+    "price_mq": 7.8,
+    "price_tot": 1716000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Longiano (AC001E00786)",
+    "sub_dist": 973,
+    "ind_dist": 170,
+    "hwy_dist": 220,
+    "hwy_name": "A14 Bologna-Taranto (km 111 - Valle del Rubicone)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "22 ha seminativo irriguo tra Cesena e Rimini, 220m da A14, CP Longiano a 970m, iter PAS accelerato. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A21-001",
+    "name": "Grande Tenuta Agricola A21 — Felizzano",
+    "comune": "Felizzano",
+    "prov": "AL",
+    "reg": "Piemonte",
+    "ll": [
+      44.921,
+      8.448
+    ],
+    "score": 93.4,
+    "ha": 29.0,
+    "mq": 290000,
+    "mwp": 24.17,
+    "mwh": 31658,
+    "price_mq": 7.8,
+    "price_tot": 2262000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Felizzano (AC001E01139)",
+    "sub_dist": 675,
+    "ind_dist": 200,
+    "hwy_dist": 220,
+    "hwy_name": "A21 Torino-Piacenza (km 63 - Felizzano)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "29 ha seminativi pianeggianti aperti, adiacenza A21 (220m) e CP Felizzano a soli 675m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-CAVA-AR-001",
+    "name": "Bacino Estrattivo a Cielo Aperto Valdarno — Montevarchi",
+    "comune": "Montevarchi",
+    "prov": "AR",
+    "reg": "Toscana",
+    "ll": [
+      43.5312,
+      11.5645
+    ],
+    "score": 93.0,
+    "ha": 6.8,
+    "mq": 68000,
+    "mwp": 5.67,
+    "mwh": 8046,
+    "price_mq": 7.8,
+    "price_tot": 530400,
+    "tipo": "EX_CAVA",
+    "substation": "CP Montevarchi 132/15 kV",
+    "sub_dist": 0,
+    "ind_dist": 210,
+    "hwy_dist": 190,
+    "hwy_name": "A1 Autostrada del Sole",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "PERSONA_GIURIDICA",
+    "contact": "",
+    "note": "Bacino di cava soleggiato a cielo aperto con fondo livellato. Suolo: Area estrattiva a cielo aperto, fondo pianeggiante o gradonato, zero fabbricati. Facilità acquisizione: ELEVATA (Transazione con ex cavatore/curatela).",
+    "bars": {
+      "norm": 90,
+      "cab": 100,
+      "price": 90,
+      "yield": 86,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A4-004",
+    "name": "Tenuta Agricola Corridoio A4 — Sommacampagna",
+    "comune": "Sommacampagna",
+    "prov": "VE",
+    "reg": "Veneto",
+    "ll": [
+      45.401,
+      10.812
+    ],
+    "score": 93.0,
+    "ha": 27.0,
+    "mq": 270000,
+    "mwp": 22.5,
+    "mwh": 29250,
+    "price_mq": 8.74,
+    "price_tot": 2359800,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Sommacampagna (AC001E01258)",
+    "sub_dist": 880,
+    "ind_dist": 210,
+    "hwy_dist": 250,
+    "hwy_name": "A4 Torino-Trieste (km 271 - Sommacampagna)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "27 ettari ad alta vocazione agrivoltaica, orografia perfettamente piana a ridosso dell'asse A4 (250m). Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-AL-002",
+    "name": "Seminativo Aperto Corridoio A7/A21 — Tortona",
+    "comune": "Tortona",
+    "prov": "AL",
+    "reg": "Piemonte",
+    "ll": [
+      44.912,
+      8.871
+    ],
+    "score": 92.9,
+    "ha": 18.5,
+    "mq": 185000,
+    "mwp": 15.42,
+    "mwh": 20195,
+    "price_mq": 7.8,
+    "price_tot": 1443000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Tortona 132/15 kV",
+    "sub_dist": 610,
+    "ind_dist": 120,
+    "hwy_dist": 280,
+    "hwy_name": "A7 Milano-Genova / A21",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Campo aperto seminativo extra-urbano. CP Tortona a 740 metri, allaccio agevole. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 92,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A4-005",
+    "name": "Compendio Seminativo Bassa Vicentina A4 — Gambellara",
+    "comune": "Gambellara",
+    "prov": "VI",
+    "reg": "Veneto",
+    "ll": [
+      45.446,
+      11.358
+    ],
+    "score": 92.5,
+    "ha": 23.0,
+    "mq": 230000,
+    "mwp": 19.17,
+    "mwh": 24916,
+    "price_mq": 8.62,
+    "price_tot": 1982600,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Gambellara (AC001E00896)",
+    "sub_dist": 810,
+    "ind_dist": 160,
+    "hwy_dist": 190,
+    "hwy_name": "A4 Milano-Venezia (km 312 - Montebello)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "23 ha seminativi aperti a 190m da A4. Zero demolizioni, CP Gambellara a soli 810m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 90,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A7-001",
+    "name": "Compendio Seminativo Irriguo A7 — Casei Gerola / Voghera",
+    "comune": "Casei Gerola",
+    "prov": "PA",
+    "reg": "Lombardia",
+    "ll": [
+      45.012,
+      9.002
+    ],
+    "score": 92.2,
+    "ha": 30.0,
+    "mq": 300000,
+    "mwp": 25.0,
+    "mwh": 32000,
+    "price_mq": 7.8,
+    "price_tot": 2340000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Voghera (AC001E01854)",
+    "sub_dist": 990,
+    "ind_dist": 190,
+    "hwy_dist": 180,
+    "hwy_name": "A7 Milano-Genova (km 51 - Casei Gerola)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "30 ettari pianeggianti adiacenti A7 (180m), seminativo cerealicolo a campo aperto, CP Voghera a 990m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A35-002",
+    "name": "Grande Tenuta Agricola Asse A35 — Calcio",
+    "comune": "Calcio",
+    "prov": "BE",
+    "reg": "Lombardia",
+    "ll": [
+      45.512,
+      9.825
+    ],
+    "score": 92.2,
+    "ha": 29.0,
+    "mq": 290000,
+    "mwp": 24.17,
+    "mwh": 30933,
+    "price_mq": 8.56,
+    "price_tot": 2482400,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Calcio (AC001E01361)",
+    "sub_dist": 945,
+    "ind_dist": 210,
+    "hwy_dist": 190,
+    "hwy_name": "A35 BreBeMi (km 38 - Calcio)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "29 ha perfettamente pianeggianti in aperta campagna, 190m da A35 BreBeMi, CP Calcio a 945m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 90,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-CAVA-VR-001",
+    "name": "Area Cava di Ghiaia Livellata a Terra — Zevio",
+    "comune": "Zevio",
+    "prov": "VE",
+    "reg": "Veneto",
+    "ll": [
+      45.3725,
+      11.135
+    ],
+    "score": 92.0,
+    "ha": 9.5,
+    "mq": 95000,
+    "mwp": 7.92,
+    "mwh": 10291,
+    "price_mq": 7.8,
+    "price_tot": 741000,
+    "tipo": "EX_CAVA",
+    "substation": "CP Zevio 132/20 kV",
+    "sub_dist": 0,
+    "ind_dist": 150,
+    "hwy_dist": 280,
+    "hwy_name": "Tangenziale Sud di Verona / Raccordo A4",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "PERSONA_GIURIDICA",
+    "contact": "",
+    "note": "Cava a cielo aperto suolo piatto. CP Zevio a 890m. Suolo: Area estrattiva a cielo aperto, fondo pianeggiante o gradonato, zero fabbricati. Facilità acquisizione: ELEVATA (Transazione con ex cavatore/curatela).",
+    "bars": {
+      "norm": 90,
+      "cab": 100,
+      "price": 90,
+      "yield": 80,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-RO-001",
+    "name": "Compendio Agricolo di Bonifica — Adria",
+    "comune": "Adria",
+    "prov": "RO",
+    "reg": "Veneto",
+    "ll": [
+      45.068,
+      12.052
+    ],
+    "score": 91.5,
+    "ha": 21.0,
+    "mq": 210000,
+    "mwp": 17.5,
+    "mwh": 22750,
+    "price_mq": 7.8,
+    "price_tot": 1638000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Adria 132/20 kV",
+    "sub_dist": 775,
+    "ind_dist": 90,
+    "hwy_dist": 1500,
+    "hwy_name": "SR 443 di Adria",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "21 ettari di campo aperto pianeggiante. Cabina Primaria Adria a soli 410 metri. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 84,
+      "price": 90,
+      "yield": 90,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-MN-001",
+    "name": "Grande Compendio Agricolo — Asola",
+    "comune": "Asola",
+    "prov": "MA",
+    "reg": "Lombardia",
+    "ll": [
+      45.215,
+      10.412
+    ],
+    "score": 91.2,
+    "ha": 26.0,
+    "mq": 260000,
+    "mwp": 21.67,
+    "mwh": 27733,
+    "price_mq": 8.24,
+    "price_tot": 2142400,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Asola (AC001E01238)",
+    "sub_dist": 735,
+    "ind_dist": 180,
+    "hwy_dist": 1500,
+    "hwy_name": "SP 1 Asolana",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "26 ettari di campo aperto seminativo. Massima facilità negoziale con la società agricola familiare. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 84,
+      "price": 90,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-DISC-MN-001",
+    "name": "Compendio Bonificato Pianeggiante a Terra — Roncoferraro",
+    "comune": "Roncoferraro",
+    "prov": "MA",
+    "reg": "Lombardia",
+    "ll": [
+      45.132,
+      10.952
+    ],
+    "score": 91.2,
+    "ha": 8.0,
+    "mq": 80000,
+    "mwp": 6.67,
+    "mwh": 8533,
+    "price_mq": 8.24,
+    "price_tot": 659200,
+    "tipo": "DISCARICA_ESAURITA",
+    "substation": "CP Roncoferraro 132/20 kV",
+    "sub_dist": 0,
+    "ind_dist": 310,
+    "hwy_dist": 850,
+    "hwy_name": "A22 Brennero",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "PERSONA_GIURIDICA",
+    "contact": "",
+    "note": "Area bonificata a prato stabile a terra, certificata Arpa. Nessun manufatto. Suolo: Compendio bonificato a terra, assenza di manufatti stabili. Facilità acquisizione: ELEVATA (Trattativa societaria).",
+    "bars": {
+      "norm": 90,
+      "cab": 100,
+      "price": 90,
+      "yield": 74,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A14-001",
+    "name": "Tenuta Agricola Romagnola A14 — Forlì",
+    "comune": "Forlì",
+    "prov": "FO",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.248,
+      12.015
+    ],
+    "score": 89.0,
+    "ha": 28.0,
+    "mq": 280000,
+    "mwp": 23.33,
+    "mwh": 31500,
+    "price_mq": 7.8,
+    "price_tot": 2184000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Forlì (AC001E00675)",
+    "sub_dist": 1084,
+    "ind_dist": 220,
+    "hwy_dist": 200,
+    "hwy_name": "A14 Bologna-Taranto (km 81 - Forlì)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "28 ettari seminativi contigui, perfetta giacitura piana lungo A14 (200m). CP Forlì a 1 km. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 100,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A21-002",
+    "name": "Compendio Agricolo Pianura Padana A21 — Piacenza Est",
+    "comune": "Piacenza",
+    "prov": "PI",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      45.042,
+      9.742
+    ],
+    "score": 89.0,
+    "ha": 32.0,
+    "mq": 320000,
+    "mwp": 26.67,
+    "mwh": 36000,
+    "price_mq": 7.92,
+    "price_tot": 2534400,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Piacenza (AC001E01168)",
+    "sub_dist": 1047,
+    "ind_dist": 190,
+    "hwy_dist": 180,
+    "hwy_name": "A21 Torino-Brescia (km 168 - Piacenza Est)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "32 ettari di seminativo irriguo a campo aperto. 180m da A21, CP Piacenza Est a 1.047m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 100,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A1-003",
+    "name": "Seminativo Irriguo di Pianura A1 — Fontevivo",
+    "comune": "Fontevivo",
+    "prov": "PA",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.86,
+      10.188
+    ],
+    "score": 88.5,
+    "ha": 21.0,
+    "mq": 210000,
+    "mwp": 17.5,
+    "mwh": 23625,
+    "price_mq": 8.45,
+    "price_tot": 1774500,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Fontevivo (AC001E01112)",
+    "sub_dist": 1069,
+    "ind_dist": 150,
+    "hwy_dist": 170,
+    "hwy_name": "A1 Milano-Napoli (km 103 - Parma Ovest)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "21 ettari di seminativo irriguo di pianura, terreno orizzontale a 170m dall'asse A1, CP Fontevivo a 1 km. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A4-001",
+    "name": "Mega Compendio Agricolo Pianura Aperta A4 — Santhià",
+    "comune": "Santhià",
+    "prov": "VE",
+    "reg": "Piemonte",
+    "ll": [
+      45.369,
+      8.192
+    ],
+    "score": 88.4,
+    "ha": 34.0,
+    "mq": 340000,
+    "mwp": 28.33,
+    "mwh": 37116,
+    "price_mq": 7.8,
+    "price_tot": 2652000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Santhià (AC001E01301)",
+    "sub_dist": 1136,
+    "ind_dist": 250,
+    "hwy_dist": 190,
+    "hwy_name": "A4 Torino-Milano (km 54 - Santhià)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "34 ettari in un unico lotto continuo a campo aperto. Top assoluto per scala (28.3 MWp) a 190m da A4. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A7-002",
+    "name": "Seminativo Padano Aperto A7 — Tortona",
+    "comune": "Tortona",
+    "prov": "AL",
+    "reg": "Piemonte",
+    "ll": [
+      44.918,
+      8.872
+    ],
+    "score": 88.4,
+    "ha": 26.0,
+    "mq": 260000,
+    "mwp": 21.67,
+    "mwh": 28383,
+    "price_mq": 7.8,
+    "price_tot": 2028000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Tortona 132/15 kV",
+    "sub_dist": 1207,
+    "ind_dist": 160,
+    "hwy_dist": 200,
+    "hwy_name": "A7 Milano-Genova (km 65 - Tortona)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "26 ha seminativi a campo aperto, zero manufatti, 200m da A7, CP Tortona a 1,2 km. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-AN-001",
+    "name": "Fascia Agricola Aperta Asse SS76 — Jesi",
+    "comune": "Jesi",
+    "prov": "AN",
+    "reg": "Marche",
+    "ll": [
+      43.535,
+      13.254
+    ],
+    "score": 88.0,
+    "ha": 15.0,
+    "mq": 150000,
+    "mwp": 12.5,
+    "mwh": 17375,
+    "price_mq": 7.8,
+    "price_tot": 1170000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Jesi Z.I. 132/20 kV",
+    "sub_dist": 1176,
+    "ind_dist": 160,
+    "hwy_dist": 150,
+    "hwy_name": "Raccordo SS76 / Casello A14 Ancona Nord",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Seminativo aperto lungo asse viario. Zero fabbricati né case nelle vicinanze. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-BS-004",
+    "name": "Terreno Agricolo Seminativo — Bagnolo Mella",
+    "comune": "Bagnolo Mella",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.421,
+      10.178
+    ],
+    "score": 87.2,
+    "ha": 13.0,
+    "mq": 130000,
+    "mwp": 10.83,
+    "mwh": 13866,
+    "price_mq": 9.2,
+    "price_tot": 1196000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Bagnolo Mella (AC001E01345)",
+    "sub_dist": 275,
+    "ind_dist": 150,
+    "hwy_dist": 600,
+    "hwy_name": "Raccordo A21 Corda Molle",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Fascia agricola contigua ad asse infrastrutturale, terreno aperto e privo di manufatti edili. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 100,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A1-001",
+    "name": "Compendio Agricolo Pianeggiante A1 — Casalpusterlengo",
+    "comune": "Casalpusterlengo",
+    "prov": "LO",
+    "reg": "Lombardia",
+    "ll": [
+      45.181,
+      9.642
+    ],
+    "score": 87.2,
+    "ha": 26.0,
+    "mq": 260000,
+    "mwp": 21.67,
+    "mwh": 27733,
+    "price_mq": 8.74,
+    "price_tot": 2272400,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Casalpusterlengo (AC001E01178)",
+    "sub_dist": 1010,
+    "ind_dist": 220,
+    "hwy_dist": 180,
+    "hwy_name": "A1 Milano-Napoli (km 48 - Casalpusterlengo)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "26 ha a campo aperto seminativo irriguo a mais. Zero fabbricati né alberature. 180m da A1, idoneità ex lege garantita. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 90,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A22-001",
+    "name": "Tenuta Agricola Pianeggiante A22 — Nogarole Rocca",
+    "comune": "Nogarole Rocca",
+    "prov": "VE",
+    "reg": "Veneto",
+    "ll": [
+      45.283,
+      10.891
+    ],
+    "score": 86.0,
+    "ha": 31.0,
+    "mq": 310000,
+    "mwp": 25.83,
+    "mwh": 33583,
+    "price_mq": 9.15,
+    "price_tot": 2836500,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Nogarole Rocca (AC001E01244)",
+    "sub_dist": 556,
+    "ind_dist": 190,
+    "hwy_dist": 220,
+    "hwy_name": "A22 Brennero-Modena (km 243 - Nogarole Rocca)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "31 ha seminativo veronese lungo A22 (220m), CP Nogarole Rocca a soli 556m con CAPEX allaccio record. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 55,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A21-003",
+    "name": "Seminativo Irriguo di Pianura — Manerbio A21",
+    "comune": "Manerbio",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.358,
+      10.142
+    ],
+    "score": 85.2,
+    "ha": 26.0,
+    "mq": 260000,
+    "mwp": 21.67,
+    "mwh": 27733,
+    "price_mq": 9.2,
+    "price_tot": 2392000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Manerbio (AC001E01253)",
+    "sub_dist": 752,
+    "ind_dist": 160,
+    "hwy_dist": 210,
+    "hwy_name": "A21 Torino-Brescia (km 218 - Manerbio)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "26 ettari a campo aperto seminativo irriguo. 210m da A21, CP Manerbio a 750m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 84,
+      "price": 55,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A1-002",
+    "name": "Tenuta Agricola Seminativo Corridoio A1 — Fidenza",
+    "comune": "Fidenza",
+    "prov": "PA",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.856,
+      10.052
+    ],
+    "score": 84.0,
+    "ha": 29.0,
+    "mq": 290000,
+    "mwp": 24.17,
+    "mwh": 32625,
+    "price_mq": 8.45,
+    "price_tot": 2450500,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Fidenza (AC001E01111)",
+    "sub_dist": 1532,
+    "ind_dist": 190,
+    "hwy_dist": 210,
+    "hwy_name": "A1 Milano-Bologna (km 90 - Fidenza)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "29 ha accorpati in aperta campagna padana. Piena idoneità agrivoltaico tracker monoassiale a 210m da A1. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 44,
+      "price": 90,
+      "yield": 100,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-PC-001",
+    "name": "Fascia Agricola Corridoio A1 — Fiorenzuola d'Arda",
+    "comune": "Fiorenzuola d'Arda",
+    "prov": "PI",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.935,
+      9.912
+    ],
+    "score": 83.5,
+    "ha": 19.5,
+    "mq": 195000,
+    "mwp": 16.25,
+    "mwh": 21937,
+    "price_mq": 7.92,
+    "price_tot": 1544400,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Fiorenzuola d'Arda (AC001E01230)",
+    "sub_dist": 2316,
+    "ind_dist": 140,
+    "hwy_dist": 220,
+    "hwy_name": "Autostrada A1 Milano-Bologna (km 74)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Terreno agricolo aperto entro buffer 300m A1. Nessun fabbricato né capannone presente. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 44,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-PV-001",
+    "name": "Grande Tenuta Agricola Seminativo — Mortara",
+    "comune": "Mortara",
+    "prov": "PA",
+    "reg": "Lombardia",
+    "ll": [
+      45.245,
+      8.742
+    ],
+    "score": 81.2,
+    "ha": 25.0,
+    "mq": 250000,
+    "mwp": 20.83,
+    "mwh": 26666,
+    "price_mq": 7.8,
+    "price_tot": 1950000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Mortara (AC001E01214)",
+    "sub_dist": 2224,
+    "ind_dist": 190,
+    "hwy_dist": 1600,
+    "hwy_name": "SP 494 Vigevanese",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "25 ettari aperti di pianura lomellina. Terreno perfettamente orizzontale, zero alberature, zero capannoni. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 44,
+      "price": 90,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-MN-004",
+    "name": "Compendio Agricolo Pianeggiante — Castiglione delle Stiviere",
+    "comune": "Castiglione delle Stiviere",
+    "prov": "MA",
+    "reg": "Lombardia",
+    "ll": [
+      45.378,
+      10.495
+    ],
+    "score": 80.2,
+    "ha": 14.5,
+    "mq": 145000,
+    "mwp": 12.08,
+    "mwh": 15466,
+    "price_mq": 8.62,
+    "price_tot": 1249900,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Castiglione delle Stiviere (AC001E01255)",
+    "sub_dist": 1948,
+    "ind_dist": 130,
+    "hwy_dist": 850,
+    "hwy_name": "SP 8 / Raccordo A4 Desenzano",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Fascia agricola aperta in pianura rurale (extra-centro abitato), zero case, zero complessi industriali. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 44,
+      "price": 90,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A4-003",
+    "name": "Seminativo Pianeggiante Asse A4 — Calcinato",
+    "comune": "Calcinato",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.462,
+      10.418
+    ],
+    "score": 80.2,
+    "ha": 25.0,
+    "mq": 250000,
+    "mwp": 20.83,
+    "mwh": 26666,
+    "price_mq": 9.2,
+    "price_tot": 2300000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Calcinato (AC001E01509)",
+    "sub_dist": 1224,
+    "ind_dist": 170,
+    "hwy_dist": 220,
+    "hwy_name": "A4 Milano-Venezia (km 239 - Lonato)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "25 ettari seminativo aperto. Prossimità ad A4 (220m) e CP Calcinato (1,2 km). Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 64,
+      "price": 55,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-BS-002",
+    "name": "Seminativo Irriguo di Pianura — Manerbio",
+    "comune": "Manerbio",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.352,
+      10.141
+    ],
+    "score": 78.7,
+    "ha": 19.0,
+    "mq": 190000,
+    "mwp": 15.83,
+    "mwh": 20266,
+    "price_mq": 9.2,
+    "price_tot": 1748000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Manerbio (AC001E01253)",
+    "sub_dist": 1424,
+    "ind_dist": 120,
+    "hwy_dist": 350,
+    "hwy_name": "A21 Raccordo Autostradale",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Appezzamento agricolo rettangolare uniforme in campo aperto. Zero macerie o manufatti industriali. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 64,
+      "price": 55,
+      "yield": 84,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-CR-004",
+    "name": "Campi Aperti Seminativi Irrigui — Pizzighettone",
+    "comune": "Pizzighettone",
+    "prov": "CR",
+    "reg": "Lombardia",
+    "ll": [
+      45.185,
+      9.775
+    ],
+    "score": 78.2,
+    "ha": 14.0,
+    "mq": 140000,
+    "mwp": 11.67,
+    "mwh": 14933,
+    "price_mq": 9.2,
+    "price_tot": 1288000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Pizzighettone (AC001E01184)",
+    "sub_dist": 1312,
+    "ind_dist": 160,
+    "hwy_dist": 900,
+    "hwy_name": "SP 234 / Corridoio Adda",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "14 ettari a campo aperto senza ostacoli né caseggiati. Accesso diretto da strada provinciale asfaltata. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 64,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-GR-001",
+    "name": "Grande Tenuta Litoranea a Campo Aperto — Grosseto",
+    "comune": "Grosseto",
+    "prov": "GR",
+    "reg": "Toscana",
+    "ll": [
+      42.782,
+      11.124
+    ],
+    "score": 78.0,
+    "ha": 32.0,
+    "mq": 320000,
+    "mwp": 26.67,
+    "mwh": 37866,
+    "price_mq": 7.8,
+    "price_tot": 2496000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Grosseto (AC001E00482)",
+    "sub_dist": 3470,
+    "ind_dist": 220,
+    "hwy_dist": 450,
+    "hwy_name": "SS 1 Via Aurelia / Variante Grosseto",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "32 ettari di pianura maremmana aperta. Insolazione record 1.560 kWh/kWp/anno! Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 24,
+      "price": 90,
+      "yield": 100,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-CAVA-BS-001",
+    "name": "Compendio Estrattivo Riconvertibile — Montichiari",
+    "comune": "Montichiari",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.4182,
+      10.3845
+    ],
+    "score": 77.2,
+    "ha": 8.5,
+    "mq": 85000,
+    "mwp": 7.08,
+    "mwh": 9066,
+    "price_mq": 7.8,
+    "price_tot": 663000,
+    "tipo": "EX_CAVA",
+    "substation": "CP Montichiari 132/15 kV",
+    "sub_dist": 1597,
+    "ind_dist": 180,
+    "hwy_dist": 1200,
+    "hwy_name": "Raccordo Fascia d'Oro",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "PERSONA_GIURIDICA",
+    "contact": "",
+    "note": "Cava esaurita a cielo aperto, fondo stabilizzato e privo di manufatti. Suolo: Area estrattiva a cielo aperto, fondo pianeggiante o gradonato, zero fabbricati. Facilità acquisizione: ELEVATA (Transazione con ex cavatore/curatela).",
+    "bars": {
+      "norm": 90,
+      "cab": 44,
+      "price": 90,
+      "yield": 74,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-A35-001",
+    "name": "Seminativo Irriguo di Pianura A35 — Caravaggio",
+    "comune": "Caravaggio",
+    "prov": "BE",
+    "reg": "Lombardia",
+    "ll": [
+      45.498,
+      9.645
+    ],
+    "score": 77.2,
+    "ha": 27.0,
+    "mq": 270000,
+    "mwp": 22.5,
+    "mwh": 28800,
+    "price_mq": 8.98,
+    "price_tot": 2424600,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Mozzanica (AC001E01355)",
+    "sub_dist": 2553,
+    "ind_dist": 170,
+    "hwy_dist": 160,
+    "hwy_name": "A35 BreBeMi (km 22 - Caravaggio)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "27 ettari seminativo irriguo a mais in fascia 160m da BreBeMi. CP Mozzanica a 2,5 km. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 100,
+      "cab": 24,
+      "price": 90,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-BS-005",
+    "name": "Tenuta a Campo Aperto per Agrivoltaico — Verolanuova",
+    "comune": "Verolanuova",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.324,
+      10.071
+    ],
+    "score": 75.7,
+    "ha": 24.0,
+    "mq": 240000,
+    "mwp": 20.0,
+    "mwh": 25600,
+    "price_mq": 8.96,
+    "price_tot": 2150400,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Bassano Bresciano (AC001E01197)",
+    "sub_dist": 2817,
+    "ind_dist": 250,
+    "hwy_dist": 1200,
+    "hwy_name": "SP 1 Quinzano",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "24 ettari unici di terreno seminativo pianeggiante. Terreno aperto con alta fertilità e canalizzazione ordinata. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 24,
+      "price": 90,
+      "yield": 84,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-MN-005",
+    "name": "Compendio Agricolo Seminativo Aperto — Suzzara",
+    "comune": "Suzzara",
+    "prov": "MA",
+    "reg": "Lombardia",
+    "ll": [
+      44.985,
+      10.741
+    ],
+    "score": 75.2,
+    "ha": 17.0,
+    "mq": 170000,
+    "mwp": 14.17,
+    "mwh": 18133,
+    "price_mq": 8.62,
+    "price_tot": 1465400,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Suzzara (AC001E01229)",
+    "sub_dist": 3139,
+    "ind_dist": 130,
+    "hwy_dist": 600,
+    "hwy_name": "A22 Modena-Brennero (casello Pegognaga)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "17 ettari a campo aperto seminativo irriguo. Zero caseggiati, vicinanza diretta a Cabina Primaria Suzzara. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 24,
+      "price": 90,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-FE-001",
+    "name": "Macro-Tenuta Agricola di Bonifica — Ostellato",
+    "comune": "Ostellato",
+    "prov": "FE",
+    "reg": "Emilia-Romagna",
+    "ll": [
+      44.732,
+      11.942
+    ],
+    "score": 74.0,
+    "ha": 38.0,
+    "mq": 380000,
+    "mwp": 31.67,
+    "mwh": 42750,
+    "price_mq": 7.8,
+    "price_tot": 2964000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Tresignana (AC001E00826)",
+    "sub_dist": 9410,
+    "ind_dist": 250,
+    "hwy_dist": 800,
+    "hwy_name": "Raccordo Autostradale Ferrara-Porto Garibaldi",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "38 ettari continui a campo aperto (grande scala utility-scale). Piattezza assoluta, zero edifici. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 90,
+      "yield": 100,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-CR-002",
+    "name": "Tenuta Agricola Pianeggiante Campo Aperto — Casalmaggiore",
+    "comune": "Casalmaggiore",
+    "prov": "CR",
+    "reg": "Lombardia",
+    "ll": [
+      44.992,
+      10.428
+    ],
+    "score": 73.7,
+    "ha": 22.0,
+    "mq": 220000,
+    "mwp": 18.33,
+    "mwh": 23466,
+    "price_mq": 9.07,
+    "price_tot": 1995400,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Sabbioneta (AC001E01233)",
+    "sub_dist": 2111,
+    "ind_dist": 220,
+    "hwy_dist": 850,
+    "hwy_name": "SS 343 Asolana",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "22 ettari contigui perfettamente pianeggianti. Ideale per agrivoltaico avanzato a inseguitori monoassiali. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 44,
+      "price": 55,
+      "yield": 84,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-AL-001",
+    "name": "Tenuta Agricola Pianura Fraschetta — Alessandria",
+    "comune": "Alessandria",
+    "prov": "AL",
+    "reg": "Piemonte",
+    "ll": [
+      44.892,
+      8.684
+    ],
+    "score": 73.4,
+    "ha": 31.0,
+    "mq": 310000,
+    "mwp": 25.83,
+    "mwh": 33841,
+    "price_mq": 7.8,
+    "price_tot": 2418000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Alessandria (AC001E01131)",
+    "sub_dist": 3730,
+    "ind_dist": 190,
+    "hwy_dist": 420,
+    "hwy_name": "A21 Torino-Piacenza / Casello Spinetta",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "31 ettari di campo aperto pianeggiante. Vicinanza strategica a Cabina Primaria Spinetta (590m). Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 90,
+      "yield": 96,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-LO-003",
+    "name": "Appezzamento Agricolo Pianeggiante — Montanaso Lombardo",
+    "comune": "Montanaso Lombardo",
+    "prov": "LO",
+    "reg": "Lombardia",
+    "ll": [
+      45.334,
+      9.471
+    ],
+    "score": 73.2,
+    "ha": 13.0,
+    "mq": 130000,
+    "mwp": 10.83,
+    "mwh": 13866,
+    "price_mq": 9.15,
+    "price_tot": 1189500,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Montanaso Lombardo (AC001E01203)",
+    "sub_dist": 2401,
+    "ind_dist": 120,
+    "hwy_dist": 800,
+    "hwy_name": "Tangenziale Est di Lodi",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Seminativo irriguo pianeggiante a campo aperto. Cabina Primaria Montanaso a 610 metri. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 44,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-MN-002",
+    "name": "Seminativo Aperto di Pianura — Viadana",
+    "comune": "Viadana",
+    "prov": "MA",
+    "reg": "Lombardia",
+    "ll": [
+      44.935,
+      10.528
+    ],
+    "score": 71.7,
+    "ha": 18.0,
+    "mq": 180000,
+    "mwp": 15.0,
+    "mwh": 19200,
+    "price_mq": 8.62,
+    "price_tot": 1551600,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Pomponesco (AC001E01232)",
+    "sub_dist": 3744,
+    "ind_dist": 110,
+    "hwy_dist": 950,
+    "hwy_name": "SP 57 Viadanese",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Terreno agricolo in campo aperto (Zona E). Nessuna abitazione né capannone presente nel fondo. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 90,
+      "yield": 84,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-MN-003",
+    "name": "Terreno Agricolo Seminativo — Marcaria",
+    "comune": "Marcaria",
+    "prov": "MA",
+    "reg": "Lombardia",
+    "ll": [
+      45.118,
+      10.534
+    ],
+    "score": 71.2,
+    "ha": 15.0,
+    "mq": 150000,
+    "mwp": 12.5,
+    "mwh": 16000,
+    "price_mq": 8.24,
+    "price_tot": 1236000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Redondesco (AC001E01237)",
+    "sub_dist": 5792,
+    "ind_dist": 140,
+    "hwy_dist": 1200,
+    "hwy_name": "SS 10 Padana Inferiore",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "15 ettari pianeggianti a seminativo. Vicinanza strategica a Cabina Primaria Marcaria. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 90,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-PV-002",
+    "name": "Seminativo Aperto di Pianura — Ferrera Erbognone",
+    "comune": "Ferrera Erbognone",
+    "prov": "PA",
+    "reg": "Lombardia",
+    "ll": [
+      45.121,
+      8.875
+    ],
+    "score": 71.2,
+    "ha": 15.5,
+    "mq": 155000,
+    "mwp": 12.92,
+    "mwh": 16533,
+    "price_mq": 7.8,
+    "price_tot": 1209000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Sannazzaro de' Burgondi (AC001E01185)",
+    "sub_dist": 4455,
+    "ind_dist": 140,
+    "hwy_dist": 1200,
+    "hwy_name": "A7 Milano-Genova (casello Gropello)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Campo aperto adiacente a corridoio energetico di cabina Enel. Altissima disponibilità di connessione. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 90,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-VR-002",
+    "name": "Seminativo di Pianura Campo Aperto — Legnago",
+    "comune": "Legnago",
+    "prov": "VE",
+    "reg": "Veneto",
+    "ll": [
+      45.184,
+      11.312
+    ],
+    "score": 69.5,
+    "ha": 23.0,
+    "mq": 230000,
+    "mwp": 19.17,
+    "mwh": 24916,
+    "price_mq": 9.15,
+    "price_tot": 2104500,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Legnago (AC001E00842)",
+    "sub_dist": 2711,
+    "ind_dist": 120,
+    "hwy_dist": 420,
+    "hwy_name": "SS 434 Transpolesana",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Fronte infrastrutturale Transpolesana. Terreno agricolo a campo aperto privo di costruzioni. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 24,
+      "price": 55,
+      "yield": 90,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-VR-001",
+    "name": "Grande Tenuta Agricola Seminativo — Isola della Scala",
+    "comune": "Isola della Scala",
+    "prov": "VE",
+    "reg": "Veneto",
+    "ll": [
+      45.271,
+      11.015
+    ],
+    "score": 66.0,
+    "ha": 27.0,
+    "mq": 270000,
+    "mwp": 22.5,
+    "mwh": 29250,
+    "price_mq": 9.15,
+    "price_tot": 2470500,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Salizzole (AC001E00890)",
+    "sub_dist": 3941,
+    "ind_dist": 170,
+    "hwy_dist": 850,
+    "hwy_name": "SS 12 dell'Abetone e del Brennero",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "27 ettari continui di campo aperto seminativo. Cabina Primaria Isola della Scala a 490 metri! Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 55,
+      "yield": 93,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-BS-001",
+    "name": "Grande Tenuta Agricola Seminativo — Leno",
+    "comune": "Leno",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.368,
+      10.224
+    ],
+    "score": 65.2,
+    "ha": 28.0,
+    "mq": 280000,
+    "mwp": 23.33,
+    "mwh": 29866,
+    "price_mq": 9.2,
+    "price_tot": 2576000,
+    "tipo": "AGRIVOLTAICO_AVANZATO",
+    "substation": "CP Ghedi (AC001E01251)",
+    "sub_dist": 5402,
+    "ind_dist": 210,
+    "hwy_dist": 450,
+    "hwy_name": "A21 Torino-Brescia (casello Manerbio)",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
+    "contact": "",
+    "note": "28 ettari a campo aperto, suolo pianeggiante privo di alberature o costruzioni. Allaccio MT a meno di 800m. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 55,
+      "yield": 88,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-CR-001",
+    "name": "Compendio Agricolo Seminativo Irriguo — Soresina",
+    "comune": "Soresina",
+    "prov": "CR",
+    "reg": "Lombardia",
+    "ll": [
+      45.285,
+      9.871
+    ],
+    "score": 64.2,
+    "ha": 16.0,
+    "mq": 160000,
+    "mwp": 13.33,
+    "mwh": 17066,
+    "price_mq": 9.07,
+    "price_tot": 1451200,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Castelleone (AC001E01196)",
+    "sub_dist": 6817,
+    "ind_dist": 140,
+    "hwy_dist": 1200,
+    "hwy_name": "SP 89 / Asse Viario Padano",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "100% Campo aperto seminativo irriguo a mais/orzo. Zero fabbricati, nessun capannone. Contiguo a polo lattiero Soresina. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-CR-003",
+    "name": "Seminativo di Pianura Contiguo Buffer Z.I. — Spinadesco",
+    "comune": "Spinadesco",
+    "prov": "CR",
+    "reg": "Lombardia",
+    "ll": [
+      45.148,
+      9.932
+    ],
+    "score": 64.2,
+    "ha": 11.5,
+    "mq": 115000,
+    "mwp": 9.58,
+    "mwh": 12266,
+    "price_mq": 9.07,
+    "price_tot": 1043050,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Acquanegra Cremonese (AC001E01183)",
+    "sub_dist": 4436,
+    "ind_dist": 80,
+    "hwy_dist": 1400,
+    "hwy_name": "SP 234 Codognese",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "Terreno agricolo a campo aperto, perimetro esterno alla zona produttiva. Nessun fabbricato né vincolo. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-BS-003",
+    "name": "Compendio Agricolo Aperto — Orzinuovi",
+    "comune": "Orzinuovi",
+    "prov": "BR",
+    "reg": "Lombardia",
+    "ll": [
+      45.398,
+      9.924
+    ],
+    "score": 64.2,
+    "ha": 17.5,
+    "mq": 175000,
+    "mwp": 14.58,
+    "mwh": 18666,
+    "price_mq": 9.2,
+    "price_tot": 1610000,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Orzivecchi (AC001E01344)",
+    "sub_dist": 4447,
+    "ind_dist": 90,
+    "hwy_dist": 1100,
+    "hwy_name": "SP 235 Orceana",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "17,5 ettari di seminativo irriguo. Cabina Primaria Orzinuovi a soli 420 metri di distanza! Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  },
+  {
+    "id": "FV-AGRI-LO-001",
+    "name": "Seminativo Irriguo a Campo Aperto — Codogno",
+    "comune": "Codogno",
+    "prov": "LO",
+    "reg": "Lombardia",
+    "ll": [
+      45.152,
+      9.688
+    ],
+    "score": 64.2,
+    "ha": 16.5,
+    "mq": 165000,
+    "mwp": 13.75,
+    "mwh": 17600,
+    "price_mq": 9.15,
+    "price_tot": 1509750,
+    "tipo": "TERRENO_AGRICOLO_IDONEO",
+    "substation": "CP Casalpusterlengo (AC001E01178)",
+    "sub_dist": 4461,
+    "ind_dist": 90,
+    "hwy_dist": 750,
+    "hwy_name": "SS 9 Via Emilia / Casello A1",
+    "catasto": "",
+    "owner": "",
+    "owner_tipo": "AZIENDA_AGRICOLA",
+    "contact": "",
+    "note": "16,5 ettari di seminativo irriguo libero. Cabina Primaria Codogno a soli 540 metri. Suolo: Terreno agricolo pianeggiante in campo aperto (100% privo di fabbricati e capannoni). Facilità acquisizione: MASSIMA (Trattativa diretta con coltivatore/azienda agricola).",
+    "bars": {
+      "norm": 96,
+      "cab": 8,
+      "price": 55,
+      "yield": 81,
+      "owner": 100
+    }
+  }
+];
+
+/* ============ BENCHMARK REGIONALI CANONI & RETE ============ */
+const LEASE_BENCHMARK = [
+  { reg: "Emilia-Romagna", canone: "3.200 €/ha", trend: "+4.5%", tag: "TOP" },
+  { reg: "Lombardia", canone: "3.000 €/ha", trend: "+3.8%", tag: "ELEVATO" },
+  { reg: "Veneto", canone: "2.950 €/ha", trend: "+2.9%", tag: "STABILE" },
+  { reg: "Piemonte", canone: "2.850 €/ha", trend: "+3.2%", tag: "ATTIVO" },
+  { reg: "Toscana", canone: "3.400 €/ha", trend: "+5.1%", tag: "TOP RESA" }
+];
+
+const GRID_BENCHMARK = [
+  { tech: "Cavidotto MT 15/20kV", costo: "65.000 €/km", lead_time: "3-5 mesi" },
+  { tech: "Stallo Cabina Primaria", costo: "45.000 €", lead_time: "4-6 mesi" },
+  { tech: "Iter TICA / STMG", costo: "Standard Enel", lead_time: "45 gg" }
+];
+
+/* ============ CLOCK ============ */
+function updateClock(){
+  const d=new Date();
+  const pad=n=>n<10?'0'+n:n;
+  document.getElementById('clock').textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+' CET';
+}
+setInterval(updateClock,1000); updateClock();
+
+/* ============ MAPPA MAPLIBRE GL ============ */
+const map = new maplibregl.Map({
+  container: 'map',
+  style: {
+    version: 8,
+    sources: {
+      'esri-satellite': {
+        type: 'raster',
+        tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
+        tileSize: 256,
+        attribution: 'Esri World Imagery'
+      },
+      'carto-dark': {
+        type: 'raster',
+        tiles: ['https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'],
+        tileSize: 256,
+        attribution: 'CartoDB Dark'
+      }
+    },
+    layers: [
+      {
+        id: 'satellite-layer',
+        type: 'raster',
+        source: 'esri-satellite',
+        paint: { 'raster-opacity': 1 }
+      }
+    ]
+  },
+  center: [11.35, 44.5], // Centro Italia Nord/Centro
+  zoom: 7.5,
+  pitch: 35,
+  bearing: 0
+});
+
+map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+let activeOrbit = false;
+let orbitRaf = null;
+let currentLead = null;
+const markers = [];
+
+/* ============ RENDER CARDS & KPIS ============ */
+function isShortlist(s) {
+  return s.hwy_dist <= 300
+    && s.ha >= 15
+    && s.price_mq <= 9.5
+    && s.sub_dist >= 1
+    && s.sub_dist <= 3500
+    && s.score >= 80;
+}
+
+function fitShortlist() {
+  const pts = SITES.filter(isShortlist).map(s => [s.ll[1], s.ll[0]]);
+  if (!pts.length || typeof map === "undefined") return;
+  const bounds = new maplibregl.LngLatBounds(pts[0], pts[0]);
+  pts.forEach(p => bounds.extend(p));
+  map.fitBounds(bounds, { padding: 70, pitch: 35, duration: 900 });
+}
+
+function renderCards(filterReg = "TUTTE", searchStr = "") {
+  const container = document.getElementById("cards");
+  container.innerHTML = "";
+
+  const filtered = SITES.filter(s => {
+    let matchReg = false;
+    if (filterReg === "TUTTE") {
+      matchReg = true;
+    } else if (filterReg === "SHORTLIST") {
+      matchReg = isShortlist(s);
+    } else if (filterReg === "AUTOSTRADE") {
+      matchReg = (s.hwy_dist <= 300) || (s.hwy_dist <= 500 && (s.tipo.includes("AGRICOL") || s.tipo.includes("AGRIVOLTAICO")));
+    } else {
+      matchReg = s.reg.toLowerCase() === filterReg.toLowerCase();
+    }
+    const matchSearch = !searchStr ||
+      s.name.toLowerCase().includes(searchStr.toLowerCase()) ||
+      s.comune.toLowerCase().includes(searchStr.toLowerCase()) ||
+      s.tipo.toLowerCase().includes(searchStr.toLowerCase()) ||
+      s.prov.toLowerCase().includes(searchStr.toLowerCase()) ||
+      (s.hwy_name && s.hwy_name.toLowerCase().includes(searchStr.toLowerCase()));
+    return matchReg && matchSearch;
+  });
+
+  document.getElementById("sitesCount").textContent = `${filtered.length} siti`;
+
+  filtered.forEach(s => {
+    const card = document.createElement("div");
+    card.className = isShortlist(s) ? "card shortlist" : "card";
+    card.id = `card-${s.id}`;
+
+    const scoreClass = s.score >= 90 ? "s-high" : (s.score >= 75 ? "s-mid" : "s-low");
+    const leaseAnnuo = Math.round(s.ha * 3000);
+    const isHighwayCorridor = s.hwy_dist <= 300;
+
+    const shortBadge = isShortlist(s) ?
+      `<span style="margin-left:6px;background:rgba(37,99,235,0.2);color:#93c5fd;border:1px solid #2563eb;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">★ SHORTLIST VISURA</span>` : '';
+    const hwyBadge = isHighwayCorridor ?
+      `<span style="margin-left:6px;background:rgba(16,185,129,0.18);color:#34d399;border:1px solid #10b981;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">🛣️ EX LEGE ≤300m</span>` : '';
+    
+    const scaleBadge = s.ha >= 25 ?
+      `<span style="margin-left:4px;background:rgba(56,189,248,0.18);color:#38bdf8;border:1px solid #0284c7;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">⚡ MEGA SCALE</span>` :
+      (s.ha >= 15 ? `<span style="margin-left:4px;background:rgba(245,158,11,0.18);color:#f59e0b;border:1px solid #d97706;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">⚡ UTILITY SCALE</span>` : '');
+
+    const hwyRow = isHighwayCorridor ?
+      `<div class="d-row" style="background:rgba(16,185,129,0.1);padding:3px 6px;border-radius:4px;border:1px solid rgba(16,185,129,0.25);margin:2px 0;">
+         <span style="color:#34d399;font-weight:700">🛣️ Corridoio Autostrada:</span>
+         <b style="color:#34d399">${s.hwy_name} (${s.hwy_dist} m · Ex Lege 199/21)</b>
+       </div>` :
+      `<div class="d-row"><span>🛣️ Asse Viario:</span><b>${s.hwy_name} (${s.hwy_dist} m)</b></div>`;
+
+    card.innerHTML = `
+      <div class="row" onclick="focusSite('${s.id}')">
+        <div>
+          <div class="name">${s.name}</div>
+          <div class="subtag">📍 ${s.comune} (${s.prov}, ${s.reg}) · <span class="mono">${s.id}</span>${shortBadge}${hwyBadge}${scaleBadge}</div>
+        </div>
+        <div class="score ${scoreClass}">${s.score}</div>
+      </div>
+      <div class="note">${s.note}</div>
+
+      <div class="bars">
+        <div class="bar-row"><span>Idoneità 199/21</span><div class="bar"><i style="width:${s.bars.norm}%"></i></div><span class="n">${s.bars.norm}%</span></div>
+        <div class="bar-row"><span>Vicinanza Rete</span><div class="bar"><i style="width:${s.bars.cab}%"></i></div><span class="n">${s.bars.cab}%</span></div>
+        <div class="bar-row"><span>Target 8-9 €/mq</span><div class="bar"><i style="width:${s.bars.price}%"></i></div><span class="n">${s.bars.price}%</span></div>
+      </div>
+
+      <div class="dists">
+        ${hwyRow}
+        <div class="d-row"><span>⚡ Cabina Primaria MT:</span><b>${s.substation} (${s.sub_dist} m)</b></div>
+        <div class="d-row"><span>📐 Superficie / MWp:</span><b>${s.ha} ha (~${s.mwp} MWp)</b></div>
+        <div class="d-row"><span>💶 Acquisto Target:</span><b>${s.price_mq.toFixed(2)} €/mq (€ ${(s.price_tot).toLocaleString('it-IT')})</b></div>
+        <div class="d-row"><span>🌱 Diritto Superficie (30y):</span><b>~€ ${leaseAnnuo.toLocaleString('it-IT')}/anno</b></div>
+        <div class="d-row"><span>🏢 Proprietario:</span><b style="font-size:10px">${s.owner}</b></div>
+      </div>
+
+      <div class="btns">
+        <button class="btn brand" onclick="start3DOrbit('${s.id}')">
+          <svg class="ic" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>Sopralluogo 3D
+        </button>
+        <button class="btn" onclick="openPdf('${s.id}')">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Dossier PDF
+        </button>
+      </div>
+    `;
+
+    card.addEventListener("mouseenter", () => {
+      const pinEl = document.getElementById(`pin-${s.id}`);
+      if (pinEl && !pinEl.classList.contains("active")) {
+        pinEl.classList.add("hovered");
+      }
+    });
+    card.addEventListener("mouseleave", () => {
+      const pinEl = document.getElementById(`pin-${s.id}`);
+      if (pinEl) {
+        pinEl.classList.remove("hovered");
+      }
+    });
+
+    container.appendChild(card);
+  });
+
+  // Sincronizza visibilità marker sulla mappa
+  const visibleIds = new Set(filtered.map(s => s.id));
+  markers.forEach(mObj => {
+    if (mObj.el) {
+      mObj.el.style.display = visibleIds.has(mObj.id) ? "flex" : "none";
+    }
+  });
+}
+
+/* ============ CREA MARKER MAPPA (TEARDROP PIN 3D - PNGAll Ref) ============ */
+function initMarkers() {
+  SITES.forEach(s => {
+    const isTop = s.score >= 90;
+    const short = isShortlist(s);
+    // Colori calibrati sul modello originale https://www.pngall.com/pin-png/download/38365/
+    const outerColor = short ? "#2563EB" : (isTop ? "#E11D48" : "#C64142");
+    const ringColor = short ? "#1E3A8A" : (isTop ? "#BE123C" : "#B72D2D");
+    const badgeStroke = short
+      ? 'stroke="#38BDF8" stroke-width="3"'
+      : (isTop ? 'stroke="#F59E0B" stroke-width="2.5"' : 'stroke="rgba(0,0,0,0.08)" stroke-width="1"');
+    const topAccent = short
+      ? '<circle cx="50" cy="8" r="4.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.2"/>'
+      : (isTop ? '<circle cx="50" cy="8" r="4.5" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.2"/>' : '');
+
+    const el = document.createElement("div");
+    el.className = `map-pin-wrap${short ? " shortlist" : ""}${isTop ? " top-lead" : ""}`;
+    el.id = `pin-${s.id}`;
+    el.title = `${s.name} · Score ${s.score}/100\n📍 ${s.comune} (${s.ha} ha)\n⚡ CP: ${s.substation} (${s.sub_dist} m)\n💶 Valore: € ${(s.price_tot).toLocaleString('it-IT')}`;
+    
+    el.innerHTML = `
+      <svg viewBox="0 0 100 142" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ground Contact Shadow -->
+        <ellipse cx="50" cy="138" rx="16" ry="3.5" fill="rgba(15,23,42,0.5)"/>
+        <!-- Teardrop Pin Body -->
+        <path d="M 50 136 L 9.5 77.6 A 49 49 0 1 1 90.5 77.6 Z" fill="${outerColor}" class="pin-body"/>
+        <!-- Concentric Bevel Ring -->
+        <circle cx="50" cy="49" r="36" fill="${ringColor}" class="pin-ring"/>
+        <!-- White Circular Inset Badge -->
+        <circle cx="50" cy="49" r="24" fill="#FFFFFF" ${badgeStroke} class="pin-badge"/>
+        <!-- Score Display -->
+        <text x="50" y="49" font-family="'JetBrains Mono', 'Segoe UI', system-ui, sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central" letter-spacing="-0.5">${Math.round(s.score)}</text>
+        ${topAccent}
+      </svg>
+    `;
+
+    el.onclick = (e) => {
+      e.stopPropagation();
+      focusSite(s.id);
+    };
+
+    const m = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+      .setLngLat([s.ll[1], s.ll[0]])
+      .addTo(map);
+
+    markers.push({ id: s.id, marker: m, el: el });
+  });
+}
+
+map.on('load', () => {
+  initMarkers();
+  renderBenchmarkBoxes();
+  renderCards();
+});
+
+/* ============ FOCUS SITO & GUIDE AVATAR ============ */
+function focusSite(id) {
+  stopOrbit();
+  const s = SITES.find(x => x.id === id);
+  if (!s) return;
+  currentLead = s;
+
+  // Evidenzia pin sulla mappa
+  document.querySelectorAll(".map-pin-wrap").forEach(p => p.classList.remove("active"));
+  const p = document.getElementById(`pin-${s.id}`);
+  if (p) p.classList.add("active");
+
+  // Evidenzia card
+  document.querySelectorAll(".card").forEach(c => c.classList.remove("sel"));
+  const c = document.getElementById(`card-${s.id}`);
+  if (c) {
+    c.classList.add("sel");
+    c.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Camera flyTo
+  map.flyTo({
+    center: [s.ll[1], s.ll[0]],
+    zoom: 16.5,
+    pitch: 58,
+    bearing: 45,
+    speed: 1.2,
+    curve: 1.4
+  });
+
+  // Mostra Avatar Guida
+  showGuideTip(s);
+}
+
+/* ============ SOPRALLUOGO 3D ORBIT ============ */
+function start3DOrbit(id) {
+  const s = SITES.find(x => x.id === id);
+  if (!s) return;
+  currentLead = s;
+  focusSite(id);
+
+  document.getElementById("orbitHint").style.display = "flex";
+  activeOrbit = true;
+
+  let currentBearing = 45;
+  function rotate() {
+    if (!activeOrbit) return;
+    currentBearing = (currentBearing + 0.35) % 360;
+    map.setBearing(currentBearing);
+    orbitRaf = requestAnimationFrame(rotate);
+  }
+  orbitRaf = requestAnimationFrame(rotate);
+}
+
+function stopOrbit() {
+  activeOrbit = false;
+  if (orbitRaf) cancelAnimationFrame(orbitRaf);
+  document.getElementById("orbitHint").style.display = "none";
+}
+
+map.on('mousedown', stopOrbit);
+map.on('touchstart', stopOrbit);
+
+/* ============ GUIDE AVATAR POPUP ============ */
+function showGuideTip(s) {
+  const tip = document.getElementById("siteTip");
+  tip.style.display = "flex";
+  tip.classList.add("talk");
+
+  const leaseAnnuo = Math.round(s.ha * 3000);
+
+  tip.innerHTML = `
+    <div class="guide">
+      <div class="gbox">
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="20" r="14" fill="#1e3a5f" stroke="#10b981" stroke-width="2"/>
+          <circle cx="19" cy="18" r="2.5" fill="#34d399"/>
+          <circle cx="29" cy="18" r="2.5" fill="#34d399"/>
+          <rect class="mouth" x="18" y="25" width="12" height="3" rx="1.5" fill="#34d399"/>
+          <path d="M12 40c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="none" stroke="#38bdf8" stroke-width="2"/>
+        </svg>
+      </div>
+      <span class="glbl">SPATIAL AI</span>
+    </div>
+    <div class="tcontent">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+        <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--brand);font-weight:700">Dossier Sopralluogo Virtuale</span>
+        <button onclick="document.getElementById('siteTip').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px">&times;</button>
+      </div>
+      <div style="font-size:14px;font-weight:800;color:#fff">${s.name} (${s.comune}, ${s.prov})</div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45">
+        Particella catastale <b>${s.catasto}</b>. Area <b>${s.ha} ha</b> idonea D.Lgs. 199/2021 per <b>~${s.mwp} MWp</b>.
+        Cabina Primaria MT a soli <b>${s.sub_dist} m</b>. Target acquisto a <b>${s.price_mq.toFixed(2)} €/mq</b> (€ ${s.price_tot.toLocaleString('it-IT')}) o diritto superficie a <b>~€ ${leaseAnnuo.toLocaleString('it-IT')}/anno</b>.
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn brand" style="padding:5px 10px;font-size:11px" onclick="openPdf('${s.id}')">
+          📄 Scarica Dossier PDF
+        </button>
+        <a href="https://www.google.com/maps/@${s.ll[0]},${s.ll[1]},18m/data=!3m1!1e3" target="_blank" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
+          🛰️ Ortofoto Satellite HD
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+/* ============ ACTIONS ============ */
+const PDF_MAP = {
+  "FV-AGRI-PC-002": "dossier_pdf/dossier_FV-AGRI-PC-002_pontenure.pdf",
+  "FV-AGRI-PG-001": "dossier_pdf/dossier_FV-AGRI-PG-001_marsciano.pdf",
+  "FV-AGRI-A4-002": "dossier_pdf/dossier_FV-AGRI-A4-002_galliate.pdf",
+  "FV-AGRI-PV-003": "dossier_pdf/dossier_FV-AGRI-PV-003_cava_manara.pdf",
+  "FV-AGRI-LO-002": "dossier_pdf/dossier_FV-AGRI-LO-002_turano_lodigiano.pdf",
+  "FV-CAVA-RA-001": "dossier_pdf/dossier_FV-CAVA-RA-001_faenza.pdf",
+  "FV-AGRI-A22-002": "dossier_pdf/dossier_FV-AGRI-A22-002_campogalliano.pdf",
+  "FV-AGRI-A1-004": "dossier_pdf/dossier_FV-AGRI-A1-004_terranuova_bracciolini.pdf",
+  "FV-AGRI-A14-002": "dossier_pdf/dossier_FV-AGRI-A14-002_longiano.pdf",
+  "FV-AGRI-A21-001": "dossier_pdf/dossier_FV-AGRI-A21-001_felizzano.pdf",
+  "FV-CAVA-AR-001": "dossier_pdf/dossier_FV-CAVA-AR-001_montevarchi.pdf",
+  "FV-AGRI-A4-004": "dossier_pdf/dossier_FV-AGRI-A4-004_sommacampagna.pdf",
+  "FV-AGRI-AL-002": "dossier_pdf/dossier_FV-AGRI-AL-002_tortona.pdf",
+  "FV-AGRI-A4-005": "dossier_pdf/dossier_FV-AGRI-A4-005_gambellara.pdf",
+  "FV-AGRI-A7-001": "dossier_pdf/dossier_FV-AGRI-A7-001_casei_gerola.pdf",
+  "FV-AGRI-A35-002": "dossier_pdf/dossier_FV-AGRI-A35-002_calcio.pdf",
+  "FV-CAVA-VR-001": "dossier_pdf/dossier_FV-CAVA-VR-001_zevio.pdf",
+  "FV-AGRI-RO-001": "dossier_pdf/dossier_FV-AGRI-RO-001_adria.pdf",
+  "FV-AGRI-MN-001": "dossier_pdf/dossier_FV-AGRI-MN-001_asola.pdf",
+  "FV-DISC-MN-001": "dossier_pdf/dossier_FV-DISC-MN-001_roncoferraro.pdf",
+  "FV-AGRI-A14-001": "dossier_pdf/dossier_FV-AGRI-A14-001_forl.pdf",
+  "FV-AGRI-A21-002": "dossier_pdf/dossier_FV-AGRI-A21-002_piacenza.pdf",
+  "FV-AGRI-A1-003": "dossier_pdf/dossier_FV-AGRI-A1-003_fontevivo.pdf",
+  "FV-AGRI-A4-001": "dossier_pdf/dossier_FV-AGRI-A4-001_santhi.pdf",
+  "FV-AGRI-A7-002": "dossier_pdf/dossier_FV-AGRI-A7-002_tortona.pdf",
+  "FV-AGRI-AN-001": "dossier_pdf/dossier_FV-AGRI-AN-001_jesi.pdf",
+  "FV-AGRI-BS-004": "dossier_pdf/dossier_FV-AGRI-BS-004_bagnolo_mella.pdf",
+  "FV-AGRI-A1-001": "dossier_pdf/dossier_FV-AGRI-A1-001_casalpusterlengo.pdf",
+  "FV-AGRI-A22-001": "dossier_pdf/dossier_FV-AGRI-A22-001_nogarole_rocca.pdf",
+  "FV-AGRI-A21-003": "dossier_pdf/dossier_FV-AGRI-A21-003_manerbio.pdf",
+  "FV-AGRI-A1-002": "dossier_pdf/dossier_FV-AGRI-A1-002_fidenza.pdf",
+  "FV-AGRI-PC-001": "dossier_pdf/dossier_FV-AGRI-PC-001_fiorenzuola_d_arda.pdf",
+  "FV-AGRI-PV-001": "dossier_pdf/dossier_FV-AGRI-PV-001_mortara.pdf",
+  "FV-AGRI-MN-004": "dossier_pdf/dossier_FV-AGRI-MN-004_castiglione_delle_stiviere.pdf",
+  "FV-AGRI-A4-003": "dossier_pdf/dossier_FV-AGRI-A4-003_calcinato.pdf",
+  "FV-AGRI-BS-002": "dossier_pdf/dossier_FV-AGRI-BS-002_manerbio.pdf",
+  "FV-AGRI-CR-004": "dossier_pdf/dossier_FV-AGRI-CR-004_pizzighettone.pdf",
+  "FV-AGRI-GR-001": "dossier_pdf/dossier_FV-AGRI-GR-001_grosseto.pdf",
+  "FV-CAVA-BS-001": "dossier_pdf/dossier_FV-CAVA-BS-001_montichiari.pdf",
+  "FV-AGRI-A35-001": "dossier_pdf/dossier_FV-AGRI-A35-001_caravaggio.pdf",
+  "FV-AGRI-BS-005": "dossier_pdf/dossier_FV-AGRI-BS-005_verolanuova.pdf",
+  "FV-AGRI-MN-005": "dossier_pdf/dossier_FV-AGRI-MN-005_suzzara.pdf",
+  "FV-AGRI-FE-001": "dossier_pdf/dossier_FV-AGRI-FE-001_ostellato.pdf",
+  "FV-AGRI-CR-002": "dossier_pdf/dossier_FV-AGRI-CR-002_casalmaggiore.pdf",
+  "FV-AGRI-AL-001": "dossier_pdf/dossier_FV-AGRI-AL-001_alessandria.pdf",
+  "FV-AGRI-LO-003": "dossier_pdf/dossier_FV-AGRI-LO-003_montanaso_lombardo.pdf",
+  "FV-AGRI-MN-002": "dossier_pdf/dossier_FV-AGRI-MN-002_viadana.pdf",
+  "FV-AGRI-MN-003": "dossier_pdf/dossier_FV-AGRI-MN-003_marcaria.pdf",
+  "FV-AGRI-PV-002": "dossier_pdf/dossier_FV-AGRI-PV-002_ferrera_erbognone.pdf",
+  "FV-AGRI-VR-002": "dossier_pdf/dossier_FV-AGRI-VR-002_legnago.pdf",
+  "FV-AGRI-VR-001": "dossier_pdf/dossier_FV-AGRI-VR-001_isola_della_scala.pdf",
+  "FV-AGRI-BS-001": "dossier_pdf/dossier_FV-AGRI-BS-001_leno.pdf",
+  "FV-AGRI-CR-001": "dossier_pdf/dossier_FV-AGRI-CR-001_soresina.pdf",
+  "FV-AGRI-CR-003": "dossier_pdf/dossier_FV-AGRI-CR-003_spinadesco.pdf",
+  "FV-AGRI-BS-003": "dossier_pdf/dossier_FV-AGRI-BS-003_orzinuovi.pdf",
+  "FV-AGRI-LO-001": "dossier_pdf/dossier_FV-AGRI-LO-001_codogno.pdf"
+};
+
+function openPdf(id) {
+  if (PDF_MAP[id]) {
+    window.open(PDF_MAP[id], '_blank');
+  } else {
+    window.open(`/api/dossier/${id}`, '_blank');
+  }
+}
+
+function downloadKml() {
+  window.open('SunPro_Pipeline_Terreni_Fotovoltaico.kml', '_blank');
+}
+
+function downloadFinancialCsv() {
+  window.open('SunPro_Executive_Financial_Model.csv', '_blank');
+}
+
+/* ============ FILTRI & SEARCH ============ */
+document.querySelectorAll(".pill").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    const reg = btn.getAttribute("data-reg");
+    renderCards(reg, document.getElementById("searchInput").value);
+    if (reg === "SHORTLIST") fitShortlist();
+  });
+});
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+  const activePill = document.querySelector(".pill.active");
+  const reg = activePill ? activePill.getAttribute("data-reg") : "TUTTE";
+  renderCards(reg, e.target.value);
+});
+
+/* ============ TOOLBAR MAPPA ============ */
+let satOn = true;
+document.getElementById("tSat").addEventListener("click", (e) => {
+  satOn = !satOn;
+  e.currentTarget.classList.toggle("on", satOn);
+  if (satOn) {
+    if (!map.getLayer('satellite-layer')) {
+      map.addLayer({ id: 'satellite-layer', type: 'raster', source: 'esri-satellite' }, 'carto-layer');
+    }
+  } else {
+    if (map.getLayer('satellite-layer')) map.removeLayer('satellite-layer');
+  }
+});
+
+let agriOn = false;
+let agriLoaded = false;
+document.getElementById("tAgri").addEventListener("click", async (e) => {
+  agriOn = !agriOn;
+  e.currentTarget.classList.toggle("on", agriOn);
+  if (agriOn && !agriLoaded) {
+    const response = await fetch("terreni_attigui_lombardia_veneto.geojson");
+    const data = await response.json();
+    map.addSource("attigui", { type: "geojson", data });
+    map.addLayer({
+      id: "attigui-fill",
+      type: "fill",
+      source: "attigui",
+      filter: ["==", ["get", "layer"], "seminativo"],
+      paint: { "fill-color": "#4ade80", "fill-opacity": 0.5, "fill-outline-color": "#14532d" }
+    });
+    map.addLayer({
+      id: "attigui-axis",
+      type: "line",
+      source: "attigui",
+      filter: ["==", ["get", "layer"], "opera"],
+      paint: { "line-color": "#fb923c", "line-width": 2.5, "line-opacity": 0.9 }
+    });
+    map.on("click", "attigui-fill", (event) => {
+      const prop = event.features[0].properties;
+      new maplibregl.Popup({ closeButton: true, maxWidth: "280px" })
+        .setLngLat(event.lngLat)
+        .setHTML(
+          `<b>${prop.classe}</b><br>${prop.regione} · ${prop.opera}<br>` +
+          `<b>${prop.ettari_fascia} ha</b> nella fascia di 300 m<br>` +
+          `<span style="color:#64748b">Fonte: ${prop.fonte} · codice ${prop.codice}</span>`
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "attigui-fill", () => { map.getCanvas().style.cursor = "pointer"; });
+    map.on("mouseleave", "attigui-fill", () => { map.getCanvas().style.cursor = ""; });
+    agriLoaded = true;
+  }
+  ["attigui-fill", "attigui-axis"].forEach((id) => {
+    if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", agriOn ? "visible" : "none");
+  });
+});
+
+document.getElementById("tReset").addEventListener("click", () => {
+  stopOrbit();
+  document.getElementById("siteTip").style.display = "none";
+  map.flyTo({ center: [11.35, 44.5], zoom: 7.5, pitch: 35, bearing: 0 });
+});
+
+/* ============ BENCHMARK BOXES ============ */
+function renderBenchmarkBoxes() {
+  const leaseContainer = document.getElementById("leaseRows");
+  leaseContainer.innerHTML = LEASE_BENCHMARK.map(b => `
+    <div class="trow">
+      <span>${b.reg}</span>
+      <b>${b.canone}</b>
+      <span class="sev ok">${b.tag}</span>
+    </div>
+  `).join("");
+
+  const gridContainer = document.getElementById("gridRows");
+  gridContainer.innerHTML = GRID_BENCHMARK.map(g => `
+    <div class="trow">
+      <span>${g.tech}</span>
+      <b>${g.costo}</b>
+      <span class="sev info">${g.lead_time}</span>
+    </div>
+  `).join("");
+}
+</script>
+</body>
+</html>
