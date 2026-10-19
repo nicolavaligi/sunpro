@@ -107,10 +107,26 @@ def generate_pdf_dossier(lead: Dict[str, Any]) -> Path:
     story.append(Spacer(1, 8))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#059669'), spaceAfter=10))
 
+    # Foglio e particella si stampano solo se una visura li ha confermati.
+    if lead.get("catasto_stato") == "VERIFICATO" and lead.get("foglio") and lead.get("particella"):
+        catastale = f"Fg. {lead['foglio']} - P.lle {lead['particella']}"
+    else:
+        catastale = "DA VERIFICARE — non usare per la visura"
+    if lead.get("contatto_verificato") is True and lead.get("proprietario_nome"):
+        intestatario = f"<b>{lead.get('proprietario_nome')}</b> ({lead.get('proprietario_tipo') or 'N/D'})"
+        piva = lead.get("proprietario_piva") or "DA VERIFICARE"
+        pec = lead.get("proprietario_pec") or "DA VERIFICARE"
+        telefono = lead.get("proprietario_telefono") or "DA VERIFICARE"
+    else:
+        intestatario = "DA VERIFICARE — non contattare da questa scheda"
+        piva = "DA VERIFICARE"
+        pec = "DA VERIFICARE"
+        telefono = "DA VERIFICARE"
+
     # Tabella Dati Catastali & Geografici
     catastali_data = [
-        [Paragraph("<b>Comune</b>", bold_style), Paragraph(f"{lead['comune']} ({lead.get('codice_belfiore', 'N/D')})", body_style),
-         Paragraph("<b>Foglio / Particelle</b>", bold_style), Paragraph(f"Fg. {lead.get('foglio', 'N/D')} - P.lle {lead.get('particella', 'N/D')}", body_style)],
+        [Paragraph("<b>Comune</b>", bold_style), Paragraph(f"{lead['comune']} ({lead.get('codice_belfiore') or 'N/D'})", body_style),
+         Paragraph("<b>Foglio / Particelle</b>", bold_style), Paragraph(catastale, body_style)],
         [Paragraph("<b>Coordinate GPS</b>", bold_style), Paragraph(f"{lead['lat']:.4f}, {lead['lng']:.4f}", body_style),
          Paragraph("<b>Tipologia D.Lgs 199/21</b>", bold_style), Paragraph(f"{lead['tipologia']}", body_style)],
         [Paragraph("<b>Buffer Industriale</b>", bold_style), Paragraph(f"{lead.get('distanza_zona_industriale_m', 0):.0f} m da Z.I.", body_style),
@@ -181,10 +197,10 @@ def generate_pdf_dossier(lead: Dict[str, Any]) -> Path:
     # Dati Proprietario e Canali di Contatto
     story.append(Paragraph("CONTATTI & INTESTAZIONE PROPRIETÀ", section_title_style))
     prop_data = [
-        [Paragraph("<b>Intestatario</b>", bold_style), Paragraph(f"<b>{lead.get('proprietario_nome', 'N/D')}</b> ({lead.get('proprietario_tipo', 'N/D')})", body_style)],
-        [Paragraph("<b>P.IVA / C.F.</b>", bold_style), Paragraph(f"{lead.get('proprietario_piva') or 'In corso di estrazione camerale'}", body_style)],
-        [Paragraph("<b>PEC Ufficiale</b>", bold_style), Paragraph(f"<b>{lead.get('proprietario_pec') or 'N/D'}</b>", bold_style)],
-        [Paragraph("<b>Telefono / Referente</b>", bold_style), Paragraph(f"{lead.get('proprietario_telefono') or 'N/D'}", body_style)]
+        [Paragraph("<b>Intestatario</b>", bold_style), Paragraph(intestatario, body_style)],
+        [Paragraph("<b>P.IVA / C.F.</b>", bold_style), Paragraph(piva, body_style)],
+        [Paragraph("<b>PEC Ufficiale</b>", bold_style), Paragraph(f"<b>{pec}</b>", bold_style)],
+        [Paragraph("<b>Telefono / Referente</b>", bold_style), Paragraph(telefono, body_style)]
     ]
     t_prop = Table(prop_data, colWidths=[4.0*cm, 14.0*cm])
     t_prop.setStyle(TableStyle([
@@ -219,6 +235,20 @@ def generate_html_dossier(lead: Dict[str, Any]) -> str:
     lead_id = lead["id"]
     pitch_info = generate_commercial_pitch(lead)
     canone_annuo = lead['superficie_ha'] * 3000
+    if lead.get("catasto_stato") == "VERIFICATO" and lead.get("foglio") and lead.get("particella"):
+        catastale = f"Fg. {lead['foglio']} - P.lle {lead['particella']}"
+    else:
+        catastale = "DA VERIFICARE — non usare per la visura"
+    if lead.get("contatto_verificato") is True and lead.get("proprietario_nome"):
+        intestatario = f"<b>{lead.get('proprietario_nome')}</b> ({lead.get('proprietario_tipo') or 'N/D'})"
+        piva = lead.get("proprietario_piva") or "DA VERIFICARE"
+        pec = lead.get("proprietario_pec") or "DA VERIFICARE"
+        telefono = lead.get("proprietario_telefono") or "DA VERIFICARE"
+    else:
+        intestatario = "DA VERIFICARE — non contattare da questa scheda"
+        piva = "DA VERIFICARE"
+        pec = "DA VERIFICARE"
+        telefono = "DA VERIFICARE"
 
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">
@@ -239,7 +269,7 @@ def generate_html_dossier(lead: Dict[str, Any]) -> str:
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
             <div style="background: #f8fafc; padding: 14px; border-radius: 6px; border: 1px solid #e2e8f0;">
                 <h3 style="margin-top: 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px;">📍 Inquadramento Spaziale (D.Lgs 199/21)</h3>
-                <p style="margin: 6px 0; font-size: 13px;"><b>Foglio / Particelle:</b> Fg. {lead.get('foglio')} - P.lle {lead.get('particella')}</p>
+                <p style="margin: 6px 0; font-size: 13px;"><b>Foglio / Particelle:</b> {catastale}</p>
                 <p style="margin: 6px 0; font-size: 13px;"><b>Coordinate GPS:</b> {lead['lat']:.4f}, {lead['lng']:.4f}</p>
                 <p style="margin: 6px 0; font-size: 13px;"><b>Tipologia:</b> <span style="background: #dbeafe; color: #1e40af; padding: 2px 6px; border-radius: 4px;">{lead['tipologia']}</span></p>
                 <p style="margin: 6px 0; font-size: 13px;"><b>Zona Industriale:</b> {lead.get('distanza_zona_industriale_m', 0):.0f} m (buffer 350m)</p>
@@ -275,9 +305,10 @@ def generate_html_dossier(lead: Dict[str, Any]) -> str:
 
         <div style="background: #fffbeb; padding: 14px; border-radius: 6px; border: 1px solid #fde68a; margin-bottom: 20px;">
             <h3 style="margin-top: 0; font-size: 14px; color: #92400e; border-bottom: 1px solid #fcd34d; padding-bottom: 6px;">🏢 Dati Proprietario e Canali di Contatto</h3>
-            <p style="margin: 6px 0; font-size: 13px;"><b>Intestatario:</b> {lead.get('proprietario_nome')} ({lead.get('proprietario_tipo')})</p>
-            <p style="margin: 6px 0; font-size: 13px;"><b>PEC:</b> <a href="mailto:{lead.get('proprietario_pec')}">{lead.get('proprietario_pec') or 'In corso di estrazione'}</a></p>
-            <p style="margin: 6px 0; font-size: 13px;"><b>Telefono / Referente:</b> {lead.get('proprietario_telefono') or 'N/D'}</p>
+            <p style="margin: 6px 0; font-size: 13px;"><b>Intestatario:</b> {intestatario}</p>
+            <p style="margin: 6px 0; font-size: 13px;"><b>P.IVA / C.F.:</b> {piva}</p>
+            <p style="margin: 6px 0; font-size: 13px;"><b>PEC:</b> {pec}</p>
+            <p style="margin: 6px 0; font-size: 13px;"><b>Telefono / Referente:</b> {telefono}</p>
         </div>
 
         <div style="background: #f1f5f9; padding: 14px; border-radius: 6px; border: 1px solid #cbd5e1;">

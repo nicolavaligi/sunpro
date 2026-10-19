@@ -200,7 +200,7 @@ def generate_blind_teaser_pdf(lead: Dict[str, Any], output_dir: Path = BLIND_TEA
         [Paragraph("<b>Classificazione D.Lgs. 199/21</b>", cell_bold), Paragraph(f"<b>{lead['tipologia']}</b>", cell_accent),
          Paragraph("<b>Fondamento Giuridico</b>", cell_bold), Paragraph(f"{env_audit['fondamento_normativo']}", cell_text)],
         [Paragraph("<b>Dati Catastali (Fg/P.lle)</b>", cell_bold), Paragraph("🔒 <i>CONFIDENZIALE — Sbloccabile previa firma NDA</i>", masked_style),
-         Paragraph("<b>Titolarità Giuridica</b>", cell_bold), Paragraph("🔒 <i>CONFIDENZIALE — Persona Giuridica censita</i>", masked_style)],
+         Paragraph("<b>Titolarità Giuridica</b>", cell_bold), Paragraph("🔒 <i>NON VERIFICATA — solo dopo visura</i>", masked_style)],
     ]
     t1 = Table(t1_data, colWidths=[4.2*cm, 5.2*cm, 4.0*cm, 5.2*cm])
     t1.setStyle(TableStyle([

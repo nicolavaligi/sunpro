@@ -118,21 +118,19 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     score_resa = min(15.0, score_insolazione + score_dimensione)
 
     # 5. Reperibilità Proprietà & Dati Contatto (max 10 pt)
-    prop_tipo = lead.get("proprietario_tipo", "")
     prop_pec = lead.get("proprietario_pec", "")
     prop_tel = lead.get("proprietario_telefono", "")
 
-    score_proprietario = 0.0
-    if prop_pec and prop_tel:
-        score_proprietario = 10.0
-    elif prop_pec or prop_tel:
-        score_proprietario = 8.0
-    elif prop_tipo in ["AZIENDA_AGRICOLA", "SOCIETA_SEMPLICE_AGRICOLA", "PERSONA_GIURIDICA", "CURATELA_FALLIMENTARE"]:
-        score_proprietario = 7.5
-    elif lead.get("particella"):
-        score_proprietario = 4.0
-    else:
-        score_proprietario = 2.0
+    # PEC, telefono e particella non verificati non alzano il punteggio:
+    # nel motore erano segnaposto e facevano entrare siti in classe A.
+    score_proprietario = 2.0
+    if lead.get("contatto_verificato") is True:
+        if prop_pec and prop_tel:
+            score_proprietario = 10.0
+        elif prop_pec or prop_tel:
+            score_proprietario = 8.0
+        elif lead.get("catasto_stato") == "VERIFICATO" and lead.get("particella"):
+            score_proprietario = 4.0
 
     # 6. Screening Vincoli Ambientali e Autorizzativi (Watchdog No-Go Zones)
     env_audit = check_environmental_constraints(lead)

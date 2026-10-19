@@ -745,10 +745,11 @@ def build_and_save_clean_pipeline():
         prezzo_totale = val_rep.prezzo_acquisto_target_totale_eur
         canone_annuo = round(ha * val_rep.canone_diritto_superficie_eur_ha, 0)
 
-        # 5. Dati Catastali
+        # 5. Catasto e intestatario non si inventano.
+        # Un foglio calcolato con hash, una coppia di particelle consecutive
+        # o una partita IVA scritta nel sorgente non è un mappale. La verifica
+        # del 15/10/2026 li ha trovati incompatibili con la mappa.
         belfiore = estimate_belfiore(comune)
-        foglio = str(10 + (hash(comune) % 60))
-        particella = f"{100 + (hash(lead_id) % 500)}, {101 + (hash(lead_id) % 500)}"
 
         lead = {
             "id": lead_id,
@@ -756,9 +757,10 @@ def build_and_save_clean_pipeline():
             "regione": regione,
             "provincia": provincia,
             "comune": comune,
-            "codice_belfiore": belfiore,
-            "foglio": foglio,
-            "particella": particella,
+            "codice_belfiore": "" if belfiore == "N/D" else belfiore,
+            "foglio": "",
+            "particella": "",
+            "catasto_stato": "DA VERIFICARE",
             "lat": lat,
             "lng": lng,
             "superficie_mq": superficie_mq,
@@ -777,11 +779,12 @@ def build_and_save_clean_pipeline():
             "distanza_cabina_m": dist_cabina,
             "livello_tensione": livello_tensione,
             "fonte_origine": "SUNPRO_AGRICULTURAL_LAND_ORIGINATION",
-            "proprietario_tipo": raw.get("proprietario_tipo", "AZIENDA_AGRICOLA"),
-            "proprietario_nome": raw.get("proprietario_nome", "Azienda Agricola del Fondo"),
-            "proprietario_piva": raw.get("proprietario_piva", ""),
-            "proprietario_pec": raw.get("proprietario_pec", ""),
-            "proprietario_telefono": raw.get("proprietario_telefono", ""),
+            "proprietario_tipo": "",
+            "proprietario_nome": "",
+            "proprietario_piva": "",
+            "proprietario_pec": "",
+            "proprietario_telefono": "",
+            "contatto_verificato": False,
             "note_commerciali": f"{raw.get('note_commerciali', '')} Suolo: {suit['descrizione_suolo']}. Facilità acquisizione: {suit['facilita_acquisizione']}.",
             "destinazione_urbanistica": val_rep.destinazione_urbanistica,
             "valore_agricolo_base_eur_mq": val_rep.valore_agricolo_base_eur_mq,
@@ -801,7 +804,7 @@ def build_and_save_clean_pipeline():
         upsert_lead(lead)
         processed_leads.append(lead)
 
-    print(f"✅ Inseriti con successo {len(processed_leads)} lead autentici a campo aperto in SQLite!")
+    print(f"✅ Inseriti {len(processed_leads)} siti. Foglio, particella e intestatario restano DA VERIFICARE.")
     return processed_leads
 
 if __name__ == "__main__":

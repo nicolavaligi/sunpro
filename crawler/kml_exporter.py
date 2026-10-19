@@ -61,8 +61,6 @@ def generate_kml_content(leads: List[Dict[str, Any]]) -> str:
         cabina = l.get("cabina_piu_vicina", "CP Primaria")
         sub_dist = l.get("distanza_cabina_m", 0)
         capex = l.get("capex_allaccio_eur", 0)
-        owner = l.get("proprietario_nome", "Proprietà Riservata")
-        contact = l.get("proprietario_pec") or l.get("proprietario_telefono") or "Inquiry riservata"
         osm = l.get("osm_url", "")
         style_id = "pin-top" if score >= 85 else "pin-qualificato"
 
@@ -79,8 +77,6 @@ def generate_kml_content(leads: List[Dict[str, Any]]) -> str:
              <b>Distanza di allaccio:</b> {sub_dist:,.0f} m · <b>CAPEX Allaccio:</b> € {capex:,.0f}</p>
           <p><b>💶 Valutazione Acquisto:</b> {price_mq:.2f} €/mq (€ {price_tot:,.0f})<br/>
              <b>🌱 Canone Diritto Superficie (30y):</b> ~€ {ha*3000:,.0f}/anno</p>
-          <p><b>🏢 Proprietà:</b> <br/>
-             <b>📞 Contatto / PEC:</b> </p>
           <p><b>Punteggio Idoneità:</b> <span style="font-weight:bold; color:#059669;">{score}/100</span> ({l.get('rating_classe', 'QUALIFICATO')})</p>
           {f'<p><a href="{osm}" target="_blank" style="color:#0284c7; font-weight:bold;">Visualizza Perimetro su OpenStreetMap &raquo;</a></p>' if osm else ''}
           <div style="margin-top:10px; font-size:11px; color:#64748b;">

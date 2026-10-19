@@ -57,7 +57,7 @@ La normativa italiana vigente individua specifiche categorie territoriali come *
 ### Elevator Pitch (60 Secondi)
 
 > *"Buongiorno [Nome Referente], la contatto dall'ufficio Sviluppo Territoriale Rinnovabili.*  
-> *Abbiamo censito la vostra area situata a [Comune], censita al Foglio [X] particella [Y], all'interno della nostra mappatura geospaziale delle aree prioritarie per la transizione energetica secondo la normativa sulle Aree Idonee.*  
+> *Abbiamo individuato un'area a [Comune], all'interno della nostra mappatura delle aree prioritarie per la transizione energetica secondo la normativa sulle Aree Idonee. Foglio, particella e intestatario si dicono solo dopo la visura.*  
 >  
 > *Desideriamo sottoporvi una duplice proposta finanziaria concreta e garantita:*  
 > *1. **Liquidazione immediata a rogito:** acquisto a corpo con valorizzazione stimata di circa [Prezzo Totale] € (pari a [Prezzo al Mq] €/mq liquidati).*  

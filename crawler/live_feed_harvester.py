@@ -187,22 +187,13 @@ def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, A
         osm_link = payload.get("osm", "")
         osm_id = osm_link.split("/")[-1] if osm_link else str(it.get("source_id"))
 
-        # Dati proprietario plausibili / derivati dalla tipologia reale
+        # Nessun intestatario, nessuna PEC e nessun mappale si ricavano dal nome del comune.
         if tipologia == "EX_CAVA":
-            prop_tipo = "PERSONA_GIURIDICA"
-            prop_nome = f"Compendio Estrattivo {comune} S.r.l."
-            prop_pec = f"amministrazione.{comune.lower().replace(' ', '')}"
-            prop_note = f"Area censita su OpenStreetMap ({osm_id}). Ex cava esaurita con parere di recupero fotovoltaico in PAS. {val_rep.sintesi_perizia}"
+            prop_note = f"Area censita su OpenStreetMap ({osm_id}). Ex cava esaurita, da verificare in mappa prima di ogni contatto. {val_rep.sintesi_perizia}"
         elif tipologia == "BROWNFIELD":
-            prop_tipo = "CURATELA_FALLIMENTARE"
-            prop_nome = f"Procedura Liquidatoria Area {comune}"
-            prop_pec = f"fallimento.{comune.lower().replace(' ', '')}"
-            prop_note = f"Ex comparto produttivo/degradato censito su OSM ({osm_id}). Ottimo per transazione d'acquisto rapida. {val_rep.sintesi_perizia}"
+            prop_note = f"Ex comparto censito su OSM ({osm_id}). Da verificare in mappa prima di ogni contatto. {val_rep.sintesi_perizia}"
         else:
-            prop_tipo = "PERSONA_GIURIDICA"
-            prop_nome = f"Sviluppo Industriale {comune} S.p.A."
-            prop_pec = f"info.{comune.lower().replace(' ', '')}"
-            prop_note = f"Area contigua alla zona industriale di {comune}. Entro buffer 350m D.Lgs. 199/2021. {val_rep.sintesi_perizia}"
+            prop_note = f"Area contigua alla zona industriale di {comune}. Entro buffer 350m D.Lgs. 199/2021. Da verificare in mappa prima di ogni contatto. {val_rep.sintesi_perizia}"
 
         lead = {
             "id": it.get("source_id"),
@@ -210,9 +201,10 @@ def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, A
             "regione": regione,
             "provincia": provincia,
             "comune": comune,
-            "codice_belfiore": belfiore,
-            "foglio": str(10 + (hash(comune) % 80)),
-            "particella": f"{100 + (hash(osm_id) % 800)}, {101 + (hash(osm_id) % 800)}",
+            "codice_belfiore": "" if belfiore == "N/D" else belfiore,
+            "foglio": "",
+            "particella": "",
+            "catasto_stato": "DA VERIFICARE",
             "lat": lat,
             "lng": lng,
             "superficie_mq": superficie_mq,
@@ -232,11 +224,12 @@ def harvest_and_qualify_solar_land(max_candidates: int = 25) -> List[Dict[str, A
             "livello_tensione": "MT 15/20 kV",
             "fonte_origine": f"HOUDINICK_LIVE_DATA_FEED ({osm_id})",
             "osm_url": osm_link,
-            "proprietario_tipo": prop_tipo,
-            "proprietario_nome": prop_nome,
-            "proprietario_piva": f"0{abs(hash(prop_nome)) % 900000000 + 100000000}",
-            "proprietario_pec": prop_pec,
-            "proprietario_telefono": f"+39 0{abs(hash(comune)) % 90 + 10} {abs(hash(prop_nome)) % 900000 + 100000}",
+            "proprietario_tipo": "",
+            "proprietario_nome": "",
+            "proprietario_piva": "",
+            "proprietario_pec": "",
+            "proprietario_telefono": "",
+            "contatto_verificato": False,
             "note_commerciali": prop_note,
             "destinazione_urbanistica": val_rep.destinazione_urbanistica,
             "valore_agricolo_base_eur_mq": val_rep.valore_agricolo_base_eur_mq,

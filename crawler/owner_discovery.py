@@ -52,7 +52,7 @@ def generate_commercial_pitch(lead: Dict[str, Any]) -> Dict[str, str]:
     )
 
     pitch_telefonico = f"""
-"Buongiorno, chiamo per conto dello Sviluppo Territoriale Rinnovabili. Abbiamo mappato {tipo_desc} situata a {comune} (Foglio {lead.get('foglio')}, P.lla {lead.get('particella')}) come area prioritaria per un investimento green fotovoltaico conforme alle direttive nazionali sulle Aree Idonee.
+"Buongiorno, chiamo per conto dello Sviluppo Territoriale Rinnovabili. Abbiamo individuato {tipo_desc} situata a {comune}, di circa {ha:.1f} ettari, come area da verificare per un investimento fotovoltaico conforme alle aree idonee. Foglio, particella e intestatario non sono in questa scheda: escono solo dalla visura.
 
 Desideriamo sottoporvi una duplice proposta finanziaria concreta:
 1. ACQUISTO IMMEDIATO con rogito notarile: valorizzazione stimata di circa {prezzo_target:,.0f} € ({lead.get('prezzo_mq_eur', 8.5):.1f} €/mq interamente liquidati).
