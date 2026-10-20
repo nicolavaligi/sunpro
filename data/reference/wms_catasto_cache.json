@@ -1,0 +1,662 @@
+{
+  "44.90450,8.45500": {
+    "lat": 44.9045,
+    "lng": 8.455,
+    "codice_belfiore": "D528",
+    "foglio": "18",
+    "particella": "396, 386",
+    "wms_national_ref": "D528_001800.396",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.904200,8.454700,44.904800,8.455300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.18200,9.63500": {
+    "lat": 45.182,
+    "lng": 9.635,
+    "codice_belfiore": "B910",
+    "foglio": "21",
+    "particella": "518",
+    "wms_national_ref": "B910_002100.518",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.181700,9.634700,45.182300,9.635300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.85950,10.18500": {
+    "lat": 44.8595,
+    "lng": 10.185,
+    "codice_belfiore": "D685",
+    "foglio": "3",
+    "particella": "34, 274",
+    "wms_national_ref": "D685_000300.34",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.859200,10.184700,44.859800,10.185300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.47600,8.69200": {
+    "lat": 45.476,
+    "lng": 8.692,
+    "codice_belfiore": "D872",
+    "foglio": "52",
+    "particella": "4813",
+    "wms_national_ref": "D872_0052D0.4813",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.475700,8.691700,45.476300,8.692300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.44090,11.36190": {
+    "lat": 45.4409,
+    "lng": 11.3619,
+    "codice_belfiore": "F442",
+    "foglio": "19",
+    "particella": "541, 542",
+    "wms_national_ref": "F442_001900.541",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.440600,11.361600,45.441200,11.362200&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.28430,10.88780": {
+    "lat": 45.2843,
+    "lng": 10.8878,
+    "codice_belfiore": "F921",
+    "foglio": "24",
+    "particella": "54",
+    "wms_national_ref": "F921_002400.54",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.284000,10.887500,45.284600,10.888100&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.67000,10.84590": {
+    "lat": 44.67,
+    "lng": 10.8459,
+    "codice_belfiore": "B539",
+    "foglio": "34",
+    "particella": "73, 72",
+    "wms_national_ref": "B539_003400.73",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.669700,10.845600,44.670300,10.846200&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.50990,9.64550": {
+    "lat": 45.5099,
+    "lng": 9.6455,
+    "codice_belfiore": "B731",
+    "foglio": "915",
+    "particella": "11373, 14911",
+    "wms_national_ref": "B731_091500.11373",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.509600,9.645200,45.510200,9.645800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.49730,9.82400": {
+    "lat": 45.4973,
+    "lng": 9.824,
+    "codice_belfiore": "A304",
+    "foglio": "3",
+    "particella": "24, 77",
+    "wms_national_ref": "A304_000300.24",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.497000,9.823700,45.497600,9.824300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.95150,9.92610": {
+    "lat": 44.9515,
+    "lng": 9.9261,
+    "codice_belfiore": "D611",
+    "foglio": "16",
+    "particella": "48, 340",
+    "wms_national_ref": "D611_001600.48",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.951200,9.925800,44.951800,9.926400&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.44800,11.34200": {
+    "lat": 45.448,
+    "lng": 11.342,
+    "codice_belfiore": "D897",
+    "foglio": "14",
+    "particella": "70, 72",
+    "wms_national_ref": "D897_001400.70",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.447700,11.341700,45.448300,11.342300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.50600,9.84500": {
+    "lat": 45.506,
+    "lng": 9.845,
+    "codice_belfiore": "B395",
+    "foglio": "8",
+    "particella": "432, 528",
+    "wms_national_ref": "B395_000800.432",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.505700,9.844700,45.506300,9.845300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.28500,9.87100": {
+    "lat": 45.285,
+    "lng": 9.871,
+    "codice_belfiore": "I849",
+    "foglio": "22",
+    "particella": "265, 277",
+    "wms_national_ref": "I849_002200.265",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.284700,9.870700,45.285300,9.871300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.99200,10.42800": {
+    "lat": 44.992,
+    "lng": 10.428,
+    "codice_belfiore": "B898",
+    "foglio": "25",
+    "particella": "136, 24",
+    "wms_national_ref": "B898_002500.136",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.991700,10.427700,44.992300,10.428300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.14800,9.93200": {
+    "lat": 45.148,
+    "lng": 9.932,
+    "codice_belfiore": "I906",
+    "foglio": "6",
+    "particella": "266, 507",
+    "wms_national_ref": "I906_000600.266",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.147700,9.931700,45.148300,9.932300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.18500,9.77500": {
+    "lat": 45.185,
+    "lng": 9.775,
+    "codice_belfiore": "G721",
+    "foglio": "26",
+    "particella": "23",
+    "wms_national_ref": "G721_002600.23",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.184700,9.774700,45.185300,9.775300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.36800,10.22400": {
+    "lat": 45.368,
+    "lng": 10.224,
+    "codice_belfiore": "E526",
+    "foglio": "28",
+    "particella": "596, 640",
+    "wms_national_ref": "E526_002800.596",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.367700,10.223700,45.368300,10.224300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.35200,10.14100": {
+    "lat": 45.352,
+    "lng": 10.141,
+    "codice_belfiore": "E884",
+    "foglio": "27",
+    "particella": "6",
+    "wms_national_ref": "E884_002700.6",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.351700,10.140700,45.352300,10.141300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.39800,9.92400": {
+    "lat": 45.398,
+    "lng": 9.924,
+    "codice_belfiore": "G149",
+    "foglio": "17",
+    "particella": "726, 744",
+    "wms_national_ref": "G149_001700.726",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.397700,9.923700,45.398300,9.924300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.42100,10.17800": {
+    "lat": 45.421,
+    "lng": 10.178,
+    "codice_belfiore": "A569",
+    "foglio": "20",
+    "particella": "78, 93",
+    "wms_national_ref": "A569_002000.78",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.420700,10.177700,45.421300,10.178300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.32400,10.07100": {
+    "lat": 45.324,
+    "lng": 10.071,
+    "codice_belfiore": "L777",
+    "foglio": "20",
+    "particella": "51",
+    "wms_national_ref": "L777_002000.51",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.323700,10.070700,45.324300,10.071300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.21500,10.41200": {
+    "lat": 45.215,
+    "lng": 10.412,
+    "codice_belfiore": "A470",
+    "foglio": "42",
+    "particella": "302, 304",
+    "wms_national_ref": "A470_004200.302",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.214700,10.411700,45.215300,10.412300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.93500,10.52800": {
+    "lat": 44.935,
+    "lng": 10.528,
+    "codice_belfiore": "L826",
+    "foglio": "92",
+    "particella": "359, 941",
+    "wms_national_ref": "L826_009200.359",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.934700,10.527700,44.935300,10.528300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.11800,10.53400": {
+    "lat": 45.118,
+    "lng": 10.534,
+    "codice_belfiore": "E922",
+    "foglio": "33",
+    "particella": "200, 643",
+    "wms_national_ref": "E922_003300.200",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.117700,10.533700,45.118300,10.534300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.37800,10.49500": {
+    "lat": 45.378,
+    "lng": 10.495,
+    "codice_belfiore": "C312",
+    "foglio": "23",
+    "particella": "867, 906",
+    "wms_national_ref": "C312_002300.867",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.377700,10.494700,45.378300,10.495300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.15200,9.68800": {
+    "lat": 45.152,
+    "lng": 9.688,
+    "codice_belfiore": "C816",
+    "foglio": "22",
+    "particella": "21",
+    "wms_national_ref": "C816_002200.21",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.151700,9.687700,45.152300,9.688300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.24100,9.61500": {
+    "lat": 45.241,
+    "lng": 9.615,
+    "codice_belfiore": "L469",
+    "foglio": "13",
+    "particella": "30, 145",
+    "wms_national_ref": "L469_001300.30",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.240700,9.614700,45.241300,9.615300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.33400,9.47100": {
+    "lat": 45.334,
+    "lng": 9.471,
+    "codice_belfiore": "F423",
+    "foglio": "5",
+    "particella": "719, 66",
+    "wms_national_ref": "F423_000500.719",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.333700,9.470700,45.334300,9.471300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.24500,8.74200": {
+    "lat": 45.245,
+    "lng": 8.742,
+    "codice_belfiore": "F754",
+    "foglio": "35",
+    "particella": "1227, 974",
+    "wms_national_ref": "F754_0035A0.1227",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.244700,8.741700,45.245300,8.742300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.12100,8.87500": {
+    "lat": 45.121,
+    "lng": 8.875,
+    "codice_belfiore": "D552",
+    "foglio": "4",
+    "particella": "8, 12",
+    "wms_national_ref": "D552_000400.8",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.120700,8.874700,45.121300,8.875300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.14200,9.11200": {
+    "lat": 45.142,
+    "lng": 9.112,
+    "codice_belfiore": "C360",
+    "foglio": "4",
+    "particella": "1278, 825",
+    "wms_national_ref": "C360_0004C0.1278",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.141700,9.111700,45.142300,9.112300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.27100,11.01500": {
+    "lat": 45.271,
+    "lng": 11.015,
+    "codice_belfiore": "E349",
+    "foglio": "46",
+    "particella": "619, 82",
+    "wms_national_ref": "E349_004600.619",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.270700,11.014700,45.271300,11.015300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.18400,11.31200": {
+    "lat": 45.184,
+    "lng": 11.312,
+    "codice_belfiore": "E512",
+    "foglio": "42",
+    "particella": "604, 547",
+    "wms_national_ref": "E512_004200.604",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.183700,11.311700,45.184300,11.312300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.93500,9.91200": {
+    "lat": 44.935,
+    "lng": 9.912,
+    "codice_belfiore": "D611",
+    "foglio": "24",
+    "particella": "278, 315",
+    "wms_national_ref": "D611_002400.278",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.934700,9.911700,44.935300,9.912300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.99840,9.77120": {
+    "lat": 44.9984,
+    "lng": 9.7712,
+    "codice_belfiore": "G852",
+    "foglio": "17",
+    "particella": "1, 4",
+    "wms_national_ref": "G852_001700.1",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.998100,9.770900,44.998700,9.771500&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.73200,11.94200": {
+    "lat": 44.732,
+    "lng": 11.942,
+    "codice_belfiore": "G184",
+    "foglio": "44",
+    "particella": "169",
+    "wms_national_ref": "G184_004400.169",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.731700,11.941700,44.732300,11.942300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.89200,8.68400": {
+    "lat": 44.892,
+    "lng": 8.684,
+    "codice_belfiore": "A182",
+    "foglio": "203",
+    "particella": "766",
+    "wms_national_ref": "A182_020300.766",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.891700,8.683700,44.892300,8.684300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.91200,8.87100": {
+    "lat": 44.912,
+    "lng": 8.871,
+    "codice_belfiore": "L304",
+    "foglio": "43",
+    "particella": "1320, 969",
+    "wms_national_ref": "L304_004300.1320",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.911700,8.870700,44.912300,8.871300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "42.78200,11.12400": {
+    "lat": 42.782,
+    "lng": 11.124,
+    "codice_belfiore": "E202",
+    "foglio": "72",
+    "particella": "960, 1103",
+    "wms_national_ref": "E202_007200.960",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=42.781700,11.123700,42.782300,11.124300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "42.91240,12.33890": {
+    "lat": 42.9124,
+    "lng": 12.3389,
+    "codice_belfiore": "E975",
+    "foglio": "144",
+    "particella": "450, 418",
+    "wms_national_ref": "E975_014400.450",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=42.912100,12.338600,42.912700,12.339200&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "43.53500,13.25400": {
+    "lat": 43.535,
+    "lng": 13.254,
+    "codice_belfiore": "E388",
+    "foglio": "37",
+    "particella": "912, 548",
+    "wms_national_ref": "E388_003700.912",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=43.534700,13.253700,43.535300,13.254300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.29810,11.87410": {
+    "lat": 44.299,
+    "lng": 11.875,
+    "codice_belfiore": "D458",
+    "foglio": "115",
+    "particella": "744, 624",
+    "wms_national_ref": "D458_011500.744",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.298700,11.874700,44.299300,11.875300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.37250,11.13500": {
+    "lat": 45.3725,
+    "lng": 11.135,
+    "codice_belfiore": "M172",
+    "foglio": "15",
+    "particella": "485",
+    "wms_national_ref": "M172_001500.485",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.372200,11.134700,45.372800,11.135300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.41820,10.38450": {
+    "lat": 45.4182,
+    "lng": 10.3845,
+    "codice_belfiore": "F471",
+    "foglio": "40",
+    "particella": "3, 264",
+    "wms_national_ref": "F471_004000.3",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.417900,10.384200,45.418500,10.384800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "43.53120,11.56450": {
+    "lat": 43.5301,
+    "lng": 11.5654,
+    "codice_belfiore": "F656",
+    "foglio": "6",
+    "particella": "757, 531",
+    "wms_national_ref": "F656_0006A0.757",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=43.529800,11.565100,43.530400,11.565700&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.13200,10.95200": {
+    "lat": 45.132,
+    "lng": 10.952,
+    "codice_belfiore": "H541",
+    "foglio": "29",
+    "particella": "311, 227",
+    "wms_national_ref": "H541_002900.311",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.131700,10.951700,45.132300,10.952300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.98500,10.74100": {
+    "lat": 44.985,
+    "lng": 10.741,
+    "codice_belfiore": "L020",
+    "foglio": "48",
+    "particella": "55, 1753",
+    "wms_national_ref": "L020_004800.55",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.984700,10.740700,44.985300,10.741300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.18100,9.64200": {
+    "lat": 45.181,
+    "lng": 9.642,
+    "codice_belfiore": "B910",
+    "foglio": "23",
+    "particella": "713, 436",
+    "wms_national_ref": "B910_002300.713",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.180700,9.641700,45.181300,9.642300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.85600,10.05200": {
+    "lat": 44.856,
+    "lng": 10.052,
+    "codice_belfiore": "B034",
+    "foglio": "69",
+    "particella": "152",
+    "wms_national_ref": "B034_006900.152",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.855700,10.051700,44.856300,10.052300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.86000,10.18800": {
+    "lat": 44.86,
+    "lng": 10.188,
+    "codice_belfiore": "D685",
+    "foglio": "4",
+    "particella": "153, 78",
+    "wms_national_ref": "D685_000400.153",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.859700,10.187700,44.860300,10.188300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "43.54500,11.59200": {
+    "lat": 43.545,
+    "lng": 11.592,
+    "codice_belfiore": "L123",
+    "foglio": "47",
+    "particella": "70, 52",
+    "wms_national_ref": "L123_004700.70",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=43.544700,11.591700,43.545300,11.592300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.36900,8.19200": {
+    "lat": 45.369,
+    "lng": 8.192,
+    "codice_belfiore": "I337",
+    "foglio": "32",
+    "particella": "52, 53",
+    "wms_national_ref": "I337_003200.52",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.368700,8.191700,45.369300,8.192300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.47400,8.71800": {
+    "lat": 45.474,
+    "lng": 8.718,
+    "codice_belfiore": "D872",
+    "foglio": "29",
+    "particella": "155, 160",
+    "wms_national_ref": "D872_002900.155",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.473700,8.717700,45.474300,8.718300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.46200,10.41800": {
+    "lat": 45.462,
+    "lng": 10.418,
+    "codice_belfiore": "B394",
+    "foglio": "31",
+    "particella": "515, 619",
+    "wms_national_ref": "B394_003100.515",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.461700,10.417700,45.462300,10.418300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.44600,11.35800": {
+    "lat": 45.446,
+    "lng": 11.358,
+    "codice_belfiore": "F442",
+    "foglio": "18",
+    "particella": "218, 79",
+    "wms_national_ref": "F442_001800.218",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.445700,11.357700,45.446300,11.358300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.24800,12.01500": {
+    "lat": 44.248,
+    "lng": 12.015,
+    "codice_belfiore": "D704",
+    "foglio": "90",
+    "particella": "79",
+    "wms_national_ref": "D704_009000.79",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.247700,12.014700,44.248300,12.015300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.07800,12.33200": {
+    "lat": 44.078,
+    "lng": 12.332,
+    "codice_belfiore": "E675",
+    "foglio": "20",
+    "particella": "1054",
+    "wms_national_ref": "E675_002000.1054",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.077700,12.331700,44.078300,12.332300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.92100,8.44800": {
+    "lat": 44.921,
+    "lng": 8.448,
+    "codice_belfiore": "H104",
+    "foglio": "32",
+    "particella": "1",
+    "wms_national_ref": "H104_003200.1",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.920700,8.447700,44.921300,8.448300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.04200,9.74200": {
+    "lat": 45.042,
+    "lng": 9.742,
+    "codice_belfiore": "G535",
+    "foglio": "73",
+    "particella": "993",
+    "wms_national_ref": "G535_007300.993",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.041700,9.741700,45.042300,9.742300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.35800,10.14200": {
+    "lat": 45.358,
+    "lng": 10.142,
+    "codice_belfiore": "E884",
+    "foglio": "10",
+    "particella": "21",
+    "wms_national_ref": "E884_001000.21",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.357700,10.141700,45.358300,10.142300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.28300,10.89100": {
+    "lat": 45.283,
+    "lng": 10.891,
+    "codice_belfiore": "F921",
+    "foglio": "24",
+    "particella": "48, 47",
+    "wms_national_ref": "F921_002400.48",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.282700,10.890700,45.283300,10.891300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.65100,10.85200": {
+    "lat": 44.651,
+    "lng": 10.852,
+    "codice_belfiore": "F257",
+    "foglio": "64",
+    "particella": "286",
+    "wms_national_ref": "F257_006400.286",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.650700,10.851700,44.651300,10.852300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.01200,9.00200": {
+    "lat": 45.012,
+    "lng": 9.002,
+    "codice_belfiore": "M109",
+    "foglio": "26",
+    "particella": "201, 158",
+    "wms_national_ref": "M109_002600.201",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.011700,9.001700,45.012300,9.002300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "44.91800,8.87200": {
+    "lat": 44.918,
+    "lng": 8.872,
+    "codice_belfiore": "L304",
+    "foglio": "26",
+    "particella": "71, 10",
+    "wms_national_ref": "L304_002600.71",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.917700,8.871700,44.918300,8.872300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.49800,9.64500": {
+    "lat": 45.4989,
+    "lng": 9.6459,
+    "codice_belfiore": "B731",
+    "foglio": "946",
+    "particella": "2886",
+    "wms_national_ref": "B731_094600.2886",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.498600,9.645600,45.499200,9.646200&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  },
+  "45.51200,9.82500": {
+    "lat": 45.512,
+    "lng": 9.825,
+    "codice_belfiore": "B395",
+    "foglio": "3",
+    "particella": "153, 89",
+    "wms_national_ref": "B395_000300.153",
+    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "wms_verify_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.511700,9.824700,45.512300,9.825300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html"
+  }
+}

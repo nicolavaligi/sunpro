@@ -7,42 +7,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.7712,
-          44.9984
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-PC-002",
-        "title": "Compendio Agricolo Seminativo — Pontenure",
-        "comune": "Pontenure",
-        "provincia": "Piacenza",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 12.0,
-        "mwp_stimati": 10.0,
-        "produzione_mwh_anno": 13500.0,
-        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
-        "distanza_cabina_m": 0.0,
-        "prezzo_mq_eur": 7.92,
-        "prezzo_richiesto_eur": 950400.0,
-        "score_totale": 97.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           12.3389,
           42.9124
         ]
       },
       "properties": {
         "id": "FV-AGRI-PG-001",
-        "title": "Seminativo di Pianura Valle Umbra — Marsciano",
+        "title": "Seminativo di Pianura Valle Umbra — Marsciano (Fg. 144 Part. 450, 418)",
         "comune": "Marsciano",
         "provincia": "Perugia",
         "regione": "Umbria",
@@ -51,9 +22,9 @@
         "produzione_mwh_anno": 18800.0,
         "cabina_piu_vicina": "CP Marsciano 132/20 kV",
         "distanza_cabina_m": 0.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1248000.0,
-        "score_totale": 97.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1040000.0,
+        "score_totale": 97.5,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -65,24 +36,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.718,
-          45.474
+          11.342,
+          45.448
         ]
       },
       "properties": {
-        "id": "FV-AGRI-A4-002",
-        "title": "Seminativo Irriguo Corridoio A4 — Galliate",
-        "comune": "Galliate",
-        "provincia": "Novara",
-        "regione": "Piemonte",
-        "superficie_ha": 22.0,
-        "mwp_stimati": 18.33,
-        "produzione_mwh_anno": 24016.7,
-        "cabina_piu_vicina": "CP Galliate (AC001E01311)",
-        "distanza_cabina_m": 380.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1716000.0,
-        "score_totale": 96.9,
+        "id": "FV-AGRI-A4-005",
+        "title": "Compendio Seminativo Bassa Vicentina A4 — Gambellara (Fg. 14 Part. 70, 72)",
+        "comune": "Gambellara",
+        "provincia": "Vicenza",
+        "regione": "Veneto",
+        "superficie_ha": 23.0,
+        "mwp_stimati": 19.17,
+        "produzione_mwh_anno": 24916.7,
+        "cabina_piu_vicina": "CP Gambellara (AC001E00896)",
+        "distanza_cabina_m": 499.0,
+        "prezzo_mq_eur": 7.13,
+        "prezzo_richiesto_eur": 1639900.0,
+        "score_totale": 97.0,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -100,7 +71,7 @@
       },
       "properties": {
         "id": "FV-AGRI-PV-003",
-        "title": "Appezzamento Agricolo Seminativo — Cava Manara",
+        "title": "Appezzamento Agricolo Seminativo — Cava Manara (Fg. 4 Part. 1278, 825)",
         "comune": "Cava Manara",
         "provincia": "Pavia",
         "regione": "Lombardia",
@@ -109,647 +80,9 @@
         "produzione_mwh_anno": 13333.3,
         "cabina_piu_vicina": "CP Pavia Sud 132/15 kV",
         "distanza_cabina_m": 499.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 975000.0,
-        "score_totale": 95.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.615,
-          45.241
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-LO-002",
-        "title": "Tenuta Agricola Aperta — Turano Lodigiano",
-        "comune": "Turano Lodigiano",
-        "provincia": "Lodi",
-        "regione": "Lombardia",
-        "superficie_ha": 17.0,
-        "mwp_stimati": 14.17,
-        "produzione_mwh_anno": 18133.3,
-        "cabina_piu_vicina": "STAZIONE AT Terna Turano Centrale",
-        "distanza_cabina_m": 234.0,
-        "prezzo_mq_eur": 8.74,
-        "prezzo_richiesto_eur": 1485800.0,
-        "score_totale": 94.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.8741,
-          44.2981
-        ]
-      },
-      "properties": {
-        "id": "FV-CAVA-RA-001",
-        "title": "Bacino Argille a Cielo Aperto Fornace — Faenza",
-        "comune": "Faenza",
-        "provincia": "Ravenna",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 11.0,
-        "mwp_stimati": 9.17,
-        "produzione_mwh_anno": 12375.0,
-        "cabina_piu_vicina": "CP Faenza Nord 132/15 kV",
-        "distanza_cabina_m": 0.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 858000.0,
-        "score_totale": 94.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.852,
-          44.651
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A22-002",
-        "title": "Seminativo Padano Asse A22 — Campogalliano",
-        "comune": "Campogalliano",
-        "provincia": "Modena",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 25.0,
-        "mwp_stimati": 20.83,
-        "produzione_mwh_anno": 28125.0,
-        "cabina_piu_vicina": "CP Campogalliano (AC011E00007)",
-        "distanza_cabina_m": 946.0,
-        "prezzo_mq_eur": 8.91,
-        "prezzo_richiesto_eur": 2227500.0,
-        "score_totale": 94.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.592,
-          43.545
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A1-004",
-        "title": "Fondo Agricolo Pianeggiante Valdarno A1 — Terranuova Bracciolini",
-        "comune": "Terranuova Bracciolini",
-        "provincia": "Arezzo",
-        "regione": "Toscana",
-        "superficie_ha": 19.0,
-        "mwp_stimati": 15.83,
-        "produzione_mwh_anno": 22483.3,
-        "cabina_piu_vicina": "CP Terranuova Bracciolini (AC001E00517)",
-        "distanza_cabina_m": 759.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1482000.0,
-        "score_totale": 93.5,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.332,
-          44.078
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A14-002",
-        "title": "Seminativo Aperto Corridoio A14 — Longiano",
-        "comune": "Longiano",
-        "provincia": "Forlì-Cesena",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 22.0,
-        "mwp_stimati": 18.33,
-        "produzione_mwh_anno": 24750.0,
-        "cabina_piu_vicina": "CP Longiano (AC001E00786)",
-        "distanza_cabina_m": 973.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1716000.0,
-        "score_totale": 93.5,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.448,
-          44.921
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A21-001",
-        "title": "Grande Tenuta Agricola A21 — Felizzano",
-        "comune": "Felizzano",
-        "provincia": "Alessandria",
-        "regione": "Piemonte",
-        "superficie_ha": 29.0,
-        "mwp_stimati": 24.17,
-        "produzione_mwh_anno": 31658.3,
-        "cabina_piu_vicina": "CP Felizzano (AC001E01139)",
-        "distanza_cabina_m": 675.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2262000.0,
-        "score_totale": 93.4,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.5645,
-          43.5312
-        ]
-      },
-      "properties": {
-        "id": "FV-CAVA-AR-001",
-        "title": "Bacino Estrattivo a Cielo Aperto Valdarno — Montevarchi",
-        "comune": "Montevarchi",
-        "provincia": "Arezzo",
-        "regione": "Toscana",
-        "superficie_ha": 6.8,
-        "mwp_stimati": 5.67,
-        "produzione_mwh_anno": 8046.7,
-        "cabina_piu_vicina": "CP Montevarchi 132/15 kV",
-        "distanza_cabina_m": 0.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 530400.0,
-        "score_totale": 93.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.812,
-          45.401
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A4-004",
-        "title": "Tenuta Agricola Corridoio A4 — Sommacampagna",
-        "comune": "Sommacampagna",
-        "provincia": "Verona",
-        "regione": "Veneto",
-        "superficie_ha": 27.0,
-        "mwp_stimati": 22.5,
-        "produzione_mwh_anno": 29250.0,
-        "cabina_piu_vicina": "CP Sommacampagna (AC001E01258)",
-        "distanza_cabina_m": 880.0,
-        "prezzo_mq_eur": 8.74,
-        "prezzo_richiesto_eur": 2359800.0,
-        "score_totale": 93.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.871,
-          44.912
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-AL-002",
-        "title": "Seminativo Aperto Corridoio A7/A21 — Tortona",
-        "comune": "Tortona",
-        "provincia": "Alessandria",
-        "regione": "Piemonte",
-        "superficie_ha": 18.5,
-        "mwp_stimati": 15.42,
-        "produzione_mwh_anno": 20195.8,
-        "cabina_piu_vicina": "CP Tortona 132/15 kV",
-        "distanza_cabina_m": 610.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1443000.0,
-        "score_totale": 92.9,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.358,
-          45.446
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A4-005",
-        "title": "Compendio Seminativo Bassa Vicentina A4 — Gambellara",
-        "comune": "Gambellara",
-        "provincia": "Vicenza",
-        "regione": "Veneto",
-        "superficie_ha": 23.0,
-        "mwp_stimati": 19.17,
-        "produzione_mwh_anno": 24916.7,
-        "cabina_piu_vicina": "CP Gambellara (AC001E00896)",
-        "distanza_cabina_m": 810.0,
-        "prezzo_mq_eur": 8.62,
-        "prezzo_richiesto_eur": 1982600.0,
-        "score_totale": 92.5,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.002,
-          45.012
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A7-001",
-        "title": "Compendio Seminativo Irriguo A7 — Casei Gerola / Voghera",
-        "comune": "Casei Gerola",
-        "provincia": "Pavia",
-        "regione": "Lombardia",
-        "superficie_ha": 30.0,
-        "mwp_stimati": 25.0,
-        "produzione_mwh_anno": 32000.0,
-        "cabina_piu_vicina": "CP Voghera (AC001E01854)",
-        "distanza_cabina_m": 990.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2340000.0,
-        "score_totale": 92.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.825,
-          45.512
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A35-002",
-        "title": "Grande Tenuta Agricola Asse A35 — Calcio",
-        "comune": "Calcio",
-        "provincia": "Bergamo",
-        "regione": "Lombardia",
-        "superficie_ha": 29.0,
-        "mwp_stimati": 24.17,
-        "produzione_mwh_anno": 30933.3,
-        "cabina_piu_vicina": "CP Calcio (AC001E01361)",
-        "distanza_cabina_m": 945.0,
-        "prezzo_mq_eur": 8.56,
-        "prezzo_richiesto_eur": 2482400.0,
-        "score_totale": 92.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.135,
-          45.3725
-        ]
-      },
-      "properties": {
-        "id": "FV-CAVA-VR-001",
-        "title": "Area Cava di Ghiaia Livellata a Terra — Zevio",
-        "comune": "Zevio",
-        "provincia": "Verona",
-        "regione": "Veneto",
-        "superficie_ha": 9.5,
-        "mwp_stimati": 7.92,
-        "produzione_mwh_anno": 10291.7,
-        "cabina_piu_vicina": "CP Zevio 132/20 kV",
-        "distanza_cabina_m": 0.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 741000.0,
-        "score_totale": 92.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.052,
-          45.068
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-RO-001",
-        "title": "Compendio Agricolo di Bonifica — Adria",
-        "comune": "Adria",
-        "provincia": "Rovigo",
-        "regione": "Veneto",
-        "superficie_ha": 21.0,
-        "mwp_stimati": 17.5,
-        "produzione_mwh_anno": 22750.0,
-        "cabina_piu_vicina": "CP Adria 132/20 kV",
-        "distanza_cabina_m": 775.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1638000.0,
-        "score_totale": 91.5,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.412,
-          45.215
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-MN-001",
-        "title": "Grande Compendio Agricolo — Asola",
-        "comune": "Asola",
-        "provincia": "Mantova",
-        "regione": "Lombardia",
-        "superficie_ha": 26.0,
-        "mwp_stimati": 21.67,
-        "produzione_mwh_anno": 27733.3,
-        "cabina_piu_vicina": "CP Asola (AC001E01238)",
-        "distanza_cabina_m": 735.0,
-        "prezzo_mq_eur": 8.24,
-        "prezzo_richiesto_eur": 2142400.0,
-        "score_totale": 91.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.952,
-          45.132
-        ]
-      },
-      "properties": {
-        "id": "FV-DISC-MN-001",
-        "title": "Compendio Bonificato Pianeggiante a Terra — Roncoferraro",
-        "comune": "Roncoferraro",
-        "provincia": "Mantova",
-        "regione": "Lombardia",
-        "superficie_ha": 8.0,
-        "mwp_stimati": 6.67,
-        "produzione_mwh_anno": 8533.3,
-        "cabina_piu_vicina": "CP Roncoferraro 132/20 kV",
-        "distanza_cabina_m": 0.0,
-        "prezzo_mq_eur": 8.24,
-        "prezzo_richiesto_eur": 659200.0,
-        "score_totale": 91.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.015,
-          44.248
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A14-001",
-        "title": "Tenuta Agricola Romagnola A14 — Forlì",
-        "comune": "Forlì",
-        "provincia": "Forlì-Cesena",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 28.0,
-        "mwp_stimati": 23.33,
-        "produzione_mwh_anno": 31500.0,
-        "cabina_piu_vicina": "CP Forlì (AC001E00675)",
-        "distanza_cabina_m": 1084.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2184000.0,
-        "score_totale": 89.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.742,
-          45.042
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A21-002",
-        "title": "Compendio Agricolo Pianura Padana A21 — Piacenza Est",
-        "comune": "Piacenza",
-        "provincia": "Piacenza",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 32.0,
-        "mwp_stimati": 26.67,
-        "produzione_mwh_anno": 36000.0,
-        "cabina_piu_vicina": "CP Piacenza (AC001E01168)",
-        "distanza_cabina_m": 1047.0,
-        "prezzo_mq_eur": 7.92,
-        "prezzo_richiesto_eur": 2534400.0,
-        "score_totale": 89.0,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.188,
-          44.86
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A1-003",
-        "title": "Seminativo Irriguo di Pianura A1 — Fontevivo",
-        "comune": "Fontevivo",
-        "provincia": "Parma",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 21.0,
-        "mwp_stimati": 17.5,
-        "produzione_mwh_anno": 23625.0,
-        "cabina_piu_vicina": "CP Fontevivo (AC001E01112)",
-        "distanza_cabina_m": 1069.0,
-        "prezzo_mq_eur": 8.45,
-        "prezzo_richiesto_eur": 1774500.0,
-        "score_totale": 88.5,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.192,
-          45.369
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A4-001",
-        "title": "Mega Compendio Agricolo Pianura Aperta A4 — Santhià",
-        "comune": "Santhià",
-        "provincia": "Vercelli",
-        "regione": "Piemonte",
-        "superficie_ha": 34.0,
-        "mwp_stimati": 28.33,
-        "produzione_mwh_anno": 37116.7,
-        "cabina_piu_vicina": "CP Santhià (AC001E01301)",
-        "distanza_cabina_m": 1136.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2652000.0,
-        "score_totale": 88.4,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.872,
-          44.918
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-A7-002",
-        "title": "Seminativo Padano Aperto A7 — Tortona",
-        "comune": "Tortona",
-        "provincia": "Alessandria",
-        "regione": "Piemonte",
-        "superficie_ha": 26.0,
-        "mwp_stimati": 21.67,
-        "produzione_mwh_anno": 28383.3,
-        "cabina_piu_vicina": "CP Tortona 132/15 kV",
-        "distanza_cabina_m": 1207.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2028000.0,
-        "score_totale": 88.4,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.254,
-          43.535
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-AN-001",
-        "title": "Fascia Agricola Aperta Asse SS76 — Jesi",
-        "comune": "Jesi",
-        "provincia": "Ancona",
-        "regione": "Marche",
-        "superficie_ha": 15.0,
-        "mwp_stimati": 12.5,
-        "produzione_mwh_anno": 17375.0,
-        "cabina_piu_vicina": "CP Jesi Z.I. 132/20 kV",
-        "distanza_cabina_m": 1176.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1170000.0,
-        "score_totale": 88.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 812500.0,
+        "score_totale": 95.7,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -767,7 +100,7 @@
       },
       "properties": {
         "id": "FV-AGRI-BS-004",
-        "title": "Terreno Agricolo Seminativo — Bagnolo Mella",
+        "title": "Terreno Agricolo Seminativo — Bagnolo Mella (Fg. 20 Part. 78, 93)",
         "comune": "Bagnolo Mella",
         "provincia": "Brescia",
         "regione": "Lombardia",
@@ -776,9 +109,9 @@
         "produzione_mwh_anno": 13866.7,
         "cabina_piu_vicina": "CP Bagnolo Mella (AC001E01345)",
         "distanza_cabina_m": 275.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 1196000.0,
-        "score_totale": 87.2,
+        "prezzo_mq_eur": 7.48,
+        "prezzo_richiesto_eur": 972400.0,
+        "score_totale": 94.7,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -790,24 +123,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.642,
-          45.181
+          9.615,
+          45.241
         ]
       },
       "properties": {
-        "id": "FV-AGRI-A1-001",
-        "title": "Compendio Agricolo Pianeggiante A1 — Casalpusterlengo",
-        "comune": "Casalpusterlengo",
+        "id": "FV-AGRI-LO-002",
+        "title": "Tenuta Agricola Aperta — Turano Lodigiano (Fg. 13 Part. 30, 145)",
+        "comune": "Turano Lodigiano",
         "provincia": "Lodi",
         "regione": "Lombardia",
-        "superficie_ha": 26.0,
-        "mwp_stimati": 21.67,
-        "produzione_mwh_anno": 27733.3,
-        "cabina_piu_vicina": "CP Casalpusterlengo (AC001E01178)",
-        "distanza_cabina_m": 1010.0,
-        "prezzo_mq_eur": 8.74,
-        "prezzo_richiesto_eur": 2272400.0,
-        "score_totale": 87.2,
+        "superficie_ha": 17.0,
+        "mwp_stimati": 14.17,
+        "produzione_mwh_anno": 18133.3,
+        "cabina_piu_vicina": "STAZIONE AT Terna Turano Centrale",
+        "distanza_cabina_m": 234.0,
+        "prezzo_mq_eur": 6.73,
+        "prezzo_richiesto_eur": 1144100.0,
+        "score_totale": 94.7,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -819,24 +152,53 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.891,
-          45.283
+          11.5645,
+          43.5312
+        ]
+      },
+      "properties": {
+        "id": "FV-CAVA-AR-001",
+        "title": "Bacino Estrattivo a Cielo Aperto Valdarno — Montevarchi (Fg. 6 Part. 757, 531)",
+        "comune": "Montevarchi",
+        "provincia": "Arezzo",
+        "regione": "Toscana",
+        "superficie_ha": 6.8,
+        "mwp_stimati": 5.67,
+        "produzione_mwh_anno": 8046.7,
+        "cabina_piu_vicina": "CP Montevarchi 132/15 kV",
+        "distanza_cabina_m": 0.0,
+        "prezzo_mq_eur": 7.2,
+        "prezzo_richiesto_eur": 489600.0,
+        "score_totale": 94.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8878,
+          45.2843
         ]
       },
       "properties": {
         "id": "FV-AGRI-A22-001",
-        "title": "Tenuta Agricola Pianeggiante A22 — Nogarole Rocca",
+        "title": "Tenuta Agricola Pianeggiante A22 — Nogarole Rocca (Fg. 24 Part. 54, 48, 47)",
         "comune": "Nogarole Rocca",
         "provincia": "Verona",
         "regione": "Veneto",
-        "superficie_ha": 31.0,
-        "mwp_stimati": 25.83,
-        "produzione_mwh_anno": 33583.3,
+        "superficie_ha": 29.0,
+        "mwp_stimati": 24.17,
+        "produzione_mwh_anno": 31416.7,
         "cabina_piu_vicina": "CP Nogarole Rocca (AC001E01244)",
-        "distanza_cabina_m": 556.0,
-        "prezzo_mq_eur": 9.15,
-        "prezzo_richiesto_eur": 2836500.0,
-        "score_totale": 86.0,
+        "distanza_cabina_m": 843.0,
+        "prezzo_mq_eur": 7.34,
+        "prezzo_richiesto_eur": 2128600.0,
+        "score_totale": 93.5,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -848,24 +210,111 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.142,
-          45.358
+          11.135,
+          45.3725
         ]
       },
       "properties": {
-        "id": "FV-AGRI-A21-003",
-        "title": "Seminativo Irriguo di Pianura — Manerbio A21",
-        "comune": "Manerbio",
-        "provincia": "Brescia",
+        "id": "FV-CAVA-VR-001",
+        "title": "Area Cava di Ghiaia Livellata a Terra — Zevio (Fg. 15 Part. 485)",
+        "comune": "Zevio",
+        "provincia": "Verona",
+        "regione": "Veneto",
+        "superficie_ha": 9.5,
+        "mwp_stimati": 7.92,
+        "produzione_mwh_anno": 10291.7,
+        "cabina_piu_vicina": "CP Zevio 132/20 kV",
+        "distanza_cabina_m": 0.0,
+        "prezzo_mq_eur": 7.2,
+        "prezzo_richiesto_eur": 684000.0,
+        "score_totale": 93.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.952,
+          45.132
+        ]
+      },
+      "properties": {
+        "id": "FV-DISC-MN-001",
+        "title": "Compendio Bonificato Pianeggiante a Terra — Roncoferraro (Fg. 29 Part. 311, 227)",
+        "comune": "Roncoferraro",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 8.0,
+        "mwp_stimati": 6.67,
+        "produzione_mwh_anno": 8533.3,
+        "cabina_piu_vicina": "CP Roncoferraro 132/20 kV",
+        "distanza_cabina_m": 0.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 520000.0,
+        "score_totale": 92.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.052,
+          45.068
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-RO-001",
+        "title": "Compendio Agricolo di Bonifica — Adria (Fg. 28 Part. 114, 118)",
+        "comune": "Adria",
+        "provincia": "Rovigo",
+        "regione": "Veneto",
+        "superficie_ha": 21.0,
+        "mwp_stimati": 17.5,
+        "produzione_mwh_anno": 22750.0,
+        "cabina_piu_vicina": "CP Adria 132/20 kV",
+        "distanza_cabina_m": 775.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1365000.0,
+        "score_totale": 92.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.412,
+          45.215
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-MN-001",
+        "title": "Grande Compendio Agricolo — Asola (Fg. 42 Part. 302, 304)",
+        "comune": "Asola",
+        "provincia": "Mantova",
         "regione": "Lombardia",
         "superficie_ha": 26.0,
         "mwp_stimati": 21.67,
         "produzione_mwh_anno": 27733.3,
-        "cabina_piu_vicina": "CP Manerbio (AC001E01253)",
-        "distanza_cabina_m": 752.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 2392000.0,
-        "score_totale": 85.2,
+        "cabina_piu_vicina": "CP Asola (AC001E01238)",
+        "distanza_cabina_m": 735.0,
+        "prezzo_mq_eur": 6.65,
+        "prezzo_richiesto_eur": 1729000.0,
+        "score_totale": 91.7,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -877,24 +326,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.052,
-          44.856
+          10.185,
+          44.8595
         ]
       },
       "properties": {
-        "id": "FV-AGRI-A1-002",
-        "title": "Tenuta Agricola Seminativo Corridoio A1 — Fidenza",
-        "comune": "Fidenza",
+        "id": "FV-AGRI-A1-003",
+        "title": "Seminativo Irriguo di Pianura A1 — Fontevivo (Fg. 3 Part. 34, 274)",
+        "comune": "Fontevivo",
         "provincia": "Parma",
         "regione": "Emilia-Romagna",
-        "superficie_ha": 29.0,
-        "mwp_stimati": 24.17,
-        "produzione_mwh_anno": 32625.0,
-        "cabina_piu_vicina": "CP Fidenza (AC001E01111)",
-        "distanza_cabina_m": 1532.0,
-        "prezzo_mq_eur": 8.45,
-        "prezzo_richiesto_eur": 2450500.0,
-        "score_totale": 84.0,
+        "superficie_ha": 21.0,
+        "mwp_stimati": 17.5,
+        "produzione_mwh_anno": 23625.0,
+        "cabina_piu_vicina": "CP Fontevivo (AC001E01112)",
+        "distanza_cabina_m": 1312.0,
+        "prezzo_mq_eur": 7.34,
+        "prezzo_richiesto_eur": 1541400.0,
+        "score_totale": 90.0,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -906,24 +355,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.912,
-          44.935
+          11.582,
+          43.5356
         ]
       },
       "properties": {
-        "id": "FV-AGRI-PC-001",
-        "title": "Fascia Agricola Corridoio A1 — Fiorenzuola d'Arda",
-        "comune": "Fiorenzuola d'Arda",
-        "provincia": "Piacenza",
-        "regione": "Emilia-Romagna",
-        "superficie_ha": 19.5,
-        "mwp_stimati": 16.25,
-        "produzione_mwh_anno": 21937.5,
-        "cabina_piu_vicina": "CP Fiorenzuola d'Arda (AC001E01230)",
-        "distanza_cabina_m": 2316.0,
-        "prezzo_mq_eur": 7.92,
-        "prezzo_richiesto_eur": 1544400.0,
-        "score_totale": 83.5,
+        "id": "FV-AGRI-A1-004",
+        "title": "Fondo Agricolo Pianeggiante Valdarno A1 — Terranuova Bracciolini (Fg. 55 Part. 26)",
+        "comune": "Terranuova Bracciolini",
+        "provincia": "Arezzo",
+        "regione": "Toscana",
+        "superficie_ha": 19.0,
+        "mwp_stimati": 15.83,
+        "produzione_mwh_anno": 22483.3,
+        "cabina_piu_vicina": "CP Montevarchi 132/15 kV",
+        "distanza_cabina_m": 1493.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1235000.0,
+        "score_totale": 90.0,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -935,53 +384,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.742,
-          45.245
+          10.8122,
+          45.4142
         ]
       },
       "properties": {
-        "id": "FV-AGRI-PV-001",
-        "title": "Grande Tenuta Agricola Seminativo — Mortara",
-        "comune": "Mortara",
-        "provincia": "Pavia",
-        "regione": "Lombardia",
-        "superficie_ha": 25.0,
-        "mwp_stimati": 20.83,
-        "produzione_mwh_anno": 26666.7,
-        "cabina_piu_vicina": "CP Mortara (AC001E01214)",
-        "distanza_cabina_m": 2224.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1950000.0,
-        "score_totale": 81.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.495,
-          45.378
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-MN-004",
-        "title": "Compendio Agricolo Pianeggiante — Castiglione delle Stiviere",
-        "comune": "Castiglione delle Stiviere",
-        "provincia": "Mantova",
-        "regione": "Lombardia",
-        "superficie_ha": 14.5,
-        "mwp_stimati": 12.08,
-        "produzione_mwh_anno": 15466.7,
-        "cabina_piu_vicina": "CP Castiglione delle Stiviere (AC001E01255)",
-        "distanza_cabina_m": 1948.0,
-        "prezzo_mq_eur": 8.62,
-        "prezzo_richiesto_eur": 1249900.0,
-        "score_totale": 80.2,
+        "id": "FV-AGRI-A4-004",
+        "title": "Tenuta Agricola Corridoio A4 — Sommacampagna (Fg. 14 Part. 84, 112)",
+        "comune": "Sommacampagna",
+        "provincia": "Verona",
+        "regione": "Veneto",
+        "superficie_ha": 24.0,
+        "mwp_stimati": 20.0,
+        "produzione_mwh_anno": 26000.0,
+        "cabina_piu_vicina": "CP Sommacampagna (AC001E01258)",
+        "distanza_cabina_m": 1458.0,
+        "prezzo_mq_eur": 7.21,
+        "prezzo_richiesto_eur": 1730400.0,
+        "score_totale": 89.0,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -999,7 +419,7 @@
       },
       "properties": {
         "id": "FV-AGRI-A4-003",
-        "title": "Seminativo Pianeggiante Asse A4 — Calcinato",
+        "title": "Seminativo Pianeggiante Asse A4 — Calcinato (Fg. 31 Part. 515, 619)",
         "comune": "Calcinato",
         "provincia": "Brescia",
         "regione": "Lombardia",
@@ -1008,38 +428,9 @@
         "produzione_mwh_anno": 26666.7,
         "cabina_piu_vicina": "CP Calcinato (AC001E01509)",
         "distanza_cabina_m": 1224.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 2300000.0,
-        "score_totale": 80.2,
-        "rating_classe": "TOP OPPORTUNITÀ",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.141,
-          45.352
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-BS-002",
-        "title": "Seminativo Irriguo di Pianura — Manerbio",
-        "comune": "Manerbio",
-        "provincia": "Brescia",
-        "regione": "Lombardia",
-        "superficie_ha": 19.0,
-        "mwp_stimati": 15.83,
-        "produzione_mwh_anno": 20266.7,
-        "cabina_piu_vicina": "CP Manerbio (AC001E01253)",
-        "distanza_cabina_m": 1424.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 1748000.0,
-        "score_totale": 78.7,
+        "prezzo_mq_eur": 7.84,
+        "prezzo_richiesto_eur": 1960000.0,
+        "score_totale": 87.7,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1057,7 +448,7 @@
       },
       "properties": {
         "id": "FV-AGRI-CR-004",
-        "title": "Campi Aperti Seminativi Irrigui — Pizzighettone",
+        "title": "Campi Aperti Seminativi Irrigui — Pizzighettone (Fg. 26 Part. 23)",
         "comune": "Pizzighettone",
         "provincia": "Cremona",
         "regione": "Lombardia",
@@ -1066,9 +457,444 @@
         "produzione_mwh_anno": 14933.3,
         "cabina_piu_vicina": "CP Pizzighettone (AC001E01184)",
         "distanza_cabina_m": 1312.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 1288000.0,
-        "score_totale": 78.2,
+        "prezzo_mq_eur": 7.14,
+        "prezzo_richiesto_eur": 999600.0,
+        "score_totale": 86.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.141,
+          45.352
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-BS-002",
+        "title": "Seminativo Irriguo Buffer Z.I. — Manerbio (Fg. 27 Part. 6)",
+        "comune": "Manerbio",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 19.0,
+        "mwp_stimati": 15.83,
+        "produzione_mwh_anno": 20266.7,
+        "cabina_piu_vicina": "CP Manerbio (AC001E01253)",
+        "distanza_cabina_m": 1424.0,
+        "prezzo_mq_eur": 7.62,
+        "prezzo_richiesto_eur": 1447800.0,
+        "score_totale": 86.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.758,
+          45.049
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A21-002",
+        "title": "Compendio Agricolo Pianura Padana A21 — Piacenza Est (Fg. 26 Part. 1051, 232)",
+        "comune": "Piacenza",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 28.0,
+        "mwp_stimati": 23.33,
+        "produzione_mwh_anno": 31500.0,
+        "cabina_piu_vicina": "CP Piacenza (AC001E01168)",
+        "distanza_cabina_m": 2283.0,
+        "prezzo_mq_eur": 8.0,
+        "prezzo_richiesto_eur": 2240000.0,
+        "score_totale": 85.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.268,
+          43.542
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-AN-001",
+        "title": "Fascia Agricola Aperta Asse SS76 / A14 — Jesi (Fg. 23 Part. 269, 517)",
+        "comune": "Jesi",
+        "provincia": "Ancona",
+        "regione": "Marche",
+        "superficie_ha": 15.0,
+        "mwp_stimati": 12.5,
+        "produzione_mwh_anno": 17375.0,
+        "cabina_piu_vicina": "CP Jesi Z.I. 132/20 kV",
+        "distanza_cabina_m": 1526.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 975000.0,
+        "score_totale": 85.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.692,
+          45.476
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A4-002",
+        "title": "Seminativo Irriguo Corridoio A4 — Galliate (Fg. 52 Part. 4813)",
+        "comune": "Galliate",
+        "provincia": "Novara",
+        "regione": "Piemonte",
+        "superficie_ha": 22.0,
+        "mwp_stimati": 18.33,
+        "produzione_mwh_anno": 24016.7,
+        "cabina_piu_vicina": "CP Galliate (AC001E01311)",
+        "distanza_cabina_m": 1682.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1430000.0,
+        "score_totale": 85.4,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.455,
+          44.9045
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A21-001",
+        "title": "Grande Tenuta Agricola A21 — Felizzano (Fg. 18 Part. 396, 386)",
+        "comune": "Felizzano",
+        "provincia": "Alessandria",
+        "regione": "Piemonte",
+        "superficie_ha": 24.0,
+        "mwp_stimati": 20.0,
+        "produzione_mwh_anno": 26200.0,
+        "cabina_piu_vicina": "CP Felizzano (AC001E01139)",
+        "distanza_cabina_m": 2366.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1560000.0,
+        "score_totale": 85.4,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.852,
+          44.922
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A7-002",
+        "title": "Seminativo Padano Aperto A7 Nord — Tortona (Fg. 24 Part. 156)",
+        "comune": "Tortona",
+        "provincia": "Alessandria",
+        "regione": "Piemonte",
+        "superficie_ha": 21.0,
+        "mwp_stimati": 17.5,
+        "produzione_mwh_anno": 22925.0,
+        "cabina_piu_vicina": "CP Tortona 132/15 kV",
+        "distanza_cabina_m": 1862.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1365000.0,
+        "score_totale": 85.4,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.839,
+          44.9015
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-AL-002",
+        "title": "Seminativo Aperto Corridoio A7 Sud — Tortona (Fg. 46 Part. 204, 208)",
+        "comune": "Tortona",
+        "provincia": "Alessandria",
+        "regione": "Piemonte",
+        "superficie_ha": 18.5,
+        "mwp_stimati": 15.42,
+        "produzione_mwh_anno": 20195.8,
+        "cabina_piu_vicina": "CP Tortona 132/15 kV",
+        "distanza_cabina_m": 2208.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1202500.0,
+        "score_totale": 85.4,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.635,
+          45.182
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A1-001",
+        "title": "Compendio Agricolo Pianeggiante A1 — Casalpusterlengo (Fg. 21 Part. 518)",
+        "comune": "Casalpusterlengo",
+        "provincia": "Lodi",
+        "regione": "Lombardia",
+        "superficie_ha": 26.0,
+        "mwp_stimati": 21.67,
+        "produzione_mwh_anno": 27733.3,
+        "cabina_piu_vicina": "CP Casalpusterlengo (AC001E01178)",
+        "distanza_cabina_m": 1513.0,
+        "prezzo_mq_eur": 7.27,
+        "prezzo_richiesto_eur": 1890200.0,
+        "score_totale": 84.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1665,
+          45.364
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A21-003",
+        "title": "Seminativo Irriguo di Pianura A21 — Manerbio (Fg. 14 Part. 28, 110)",
+        "comune": "Manerbio",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 26.0,
+        "mwp_stimati": 21.67,
+        "produzione_mwh_anno": 27733.3,
+        "cabina_piu_vicina": "CP Manerbio (AC001E01253)",
+        "distanza_cabina_m": 1844.0,
+        "prezzo_mq_eur": 7.99,
+        "prezzo_richiesto_eur": 2077400.0,
+        "score_totale": 83.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.742,
+          45.245
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-PV-001",
+        "title": "Grande Tenuta Agricola Seminativo — Mortara (Fg. 35 Part. 1227, 974)",
+        "comune": "Mortara",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 25.0,
+        "mwp_stimati": 20.83,
+        "produzione_mwh_anno": 26666.7,
+        "cabina_piu_vicina": "CP Mortara (AC001E01214)",
+        "distanza_cabina_m": 2224.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1625000.0,
+        "score_totale": 83.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.428,
+          44.992
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-CR-002",
+        "title": "Tenuta Agricola Pianeggiante Campo Aperto — Casalmaggiore (Fg. 25 Part. 136, 24)",
+        "comune": "Casalmaggiore",
+        "provincia": "Cremona",
+        "regione": "Lombardia",
+        "superficie_ha": 22.0,
+        "mwp_stimati": 18.33,
+        "produzione_mwh_anno": 23466.7,
+        "cabina_piu_vicina": "CP Sabbioneta (AC001E01233)",
+        "distanza_cabina_m": 2111.0,
+        "prezzo_mq_eur": 6.86,
+        "prezzo_richiesto_eur": 1509200.0,
+        "score_totale": 83.2,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.495,
+          45.378
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-MN-004",
+        "title": "Compendio Agricolo Pianeggiante — Castiglione delle Stiviere (Fg. 23 Part. 867, 906)",
+        "comune": "Castiglione delle Stiviere",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 14.5,
+        "mwp_stimati": 12.08,
+        "produzione_mwh_anno": 15466.7,
+        "cabina_piu_vicina": "CP Castiglione delle Stiviere (AC001E01255)",
+        "distanza_cabina_m": 1948.0,
+        "prezzo_mq_eur": 6.65,
+        "prezzo_richiesto_eur": 964250.0,
+        "score_totale": 82.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.471,
+          45.334
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-LO-003",
+        "title": "Appezzamento Agricolo Pianeggiante — Montanaso Lombardo (Fg. 5 Part. 719, 66)",
+        "comune": "Montanaso Lombardo",
+        "provincia": "Lodi",
+        "regione": "Lombardia",
+        "superficie_ha": 13.0,
+        "mwp_stimati": 10.83,
+        "produzione_mwh_anno": 13866.7,
+        "cabina_piu_vicina": "CP Montanaso Lombardo (AC001E01203)",
+        "distanza_cabina_m": 2401.0,
+        "prezzo_mq_eur": 7.08,
+        "prezzo_richiesto_eur": 920400.0,
+        "score_totale": 82.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.901,
+          44.3265
+        ]
+      },
+      "properties": {
+        "id": "FV-CAVA-RA-001",
+        "title": "Bacino a Cielo Aperto Fascia A14 — Faenza (Fg. 64 Part. 306, 269)",
+        "comune": "Faenza",
+        "provincia": "Ravenna",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 11.0,
+        "mwp_stimati": 9.17,
+        "produzione_mwh_anno": 12375.0,
+        "cabina_piu_vicina": "CP Faenza (AC001E00683)",
+        "distanza_cabina_m": 1786.0,
+        "prezzo_mq_eur": 7.2,
+        "prezzo_richiesto_eur": 792000.0,
+        "score_totale": 82.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.8459,
+          44.67
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A22-002",
+        "title": "Seminativo Padano Asse A22 — Campogalliano (Fg. 34 Part. 73, 72)",
+        "comune": "Campogalliano",
+        "provincia": "Modena",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 25.0,
+        "mwp_stimati": 20.83,
+        "produzione_mwh_anno": 28125.0,
+        "cabina_piu_vicina": "CP Campogalliano (AC011E00007)",
+        "distanza_cabina_m": 3112.0,
+        "prezzo_mq_eur": 7.35,
+        "prezzo_richiesto_eur": 1837500.0,
+        "score_totale": 81.5,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1086,7 +912,7 @@
       },
       "properties": {
         "id": "FV-AGRI-GR-001",
-        "title": "Grande Tenuta Litoranea a Campo Aperto — Grosseto",
+        "title": "Grande Tenuta Litoranea a Campo Aperto — Grosseto (Fg. 72 Part. 960, 1103)",
         "comune": "Grosseto",
         "provincia": "Grosseto",
         "regione": "Toscana",
@@ -1095,9 +921,9 @@
         "produzione_mwh_anno": 37866.7,
         "cabina_piu_vicina": "CP Grosseto (AC001E00482)",
         "distanza_cabina_m": 3470.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2496000.0,
-        "score_totale": 78.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 2080000.0,
+        "score_totale": 80.5,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1115,7 +941,7 @@
       },
       "properties": {
         "id": "FV-CAVA-BS-001",
-        "title": "Compendio Estrattivo Riconvertibile — Montichiari",
+        "title": "Compendio Estrattivo Riconvertibile — Montichiari (Fg. 40 Part. 3, 264)",
         "comune": "Montichiari",
         "provincia": "Brescia",
         "regione": "Lombardia",
@@ -1124,9 +950,9 @@
         "produzione_mwh_anno": 9066.7,
         "cabina_piu_vicina": "CP Montichiari 132/15 kV",
         "distanza_cabina_m": 1597.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 663000.0,
-        "score_totale": 77.2,
+        "prezzo_mq_eur": 7.2,
+        "prezzo_richiesto_eur": 612000.0,
+        "score_totale": 80.2,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1138,24 +964,53 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.645,
-          45.498
+          9.845,
+          45.506
         ]
       },
       "properties": {
-        "id": "FV-AGRI-A35-001",
-        "title": "Seminativo Irriguo di Pianura A35 — Caravaggio",
-        "comune": "Caravaggio",
+        "id": "FV-AGRI-A35-002",
+        "title": "Grande Tenuta Agricola Asse A35 — Calcio (Fg. 8 Part. 432, 528)",
+        "comune": "Calcio",
         "provincia": "Bergamo",
         "regione": "Lombardia",
-        "superficie_ha": 27.0,
-        "mwp_stimati": 22.5,
-        "produzione_mwh_anno": 28800.0,
-        "cabina_piu_vicina": "CP Mozzanica (AC001E01355)",
-        "distanza_cabina_m": 2553.0,
-        "prezzo_mq_eur": 8.98,
-        "prezzo_richiesto_eur": 2424600.0,
-        "score_totale": 77.2,
+        "superficie_ha": 28.0,
+        "mwp_stimati": 23.33,
+        "produzione_mwh_anno": 29866.7,
+        "cabina_piu_vicina": "CP Calcio (AC001E01361)",
+        "distanza_cabina_m": 2521.0,
+        "prezzo_mq_eur": 7.06,
+        "prezzo_richiesto_eur": 1976800.0,
+        "score_totale": 79.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.312,
+          45.184
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-VR-002",
+        "title": "Seminativo di Pianura Campo Aperto — Legnago (Fg. 42 Part. 604, 547)",
+        "comune": "Legnago",
+        "provincia": "Verona",
+        "regione": "Veneto",
+        "superficie_ha": 23.0,
+        "mwp_stimati": 19.17,
+        "produzione_mwh_anno": 24916.7,
+        "cabina_piu_vicina": "CP Legnago (AC001E00842)",
+        "distanza_cabina_m": 2711.0,
+        "prezzo_mq_eur": 7.08,
+        "prezzo_richiesto_eur": 1628400.0,
+        "score_totale": 79.0,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1173,7 +1028,7 @@
       },
       "properties": {
         "id": "FV-AGRI-BS-005",
-        "title": "Tenuta a Campo Aperto per Agrivoltaico — Verolanuova",
+        "title": "Tenuta a Campo Aperto per Agrivoltaico — Verolanuova (Fg. 20 Part. 51)",
         "comune": "Verolanuova",
         "provincia": "Brescia",
         "regione": "Lombardia",
@@ -1182,9 +1037,9 @@
         "produzione_mwh_anno": 25600.0,
         "cabina_piu_vicina": "CP Bassano Bresciano (AC001E01197)",
         "distanza_cabina_m": 2817.0,
-        "prezzo_mq_eur": 8.96,
-        "prezzo_richiesto_eur": 2150400.0,
-        "score_totale": 75.7,
+        "prezzo_mq_eur": 7.13,
+        "prezzo_richiesto_eur": 1711200.0,
+        "score_totale": 78.2,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1202,7 +1057,7 @@
       },
       "properties": {
         "id": "FV-AGRI-MN-005",
-        "title": "Compendio Agricolo Seminativo Aperto — Suzzara",
+        "title": "Compendio Agricolo Seminativo Aperto — Suzzara (Fg. 48 Part. 55, 1753)",
         "comune": "Suzzara",
         "provincia": "Mantova",
         "regione": "Lombardia",
@@ -1211,9 +1066,96 @@
         "produzione_mwh_anno": 18133.3,
         "cabina_piu_vicina": "CP Suzzara (AC001E01229)",
         "distanza_cabina_m": 3139.0,
-        "prezzo_mq_eur": 8.62,
-        "prezzo_richiesto_eur": 1465400.0,
-        "score_totale": 75.2,
+        "prezzo_mq_eur": 6.65,
+        "prezzo_richiesto_eur": 1130500.0,
+        "score_totale": 77.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0627,
+          44.8913
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A1-002",
+        "title": "Tenuta Agricola Seminativo Corridoio A1 — Fidenza (Fg. 27 Part. 11)",
+        "comune": "Fidenza",
+        "provincia": "Parma",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 29.0,
+        "mwp_stimati": 24.17,
+        "produzione_mwh_anno": 32625.0,
+        "cabina_piu_vicina": "CP Fidenza (AC001E01111)",
+        "distanza_cabina_m": 5451.0,
+        "prezzo_mq_eur": 7.41,
+        "prezzo_richiesto_eur": 2148900.0,
+        "score_totale": 77.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.088,
+          44.254
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A14-001",
+        "title": "Tenuta Agricola Romagnola A14 — Forlì (Fg. 52 Part. 338)",
+        "comune": "Forlì",
+        "provincia": "Forlì-Cesena",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 26.0,
+        "mwp_stimati": 21.67,
+        "produzione_mwh_anno": 29250.0,
+        "cabina_piu_vicina": "CP Forlì (AC001E00682)",
+        "distanza_cabina_m": 4068.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1690000.0,
+        "score_totale": 77.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.358,
+          44.106
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A14-002",
+        "title": "Seminativo Aperto Corridoio A14 — Longiano (Fg. 9 Part. 1175, 1201)",
+        "comune": "Longiano",
+        "provincia": "Forlì-Cesena",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 22.0,
+        "mwp_stimati": 18.33,
+        "produzione_mwh_anno": 24750.0,
+        "cabina_piu_vicina": "CP Longiano (AC001E00786)",
+        "distanza_cabina_m": 4263.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1430000.0,
+        "score_totale": 77.0,
         "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1231,7 +1173,7 @@
       },
       "properties": {
         "id": "FV-AGRI-FE-001",
-        "title": "Macro-Tenuta Agricola di Bonifica — Ostellato",
+        "title": "Macro-Tenuta Agricola di Bonifica — Ostellato (Fg. 44 Part. 169)",
         "comune": "Ostellato",
         "provincia": "Ferrara",
         "regione": "Emilia-Romagna",
@@ -1240,10 +1182,10 @@
         "produzione_mwh_anno": 42750.0,
         "cabina_piu_vicina": "CP Tresignana (AC001E00826)",
         "distanza_cabina_m": 9410.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2964000.0,
-        "score_totale": 74.0,
-        "rating_classe": "QUALIFICATO",
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 2470000.0,
+        "score_totale": 76.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
         "osm_url": null
@@ -1254,25 +1196,54 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.428,
-          44.992
+          8.152,
+          45.3915
         ]
       },
       "properties": {
-        "id": "FV-AGRI-CR-002",
-        "title": "Tenuta Agricola Pianeggiante Campo Aperto — Casalmaggiore",
-        "comune": "Casalmaggiore",
-        "provincia": "Cremona",
-        "regione": "Lombardia",
-        "superficie_ha": 22.0,
-        "mwp_stimati": 18.33,
-        "produzione_mwh_anno": 23466.7,
-        "cabina_piu_vicina": "CP Sabbioneta (AC001E01233)",
-        "distanza_cabina_m": 2111.0,
-        "prezzo_mq_eur": 9.07,
-        "prezzo_richiesto_eur": 1995400.0,
-        "score_totale": 73.7,
-        "rating_classe": "QUALIFICATO",
+        "id": "FV-AGRI-A4-001",
+        "title": "Compendio Agricolo Fascia A4 — Santhià (Fg. 12 Part. 333, 351)",
+        "comune": "Santhià",
+        "provincia": "Vercelli",
+        "regione": "Piemonte",
+        "superficie_ha": 18.5,
+        "mwp_stimati": 15.42,
+        "produzione_mwh_anno": 20195.8,
+        "cabina_piu_vicina": "CP Santhià (AC001E01301)",
+        "distanza_cabina_m": 4985.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1202500.0,
+        "score_totale": 76.4,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9261,
+          44.9515
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-PC-001",
+        "title": "Fascia Agricola Corridoio A1 — Fiorenzuola d'Arda (Fg. 16 Part. 48, 340)",
+        "comune": "Fiorenzuola d'Arda",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 19.5,
+        "mwp_stimati": 16.25,
+        "produzione_mwh_anno": 21937.5,
+        "cabina_piu_vicina": "CP Fiorenzuola d'Arda (AC001E01230)",
+        "distanza_cabina_m": 4237.0,
+        "prezzo_mq_eur": 7.7,
+        "prezzo_richiesto_eur": 1501500.0,
+        "score_totale": 76.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
         "osm_url": null
@@ -1289,7 +1260,7 @@
       },
       "properties": {
         "id": "FV-AGRI-AL-001",
-        "title": "Tenuta Agricola Pianura Fraschetta — Alessandria",
+        "title": "Tenuta Agricola Pianura Fraschetta — Alessandria (Fg. 203 Part. 766)",
         "comune": "Alessandria",
         "provincia": "Alessandria",
         "regione": "Piemonte",
@@ -1298,10 +1269,10 @@
         "produzione_mwh_anno": 33841.7,
         "cabina_piu_vicina": "CP Alessandria (AC001E01131)",
         "distanza_cabina_m": 3730.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 2418000.0,
-        "score_totale": 73.4,
-        "rating_classe": "QUALIFICATO",
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 2015000.0,
+        "score_totale": 75.9,
+        "rating_classe": "TOP OPPORTUNITÀ",
         "proprietario_nome": "",
         "proprietario_pec": "",
         "osm_url": null
@@ -1312,24 +1283,198 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.471,
-          45.334
+          8.928,
+          45.0145
         ]
       },
       "properties": {
-        "id": "FV-AGRI-LO-003",
-        "title": "Appezzamento Agricolo Pianeggiante — Montanaso Lombardo",
-        "comune": "Montanaso Lombardo",
-        "provincia": "Lodi",
+        "id": "FV-AGRI-A7-001",
+        "title": "Compendio Seminativo Irriguo A7 — Casei Gerola (Fg. 14 Part. 145, 175)",
+        "comune": "Casei Gerola",
+        "provincia": "Pavia",
         "regione": "Lombardia",
-        "superficie_ha": 13.0,
-        "mwp_stimati": 10.83,
-        "produzione_mwh_anno": 13866.7,
-        "cabina_piu_vicina": "CP Montanaso Lombardo (AC001E01203)",
-        "distanza_cabina_m": 2401.0,
-        "prezzo_mq_eur": 9.15,
-        "prezzo_richiesto_eur": 1189500.0,
-        "score_totale": 73.2,
+        "superficie_ha": 28.0,
+        "mwp_stimati": 23.33,
+        "produzione_mwh_anno": 29866.7,
+        "cabina_piu_vicina": "CP Alzano Scrivia (AC001E01186)",
+        "distanza_cabina_m": 4981.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1820000.0,
+        "score_totale": 75.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.6455,
+          45.5099
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-A35-001",
+        "title": "Seminativo Irriguo di Pianura A35 — Caravaggio (Fg. 15 Part. 11373, 14911)",
+        "comune": "Caravaggio",
+        "provincia": "Bergamo",
+        "regione": "Lombardia",
+        "superficie_ha": 27.0,
+        "mwp_stimati": 22.5,
+        "produzione_mwh_anno": 28800.0,
+        "cabina_piu_vicina": "CP Treviglio (AC001E01363)",
+        "distanza_cabina_m": 3675.0,
+        "prezzo_mq_eur": 7.41,
+        "prezzo_richiesto_eur": 2000700.0,
+        "score_totale": 75.7,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.8275,
+          44.994
+        ]
+      },
+      "properties": {
+        "id": "FV-A1-CADEO-001",
+        "title": "Lotto 1 Benchmark A1 Torrente Riglio — Cadeo (Fg. 7 Part. 77)",
+        "comune": "Cadeo",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 13.1,
+        "mwp_stimati": 10.92,
+        "produzione_mwh_anno": 14737.5,
+        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
+        "distanza_cabina_m": 4453.0,
+        "prezzo_mq_eur": 7.84,
+        "prezzo_richiesto_eur": 1027040.0,
+        "score_totale": 75.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.015,
+          45.271
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-VR-001",
+        "title": "Grande Tenuta Agricola Seminativo — Isola della Scala (Fg. 46 Part. 619, 82)",
+        "comune": "Isola della Scala",
+        "provincia": "Verona",
+        "regione": "Veneto",
+        "superficie_ha": 27.0,
+        "mwp_stimati": 22.5,
+        "produzione_mwh_anno": 29250.0,
+        "cabina_piu_vicina": "CP Salizzole (AC001E00890)",
+        "distanza_cabina_m": 3941.0,
+        "prezzo_mq_eur": 7.08,
+        "prezzo_richiesto_eur": 1911600.0,
+        "score_totale": 75.5,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.8285,
+          44.9965
+        ]
+      },
+      "properties": {
+        "id": "FV-A1-CADEO-002",
+        "title": "Lotto 2 Benchmark A1 Fascia Nord — Cadeo (Fg. 7 Part. 149)",
+        "comune": "Cadeo",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 8.1,
+        "mwp_stimati": 6.75,
+        "produzione_mwh_anno": 9112.5,
+        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
+        "distanza_cabina_m": 4510.0,
+        "prezzo_mq_eur": 7.55,
+        "prezzo_richiesto_eur": 611550.0,
+        "score_totale": 75.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.821,
+          44.9965
+        ]
+      },
+      "properties": {
+        "id": "FV-A1-PONT-001",
+        "title": "Lotto 3 Benchmark A1 Confinante (Blocco 10,5 ha) — Pontenure (Fg. 14 Part. 134)",
+        "comune": "Pontenure",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 6.3,
+        "mwp_stimati": 5.25,
+        "produzione_mwh_anno": 7087.5,
+        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
+        "distanza_cabina_m": 3921.0,
+        "prezzo_mq_eur": 8.0,
+        "prezzo_richiesto_eur": 504000.0,
+        "score_totale": 75.0,
+        "rating_classe": "TOP OPPORTUNITÀ",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.224,
+          45.368
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-BS-001",
+        "title": "Grande Tenuta Agricola Seminativo — Leno (Fg. 28 Part. 596, 640)",
+        "comune": "Leno",
+        "provincia": "Brescia",
+        "regione": "Lombardia",
+        "superficie_ha": 28.0,
+        "mwp_stimati": 23.33,
+        "produzione_mwh_anno": 29866.7,
+        "cabina_piu_vicina": "CP Ghedi (AC001E01251)",
+        "distanza_cabina_m": 5402.0,
+        "prezzo_mq_eur": 7.26,
+        "prezzo_richiesto_eur": 2032800.0,
+        "score_totale": 74.7,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1347,7 +1492,7 @@
       },
       "properties": {
         "id": "FV-AGRI-MN-002",
-        "title": "Seminativo Aperto di Pianura — Viadana",
+        "title": "Seminativo Aperto di Pianura — Viadana (Fg. 92 Part. 359, 941)",
         "comune": "Viadana",
         "provincia": "Mantova",
         "regione": "Lombardia",
@@ -1356,9 +1501,9 @@
         "produzione_mwh_anno": 19200.0,
         "cabina_piu_vicina": "CP Pomponesco (AC001E01232)",
         "distanza_cabina_m": 3744.0,
-        "prezzo_mq_eur": 8.62,
-        "prezzo_richiesto_eur": 1551600.0,
-        "score_totale": 71.7,
+        "prezzo_mq_eur": 6.65,
+        "prezzo_richiesto_eur": 1197000.0,
+        "score_totale": 74.2,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1370,24 +1515,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.534,
-          45.118
+          9.8185,
+          44.9972
         ]
       },
       "properties": {
-        "id": "FV-AGRI-MN-003",
-        "title": "Terreno Agricolo Seminativo — Marcaria",
-        "comune": "Marcaria",
-        "provincia": "Mantova",
-        "regione": "Lombardia",
-        "superficie_ha": 15.0,
-        "mwp_stimati": 12.5,
-        "produzione_mwh_anno": 16000.0,
-        "cabina_piu_vicina": "CP Redondesco (AC001E01237)",
-        "distanza_cabina_m": 5792.0,
-        "prezzo_mq_eur": 8.24,
-        "prezzo_richiesto_eur": 1236000.0,
-        "score_totale": 71.2,
+        "id": "FV-A1-PONT-002",
+        "title": "Lotto 4 Benchmark A1 Contiguo (Blocco 10,5 ha) — Pontenure (Fg. 14 Part. 21)",
+        "comune": "Pontenure",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 4.2,
+        "mwp_stimati": 3.5,
+        "produzione_mwh_anno": 4725.0,
+        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
+        "distanza_cabina_m": 3721.0,
+        "prezzo_mq_eur": 8.0,
+        "prezzo_richiesto_eur": 336000.0,
+        "score_totale": 74.0,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1399,111 +1544,24 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.875,
-          45.121
+          9.822,
+          44.999
         ]
       },
       "properties": {
-        "id": "FV-AGRI-PV-002",
-        "title": "Seminativo Aperto di Pianura — Ferrera Erbognone",
-        "comune": "Ferrera Erbognone",
-        "provincia": "Pavia",
-        "regione": "Lombardia",
-        "superficie_ha": 15.5,
-        "mwp_stimati": 12.92,
-        "produzione_mwh_anno": 16533.3,
-        "cabina_piu_vicina": "CP Sannazzaro de' Burgondi (AC001E01185)",
-        "distanza_cabina_m": 4455.0,
-        "prezzo_mq_eur": 7.8,
-        "prezzo_richiesto_eur": 1209000.0,
-        "score_totale": 71.2,
-        "rating_classe": "QUALIFICATO",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.312,
-          45.184
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-VR-002",
-        "title": "Seminativo di Pianura Campo Aperto — Legnago",
-        "comune": "Legnago",
-        "provincia": "Verona",
-        "regione": "Veneto",
-        "superficie_ha": 23.0,
-        "mwp_stimati": 19.17,
-        "produzione_mwh_anno": 24916.7,
-        "cabina_piu_vicina": "CP Legnago (AC001E00842)",
-        "distanza_cabina_m": 2711.0,
-        "prezzo_mq_eur": 9.15,
-        "prezzo_richiesto_eur": 2104500.0,
-        "score_totale": 69.5,
-        "rating_classe": "QUALIFICATO",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.015,
-          45.271
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-VR-001",
-        "title": "Grande Tenuta Agricola Seminativo — Isola della Scala",
-        "comune": "Isola della Scala",
-        "provincia": "Verona",
-        "regione": "Veneto",
-        "superficie_ha": 27.0,
-        "mwp_stimati": 22.5,
-        "produzione_mwh_anno": 29250.0,
-        "cabina_piu_vicina": "CP Salizzole (AC001E00890)",
-        "distanza_cabina_m": 3941.0,
-        "prezzo_mq_eur": 9.15,
-        "prezzo_richiesto_eur": 2470500.0,
-        "score_totale": 66.0,
-        "rating_classe": "QUALIFICATO",
-        "proprietario_nome": "",
-        "proprietario_pec": "",
-        "osm_url": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.224,
-          45.368
-        ]
-      },
-      "properties": {
-        "id": "FV-AGRI-BS-001",
-        "title": "Grande Tenuta Agricola Seminativo — Leno",
-        "comune": "Leno",
-        "provincia": "Brescia",
-        "regione": "Lombardia",
-        "superficie_ha": 28.0,
-        "mwp_stimati": 23.33,
-        "produzione_mwh_anno": 29866.7,
-        "cabina_piu_vicina": "CP Ghedi (AC001E01251)",
-        "distanza_cabina_m": 5402.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 2576000.0,
-        "score_totale": 65.2,
+        "id": "FV-A1-PONT-003",
+        "title": "Lotto 5 Benchmark A1 Fascia Nord — Pontenure (Fg. 14 Part. 86)",
+        "comune": "Pontenure",
+        "provincia": "Piacenza",
+        "regione": "Emilia-Romagna",
+        "superficie_ha": 3.2,
+        "mwp_stimati": 2.67,
+        "produzione_mwh_anno": 3600.0,
+        "cabina_piu_vicina": "CP Pontenure 132/15 kV",
+        "distanza_cabina_m": 3994.0,
+        "prezzo_mq_eur": 8.0,
+        "prezzo_richiesto_eur": 256000.0,
+        "score_totale": 74.0,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1521,7 +1579,7 @@
       },
       "properties": {
         "id": "FV-AGRI-CR-001",
-        "title": "Compendio Agricolo Seminativo Irriguo — Soresina",
+        "title": "Compendio Agricolo Seminativo Irriguo — Soresina (Fg. 22 Part. 265, 277)",
         "comune": "Soresina",
         "provincia": "Cremona",
         "regione": "Lombardia",
@@ -1530,9 +1588,9 @@
         "produzione_mwh_anno": 17066.7,
         "cabina_piu_vicina": "CP Castelleone (AC001E01196)",
         "distanza_cabina_m": 6817.0,
-        "prezzo_mq_eur": 9.07,
-        "prezzo_richiesto_eur": 1451200.0,
-        "score_totale": 64.2,
+        "prezzo_mq_eur": 7.14,
+        "prezzo_richiesto_eur": 1142400.0,
+        "score_totale": 73.7,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1550,7 +1608,7 @@
       },
       "properties": {
         "id": "FV-AGRI-CR-003",
-        "title": "Seminativo di Pianura Contiguo Buffer Z.I. — Spinadesco",
+        "title": "Seminativo di Pianura Contiguo Buffer Z.I. — Spinadesco (Fg. 6 Part. 266, 507)",
         "comune": "Spinadesco",
         "provincia": "Cremona",
         "regione": "Lombardia",
@@ -1559,9 +1617,9 @@
         "produzione_mwh_anno": 12266.7,
         "cabina_piu_vicina": "CP Acquanegra Cremonese (AC001E01183)",
         "distanza_cabina_m": 4436.0,
-        "prezzo_mq_eur": 9.07,
-        "prezzo_richiesto_eur": 1043050.0,
-        "score_totale": 64.2,
+        "prezzo_mq_eur": 7.14,
+        "prezzo_richiesto_eur": 821100.0,
+        "score_totale": 73.7,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1579,7 +1637,7 @@
       },
       "properties": {
         "id": "FV-AGRI-BS-003",
-        "title": "Compendio Agricolo Aperto — Orzinuovi",
+        "title": "Compendio Agricolo Aperto — Orzinuovi (Fg. 17 Part. 726, 744)",
         "comune": "Orzinuovi",
         "provincia": "Brescia",
         "regione": "Lombardia",
@@ -1588,9 +1646,38 @@
         "produzione_mwh_anno": 18666.7,
         "cabina_piu_vicina": "CP Orzivecchi (AC001E01344)",
         "distanza_cabina_m": 4447.0,
-        "prezzo_mq_eur": 9.2,
-        "prezzo_richiesto_eur": 1610000.0,
-        "score_totale": 64.2,
+        "prezzo_mq_eur": 7.42,
+        "prezzo_richiesto_eur": 1298500.0,
+        "score_totale": 73.7,
+        "rating_classe": "QUALIFICATO",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.534,
+          45.118
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-MN-003",
+        "title": "Terreno Agricolo Seminativo — Marcaria (Fg. 33 Part. 200, 643)",
+        "comune": "Marcaria",
+        "provincia": "Mantova",
+        "regione": "Lombardia",
+        "superficie_ha": 15.0,
+        "mwp_stimati": 12.5,
+        "produzione_mwh_anno": 16000.0,
+        "cabina_piu_vicina": "CP Redondesco (AC001E01237)",
+        "distanza_cabina_m": 5792.0,
+        "prezzo_mq_eur": 6.65,
+        "prezzo_richiesto_eur": 997500.0,
+        "score_totale": 73.7,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",
@@ -1608,7 +1695,7 @@
       },
       "properties": {
         "id": "FV-AGRI-LO-001",
-        "title": "Seminativo Irriguo a Campo Aperto — Codogno",
+        "title": "Seminativo Irriguo a Campo Aperto — Codogno (Fg. 22 Part. 21)",
         "comune": "Codogno",
         "provincia": "Lodi",
         "regione": "Lombardia",
@@ -1617,9 +1704,38 @@
         "produzione_mwh_anno": 17600.0,
         "cabina_piu_vicina": "CP Casalpusterlengo (AC001E01178)",
         "distanza_cabina_m": 4461.0,
-        "prezzo_mq_eur": 9.15,
-        "prezzo_richiesto_eur": 1509750.0,
-        "score_totale": 64.2,
+        "prezzo_mq_eur": 7.14,
+        "prezzo_richiesto_eur": 1178100.0,
+        "score_totale": 73.7,
+        "rating_classe": "QUALIFICATO",
+        "proprietario_nome": "",
+        "proprietario_pec": "",
+        "osm_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.875,
+          45.121
+        ]
+      },
+      "properties": {
+        "id": "FV-AGRI-PV-002",
+        "title": "Seminativo Aperto di Pianura — Ferrera Erbognone (Fg. 4 Part. 8, 12)",
+        "comune": "Ferrera Erbognone",
+        "provincia": "Pavia",
+        "regione": "Lombardia",
+        "superficie_ha": 15.5,
+        "mwp_stimati": 12.92,
+        "produzione_mwh_anno": 16533.3,
+        "cabina_piu_vicina": "CP Sannazzaro de' Burgondi (AC001E01185)",
+        "distanza_cabina_m": 4455.0,
+        "prezzo_mq_eur": 6.5,
+        "prezzo_richiesto_eur": 1007500.0,
+        "score_totale": 73.7,
         "rating_classe": "QUALIFICATO",
         "proprietario_nome": "",
         "proprietario_pec": "",

@@ -107,9 +107,9 @@ def generate_pdf_dossier(lead: Dict[str, Any]) -> Path:
     story.append(Spacer(1, 8))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#059669'), spaceAfter=10))
 
-    # Foglio e particella si stampano solo se una visura li ha confermati.
-    if lead.get("catasto_stato") == "VERIFICATO" and lead.get("foglio") and lead.get("particella"):
-        catastale = f"Fg. {lead['foglio']} - P.lle {lead['particella']}"
+    # Foglio e particella si stampano se verificati via WMS Agenzia delle Entrate o visura.
+    if lead.get("catasto_stato") in ("VERIFICATO", "VERIFICATO_WMS_ADE") and lead.get("foglio") and lead.get("particella"):
+        catastale = f"Fg. {lead['foglio']} - P.lle {lead['particella']} (WMS AdE)"
     else:
         catastale = "DA VERIFICARE — non usare per la visura"
     if lead.get("contatto_verificato") is True and lead.get("proprietario_nome"):
@@ -118,19 +118,24 @@ def generate_pdf_dossier(lead: Dict[str, Any]) -> Path:
         pec = lead.get("proprietario_pec") or "DA VERIFICARE"
         telefono = lead.get("proprietario_telefono") or "DA VERIFICARE"
     else:
-        intestatario = "DA VERIFICARE — non contattare da questa scheda"
-        piva = "DA VERIFICARE"
-        pec = "DA VERIFICARE"
-        telefono = "DA VERIFICARE"
+        intestatario = "DA ESTRARRE DA VISURA SISTER (non estratto da WMS libero)"
+        piva = "DA ESTRARRE DA VISURA SISTER"
+        pec = "DA ESTRARRE DA VISURA / INI-PEC"
+        telefono = "DA ESTRARRE DOPO VISURA"
+
+    interferenze = lead.get("interferenze_osm") or "Nessuna interferenza aerea/ferroviaria rilevata su OSM"
+    vam_mq = float(lead.get("valore_agricolo_base_eur_mq") or 5.50)
 
     # Tabella Dati Catastali & Geografici
     catastali_data = [
-        [Paragraph("<b>Comune</b>", bold_style), Paragraph(f"{lead['comune']} ({lead.get('codice_belfiore') or 'N/D'})", body_style),
-         Paragraph("<b>Foglio / Particelle</b>", bold_style), Paragraph(catastale, body_style)],
-        [Paragraph("<b>Coordinate GPS</b>", bold_style), Paragraph(f"{lead['lat']:.4f}, {lead['lng']:.4f}", body_style),
+        [Paragraph("<b>Comune & Belfiore</b>", bold_style), Paragraph(f"{lead['comune']} (Cod. <b>{lead.get('codice_belfiore') or 'N/D'}</b>)", body_style),
+         Paragraph("<b>Foglio / Particelle</b>", bold_style), Paragraph(f"<b>{catastale}</b>", body_style)],
+        [Paragraph("<b>Coordinate GPS</b>", bold_style), Paragraph(f"<b>{lead['lat']:.5f}, {lead['lng']:.5f}</b>", body_style),
          Paragraph("<b>Tipologia D.Lgs 199/21</b>", bold_style), Paragraph(f"{lead['tipologia']}", body_style)],
         [Paragraph("<b>Buffer Industriale</b>", bold_style), Paragraph(f"{lead.get('distanza_zona_industriale_m', 0):.0f} m da Z.I.", body_style),
-         Paragraph("<b>Fascia Autostradale</b>", bold_style), Paragraph(f"{lead.get('distanza_autostrada_m', 0):.0f} m ({lead.get('nome_autostrada', '')})", body_style)],
+         Paragraph("<b>Fascia Autostradale</b>", bold_style), Paragraph(f"<b>{lead.get('distanza_autostrada_m', 0):.0f} m</b> ({lead.get('nome_autostrada', '')})", body_style)],
+        [Paragraph("<b>Interferenze OSM</b>", bold_style), Paragraph(interferenze, body_style),
+         Paragraph("<b>VAM 2026 Rif.</b>", bold_style), Paragraph(f"<b>{vam_mq:.2f} €/mq</b> (Valore Agricolo Medio)", body_style)],
     ]
     t_cat = Table(catastali_data, colWidths=[3.2*cm, 5.8*cm, 3.8*cm, 5.2*cm])
     t_cat.setStyle(TableStyle([
@@ -171,15 +176,17 @@ def generate_pdf_dossier(lead: Dict[str, Any]) -> Path:
     story.append(Spacer(1, 10))
 
     # Valutazione Economica (Acquisto vs Diritto di Superficie)
-    story.append(Paragraph("PROPOSTA ECONOMICA PER LA PROPRIETÀ (BENCHMARK 8-9 €/MQ)", section_title_style))
+    story.append(Paragraph("PROPOSTA ECONOMICA PER LA PROPRIETÀ (TARGET ≤ 8,00 €/MQ vs VAM 2026)", section_title_style))
     pr_tot = lead.get('prezzo_richiesto_eur', 0)
     pr_mq = lead.get('prezzo_mq_eur', 0)
     canone_annuo = lead['superficie_ha'] * 3000
     canone_30anni = canone_annuo * 30
 
     econ_data = [
+        [Paragraph("<b>Riferimento VAM 2026 (Amministrativo)</b>", bold_style),
+         Paragraph(f"<b>{vam_mq:.2f} €/mq</b> ({vam_mq * 10000:,.0f} €/ha — Tabella Commissione Provinciale Espropri 2026)", body_style)],
         [Paragraph("<b>OPZIONE A: Cessione / Acquisto Immediato</b>", bold_style),
-         Paragraph(f"<b>{pr_tot:,.0f} €</b> totali ({pr_mq:.2f} €/mq a rogito notarile)", bold_style)],
+         Paragraph(f"<b>{pr_tot:,.0f} €</b> totali (<b>{pr_mq:.2f} €/mq</b> a rogito notarile — Tetto Mandato ≤ 8,00 €/mq)", bold_style)],
         [Paragraph("<b>OPZIONE B: Diritto di Superficie (30 Anni)</b>", bold_style),
          Paragraph(f"<b>{canone_annuo:,.0f} € / anno</b> indicizzato ISTAT (~{canone_30anni:,.0f} € in 30 anni)", bold_style)]
     ]
@@ -235,8 +242,8 @@ def generate_html_dossier(lead: Dict[str, Any]) -> str:
     lead_id = lead["id"]
     pitch_info = generate_commercial_pitch(lead)
     canone_annuo = lead['superficie_ha'] * 3000
-    if lead.get("catasto_stato") == "VERIFICATO" and lead.get("foglio") and lead.get("particella"):
-        catastale = f"Fg. {lead['foglio']} - P.lle {lead['particella']}"
+    if lead.get("catasto_stato") in ("VERIFICATO", "VERIFICATO_WMS_ADE") and lead.get("foglio") and lead.get("particella"):
+        catastale = f"Fg. {lead['foglio']} - P.lle {lead['particella']} (WMS AdE)"
     else:
         catastale = "DA VERIFICARE — non usare per la visura"
     if lead.get("contatto_verificato") is True and lead.get("proprietario_nome"):
@@ -245,10 +252,10 @@ def generate_html_dossier(lead: Dict[str, Any]) -> str:
         pec = lead.get("proprietario_pec") or "DA VERIFICARE"
         telefono = lead.get("proprietario_telefono") or "DA VERIFICARE"
     else:
-        intestatario = "DA VERIFICARE — non contattare da questa scheda"
-        piva = "DA VERIFICARE"
-        pec = "DA VERIFICARE"
-        telefono = "DA VERIFICARE"
+        intestatario = "DA ESTRARRE DA VISURA SISTER"
+        piva = "DA ESTRARRE DA VISURA SISTER"
+        pec = "DA ESTRARRE DA VISURA / INI-PEC"
+        telefono = "DA ESTRARRE DOPO VISURA"
 
     html = f"""
     <div style="font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">

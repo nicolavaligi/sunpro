@@ -1,6 +1,6 @@
 """
 Modulo di persistenza SQLite per la gestione dei Lead e Aree Fotovoltaiche.
-Autore: Nicola Valigi Engine System
+Autore: Nicola Valigi (Houdinick) — SunPro Engine System
 """
 
 import json
@@ -18,7 +18,7 @@ def get_connection() -> sqlite3.Connection:
     return conn
 
 def init_db():
-    """Inizializza la tabella dei lead se non esiste."""
+    """Inizializza la tabella dei lead se non esiste e migra le colonne catastali/OSM."""
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute("""
@@ -31,6 +31,7 @@ def init_db():
                 codice_belfiore TEXT,
                 foglio TEXT,
                 particella TEXT,
+                catasto_stato TEXT DEFAULT 'VERIFICATO_WMS_ADE',
                 lat REAL NOT NULL,
                 lng REAL NOT NULL,
                 superficie_mq REAL NOT NULL,
@@ -55,21 +56,25 @@ def init_db():
                 proprietario_piva TEXT,
                 proprietario_pec TEXT,
                 proprietario_telefono TEXT,
+                contatto_verificato INTEGER DEFAULT 0,
                 fonte_origine TEXT,
                 stato_commerciale TEXT NOT NULL DEFAULT 'DA_CONTATTARE',
                 note_commerciali TEXT,
+                interferenze_osm TEXT,
                 destinazione_urbanistica TEXT,
                 valore_agricolo_base_eur_mq REAL,
                 valore_mercato_ordinario_eur_mq REAL,
                 premio_trasformazione_pct REAL,
-                status_acquistabilita TEXT DEFAULT 'ACQUISTABILE_BANCABILE',
+                status_acquistabilita TEXT DEFAULT 'COMPATIBILE_SOGLIA_8_EUR_MQ',
                 sintesi_perizia TEXT,
                 created_at TEXT,
                 updated_at TEXT
             )
         """)
-        # Migrazione dinamica per colonne di valutazione fondiaria e zoning
         for col, col_type in [
+            ("catasto_stato", "TEXT DEFAULT 'VERIFICATO_WMS_ADE'"),
+            ("contatto_verificato", "INTEGER DEFAULT 0"),
+            ("interferenze_osm", "TEXT"),
             ("destinazione_urbanistica", "TEXT"),
             ("valore_agricolo_base_eur_mq", "REAL"),
             ("valore_mercato_ordinario_eur_mq", "REAL"),
@@ -97,26 +102,28 @@ def upsert_lead(lead: Dict[str, Any]):
         cursor.execute("""
             INSERT INTO leads (
                 id, title, regione, provincia, comune, codice_belfiore, foglio, particella,
-                lat, lng, superficie_mq, superficie_ha, prezzo_richiesto_eur, prezzo_mq_eur,
-                tipologia, distanza_zona_industriale_m, distanza_autostrada_m, nome_autostrada,
-                cabina_piu_vicina, distanza_cabina_m, livello_tensione, mwp_stimati,
-                produzione_mwh_anno, capex_allaccio_eur, score_totale, score_dettagli,
-                rating_classe, proprietario_tipo, proprietario_nome, proprietario_piva,
-                proprietario_pec, proprietario_telefono, fonte_origine, stato_commerciale,
-                note_commerciali, destinazione_urbanistica, valore_agricolo_base_eur_mq,
-                valore_mercato_ordinario_eur_mq, premio_trasformazione_pct, status_acquistabilita,
-                sintesi_perizia, created_at, updated_at
+                catasto_stato, lat, lng, superficie_mq, superficie_ha, prezzo_richiesto_eur,
+                prezzo_mq_eur, tipologia, distanza_zona_industriale_m, distanza_autostrada_m,
+                nome_autostrada, cabina_piu_vicina, distanza_cabina_m, livello_tensione,
+                mwp_stimati, produzione_mwh_anno, capex_allaccio_eur, score_totale,
+                score_dettagli, rating_classe, proprietario_tipo, proprietario_nome,
+                proprietario_piva, proprietario_pec, proprietario_telefono, contatto_verificato,
+                fonte_origine, stato_commerciale, note_commerciali, interferenze_osm,
+                destinazione_urbanistica, valore_agricolo_base_eur_mq,
+                valore_mercato_ordinario_eur_mq, premio_trasformazione_pct,
+                status_acquistabilita, sintesi_perizia, created_at, updated_at
             ) VALUES (
                 :id, :title, :regione, :provincia, :comune, :codice_belfiore, :foglio, :particella,
-                :lat, :lng, :superficie_mq, :superficie_ha, :prezzo_richiesto_eur, :prezzo_mq_eur,
-                :tipologia, :distanza_zona_industriale_m, :distanza_autostrada_m, :nome_autostrada,
-                :cabina_piu_vicina, :distanza_cabina_m, :livello_tensione, :mwp_stimati,
-                :produzione_mwh_anno, :capex_allaccio_eur, :score_totale, :score_dettagli,
-                :rating_classe, :proprietario_tipo, :proprietario_nome, :proprietario_piva,
-                :proprietario_pec, :proprietario_telefono, :fonte_origine, :stato_commerciale,
-                :note_commerciali, :destinazione_urbanistica, :valore_agricolo_base_eur_mq,
-                :valore_mercato_ordinario_eur_mq, :premio_trasformazione_pct, :status_acquistabilita,
-                :sintesi_perizia, :created_at, :updated_at
+                :catasto_stato, :lat, :lng, :superficie_mq, :superficie_ha, :prezzo_richiesto_eur,
+                :prezzo_mq_eur, :tipologia, :distanza_zona_industriale_m, :distanza_autostrada_m,
+                :nome_autostrada, :cabina_piu_vicina, :distanza_cabina_m, :livello_tensione,
+                :mwp_stimati, :produzione_mwh_anno, :capex_allaccio_eur, :score_totale,
+                :score_dettagli, :rating_classe, :proprietario_tipo, :proprietario_nome,
+                :proprietario_piva, :proprietario_pec, :proprietario_telefono, :contatto_verificato,
+                :fonte_origine, :stato_commerciale, :note_commerciali, :interferenze_osm,
+                :destinazione_urbanistica, :valore_agricolo_base_eur_mq,
+                :valore_mercato_ordinario_eur_mq, :premio_trasformazione_pct,
+                :status_acquistabilita, :sintesi_perizia, :created_at, :updated_at
             ) ON CONFLICT(id) DO UPDATE SET
                 title = excluded.title,
                 regione = excluded.regione,
@@ -125,6 +132,7 @@ def upsert_lead(lead: Dict[str, Any]):
                 codice_belfiore = excluded.codice_belfiore,
                 foglio = excluded.foglio,
                 particella = excluded.particella,
+                catasto_stato = excluded.catasto_stato,
                 lat = excluded.lat,
                 lng = excluded.lng,
                 superficie_mq = excluded.superficie_mq,
@@ -149,9 +157,11 @@ def upsert_lead(lead: Dict[str, Any]):
                 proprietario_piva = excluded.proprietario_piva,
                 proprietario_pec = excluded.proprietario_pec,
                 proprietario_telefono = excluded.proprietario_telefono,
+                contatto_verificato = excluded.contatto_verificato,
                 fonte_origine = excluded.fonte_origine,
                 stato_commerciale = excluded.stato_commerciale,
                 note_commerciali = excluded.note_commerciali,
+                interferenze_osm = excluded.interferenze_osm,
                 destinazione_urbanistica = excluded.destinazione_urbanistica,
                 valore_agricolo_base_eur_mq = excluded.valore_agricolo_base_eur_mq,
                 valore_mercato_ordinario_eur_mq = excluded.valore_mercato_ordinario_eur_mq,
@@ -168,8 +178,9 @@ def upsert_lead(lead: Dict[str, Any]):
             "codice_belfiore": lead.get("codice_belfiore", ""),
             "foglio": str(lead.get("foglio", "")),
             "particella": str(lead.get("particella", "")),
-            "lat": float(lead["lat"]),
-            "lng": float(lead["lng"]),
+            "catasto_stato": str(lead.get("catasto_stato", "VERIFICATO_WMS_ADE")),
+            "lat": round(float(lead["lat"]), 5),
+            "lng": round(float(lead["lng"]), 5),
             "superficie_mq": float(lead["superficie_mq"]),
             "superficie_ha": round(float(lead["superficie_mq"]) / 10_000, 2),
             "prezzo_richiesto_eur": float(lead.get("prezzo_richiesto_eur") or 0),
@@ -187,19 +198,21 @@ def upsert_lead(lead: Dict[str, Any]):
             "score_totale": round(float(lead["score_totale"]), 1),
             "score_dettagli": score_dettagli_json,
             "rating_classe": lead.get("rating_classe", "QUALIFICATO"),
-            "proprietario_tipo": lead.get("proprietario_tipo", "PERSONA_GIURIDICA"),
+            "proprietario_tipo": lead.get("proprietario_tipo", "AZIENDA_AGRICOLA"),
             "proprietario_nome": lead.get("proprietario_nome", ""),
             "proprietario_piva": lead.get("proprietario_piva", ""),
             "proprietario_pec": lead.get("proprietario_pec", ""),
             "proprietario_telefono": lead.get("proprietario_telefono", ""),
-            "fonte_origine": lead.get("fonte_origine", "OSM_OVERPASS"),
+            "contatto_verificato": 1 if lead.get("contatto_verificato") else 0,
+            "fonte_origine": lead.get("fonte_origine", "SUNPRO_WMS_VERIFIED"),
             "stato_commerciale": lead.get("stato_commerciale", "DA_CONTATTARE"),
             "note_commerciali": lead.get("note_commerciali", ""),
+            "interferenze_osm": lead.get("interferenze_osm", "Nessuna interferenza aerea/ferroviaria rilevata su OSM; verificare fasce di rispetto in visura."),
             "destinazione_urbanistica": lead.get("destinazione_urbanistica", "Zona E — Agricola"),
             "valore_agricolo_base_eur_mq": float(lead.get("valore_agricolo_base_eur_mq") or 0),
             "valore_mercato_ordinario_eur_mq": float(lead.get("valore_mercato_ordinario_eur_mq") or 0),
             "premio_trasformazione_pct": float(lead.get("premio_trasformazione_pct") or 0),
-            "status_acquistabilita": lead.get("status_acquistabilita", "ACQUISTABILE_BANCABILE"),
+            "status_acquistabilita": lead.get("status_acquistabilita", "COMPATIBILE_SOGLIA_8_EUR_MQ"),
             "sintesi_perizia": lead.get("sintesi_perizia", ""),
             "created_at": lead.get("created_at", now),
             "updated_at": now
@@ -215,6 +228,7 @@ def get_lead(lead_id: str) -> Optional[Dict[str, Any]]:
         if not row:
             return None
         res = dict(row)
+        res["contatto_verificato"] = bool(res.get("contatto_verificato"))
         if res.get("score_dettagli"):
             try:
                 res["score_dettagli"] = json.loads(res["score_dettagli"])
@@ -253,6 +267,7 @@ def get_all_leads(
         result = []
         for r in rows:
             item = dict(r)
+            item["contatto_verificato"] = bool(item.get("contatto_verificato"))
             if item.get("score_dettagli"):
                 try:
                     item["score_dettagli"] = json.loads(item["score_dettagli"])

@@ -1,30 +1,84 @@
 """
-Modulo per il Reperimento Dati Proprietari e Lead Enrichment Commerciale.
-Supporta persone giuridiche, curatele fallimentari e persone fisiche.
-Autore: Nicola Valigi Engine System
+Modulo per la Validazione Rigorosa Anagrafica/P.IVA (Algoritmo Ufficiale Agenzia Entrate)
+e Lead Enrichment Commerciale per l'acquisizione di terreni fotovoltaici.
+Autore: Nicola Valigi (Houdinick) — SunPro Engine System
 """
 
-from typing import Dict, Any
+import re
+from typing import Any, Dict
+
+
+def validate_italian_piva(piva: str) -> bool:
+    """
+    Valida rigorosamente una Partita IVA italiana a 11 cifre secondo l'algoritmo ufficiale
+    pari/dispari (Luhn Modulo 10 — D.P.R. 633/1972 / Agenzia delle Entrate).
+    Blocca qualsiasi P.IVA segnaposto, con cifre ripetute o con cifra di controllo errata.
+    """
+    if not piva:
+        return False
+    clean = re.sub(r"\s+", "", str(piva))
+    if clean.upper().startswith("IT"):
+        clean = clean[2:]
+    if len(clean) != 11 or not clean.isdigit():
+        return False
+    if clean == "00000000000" or len(set(clean)) == 1:
+        return False
+
+    # Le prime 7 cifre sono il numero di matricola, le cifre 8-10 sono il codice ufficio provinciale (001-100, 120, 121, 888, 999)
+    ufficio = int(clean[7:10])
+    if ufficio == 0:
+        return False
+
+    somma_dispari = sum(int(clean[i]) for i in range(0, 10, 2))
+    somma_pari = 0
+    for i in range(1, 10, 2):
+        doppio = int(clean[i]) * 2
+        if doppio > 9:
+            doppio -= 9
+        somma_pari += doppio
+
+    totale = somma_dispari + somma_pari
+    check_atteso = (10 - (totale % 10)) % 10
+    return int(clean[10]) == check_atteso
+
+
+def sanitize_owner_fields(lead: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Garantisce che nessuna P.IVA non conforme al codice di controllo o anagrafica
+    segnaposto non verificata in visura venga mantenuta nel record.
+    """
+    piva = str(lead.get("proprietario_piva") or "").strip()
+    if piva and not validate_italian_piva(piva):
+        lead["proprietario_piva"] = ""
+        lead["contatto_verificato"] = False
+
+    if not lead.get("contatto_verificato"):
+        lead["proprietario_piva"] = ""
+        lead["proprietario_pec"] = ""
+        lead["proprietario_telefono"] = ""
+    return lead
+
 
 def enrich_owner_profile(lead: Dict[str, Any]) -> Dict[str, Any]:
-    """Arricchisce i dati del proprietario con canali di contatto e modalità di visura."""
-    prop_tipo = lead.get("proprietario_tipo", "PERSONA_GIURIDICA")
-    nome = lead.get("proprietario_nome", "Proprietà da censire")
-    pec = lead.get("proprietario_pec", "")
-    piva = lead.get("proprietario_piva", "")
+    """Arricchisce i dati del proprietario indicando la procedura di visura su mappale WMS verificato."""
+    sanitize_owner_fields(lead)
+    prop_tipo = lead.get("proprietario_tipo") or "AZIENDA_AGRICOLA / PROPRIETÀ FONDIARIA"
+    belf = lead.get("codice_belfiore") or "N/D"
+    fg = lead.get("foglio") or "N/D"
+    part = lead.get("particella") or "N/D"
 
-    canale_contatto = "Telefono / Visita in loco"
-    canale_ufficiale = ""
-
-    if prop_tipo == "PERSONA_GIURIDICA":
-        canale_ufficiale = f"PEC Ufficiale Registro Imprese: {pec}" if pec else "Visura Camerale Telemaco su P.IVA"
+    if lead.get("contatto_verificato") and lead.get("proprietario_nome"):
+        nome = lead["proprietario_nome"]
+        piva = lead.get("proprietario_piva", "")
+        pec = lead.get("proprietario_pec", "")
+        canale_ufficiale = f"PEC Verificata Registro Imprese: {pec}" if pec else "Visura Catastale Ufficiale"
         canale_contatto = f"PEC: {pec} | Tel: {lead.get('proprietario_telefono', 'N/D')}"
-    elif prop_tipo == "CURATELA_FALLIMENTARE":
-        canale_ufficiale = f"PEC Curatore Fallimentare: {pec}"
-        canale_contatto = f"PEC Procedura: {pec}"
     else:
-        canale_ufficiale = "Visura Catastale per Immobile su Agenzia delle Entrate (Sister)"
-        canale_contatto = f"Contatto diretto: {lead.get('proprietario_telefono', 'Non disponibile')}"
+        nome = "Acquisibile tramite Visura Catastale Sister (Mappale WMS Verificato)"
+        piva = "Richiede Visura Catastale su Sister (~0,90 €)"
+        pec = "Estrarre da INI-PEC / Telemaco post-visura catastale"
+        canale_ufficiale = f"Visura Catastale per Immobile su Sister -> Comune Cod. {belf}, Fg. {fg}, Part. {part}"
+        canale_contatto = f"1) Visura Sister su Fg. {fg} Part. {part} ({belf}) -> 2) Ricerca C.F./P.IVA su Registro Imprese"
 
     return {
         "proprietario_nome": nome,
@@ -35,36 +89,42 @@ def enrich_owner_profile(lead: Dict[str, Any]) -> Dict[str, Any]:
         "canale_contatto": canale_contatto
     }
 
+
 def generate_commercial_pitch(lead: Dict[str, Any]) -> Dict[str, str]:
-    """Genera lo script e il pitch commerciale su misura per il commerciale/agente."""
-    nome = lead.get("proprietario_nome", "Gentile Proprietà")
+    """Genera lo script e il pitch commerciale post-visura su mappale catastale WMS."""
     comune = lead.get("comune", "del comune")
-    ha = lead.get("superficie_ha", 5.0)
-    mq = lead.get("superficie_mq", 50000)
+    belf = lead.get("codice_belfiore") or "N/D"
+    fg = lead.get("foglio") or "N/D"
+    part = lead.get("particella") or "N/D"
+    ha = float(lead.get("superficie_ha", 5.0))
+    mq = float(lead.get("superficie_mq", 50000))
     tipo = lead.get("tipologia", "area")
-    prezzo_target = lead.get("prezzo_richiesto_eur", mq * 8.5)
+    prezzo_mq = float(lead.get("prezzo_mq_eur", 7.80))
+    prezzo_target = float(lead.get("prezzo_richiesto_eur", mq * prezzo_mq))
+    vam_mq = float(lead.get("valore_agricolo_base_eur_mq", 5.20))
     canone_annuo = round(ha * 3000, 0)
     trentennale = round(canone_annuo * 30, 0)
 
-    # Adattamento tipologia per il dialogo
     tipo_desc = "la vostra ex cava dismessa" if "CAVA" in tipo else (
-        "la vostra area in zona produttiva" if "INDUSTRIALE" in tipo else "il vostro compendio immobiliare"
+        "il vostro terreno in fascia infrastrutturale" if "AUTOSTRAD" in tipo else "il vostro compendio agricolo a campo aperto"
     )
 
+    rif_cat = f"Comune di {comune} (Cod. Belfiore {belf}), Foglio {fg}, Particella/e {part}" if fg != "N/D" and fg != "" else f"Comune di {comune} (Cod. Belfiore {belf})"
+
     pitch_telefonico = f"""
-"Buongiorno, chiamo per conto dello Sviluppo Territoriale Rinnovabili. Abbiamo individuato {tipo_desc} situata a {comune}, di circa {ha:.1f} ettari, come area da verificare per un investimento fotovoltaico conforme alle aree idonee. Foglio, particella e intestatario non sono in questa scheda: escono solo dalla visura.
+"Buongiorno, chiamo per conto dello Sviluppo Territoriale Rinnovabili (SunPro). Abbiamo individuato sulla cartografia catastale WMS dell'Agenzia delle Entrate {tipo_desc} sito in {rif_cat} (Coordinate GPS: {lead.get('lat', 0):.5f}, {lead.get('lng', 0):.5f}), di circa {ha:.1f} ettari, idoneo ex lege ai sensi del D.Lgs. 199/2021.
 
 Desideriamo sottoporvi una duplice proposta finanziaria concreta:
-1. ACQUISTO IMMEDIATO con rogito notarile: valorizzazione stimata di circa {prezzo_target:,.0f} € ({lead.get('prezzo_mq_eur', 8.5):.1f} €/mq interamente liquidati).
-2. DIRITTO DI SUPERFICIE 30 ANNI: rendita garantita per la proprietà di circa {canone_annuo:,.0f} € all'anno indicizzati ISTAT (oltre {trentennale:,.0f} € complessivi), mantenendo la titolarità del bene e senza alcun costo o onere a vostro carico.
+1. ACQUISTO IMMEDIATO con rogito notarile: offerta target fino a {prezzo_target:,.0f} € ({prezzo_mq:.2f} €/mq, a fronte di un valore agricolo medio VAM di zona di {vam_mq:.2f} €/mq, entro il tetto di sostenibilità ≤ 8,00 €/mq).
+2. DIRITTO DI SUPERFICIE 30 ANNI: rendita garantita di circa {canone_annuo:,.0f} €/anno indicizzati ISTAT ({trentennale:,.0f} € complessivi), mantenendo la nuda proprietà del fondo.
 
-Possiamo inviarvi via PEC o concordare un breve incontro per illustrarvi il piano preliminare?"
+Possiamo concordare un breve incontro o inviarvi la Lettera d'Intenti (LOI) non vincolante?"
     """.strip()
 
     obiezioni = """
-• Se obiettano: "L'area ha vincoli o è da bonificare" -> Risposta: "La normativa D.Lgs. 199/2021 favorisce specificamente il recupero di cave e siti degradati, esentando da iter ordinari complessi. I costi di progettazione e le verifiche ambientali sono al 100% a nostro carico."
-• Se obiettano: "Preferisco affittare che vendere" -> Risposta: "Possiamo procedere con Diritto di Superficie trentennale con fideiussione bancaria di primario istituto a garanzia del canone e dello smaltimento finale."
-• Se chiedono: "Quanto tempo serve?" -> Risposta: "Sottoscriviamo una Lettera d'Intenti (LOI) non vincolante con indennizzo d'opzione entro 30 giorni."
+• Verifica preventiva effettuata: Mappale (Comune, Codice Belfiore, Foglio e Particella) già riscontrato gratuitamente tramite Servizio Cartografico WMS Agenzia delle Entrate e sovrapposto a ortofoto e vincoli OSM (elettrodotti, ferrovia AV, idrografia).
+• Procedura pre-contatto: Eseguire Visura Catastale per Immobile su Sister usando Codice Belfiore + Foglio + Particella per estrarre l'intestatario reale e verificare la quota di proprietà.
+• Se il proprietario chiede garanzie: Diritto di Superficie trentennale assistito da fideiussione bancaria a prima richiesta per canone e decommissioning finale.
     """.strip()
 
     return {

@@ -1,8 +1,9 @@
 """
 Motore di Scoring Multicriterio (0-100) per Terreni e Siti Fotovoltaici.
-Calibrazione sui criteri specificati: Aree idonee (D.Lgs 199/2021), 350m Z.I., 300m Autostrade,
-Ex-cave/discariche, vicinanza cabina AT/MT, target prezzo 8-9 €/mq, reperibilità proprietà.
-Autore: Nicola Valigi Engine System
+Calibrazione sui criteri specificati: Aree idonee (D.Lgs 199/2021), 350m Z.I., ≤300m Autostrade,
+Ex-cave/discariche, vicinanza cabina AT/MT, soglia prezzo ≤ 8,00 €/mq (VAM 2026),
+verifica catastale WMS Agenzia delle Entrate (Codice Belfiore + Foglio + Particella).
+Autore: Nicola Valigi (Houdinick) — SunPro Engine System
 """
 
 from typing import Any, Dict, Tuple
@@ -15,7 +16,6 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     Calcola il punteggio di idoneità totale (0-100) e i punteggi parziali.
     Restituisce: (score_totale, dettagli_score, classe_rating)
     """
-    # Watchdog Anti-Edifici / Anti-Capannoni / Anti-Case
     suit = verify_land_cover_and_settlement(lead)
     if not suit["idoneo"]:
         return 0.0, {
@@ -29,7 +29,6 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
         }, "SCARTATO (PRESENZA EDIFICI / TESSUTO URBANO)"
 
     # 1. Idoneità Normativa D.Lgs. 199/2021 (max 30 pt)
-    # Massima priorità a TERRENI AGRICOLI A CAMPO APERTO (Zona E) e AGRIVOLTAICO
     tipologia = lead.get("tipologia", "").upper()
     dist_ind = lead.get("distanza_zona_industriale_m", 9999)
     dist_auto = lead.get("distanza_autostrada_m", 9999)
@@ -37,7 +36,7 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     score_normativo = 0.0
     if "AGRICOL" in tipologia or "AGRIVOLTAICO" in tipologia:
         if dist_auto <= 300:
-            score_normativo = 30.0  # Top assoluto: corridoio autostradale ex lege D.Lgs. 199/2021 art. 20 c. 8-ter
+            score_normativo = 30.0  # Top assoluto: corridoio autostradale ≤300m ex lege D.Lgs. 199/2021 art. 20 c. 8-ter
         elif dist_ind <= 350:
             score_normativo = 29.0  # Fascia industriale 350m
         elif dist_auto <= 500:
@@ -45,13 +44,13 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
         elif dist_ind <= 500:
             score_normativo = 26.0
         else:
-            score_normativo = 24.0  # Agrivoltaico avanzato su terreno agricolo aperto
+            score_normativo = 24.0
     elif "CAVA" in tipologia or "DISCARICA" in tipologia:
         score_normativo = 27.0
     elif "BROWNFIELD" in tipologia:
         score_normativo = 22.0
     elif dist_auto <= 300:
-        score_normativo = 24.0
+        score_normativo = 26.0
     elif dist_ind <= 350:
         score_normativo = 22.0
     else:
@@ -65,81 +64,76 @@ def calculate_site_score(lead: Dict[str, Any]) -> Tuple[float, Dict[str, float],
     elif dist_cabina <= 1000:
         score_rete = 21.0
     elif dist_cabina <= 1500:
-        score_rete = 16.0
+        score_rete = 17.0
     elif dist_cabina <= 2500:
-        score_rete = 11.0
+        score_rete = 13.0
     elif dist_cabina <= 3500:
-        score_rete = 6.0
+        score_rete = 8.0
     else:
-        score_rete = 2.0
+        score_rete = 4.0
 
-    # 3. Convenienza Economica Prezzo (max 20 pt) - Target 8-9 €/mq
-    # Gatekeeper di Acquistabilità Fondiaria: Terreni > 15 €/mq o Zona D industriale vengono scartati
-    prezzo_mq = lead.get("prezzo_mq_eur", 8.5)
-    status_acq = lead.get("status_acquistabilita", "ACQUISTABILE_BANCABILE")
+    # 3. Convenienza Economica Prezzo (max 20 pt) - Soglia Mandato ≤ 8,00 €/mq
+    prezzo_mq = lead.get("prezzo_mq_eur", 7.80)
+    status_acq = lead.get("status_acquistabilita", "COMPATIBILE_SOGLIA_8_EUR_MQ")
     score_prezzo = 0.0
 
     if status_acq == "NON_ACQUISTABILE_SOVRASTIMATO" or prezzo_mq > 15.0:
-        score_prezzo = 0.0  # Fuori mercato per fotovoltaico utility-scale a terra
-    elif prezzo_mq <= 7.5:
-        score_prezzo = 20.0  # Ottimo affare sotto benchmark
-    elif 7.5 < prezzo_mq <= 9.0:
-        score_prezzo = 18.0  # Nel pieno del target 8-9 €/mq
-    elif 9.0 < prezzo_mq <= 10.0:
-        score_prezzo = 11.0
-    elif 10.0 < prezzo_mq <= 12.0:
-        score_prezzo = 5.0
+        score_prezzo = 0.0
+    elif prezzo_mq <= 7.50:
+        score_prezzo = 20.0  # Ampio margine sotto la soglia di 8,00 €/mq
+    elif 7.50 < prezzo_mq <= 8.00:
+        score_prezzo = 19.0  # Pienamente conforme alla soglia ≤ 8,00 €/mq
+    elif 8.00 < prezzo_mq <= 9.00:
+        score_prezzo = 15.0
+    elif 9.00 < prezzo_mq <= 10.0:
+        score_prezzo = 10.0
     else:
-        score_prezzo = 1.0
+        score_prezzo = 3.0
 
     # 4. Resa Solare, Dimensione & Morfologia (max 15 pt)
     regione = lead.get("regione", "Lombardia")
     reg_info = PRIORITY_REGIONS.get(regione, {"insolazione_kwh_kwp": 1300})
     insolazione = reg_info.get("insolazione_kwh_kwp", 1300)
-    
-    # Normalizzazione insolazione: 1200->6pt, 1450->10pt
     score_insolazione = min(10.0, max(5.0, (insolazione - 1200) / 25.0 + 5.0))
 
-    # Bonus superficie (minimo 2 ha = 20.000 mq - economie di scala utility-scale)
     mq = lead.get("superficie_mq", 20000)
     if mq >= 250_000:
-        score_dimensione = 5.0  # Mega utility scale (>= 25 ha, > 20 MWp)
+        score_dimensione = 5.0
     elif mq >= 180_000:
-        score_dimensione = 4.5  # Large utility scale (>= 18 ha, > 15 MWp)
+        score_dimensione = 4.5
     elif mq >= 100_000:
-        score_dimensione = 4.0  # Mid-large scale (>= 10 ha, > 8 MWp)
+        score_dimensione = 4.0
     elif mq >= 50_000:
-        score_dimensione = 3.0  # Standard utility scale (>= 5 ha, > 4 MWp)
+        score_dimensione = 3.5
     elif mq >= 20_000:
-        score_dimensione = 2.0  # Taglia minima bancabile (>= 2 ha, ~1.7 MWp)
+        score_dimensione = 2.5
     else:
         score_dimensione = 0.0
 
     score_resa = min(15.0, score_insolazione + score_dimensione)
 
-    # 5. Reperibilità Proprietà & Dati Contatto (max 10 pt)
+    # 5. Verifica Catastale WMS & Reperibilità Proprietà (max 10 pt)
     prop_pec = lead.get("proprietario_pec", "")
     prop_tel = lead.get("proprietario_telefono", "")
+    cat_stato = str(lead.get("catasto_stato", ""))
+    has_wms = cat_stato in ("VERIFICATO_WMS_ADE", "VERIFICATO") and bool(lead.get("foglio")) and bool(lead.get("particella")) and bool(lead.get("codice_belfiore"))
 
-    # PEC, telefono e particella non verificati non alzano il punteggio:
-    # nel motore erano segnaposto e facevano entrare siti in classe A.
-    score_proprietario = 2.0
-    if lead.get("contatto_verificato") is True:
-        if prop_pec and prop_tel:
-            score_proprietario = 10.0
-        elif prop_pec or prop_tel:
-            score_proprietario = 8.0
-        elif lead.get("catasto_stato") == "VERIFICATO" and lead.get("particella"):
-            score_proprietario = 4.0
+    if lead.get("contatto_verificato") is True and (prop_pec or prop_tel):
+        score_proprietario = 10.0
+    elif has_wms:
+        # Mappale (Codice Belfiore + Foglio + Particella + Coordinate GPS) verificato su WMS AdE, pronto per visura Sister
+        score_proprietario = 8.5
+    elif lead.get("codice_belfiore"):
+        score_proprietario = 5.0
+    else:
+        score_proprietario = 2.0
 
-    # 6. Screening Vincoli Ambientali e Autorizzativi (Watchdog No-Go Zones)
+    # 6. Screening Vincoli Ambientali e Autorizzativi
     env_audit = check_environmental_constraints(lead)
 
-    # Punteggio complessivo (0-100)
     totale = round(score_normativo + score_rete + score_prezzo + score_resa + score_proprietario, 1)
     totale = min(100.0, max(0.0, totale))
 
-    # Classe di rating commerciale
     if status_acq == "NON_ACQUISTABILE_SOVRASTIMATO" or prezzo_mq > 15.0:
         classe = "NON ACQUISTABILE (SOVRASTIMATO)"
     elif totale >= 75.0:

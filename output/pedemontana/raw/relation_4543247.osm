@@ -1,0 +1,2097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3814958 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="171910064" visible="true" version="7" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6830385" lon="9.0981970"/>
+ <node id="171910068" visible="true" version="8" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6838604" lon="9.0936533"/>
+ <node id="952167408" visible="true" version="4" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6775129" lon="9.0088374"/>
+ <node id="952167482" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6781556" lon="9.0257631">
+  <tag k="destination:ref" v="A9"/>
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="A9 Milano Como"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="952167569" visible="true" version="4" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6780733" lon="9.0266744"/>
+ <node id="952167719" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6773029" lon="9.0058896">
+  <tag k="destination:ref" v="A9"/>
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="A9 Milano Como"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="952369271" visible="true" version="3" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6778466" lon="9.0155740"/>
+ <node id="952369277" visible="true" version="3" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6777397" lon="9.0155484"/>
+ <node id="952369279" visible="true" version="3" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6779204" lon="9.0179905"/>
+ <node id="952369297" visible="true" version="3" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6778158" lon="9.0179675"/>
+ <node id="953788812" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:33Z" user="Alecs01" uid="1476146" lat="45.6729269" lon="8.9733033"/>
+ <node id="953788816" visible="true" version="4" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6622994" lon="8.9609223"/>
+ <node id="953788821" visible="true" version="2" changeset="26646408" timestamp="2014-11-08T16:55:24Z" user="Comasco" uid="905066" lat="45.6743271" lon="8.9752666"/>
+ <node id="953788824" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:08:04Z" user="Alecs01" uid="1476146" lat="45.6692337" lon="8.9709438"/>
+ <node id="953788827" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:35Z" user="Alecs01" uid="1476146" lat="45.6737312" lon="8.9741813"/>
+ <node id="953788830" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6631389" lon="8.9628530"/>
+ <node id="953788840" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:35:35Z" user="Alecs01" uid="1476146" lat="45.6769428" lon="8.9928488"/>
+ <node id="953788843" visible="true" version="4" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6760210" lon="8.9790576">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="953788846" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:08:05Z" user="Alecs01" uid="1476146" lat="45.6767593" lon="8.9889257">
+  <tag k="distance" v="13"/>
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="milestone"/>
+ </node>
+ <node id="953788849" visible="true" version="2" changeset="26646408" timestamp="2014-11-08T16:55:24Z" user="Comasco" uid="905066" lat="45.6750715" lon="8.9765447"/>
+ <node id="953788853" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:36Z" user="Alecs01" uid="1476146" lat="45.6703001" lon="8.9715522"/>
+ <node id="953788856" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6639727" lon="8.9641382"/>
+ <node id="953788859" visible="true" version="4" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6632213" lon="8.9626798">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="953788861" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6770903" lon="9.0009085">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="953788869" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:37Z" user="Alecs01" uid="1476146" lat="45.6763757" lon="8.9803792"/>
+ <node id="953788871" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:08:07Z" user="Alecs01" uid="1476146" lat="45.6693235" lon="8.9707643"/>
+ <node id="953788873" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6614859" lon="8.9592397"/>
+ <node id="953788876" visible="true" version="2" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6773781" lon="9.0051274"/>
+ <node id="953788878" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:37Z" user="Alecs01" uid="1476146" lat="45.6703298" lon="8.9713603"/>
+ <node id="953788881" visible="true" version="3" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6627601" lon="8.9618697"/>
+ <node id="953788884" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6621383" lon="8.9609369"/>
+ <node id="953788887" visible="true" version="2" changeset="26646408" timestamp="2014-11-08T16:55:24Z" user="Comasco" uid="905066" lat="45.6744770" lon="8.9751753"/>
+ <node id="953788899" visible="true" version="1" changeset="6063975" timestamp="2010-10-17T07:19:20Z" user="andres26" uid="320936" lat="45.6674818" lon="8.9693273"/>
+ <node id="953788902" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:35:38Z" user="Alecs01" uid="1476146" lat="45.6768313" lon="8.9929036"/>
+ <node id="953788905" visible="true" version="2" changeset="26646408" timestamp="2014-11-08T16:55:24Z" user="Comasco" uid="905066" lat="45.6756082" lon="8.9777928"/>
+ <node id="953788908" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:39Z" user="Alecs01" uid="1476146" lat="45.6712034" lon="8.9721338"/>
+ <node id="953788910" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:35:40Z" user="Alecs01" uid="1476146" lat="45.6770506" lon="8.9967300"/>
+ <node id="953788912" visible="true" version="3" changeset="42007421" timestamp="2016-09-08T16:17:06Z" user="luschi" uid="1714220" lat="45.6766720" lon="8.9822001"/>
+ <node id="953788915" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:41Z" user="Alecs01" uid="1476146" lat="45.6761393" lon="8.9789579"/>
+ <node id="953788922" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:08:09Z" user="Alecs01" uid="1476146" lat="45.6720275" lon="8.9728089"/>
+ <node id="953788929" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:35:41Z" user="Alecs01" uid="1476146" lat="45.6772690" lon="9.0050323"/>
+ <node id="953788932" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:42Z" user="Alecs01" uid="1476146" lat="45.6769521" lon="8.9839623"/>
+ <node id="953788936" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:42Z" user="Alecs01" uid="1476146" lat="45.6712559" lon="8.9719613"/>
+ <node id="953788943" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6626649" lon="8.9620190"/>
+ <node id="953788946" visible="true" version="2" changeset="26646408" timestamp="2014-11-08T16:55:24Z" user="Comasco" uid="905066" lat="45.6751618" lon="8.9763813"/>
+ <node id="953788954" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:08:11Z" user="Alecs01" uid="1476146" lat="45.6720722" lon="8.9725947"/>
+ <node id="953788956" visible="true" version="2" changeset="26646408" timestamp="2014-11-08T16:55:24Z" user="Comasco" uid="905066" lat="45.6757121" lon="8.9776698"/>
+ <node id="953788959" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:08:12Z" user="Alecs01" uid="1476146" lat="45.6683037" lon="8.9701797"/>
+ <node id="953788962" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:35:43Z" user="Alecs01" uid="1476146" lat="45.6769292" lon="8.9967780"/>
+ <node id="953788965" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:43Z" user="Alecs01" uid="1476146" lat="45.6767973" lon="8.9820954"/>
+ <node id="953788970" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:44Z" user="Alecs01" uid="1476146" lat="45.6769276" lon="8.9889603">
+  <tag k="distance" v="13"/>
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="milestone"/>
+ </node>
+ <node id="953788985" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:44Z" user="Alecs01" uid="1476146" lat="45.6765073" lon="8.9803230"/>
+ <node id="953788987" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:44Z" user="Alecs01" uid="1476146" lat="45.6729041" lon="8.9735571"/>
+ <node id="953788988" visible="true" version="4" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6640554" lon="8.9639890"/>
+ <node id="953788990" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:35:45Z" user="Alecs01" uid="1476146" lat="45.6772098" lon="9.0008565"/>
+ <node id="953788991" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:45Z" user="Alecs01" uid="1476146" lat="45.6767762" lon="8.9839701"/>
+ <node id="953788994" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6683858" lon="8.9699752">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="953788997" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:35:46Z" user="Alecs01" uid="1476146" lat="45.6736157" lon="8.9743870"/>
+ <node id="953788999" visible="true" version="1" changeset="6063975" timestamp="2010-10-17T07:19:21Z" user="andres26" uid="320936" lat="45.6675803" lon="8.9691826"/>
+ <node id="953823518" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6628422" lon="8.9424098">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Mozzate"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="953823521" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6618771" lon="8.9326348"/>
+ <node id="953823522" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6610861" lon="8.9286477"/>
+ <node id="953823527" visible="true" version="4" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6620017" lon="8.9325739"/>
+ <node id="953823529" visible="true" version="7" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6625200" lon="8.9349153"/>
+ <node id="953823531" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6604513" lon="8.9205872"/>
+ <node id="953823533" visible="true" version="3" changeset="47162100" timestamp="2017-03-25T20:35:39Z" user="Yiyi_" uid="1404750" lat="45.6607097" lon="8.9502309"/>
+ <node id="953823540" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6599387" lon="8.9182784"/>
+ <node id="953823541" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6625800" lon="8.9345634"/>
+ <node id="953823543" visible="true" version="5" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6606650" lon="8.9526225"/>
+ <node id="953823544" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6625351" lon="8.9432024"/>
+ <node id="953823545" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6603098" lon="8.9204323"/>
+ <node id="953823546" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6572001" lon="8.9063150"/>
+ <node id="953823548" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6605345" lon="8.9526199"/>
+ <node id="953823550" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6600399" lon="8.9181914"/>
+ <node id="953823553" visible="true" version="5" changeset="187938459" timestamp="2026-08-24T13:13:35Z" user="pianolente" uid="462871" lat="45.6607302" lon="8.9544116"/>
+ <node id="953823556" visible="true" version="3" changeset="47162100" timestamp="2017-03-25T20:35:40Z" user="Yiyi_" uid="1404750" lat="45.6619875" lon="8.9452291"/>
+ <node id="953823560" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6578749" lon="8.9093469"/>
+ <node id="953823561" visible="true" version="6" changeset="187938459" timestamp="2026-08-24T13:13:35Z" user="pianolente" uid="462871" lat="45.6605826" lon="8.9543400">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="953823567" visible="true" version="6" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6611938" lon="8.9300801"/>
+ <node id="953823568" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6614125" lon="8.9475439">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="953823569" visible="true" version="4" changeset="187938941" timestamp="2026-08-24T13:23:56Z" user="pianolente" uid="462871" lat="45.6620965" lon="8.9453556"/>
+ <node id="953823570" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6629056" lon="8.9371308"/>
+ <node id="953823573" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6573132" lon="8.9062586"/>
+ <node id="953823578" visible="true" version="4" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6608235" lon="8.9503825"/>
+ <node id="953823579" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6630353" lon="8.9370046"/>
+ <node id="953823581" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6626473" lon="8.9426644"/>
+ <node id="953823582" visible="true" version="8" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6609394" lon="8.9274461"/>
+ <node id="953900008" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:26Z" user="Alecs01" uid="1476146" lat="45.6583348" lon="8.8814776"/>
+ <node id="953900009" visible="true" version="4" changeset="57668035" timestamp="2018-03-30T17:47:42Z" user="Alecs01" uid="1476146" lat="45.6572726" lon="8.8901350"/>
+ <node id="953900011" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:27Z" user="Alecs01" uid="1476146" lat="45.6583327" lon="8.8786005"/>
+ <node id="953900018" visible="true" version="3" changeset="53743827" timestamp="2017-11-13T15:31:04Z" user="Yiyi_" uid="1404750" lat="45.6579827" lon="8.8860137"/>
+ <node id="953900020" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:04Z" user="Yiyi_" uid="1404750" lat="45.6584350" lon="8.8850724"/>
+ <node id="953900023" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:02Z" user="andres26" uid="320936" lat="45.6565592" lon="8.8948627"/>
+ <node id="953900025" visible="true" version="4" changeset="57668035" timestamp="2018-03-30T17:47:42Z" user="Alecs01" uid="1476146" lat="45.6577644" lon="8.8877399"/>
+ <node id="953900027" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:02Z" user="andres26" uid="320936" lat="45.6576169" lon="8.8759097"/>
+ <node id="953900029" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6570108" lon="8.8910797"/>
+ <node id="953900032" visible="true" version="6" changeset="57668035" timestamp="2018-03-30T17:47:42Z" user="Alecs01" uid="1476146" lat="45.6574785" lon="8.8901714"/>
+ <node id="953900036" visible="true" version="5" changeset="57668035" timestamp="2018-03-30T17:47:42Z" user="Alecs01" uid="1476146" lat="45.6582448" lon="8.8869000"/>
+ <node id="953900037" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:27Z" user="Alecs01" uid="1476146" lat="45.6582831" lon="8.8804922"/>
+ <node id="953900039" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6585874" lon="8.8828671"/>
+ <node id="953900041" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6572051" lon="8.8911394"/>
+ <node id="953900043" visible="true" version="3" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6562763" lon="8.8964978"/>
+ <node id="953900045" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6581400" lon="8.8875057"/>
+ <node id="953900053" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6585094" lon="8.8840954"/>
+ <node id="953900054" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6563110" lon="8.9010730"/>
+ <node id="953900055" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6586369" lon="8.8814143"/>
+ <node id="953900056" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:27Z" user="Alecs01" uid="1476146" lat="45.6578509" lon="8.8777545"/>
+ <node id="953900057" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6562014" lon="8.8984048"/>
+ <node id="953900058" visible="true" version="4" changeset="57668035" timestamp="2018-03-30T17:47:42Z" user="Alecs01" uid="1476146" lat="45.6579092" lon="8.8869498"/>
+ <node id="953900059" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6574091" lon="8.8759650"/>
+ <node id="953900064" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:26:42Z" user="Alecs01" uid="1476146" lat="45.6564312" lon="8.8964634"/>
+ <node id="953900068" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6581718" lon="8.8841602"/>
+ <node id="953900070" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6566433" lon="8.9033791"/>
+ <node id="953900072" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:03Z" user="andres26" uid="320936" lat="45.6582485" lon="8.8830360"/>
+ <node id="953900074" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:28Z" user="Alecs01" uid="1476146" lat="45.6581605" lon="8.8795399"/>
+ <node id="953900077" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:05Z" user="Yiyi_" uid="1404750" lat="45.6566591" lon="8.8930949"/>
+ <node id="953900079" visible="true" version="2" changeset="53743827" timestamp="2017-11-13T15:31:04Z" user="Yiyi_" uid="1404750" lat="45.6583342" lon="8.8859364"/>
+ <node id="953900080" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:04Z" user="andres26" uid="320936" lat="45.6564571" lon="8.9010489"/>
+ <node id="953900082" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:04Z" user="andres26" uid="320936" lat="45.6563407" lon="8.8983887"/>
+ <node id="953900086" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:04Z" user="andres26" uid="320936" lat="45.6580860" lon="8.8851487"/>
+ <node id="953900088" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:28Z" user="Alecs01" uid="1476146" lat="45.6585750" lon="8.8803912"/>
+ <node id="953900091" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:04Z" user="andres26" uid="320936" lat="45.6563977" lon="8.8948464"/>
+ <node id="953900092" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:28Z" user="Alecs01" uid="1476146" lat="45.6580914" lon="8.8776082"/>
+ <node id="953900094" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:26:42Z" user="Alecs01" uid="1476146" lat="45.6567714" lon="8.9033304"/>
+ <node id="953900095" visible="true" version="1" changeset="6064188" timestamp="2010-10-17T08:07:04Z" user="andres26" uid="320936" lat="45.6568229" lon="8.8932448"/>
+ <node id="954025735" visible="true" version="4" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6500350" lon="8.8455998"/>
+ <node id="954025744" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:43:57Z" user="Alecs01" uid="1476146" lat="45.6530861" lon="8.8623044"/>
+ <node id="954025773" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:43:58Z" user="Alecs01" uid="1476146" lat="45.6510783" lon="8.8502231"/>
+ <node id="954025776" visible="true" version="4" changeset="41690873" timestamp="2016-08-25T15:12:53Z" user="dezzeus" uid="3970062" lat="45.6509545" lon="8.8502662">
+  <tag k="highway" v="speed_camera"/>
+ </node>
+ <node id="954025782" visible="true" version="4" changeset="146218551" timestamp="2024-01-13T15:41:14Z" user="Yiyi_" uid="1404750" lat="45.6555894" lon="8.8714844">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="954025786" visible="true" version="4" changeset="38863614" timestamp="2016-04-25T18:43:59Z" user="Alecs01" uid="1476146" lat="45.6551945" lon="8.8704668"/>
+ <node id="954025814" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6473462" lon="8.8406264"/>
+ <node id="954025860" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:29Z" user="Alecs01" uid="1476146" lat="45.6570842" lon="8.8743640"/>
+ <node id="954025863" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6497707" lon="8.8443691">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="A8 Varese"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="954025865" visible="true" version="5" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6532143" lon="8.8622214">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Solbiate Olona"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="954025894" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:43:59Z" user="Alecs01" uid="1476146" lat="45.6560312" lon="8.8725241"/>
+ <node id="954025897" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:44:00Z" user="Alecs01" uid="1476146" lat="45.6543929" lon="8.8680756"/>
+ <node id="954025903" visible="true" version="4" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6486826" lon="8.8422545"/>
+ <node id="954025912" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6468963" lon="8.8402239">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="A8 Milano"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="954025952" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6517624" lon="8.8549602">
+  <tag k="name" v="Solbiate Olona"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="954025987" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6505682" lon="8.8472320">
+  <tag k="highway" v="speed_camera"/>
+ </node>
+ <node id="954026014" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:44:01Z" user="Alecs01" uid="1476146" lat="45.6539347" lon="8.8660176"/>
+ <node id="954026018" visible="true" version="7" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6449597" lon="8.8393831"/>
+ <node id="954026026" visible="true" version="4" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6475983" lon="8.8411438"/>
+ <node id="954026053" visible="true" version="3" changeset="146218551" timestamp="2024-01-13T15:41:14Z" user="Yiyi_" uid="1404750" lat="45.6557545" lon="8.8715717">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="954026064" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:44:01Z" user="Alecs01" uid="1476146" lat="45.6519419" lon="8.8550682"/>
+ <node id="954026074" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6472655" lon="8.8408191"/>
+ <node id="954026140" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:44:02Z" user="Alecs01" uid="1476146" lat="45.6561308" lon="8.8724512"/>
+ <node id="954026164" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6480482" lon="8.8416426"/>
+ <node id="954026193" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:44:03Z" user="Alecs01" uid="1476146" lat="45.6538323" lon="8.8660923"/>
+ <node id="954026196" visible="true" version="6" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6468120" lon="8.8404248"/>
+ <node id="954026204" visible="true" version="2" changeset="28510791" timestamp="2015-01-30T19:15:31Z" user="Alecs01" uid="1476146" lat="45.6569309" lon="8.8744739"/>
+ <node id="954026221" visible="true" version="4" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6494795" lon="8.8436917"/>
+ <node id="954026243" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6494000" lon="8.8438268"/>
+ <node id="954026268" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6496331" lon="8.8444245"/>
+ <node id="954026276" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6504471" lon="8.8472915"/>
+ <node id="954026284" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:44:04Z" user="Alecs01" uid="1476146" lat="45.6552808" lon="8.8703906"/>
+ <node id="954026303" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:44:04Z" user="Alecs01" uid="1476146" lat="45.6544869" lon="8.8680701"/>
+ <node id="954026310" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6502815" lon="8.8459516"/>
+ <node id="954629430" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6618282" lon="8.9597507">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Cislago"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="954629504" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6607346" lon="8.9235253"/>
+ <node id="954629515" visible="true" version="8" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6604379" lon="8.9214857">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Mozzate - Cislago"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="954632389" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6610636" lon="8.9576982"/>
+ <node id="1654566175" visible="true" version="4" changeset="100307313" timestamp="2021-03-02T22:49:42Z" user="pianolente" uid="462871" lat="45.6784850" lon="9.0394275"/>
+ <node id="1654566177" visible="true" version="4" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6780511" lon="9.0256985"/>
+ <node id="1654594537" visible="true" version="3" changeset="56102677" timestamp="2018-02-06T01:58:55Z" user="fedc" uid="602784" lat="45.6859473" lon="9.0824669"/>
+ <node id="1654594539" visible="true" version="6" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6787171" lon="9.0542195">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="1654594545" visible="true" version="4" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6856292" lon="9.0881030"/>
+ <node id="1654594547" visible="true" version="5" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6788576" lon="9.0630750"/>
+ <node id="1654594548" visible="true" version="4" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6856835" lon="9.0869096"/>
+ <node id="1654594550" visible="true" version="3" changeset="56103044" timestamp="2018-02-06T02:30:31Z" user="fedc" uid="602784" lat="45.6845790" lon="9.0773992"/>
+ <node id="1654594552" visible="true" version="2" changeset="56102677" timestamp="2018-02-06T01:58:56Z" user="fedc" uid="602784" lat="45.6858056" lon="9.0812907"/>
+ <node id="1654594586" visible="true" version="5" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6792427" lon="9.0646818"/>
+ <node id="1654594590" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6795361" lon="9.0668418"/>
+ <node id="1654594593" visible="true" version="3" changeset="56102677" timestamp="2018-02-06T01:58:56Z" user="fedc" uid="602784" lat="45.6858340" lon="9.0827963"/>
+ <node id="1654594595" visible="true" version="2" changeset="56103044" timestamp="2018-02-06T02:30:31Z" user="fedc" uid="602784" lat="45.6848413" lon="9.0780682"/>
+ <node id="1654594598" visible="true" version="5" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6790262" lon="9.0632230"/>
+ <node id="1654594599" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6831306" lon="9.0742973">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="1654594600" visible="true" version="4" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6859236" lon="9.0860587"/>
+ <node id="1654594603" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6855457" lon="9.0799588">
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="1654594604" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6834544" lon="9.0751322"/>
+ <node id="1654594626" visible="true" version="2" changeset="56103044" timestamp="2018-02-06T02:30:31Z" user="fedc" uid="602784" lat="45.6849729" lon="9.0779824"/>
+ <node id="1654594633" visible="true" version="3" changeset="56102677" timestamp="2018-02-06T01:58:56Z" user="fedc" uid="602784" lat="45.6858673" lon="9.0833571"/>
+ <node id="1654594638" visible="true" version="2" changeset="56102677" timestamp="2018-02-06T01:58:56Z" user="fedc" uid="602784" lat="45.6855105" lon="9.0804923"/>
+ <node id="1654594640" visible="true" version="3" changeset="56103044" timestamp="2018-02-06T02:30:32Z" user="fedc" uid="602784" lat="45.6839963" lon="9.0757737"/>
+ <node id="1654594642" visible="true" version="3" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6837343" lon="9.0935060"/>
+ <node id="1654594645" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6798535" lon="9.0673150"/>
+ <node id="1654594647" visible="true" version="3" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6840933" lon="9.0924340"/>
+ <node id="1654594649" visible="true" version="3" changeset="56103044" timestamp="2018-02-06T02:30:31Z" user="fedc" uid="602784" lat="45.6846938" lon="9.0772749"/>
+ <node id="1654594651" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6833094" lon="9.0745905"/>
+ <node id="1654594652" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6819491" lon="9.0723377"/>
+ <node id="1654594654" visible="true" version="2" changeset="56102677" timestamp="2018-02-06T01:58:56Z" user="fedc" uid="602784" lat="45.6857855" lon="9.0822595"/>
+ <node id="1654594656" visible="true" version="3" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6835247" lon="9.0948479"/>
+ <node id="1654594674" visible="true" version="3" changeset="56103044" timestamp="2018-02-06T02:30:31Z" user="fedc" uid="602784" lat="45.6842394" lon="9.0766245"/>
+ <node id="1654594678" visible="true" version="4" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6833017" lon="9.0959573"/>
+ <node id="1654594682" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6828923" lon="9.0742236"/>
+ <node id="1654594686" visible="true" version="3" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6852709" lon="9.0895685"/>
+ <node id="1654594689" visible="true" version="4" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6834215" lon="9.0953178"/>
+ <node id="1654627439" visible="true" version="6" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6809464" lon="9.0703422">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Bregnano - Lazzate"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="1654627440" visible="true" version="4" changeset="56103044" timestamp="2018-02-06T02:30:32Z" user="fedc" uid="602784" lat="45.6787738" lon="9.0579524"/>
+ <node id="1654627444" visible="true" version="8" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6786902" lon="9.0597876">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Bregnano - Lazzate"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="2392156285" visible="true" version="7" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6605747" lon="8.9216215"/>
+ <node id="2392156286" visible="true" version="7" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6606467" lon="8.9223347"/>
+ <node id="2547948971" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6488501" lon="8.8427901"/>
+ <node id="2547948972" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6484576" lon="8.8421867"/>
+ <node id="2547952449" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6483677" lon="8.8417668"/>
+ <node id="3318457464" visible="true" version="1" changeset="28484062" timestamp="2015-01-29T11:33:27Z" user="Comasco" uid="905066" lat="45.6751940" lon="8.9768296"/>
+ <node id="3318457465" visible="true" version="1" changeset="28484062" timestamp="2015-01-29T11:33:27Z" user="Comasco" uid="905066" lat="45.6753154" lon="8.9767409"/>
+ <node id="3318457466" visible="true" version="1" changeset="28484062" timestamp="2015-01-29T11:33:27Z" user="Comasco" uid="905066" lat="45.6753194" lon="8.9771213"/>
+ <node id="3318457467" visible="true" version="1" changeset="28484062" timestamp="2015-01-29T11:33:27Z" user="Comasco" uid="905066" lat="45.6754394" lon="8.9770313"/>
+ <node id="3321382047" visible="true" version="3" changeset="38863614" timestamp="2016-04-25T18:43:52Z" user="Alecs01" uid="1476146" lat="45.6524747" lon="8.8588603"/>
+ <node id="3321389041" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6489498" lon="8.8426875"/>
+ <node id="3321391005" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6498507" lon="8.8450106"/>
+ <node id="3321391608" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6492100" lon="8.8434410"/>
+ <node id="3321391609" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6499577" lon="8.8448652"/>
+ <node id="3321391614" visible="true" version="4" changeset="146218551" timestamp="2024-01-13T15:41:14Z" user="Yiyi_" uid="1404750" lat="45.6527306" lon="8.8595594">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="3321398146" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:15:10Z" user="Alecs01" uid="1476146" lat="45.6573016" lon="8.8749964"/>
+ <node id="3321398147" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:15:11Z" user="Alecs01" uid="1476146" lat="45.6579262" lon="8.8769894"/>
+ <node id="3321398148" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:15:12Z" user="Alecs01" uid="1476146" lat="45.6584687" lon="8.8794293"/>
+ <node id="3321416320" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:43:53Z" user="Alecs01" uid="1476146" lat="45.6534078" lon="8.8639860"/>
+ <node id="3321416321" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:43:54Z" user="Alecs01" uid="1476146" lat="45.6535128" lon="8.8639482"/>
+ <node id="3321416410" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:15:10Z" user="Alecs01" uid="1476146" lat="45.6576920" lon="8.8771129"/>
+ <node id="3321416411" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:15:11Z" user="Alecs01" uid="1476146" lat="45.6580331" lon="8.8787120"/>
+ <node id="3321416527" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:15:09Z" user="Alecs01" uid="1476146" lat="45.6571496" lon="8.8750963"/>
+ <node id="3321460439" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:26:09Z" user="Alecs01" uid="1476146" lat="45.6564547" lon="8.9021170"/>
+ <node id="3321460440" visible="true" version="1" changeset="28510791" timestamp="2015-01-30T19:26:09Z" user="Alecs01" uid="1476146" lat="45.6565797" lon="8.9020791"/>
+ <node id="3321460443" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6579794" lon="8.9092961">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="3321460444" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6603146" lon="8.9196525"/>
+ <node id="3321461191" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6601673" lon="8.9194858"/>
+ <node id="3321492660" visible="true" version="2" changeset="187938941" timestamp="2026-08-24T13:23:56Z" user="pianolente" uid="462871" lat="45.6624152" lon="8.9443560"/>
+ <node id="3321501303" visible="true" version="2" changeset="47162100" timestamp="2017-03-25T20:35:39Z" user="Yiyi_" uid="1404750" lat="45.6609013" lon="8.9490194"/>
+ <node id="3321501357" visible="true" version="2" changeset="47162100" timestamp="2017-03-25T20:35:40Z" user="Yiyi_" uid="1404750" lat="45.6623037" lon="8.9442095"/>
+ <node id="3321505775" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6611401" lon="8.9580439"/>
+ <node id="3321507966" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6605378" lon="8.9533532"/>
+ <node id="3321507967" visible="true" version="5" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6606687" lon="8.9535656"/>
+ <node id="3321508642" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6628899" lon="8.9359888"/>
+ <node id="3321508646" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6630018" lon="8.9387987"/>
+ <node id="3321508647" visible="true" version="5" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6631357" lon="8.9388268"/>
+ <node id="3321509112" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6611567" lon="8.9485331"/>
+ <node id="3321509113" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6613011" lon="8.9586307"/>
+ <node id="3321509461" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6627566" lon="8.9360379"/>
+ <node id="3627072317" visible="true" version="3" changeset="56102677" timestamp="2018-02-06T01:58:55Z" user="fedc" uid="602784" lat="45.6859937" lon="9.0831389"/>
+ <node id="3627072320" visible="true" version="3" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6845442" lon="9.0916466"/>
+ <node id="3755708930" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653" lat="45.6856320" lon="9.0872556">
+  <tag k="highway" v="motorway_junction"/>
+  <tag k="name" v="Lentate sul Seveso"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+ </node>
+ <node id="3755708941" visible="true" version="4" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6838789" lon="9.0930466"/>
+ <node id="3824522672" visible="true" version="5" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6792450" lon="9.0656091"/>
+ <node id="4147314848" visible="true" version="3" changeset="146218551" timestamp="2024-01-13T15:41:14Z" user="Yiyi_" uid="1404750" lat="45.6521379" lon="8.8571918">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147318697" visible="true" version="6" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6612713" lon="8.9474893">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147318698" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:42Z" user="Alecs01" uid="1476146" lat="45.6766780" lon="8.9811135"/>
+ <node id="4147319308" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6581903" lon="8.9107956">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147319309" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:43Z" user="Alecs01" uid="1476146" lat="45.6762057" lon="8.9797053"/>
+ <node id="4147319310" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:43Z" user="Alecs01" uid="1476146" lat="45.6767567" lon="8.9831171"/>
+ <node id="4147319311" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6767613" lon="8.9908040">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147319328" visible="true" version="3" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6777094" lon="9.0149682">
+  <tag k="distance" v="15"/>
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="milestone"/>
+ </node>
+ <node id="4147319329" visible="true" version="3" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6783373" lon="9.0361137"/>
+ <node id="4147319543" visible="true" version="4" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6609754" lon="8.9288139"/>
+ <node id="4147319693" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:45Z" user="Alecs01" uid="1476146" lat="45.6768054" lon="8.9861882"/>
+ <node id="4147319694" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:45Z" user="Alecs01" uid="1476146" lat="45.6772502" lon="9.0015900">
+  <tag k="distance" v="14"/>
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="milestone"/>
+ </node>
+ <node id="4147319890" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:46Z" user="Alecs01" uid="1476146" lat="45.6763294" lon="8.9796168"/>
+ <node id="4147319891" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:47Z" user="Alecs01" uid="1476146" lat="45.6765243" lon="8.9812074"/>
+ <node id="4147319892" visible="true" version="1" changeset="38863614" timestamp="2016-04-25T18:04:22Z" user="Alecs01" uid="1476146" lat="45.6767664" lon="8.9875141"/>
+ <node id="4147319893" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:47Z" user="Alecs01" uid="1476146" lat="45.6768935" lon="8.9830876"/>
+ <node id="4147320390" visible="true" version="3" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6778144" lon="9.0149652">
+  <tag k="distance" v="15"/>
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="milestone"/>
+ </node>
+ <node id="4147320391" visible="true" version="3" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6781861" lon="9.0301167"/>
+ <node id="4147320508" visible="true" version="1" changeset="38863614" timestamp="2016-04-25T18:04:25Z" user="Alecs01" uid="1476146" lat="45.6771328" lon="9.0016433">
+  <tag k="distance" v="14"/>
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="milestone"/>
+ </node>
+ <node id="4147320510" visible="true" version="3" changeset="100307313" timestamp="2021-03-02T22:49:42Z" user="pianolente" uid="462871" lat="45.6784421" lon="9.0361393"/>
+ <node id="4147320656" visible="true" version="3" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6784782" lon="9.0429357"/>
+ <node id="4147320657" visible="true" version="3" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6785177" lon="9.0458403"/>
+ <node id="4147320889" visible="true" version="2" changeset="38863614" timestamp="2016-04-25T18:34:49Z" user="Alecs01" uid="1476146" lat="45.6769516" lon="8.9861775"/>
+ <node id="4147320989" visible="true" version="1" changeset="38863614" timestamp="2016-04-25T18:04:24Z" user="Alecs01" uid="1476146" lat="45.6769152" lon="8.9875513"/>
+ <node id="4147320990" visible="true" version="3" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6786227" lon="9.0458385"/>
+ <node id="4147320991" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6825517" lon="9.0733501"/>
+ <node id="4147321189" visible="true" version="4" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6782877" lon="9.0331290">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147321289" visible="true" version="4" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6783928" lon="9.0394349"/>
+ <node id="4147321390" visible="true" version="4" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6786152" lon="9.0541919">
+  <tag k="fixme" v="posizione approssimata"/>
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147321391" visible="true" version="3" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6785830" lon="9.0429374"/>
+ <node id="4147321392" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6794315" lon="9.0656668"/>
+ <node id="4147321393" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6822343" lon="9.0728293"/>
+ <node id="4147321489" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6817662" lon="9.0724184"/>
+ <node id="4147321490" visible="true" version="4" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6854057" lon="9.0800301">
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4147321589" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6822125" lon="9.0731555"/>
+ <node id="4147321690" visible="true" version="3" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6858684" lon="9.0866089"/>
+ <node id="4147321691" visible="true" version="3" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6857491" lon="9.0863450"/>
+ <node id="4147321692" visible="true" version="2" changeset="56102677" timestamp="2018-02-06T01:58:55Z" user="fedc" uid="602784" lat="45.6858924" lon="9.0818983"/>
+ <node id="4147370042" visible="true" version="4" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6631096" lon="8.9379264"/>
+ <node id="4147370148" visible="true" version="4" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6616508" lon="8.9314349"/>
+ <node id="4147370259" visible="true" version="3" changeset="100307509" timestamp="2021-03-02T22:58:24Z" user="pianolente" uid="462871" lat="45.6605816" lon="8.9514122"/>
+ <node id="4147370272" visible="true" version="2" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6769346" lon="8.9907633">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147370276" visible="true" version="2" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6773291" lon="9.0030973">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="4147370282" visible="true" version="2" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6774619" lon="9.0075404"/>
+ <node id="4147371089" visible="true" version="3" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6607108" lon="8.9514913"/>
+ <node id="4147371291" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6615113" lon="8.9314466"/>
+ <node id="4147371294" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6629688" lon="8.9379183"/>
+ <node id="4147379952" visible="true" version="1" changeset="38863614" timestamp="2016-04-25T18:43:18Z" user="Alecs01" uid="1476146" lat="45.6535853" lon="8.8650777"/>
+ <node id="4147383386" visible="true" version="1" changeset="38863614" timestamp="2016-04-25T18:43:19Z" user="Alecs01" uid="1476146" lat="45.6537165" lon="8.8650187"/>
+ <node id="4346965348" visible="true" version="2" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6782876" lon="9.0301112"/>
+ <node id="4346965350" visible="true" version="2" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6785554" lon="9.0485336"/>
+ <node id="4346965351" visible="true" version="2" changeset="56103044" timestamp="2018-02-06T02:30:32Z" user="fedc" uid="602784" lat="45.6785998" lon="9.0519371"/>
+ <node id="4346965352" visible="true" version="2" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6786725" lon="9.0498462"/>
+ <node id="4346965353" visible="true" version="2" changeset="56103339" timestamp="2018-02-06T02:52:53Z" user="fedc" uid="602784" lat="45.6787081" lon="9.0520352"/>
+ <node id="4356703010" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6786315" lon="9.0464509">
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4356703011" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6769907" lon="8.9946687">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4356703012" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6619807" lon="8.9457282">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4356703013" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6591139" lon="8.9142002">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4363620630" visible="true" version="5" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6504468" lon="8.8466203">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4366494462" visible="true" version="4" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6503158" lon="8.8466846">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4366494463" visible="true" version="5" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6589986" lon="8.9142550">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4366494464" visible="true" version="5" changeset="146220933" timestamp="2024-01-13T16:55:00Z" user="Yiyi_" uid="1404750" lat="45.6618588" lon="8.9456518">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4366494465" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6768692" lon="8.9946912">
+  <tag k="bus" v="yes"/>
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4366494466" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6785293" lon="9.0464495">
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="4609589414" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6452845" lon="8.8395523"/>
+ <node id="4609589415" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6459795" lon="8.8398823"/>
+ <node id="4609589418" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6462831" lon="8.8400567"/>
+ <node id="4609589423" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6465717" lon="8.8402490"/>
+ <node id="4609589427" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6474988" lon="8.8407729"/>
+ <node id="4609589428" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6477114" lon="8.8409842"/>
+ <node id="4609589430" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6481301" lon="8.8414539"/>
+ <node id="4609589433" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6482674" lon="8.8419171"/>
+ <node id="4755304815" visible="true" version="2" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6609855" lon="8.9493183"/>
+ <node id="4755304816" visible="true" version="1" changeset="47162100" timestamp="2017-03-25T20:35:38Z" user="Yiyi_" uid="1404750" lat="45.6608892" lon="8.9499071"/>
+ <node id="4755304817" visible="true" version="2" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6607645" lon="8.9509222"/>
+ <node id="4755304818" visible="true" version="2" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6606743" lon="8.9521071"/>
+ <node id="4755304823" visible="true" version="2" changeset="100307478" timestamp="2021-03-02T22:57:07Z" user="pianolente" uid="462871" lat="45.6606606" lon="8.9531298"/>
+ <node id="4755304824" visible="true" version="1" changeset="47162100" timestamp="2017-03-25T20:35:38Z" user="Yiyi_" uid="1404750" lat="45.6606242" lon="8.9509568"/>
+ <node id="4755304825" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6605496" lon="8.9520507"/>
+ <node id="4755304826" visible="true" version="1" changeset="47162100" timestamp="2017-03-25T20:35:38Z" user="Yiyi_" uid="1404750" lat="45.6608005" lon="8.9495774"/>
+ <node id="4755304827" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6610544" lon="8.9483213"/>
+ <node id="4755304828" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6611801" lon="8.9478134"/>
+ <node id="4755304829" visible="true" version="2" changeset="100307509" timestamp="2021-03-02T22:58:24Z" user="pianolente" uid="462871" lat="45.6614446" lon="8.9468511"/>
+ <node id="4755304830" visible="true" version="4" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6624446" lon="8.9436364"/>
+ <node id="4755304831" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6625419" lon="8.9438530"/>
+ <node id="4755304834" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6626043" lon="8.9428977"/>
+ <node id="4755304836" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6629753" lon="8.9397476"/>
+ <node id="4755310338" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6608463" lon="8.9257183"/>
+ <node id="4755310339" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6608952" lon="8.9268257"/>
+ <node id="4755310340" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6610219" lon="8.9281467"/>
+ <node id="4755310351" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6606982" lon="8.9229203"/>
+ <node id="5194557335" visible="true" version="1" changeset="53297568" timestamp="2017-10-27T17:41:38Z" user="MauroG61" uid="3252538" lat="45.6506638" lon="8.8478930"/>
+ <node id="5194557336" visible="true" version="1" changeset="53297568" timestamp="2017-10-27T17:41:38Z" user="MauroG61" uid="3252538" lat="45.6506878" lon="8.8480280"/>
+ <node id="5226624349" visible="true" version="2" changeset="57668035" timestamp="2018-03-30T17:47:47Z" user="Alecs01" uid="1476146" lat="45.6580408" lon="8.8879273"/>
+ <node id="5391421684" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6841007" lon="9.0928852"/>
+ <node id="5391421685" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6839323" lon="9.0934083"/>
+ <node id="5391421686" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6837674" lon="9.0939700"/>
+ <node id="5391421687" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6836836" lon="9.0942626"/>
+ <node id="5391421688" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6832486" lon="9.0962463"/>
+ <node id="5391421689" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6831580" lon="9.0968430"/>
+ <node id="5391421690" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6849515" lon="9.0905367"/>
+ <node id="5391421691" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6851387" lon="9.0899741"/>
+ <node id="5391421692" visible="true" version="3" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6854165" lon="9.0890472">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="5391421693" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6855338" lon="9.0885652"/>
+ <node id="5391421694" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6857241" lon="9.0876058"/>
+ <node id="5391421695" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6858091" lon="9.0870828"/>
+ <node id="5391421922" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6860092" lon="9.0838525"/>
+ <node id="5391421923" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6860108" lon="9.0845100"/>
+ <node id="5391421924" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6859872" lon="9.0850773"/>
+ <node id="5391421925" visible="true" version="2" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6859571" lon="9.0855581"/>
+ <node id="5391421926" visible="true" version="1" changeset="56102677" timestamp="2018-02-06T01:58:52Z" user="fedc" uid="602784" lat="45.6857114" lon="9.0807343"/>
+ <node id="5391421927" visible="true" version="1" changeset="56102677" timestamp="2018-02-06T01:58:52Z" user="fedc" uid="602784" lat="45.6856171" lon="9.0810259"/>
+ <node id="5391421928" visible="true" version="1" changeset="56102677" timestamp="2018-02-06T01:58:52Z" user="fedc" uid="602784" lat="45.6857174" lon="9.0816792"/>
+ <node id="5391421929" visible="true" version="1" changeset="56102677" timestamp="2018-02-06T01:58:52Z" user="fedc" uid="602784" lat="45.6858894" lon="9.0840200"/>
+ <node id="5391421930" visible="true" version="1" changeset="56102677" timestamp="2018-02-06T01:58:52Z" user="fedc" uid="602784" lat="45.6858897" lon="9.0845283"/>
+ <node id="5391421931" visible="true" version="2" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6858581" lon="9.0850978"/>
+ <node id="5391421932" visible="true" version="2" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6858154" lon="9.0856980"/>
+ <node id="5391421933" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6855459" lon="9.0877650"/>
+ <node id="5391421934" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6854513" lon="9.0882365"/>
+ <node id="5391421935" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6853421" lon="9.0887296"/>
+ <node id="5391421936" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6851810" lon="9.0893431"/>
+ <node id="5391421937" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6850206" lon="9.0898696"/>
+ <node id="5391421938" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6848642" lon="9.0903368"/>
+ <node id="5391421939" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6847221" lon="9.0907304"/>
+ <node id="5391421940" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6845595" lon="9.0911738"/>
+ <node id="5391421944" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6831232" lon="9.0960773"/>
+ <node id="5391421951" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6835990" lon="9.0939504"/>
+ <node id="5391421952" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6834951" lon="9.0943531"/>
+ <node id="5391421953" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6833827" lon="9.0947866"/>
+ <node id="5391421954" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6832883" lon="9.0952272"/>
+ <node id="5391421955" visible="true" version="2" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6832102" lon="9.0956045"/>
+ <node id="5391442798" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6852940" lon="9.0795566"/>
+ <node id="5391442799" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6851765" lon="9.0791185"/>
+ <node id="5391442800" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6850600" lon="9.0787313"/>
+ <node id="5391442801" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6849468" lon="9.0783735"/>
+ <node id="5391442802" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6847255" lon="9.0777641"/>
+ <node id="5391442803" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6853923" lon="9.0793456"/>
+ <node id="5391442804" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6852512" lon="9.0788351"/>
+ <node id="5391442805" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6851053" lon="9.0783607"/>
+ <node id="5391442806" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6848414" lon="9.0776306"/>
+ <node id="5391442807" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6823655" lon="9.0733896"/>
+ <node id="5391442808" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6825762" lon="9.0737179"/>
+ <node id="5391442809" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6830653" lon="9.0745067">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="5391442810" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6832312" lon="9.0747696"/>
+ <node id="5391442811" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6836585" lon="9.0755015"/>
+ <node id="5391442812" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6838442" lon="9.0758380"/>
+ <node id="5391442813" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6840526" lon="9.0762274"/>
+ <node id="5391442817" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6811277" lon="9.0711814"/>
+ <node id="5391442820" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6818748" lon="9.0726056"/>
+ <node id="5391443721" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6820535" lon="9.0729037"/>
+ <node id="5391443722" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6815070" lon="9.0719420"/>
+ <node id="5391443723" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6813062" lon="9.0715534"/>
+ <node id="5391443724" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6809266" lon="9.0707624"/>
+ <node id="5391443725" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6807735" lon="9.0704158"/>
+ <node id="5391443726" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6806387" lon="9.0701100"/>
+ <node id="5391443727" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6805040" lon="9.0697839"/>
+ <node id="5391443728" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6803611" lon="9.0694125"/>
+ <node id="5391443729" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6802212" lon="9.0690422"/>
+ <node id="5391443730" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6800971" lon="9.0686954"/>
+ <node id="5391443731" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6799098" lon="9.0681397"/>
+ <node id="5391443733" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6797365" lon="9.0675623"/>
+ <node id="5391443735" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6793655" lon="9.0661468"/>
+ <node id="5391443737" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6791623" lon="9.0651876"/>
+ <node id="5391443738" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6817155" lon="9.0718951"/>
+ <node id="5391443739" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6836026" lon="9.0750847"/>
+ <node id="5391443740" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6838058" lon="9.0754315"/>
+ <node id="5391443741" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6842339" lon="9.0762382"/>
+ <node id="5391443742" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6844194" lon="9.0766339"/>
+ <node id="5391443743" visible="true" version="1" changeset="56103044" timestamp="2018-02-06T02:30:28Z" user="fedc" uid="602784" lat="45.6845566" lon="9.0769408"/>
+ <node id="5391443747" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6805434" lon="9.0693723"/>
+ <node id="5391443748" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6803330" lon="9.0688179"/>
+ <node id="5391443749" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6801657" lon="9.0683109"/>
+ <node id="5391443750" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6800218" lon="9.0678845"/>
+ <node id="5391443751" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6796922" lon="9.0667463"/>
+ <node id="5391443752" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6795709" lon="9.0662900"/>
+ <node id="5391443753" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6793326" lon="9.0651694"/>
+ <node id="5391443777" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6787088" lon="9.0605175"/>
+ <node id="5391443778" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6787573" lon="9.0618136"/>
+ <node id="5391443780" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6787969" lon="9.0623766"/>
+ <node id="5391443781" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6789125" lon="9.0635426"/>
+ <node id="5391443782" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6789720" lon="9.0640178"/>
+ <node id="5391443783" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6790613" lon="9.0646177"/>
+ <node id="5391443841" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6791529" lon="9.0641552"/>
+ <node id="5391443842" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6790870" lon="9.0637049"/>
+ <node id="5391443843" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6789535" lon="9.0625307"/>
+ <node id="5391443844" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6789033" lon="9.0619545"/>
+ <node id="5391443845" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6788528" lon="9.0611905"/>
+ <node id="5391443846" visible="true" version="3" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6788193" lon="9.0603807"/>
+ <node id="5391443847" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6788038" lon="9.0597128"/>
+ <node id="5391443854" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6787960" lon="9.0592520"/>
+ <node id="5391462507" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6785051" lon="9.0439224"/>
+ <node id="5391462508" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6785040" lon="9.0436450"/>
+ <node id="5391462509" visible="true" version="2" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6784554" lon="9.0425961"/>
+ <node id="5391462510" visible="true" version="2" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6784452" lon="9.0422360"/>
+ <node id="5391462511" visible="true" version="2" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6784200" lon="9.0409538"/>
+ <node id="5391462512" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6785438" lon="9.0409482"/>
+ <node id="5391462513" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6786034" lon="9.0435719"/>
+ <node id="5391462514" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6786084" lon="9.0439045"/>
+ <node id="5391462515" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6785900" lon="9.0511396"/>
+ <node id="5391462516" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6785774" lon="9.0501162"/>
+ <node id="5391462517" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6785586" lon="9.0492749"/>
+ <node id="5391462518" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6786562" lon="9.0482774"/>
+ <node id="5391462519" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6786945" lon="9.0511549"/>
+ <node id="5391462520" visible="true" version="1" changeset="56103339" timestamp="2018-02-06T02:52:49Z" user="fedc" uid="602784" lat="45.6787063" lon="9.0530973"/>
+ <node id="8479098659" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6786947" lon="9.0600182"/>
+ <node id="8479098660" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6787196" lon="9.0609048"/>
+ <node id="8479098662" visible="true" version="2" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6788269" lon="9.0627248"/>
+ <node id="8480302964" visible="true" version="1" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6779510" lon="9.0222366"/>
+ <node id="8480302966" visible="true" version="1" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6780111" lon="9.0237438"/>
+ <node id="8480302967" visible="true" version="1" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6781009" lon="9.0278842"/>
+ <node id="8480302968" visible="true" version="1" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6781527" lon="9.0289934"/>
+ <node id="8480302969" visible="true" version="1" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6783169" lon="9.0343927"/>
+ <node id="8480302970" visible="true" version="1" changeset="100298771" timestamp="2021-03-02T18:24:11Z" user="pianolente" uid="462871" lat="45.6783700" lon="9.0377763"/>
+ <node id="8480356731" visible="true" version="1" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6781866" lon="9.0271694"/>
+ <node id="8480356739" visible="true" version="1" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6780482" lon="9.0219508"/>
+ <node id="8480356740" visible="true" version="1" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6778840" lon="9.0168008"/>
+ <node id="8480356741" visible="true" version="1" changeset="100300150" timestamp="2021-03-02T19:02:19Z" user="pianolente" uid="462871" lat="45.6779027" lon="9.0173910"/>
+ <node id="8481083662" visible="true" version="1" changeset="100306904" timestamp="2021-03-02T22:32:08Z" user="pianolente" uid="462871" lat="45.6774817" lon="9.0103740"/>
+ <node id="8481083663" visible="true" version="2" changeset="100557961" timestamp="2021-03-07T00:24:48Z" user="pianolente" uid="462871" lat="45.6774087" lon="9.0081493"/>
+ <node id="8481083664" visible="true" version="2" changeset="100557961" timestamp="2021-03-07T00:24:48Z" user="pianolente" uid="462871" lat="45.6774558" lon="9.0092600"/>
+ <node id="8481083665" visible="true" version="1" changeset="100306904" timestamp="2021-03-02T22:32:08Z" user="pianolente" uid="462871" lat="45.6775837" lon="9.0126793"/>
+ <node id="8481083666" visible="true" version="1" changeset="100306904" timestamp="2021-03-02T22:32:08Z" user="pianolente" uid="462871" lat="45.6776437" lon="9.0138237"/>
+ <node id="8481109443" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6606748" lon="8.9553754"/>
+ <node id="8481109444" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6617895" lon="8.9601018"/>
+ <node id="8481109445" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6623915" lon="8.9614791"/>
+ <node id="8481109446" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6635606" lon="8.9635211"/>
+ <node id="8481109450" visible="true" version="2" changeset="187938459" timestamp="2026-08-24T13:13:35Z" user="pianolente" uid="462871" lat="45.6608518" lon="8.9556679"/>
+ <node id="8481109451" visible="true" version="2" changeset="187938459" timestamp="2026-08-24T13:13:35Z" user="pianolente" uid="462871" lat="45.6607785" lon="8.9550357"/>
+ <node id="8481110582" visible="true" version="3" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6636339" lon="8.9633641"/>
+ <node id="8481126247" visible="true" version="1" changeset="100307313" timestamp="2021-03-02T22:49:42Z" user="pianolente" uid="462871" lat="45.6783836" lon="9.0331226"/>
+ <node id="8481126248" visible="true" version="1" changeset="100307313" timestamp="2021-03-02T22:49:42Z" user="pianolente" uid="462871" lat="45.6783431" lon="9.0316155"/>
+ <node id="8484175937" visible="true" version="2" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6855919" lon="9.0875072"/>
+ <node id="8484175938" visible="true" version="1" changeset="100378691" timestamp="2021-03-03T23:48:43Z" user="pianolente" uid="462871" lat="45.6843207" lon="9.0918206"/>
+ <node id="8484180792" visible="true" version="1" changeset="100378932" timestamp="2021-03-04T00:04:12Z" user="pianolente" uid="462871" lat="45.6833508" lon="9.0956579"/>
+ <node id="8647072669" visible="true" version="1" changeset="103263634" timestamp="2021-04-20T10:52:10Z" user="Gior7" uid="12531617" lat="45.6839861" lon="9.0927403"/>
+ <node id="9956420044" visible="true" version="3" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6474315" lon="8.8409813"/>
+ <node id="11039565869" visible="true" version="4" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6627387" lon="8.9352398"/>
+ <node id="11039565870" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6624579" lon="8.9341145"/>
+ <node id="11039565871" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6623408" lon="8.9342086"/>
+ <node id="11039565872" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6626413" lon="8.9354991"/>
+ <node id="11368268818" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6491682" lon="8.8430781"/>
+ <node id="11502649616" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6478758" lon="8.8414457"/>
+ <node id="11502649617" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6486952" lon="8.8425351"/>
+ <node id="11514132611" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6581747" lon="8.9101882">
+  <tag k="traffic_sign" v="variable_message"/>
+  <tag k="traffic_sign:direction" v="forward"/>
+ </node>
+ <node id="11514132612" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6580571" lon="8.9101845">
+  <tag k="traffic_sign" v="variable_message"/>
+  <tag k="traffic_sign:direction" v="forward"/>
+ </node>
+ <node id="11519302943" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6625054" lon="8.9617157">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="11519302944" visible="true" version="1" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6784271" lon="9.0350234">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="11519302945" visible="true" version="1" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6785477" lon="9.0478495">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="11519302946" visible="true" version="1" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6786474" lon="9.0476963">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="11519302947" visible="true" version="1" changeset="146289177" timestamp="2024-01-15T16:17:44Z" user="Yiyi_" uid="1404750" lat="45.6846408" lon="9.0909469">
+  <tag k="highway" v="emergency_bay"/>
+ </node>
+ <node id="11701100791" visible="true" version="2" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6478902" lon="8.8411677"/>
+ <node id="11833303084" visible="true" version="1" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6477507" lon="8.8413063"/>
+ <node id="11833303087" visible="true" version="1" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6476391" lon="8.8411872"/>
+ <node id="11833303090" visible="true" version="1" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6489979" lon="8.8430421"/>
+ <node id="11833303091" visible="true" version="1" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6494891" lon="8.8440439"/>
+ <node id="11833303096" visible="true" version="1" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6501318" lon="8.8454069"/>
+ <node id="11833303098" visible="true" version="1" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493" lat="45.6496203" lon="8.8439969"/>
+ <node id="12336873128" visible="true" version="1" changeset="159084587" timestamp="2024-11-13T10:34:15Z" user="YellowSoul" uid="16061279" lat="45.6458059" lon="8.8397999"/>
+ <node id="13823733059" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6602063" lon="8.9190095"/>
+ <node id="14119343460" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6629154" lon="8.9406872"/>
+ <node id="14119343461" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6628351" lon="8.9414421"/>
+ <node id="14119343468" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6631174" lon="8.9397842"/>
+ <node id="14119343469" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6622410" lon="8.9333292"/>
+ <node id="14119343472" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6606455" lon="8.9240748"/>
+ <node id="14119343473" visible="true" version="2" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6605766" lon="8.9228783"/>
+ <node id="14119343474" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6608482" lon="8.9277968"/>
+ <node id="14119377821" visible="true" version="2" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6610584" lon="8.9569534"/>
+ <node id="14119419678" visible="true" version="3" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6629670" lon="8.9364976"/>
+ <node id="14119419679" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6630785" lon="8.9374626"/>
+ <node id="14119419681" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6626176" lon="8.9435466"/>
+ <node id="14119419683" visible="true" version="3" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6630260" lon="8.9410049"/>
+ <node id="14119423134" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6613829" lon="8.9303220"/>
+ <node id="14119423139" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6612109" lon="8.9294354"/>
+ <node id="14119449807" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6630787" lon="8.9404083"/>
+ <node id="14119449808" visible="true" version="2" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6631361" lon="8.9392958"/>
+ <node id="14120093967" visible="true" version="1" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6615031" lon="8.9308764"/>
+ <node id="14120093968" visible="true" version="1" changeset="187948236" timestamp="2026-08-24T16:37:20Z" user="pianolente" uid="462871" lat="45.6607667" lon="8.9267913"/>
+ <node id="14120175780" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6595751" lon="8.9161979"/>
+ <node id="14120175781" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6586335" lon="8.9122096"/>
+ <node id="14120175782" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6585836" lon="8.9125240"/>
+ <node id="14120175783" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6594719" lon="8.9162728"/>
+ <node id="14120175784" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6607080" lon="8.9254534"/>
+ <node id="14120175785" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6613412" lon="8.9307837"/>
+ <node id="14120175786" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6607892" lon="8.9562014"/>
+ <node id="14120175787" visible="true" version="1" changeset="187948995" timestamp="2026-08-24T16:49:17Z" user="pianolente" uid="462871" lat="45.6607234" lon="8.9558006"/>
+ <node id="14120221604" visible="true" version="1" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6625266" lon="8.9614005"/>
+ <node id="14120221605" visible="true" version="1" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6626433" lon="8.9616351"/>
+ <node id="14120221606" visible="true" version="1" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6614064" lon="8.9584916"/>
+ <node id="14120221607" visible="true" version="1" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6612229" lon="8.9577198"/>
+ <node id="14120221608" visible="true" version="1" changeset="187949152" timestamp="2026-08-24T16:52:17Z" user="pianolente" uid="462871" lat="45.6616107" lon="8.9591767"/>
+ <node id="14249463194" visible="true" version="1" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824" lat="45.6807564" lon="9.0699097"/>
+ <way id="81750655" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="952369277"/>
+  <nd ref="952369297"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="1"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81750663" visible="true" version="11" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="952167719"/>
+  <nd ref="8481083663"/>
+  <nd ref="8481083664"/>
+  <nd ref="8481083662"/>
+  <nd ref="8481083665"/>
+  <nd ref="8481083666"/>
+  <nd ref="4147319328"/>
+  <nd ref="952369277"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81750664" visible="true" version="24" changeset="178950954" timestamp="2026-02-23T16:14:43Z" user="ja+" uid="11242131">
+  <nd ref="171910064"/>
+  <nd ref="5391421689"/>
+  <nd ref="5391421688"/>
+  <nd ref="1654594678"/>
+  <tag k="expressway" v="yes"/>
+  <tag k="highway" v="trunk"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="no"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="81750676" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="952369279"/>
+  <nd ref="8480356741"/>
+  <nd ref="8480356740"/>
+  <nd ref="952369271"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="1"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81750686" visible="true" version="34" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824">
+  <nd ref="1654627444"/>
+  <nd ref="8479098659"/>
+  <nd ref="5391443777"/>
+  <nd ref="8479098660"/>
+  <nd ref="5391443778"/>
+  <nd ref="5391443780"/>
+  <nd ref="8479098662"/>
+  <nd ref="1654594547"/>
+  <nd ref="5391443781"/>
+  <nd ref="5391443782"/>
+  <nd ref="5391443783"/>
+  <nd ref="5391443737"/>
+  <nd ref="3824522672"/>
+  <nd ref="5391443735"/>
+  <nd ref="1654594590"/>
+  <nd ref="5391443733"/>
+  <nd ref="5391443731"/>
+  <nd ref="5391443730"/>
+  <nd ref="5391443729"/>
+  <nd ref="5391443728"/>
+  <nd ref="5391443727"/>
+  <nd ref="5391443726"/>
+  <nd ref="5391443725"/>
+  <nd ref="5391443724"/>
+  <nd ref="5391442817"/>
+  <nd ref="5391443723"/>
+  <nd ref="5391443722"/>
+  <nd ref="4147321489"/>
+  <nd ref="5391442820"/>
+  <nd ref="5391443721"/>
+  <nd ref="4147321589"/>
+  <nd ref="5391442807"/>
+  <nd ref="5391442808"/>
+  <nd ref="1654594682"/>
+  <nd ref="5391442809"/>
+  <nd ref="5391442810"/>
+  <nd ref="1654594604"/>
+  <nd ref="5391442811"/>
+  <nd ref="5391442812"/>
+  <nd ref="5391442813"/>
+  <nd ref="1654594674"/>
+  <nd ref="1654594550"/>
+  <nd ref="5391442802"/>
+  <nd ref="1654594595"/>
+  <nd ref="5391442801"/>
+  <nd ref="5391442800"/>
+  <nd ref="5391442799"/>
+  <nd ref="5391442798"/>
+  <nd ref="4147321490"/>
+  <nd ref="1654594638"/>
+  <nd ref="5391421927"/>
+  <nd ref="5391421928"/>
+  <nd ref="1654594654"/>
+  <nd ref="1654594593"/>
+  <nd ref="1654594633"/>
+  <nd ref="5391421929"/>
+  <nd ref="5391421930"/>
+  <nd ref="5391421931"/>
+  <nd ref="5391421932"/>
+  <nd ref="4147321691"/>
+  <nd ref="1654594548"/>
+  <nd ref="3755708930"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81750709" visible="true" version="9" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="952369271"/>
+  <nd ref="4147320390"/>
+  <nd ref="952167408"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81811874" visible="true" version="27" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954629430"/>
+  <nd ref="14120221608"/>
+  <nd ref="14120221606"/>
+  <nd ref="14120221607"/>
+  <nd ref="14119377821"/>
+  <nd ref="8481109450"/>
+  <nd ref="8481109451"/>
+  <nd ref="953823553"/>
+  <nd ref="3321507967"/>
+  <nd ref="4755304823"/>
+  <nd ref="953823543"/>
+  <nd ref="4755304818"/>
+  <nd ref="4147371089"/>
+  <nd ref="4755304817"/>
+  <nd ref="953823578"/>
+  <nd ref="4755304816"/>
+  <nd ref="4755304815"/>
+  <nd ref="3321509112"/>
+  <nd ref="953823568"/>
+  <nd ref="4356703012"/>
+  <nd ref="953823569"/>
+  <nd ref="3321492660"/>
+  <nd ref="4755304831"/>
+  <nd ref="14119419681"/>
+  <nd ref="953823518"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81811875" visible="true" version="10" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953788999"/>
+  <nd ref="953788988"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+  <tag k="tunnel:name" v="Cislago Ovest"/>
+ </way>
+ <way id="81811878" visible="true" version="10" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953788856"/>
+  <nd ref="953788899"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+  <tag k="tunnel:name" v="Cislago Est"/>
+ </way>
+ <way id="81811880" visible="true" version="24" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953823581"/>
+  <nd ref="4755304834"/>
+  <nd ref="953823544"/>
+  <nd ref="4755304830"/>
+  <nd ref="3321501357"/>
+  <nd ref="953823556"/>
+  <nd ref="4366494464"/>
+  <nd ref="4755304829"/>
+  <nd ref="4147318697"/>
+  <nd ref="4755304828"/>
+  <nd ref="4755304827"/>
+  <nd ref="3321501303"/>
+  <nd ref="4755304826"/>
+  <nd ref="953823533"/>
+  <nd ref="4755304824"/>
+  <nd ref="4147370259"/>
+  <nd ref="4755304825"/>
+  <nd ref="953823548"/>
+  <nd ref="3321507966"/>
+  <nd ref="953823561"/>
+  <nd ref="8481109443"/>
+  <nd ref="14120175787"/>
+  <nd ref="14120175786"/>
+  <nd ref="954632389"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81813958" visible="true" version="13" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025786"/>
+  <nd ref="954025782"/>
+  <nd ref="954025894"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="no"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81813959" visible="true" version="14" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953900058"/>
+  <nd ref="953900025"/>
+  <nd ref="953900009"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="1"/>
+  <tag k="lit" v="no"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="wikidata" v="Q109351510"/>
+ </way>
+ <way id="81813960" visible="true" version="15" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953900036"/>
+  <nd ref="953900079"/>
+  <nd ref="953900020"/>
+  <nd ref="953900053"/>
+  <nd ref="953900039"/>
+  <nd ref="953900055"/>
+  <nd ref="953900088"/>
+  <nd ref="3321398148"/>
+  <nd ref="953900011"/>
+  <nd ref="953900092"/>
+  <nd ref="3321398147"/>
+  <nd ref="953900027"/>
+  <nd ref="3321398146"/>
+  <nd ref="954025860"/>
+  <nd ref="954026140"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+  <tag k="tunnel:name" v="Solbiate Ovest"/>
+  <tag k="wikidata" v="Q109351506"/>
+ </way>
+ <way id="81813961" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953900032"/>
+  <nd ref="5226624349"/>
+  <nd ref="953900045"/>
+  <nd ref="953900036"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="1"/>
+  <tag k="lit" v="no"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="wikidata" v="Q109351510"/>
+ </way>
+ <way id="81813964" visible="true" version="16" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953823573"/>
+  <nd ref="953900094"/>
+  <nd ref="3321460440"/>
+  <nd ref="953900080"/>
+  <nd ref="953900082"/>
+  <nd ref="953900064"/>
+  <nd ref="953900023"/>
+  <nd ref="953900095"/>
+  <nd ref="953900041"/>
+  <nd ref="953900032"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+  <tag k="tunnel:name" v="Gorla Ovest"/>
+  <tag k="wikidata" v="Q109351522"/>
+ </way>
+ <way id="81816525" visible="true" version="11" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026276"/>
+  <nd ref="954025776"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-2"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="81816526" visible="true" version="15" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025987"/>
+  <nd ref="4363620630"/>
+  <nd ref="954026310"/>
+  <nd ref="11833303096"/>
+  <nd ref="3321391609"/>
+  <nd ref="954025863"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="120"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="turn:lanes" v="through|through|right"/>
+ </way>
+ <way id="81816527" visible="true" version="16" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026018"/>
+  <nd ref="4609589414"/>
+  <nd ref="12336873128"/>
+  <nd ref="4609589415"/>
+  <tag k="highway" v="motorway_link"/>
+  <tag k="lane_markings" v="yes"/>
+  <tag k="lanes" v="1"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="60"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81816528" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025773"/>
+  <nd ref="5194557336"/>
+  <nd ref="5194557335"/>
+  <nd ref="954025987"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-2"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="81816529" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025814"/>
+  <nd ref="954025912"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="1"/>
+  <tag k="layer" v="1"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="60"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81816532" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025897"/>
+  <nd ref="954025786"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="81816533" visible="true" version="10" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026196"/>
+  <nd ref="954026074"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="layer" v="1"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81816535" visible="true" version="11" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026284"/>
+  <nd ref="954026303"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="81816538" visible="true" version="12" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026303"/>
+  <nd ref="954026014"/>
+  <nd ref="4147383386"/>
+  <nd ref="3321416321"/>
+  <nd ref="954025865"/>
+  <nd ref="3321391614"/>
+  <nd ref="954026064"/>
+  <nd ref="954025773"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="no"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81816539" visible="true" version="14" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025952"/>
+  <nd ref="4147314848"/>
+  <nd ref="3321382047"/>
+  <nd ref="954025744"/>
+  <nd ref="3321416320"/>
+  <nd ref="4147379952"/>
+  <nd ref="954026193"/>
+  <nd ref="954025897"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="no"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="81816540" visible="true" version="19" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026074"/>
+  <nd ref="9956420044"/>
+  <nd ref="954026026"/>
+  <nd ref="11833303087"/>
+  <nd ref="11833303084"/>
+  <nd ref="11502649616"/>
+  <nd ref="954026164"/>
+  <nd ref="4609589433"/>
+  <nd ref="2547948972"/>
+  <nd ref="11502649617"/>
+  <nd ref="2547948971"/>
+  <nd ref="11833303090"/>
+  <nd ref="3321391608"/>
+  <nd ref="954026243"/>
+  <nd ref="11833303091"/>
+  <nd ref="954026268"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="325189345" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953788899"/>
+  <nd ref="953788959"/>
+  <nd ref="953788824"/>
+  <nd ref="953788853"/>
+  <nd ref="953788908"/>
+  <nd ref="953788922"/>
+  <nd ref="953788987"/>
+  <nd ref="953788997"/>
+  <nd ref="953788821"/>
+  <nd ref="953788849"/>
+  <nd ref="3318457464"/>
+  <nd ref="3318457466"/>
+  <nd ref="953788905"/>
+  <nd ref="953788843"/>
+  <nd ref="4147319309"/>
+  <nd ref="953788869"/>
+  <nd ref="4147319891"/>
+  <nd ref="953788912"/>
+  <nd ref="4147319310"/>
+  <nd ref="953788991"/>
+  <nd ref="4147319693"/>
+  <nd ref="4147319892"/>
+  <nd ref="953788846"/>
+  <nd ref="4147319311"/>
+  <nd ref="953788902"/>
+  <nd ref="4366494465"/>
+  <nd ref="953788962"/>
+  <nd ref="953788861"/>
+  <nd ref="4147320508"/>
+  <nd ref="953788929"/>
+  <nd ref="952167719"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="325189352" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="952167408"/>
+  <nd ref="4147370282"/>
+  <nd ref="953788876"/>
+  <nd ref="4147370276"/>
+  <nd ref="4147319694"/>
+  <nd ref="953788990"/>
+  <nd ref="953788910"/>
+  <nd ref="4356703011"/>
+  <nd ref="953788840"/>
+  <nd ref="4147370272"/>
+  <nd ref="953788970"/>
+  <nd ref="4147320989"/>
+  <nd ref="4147320889"/>
+  <nd ref="953788932"/>
+  <nd ref="4147319893"/>
+  <nd ref="953788965"/>
+  <nd ref="4147318698"/>
+  <nd ref="953788985"/>
+  <nd ref="4147319890"/>
+  <nd ref="953788915"/>
+  <nd ref="953788956"/>
+  <nd ref="3318457467"/>
+  <nd ref="3318457465"/>
+  <nd ref="953788946"/>
+  <nd ref="953788887"/>
+  <nd ref="953788827"/>
+  <nd ref="953788812"/>
+  <nd ref="953788954"/>
+  <nd ref="953788936"/>
+  <nd ref="953788878"/>
+  <nd ref="953788871"/>
+  <nd ref="953788994"/>
+  <nd ref="953788999"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="325490229" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026140"/>
+  <nd ref="954026053"/>
+  <nd ref="954026284"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="no"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="325490236" visible="true" version="9" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025894"/>
+  <nd ref="954026204"/>
+  <nd ref="3321416527"/>
+  <nd ref="953900059"/>
+  <nd ref="3321416410"/>
+  <nd ref="953900056"/>
+  <nd ref="3321416411"/>
+  <nd ref="953900074"/>
+  <nd ref="953900037"/>
+  <nd ref="953900008"/>
+  <nd ref="953900072"/>
+  <nd ref="953900068"/>
+  <nd ref="953900086"/>
+  <nd ref="953900018"/>
+  <nd ref="953900058"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+  <tag k="tunnel:name" v="Solbiate Est"/>
+  <tag k="wikidata" v="Q109351506"/>
+ </way>
+ <way id="325494358" visible="true" version="10" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953900009"/>
+  <nd ref="953900029"/>
+  <nd ref="953900077"/>
+  <nd ref="953900091"/>
+  <nd ref="953900043"/>
+  <nd ref="953900057"/>
+  <nd ref="953900054"/>
+  <nd ref="3321460439"/>
+  <nd ref="953900070"/>
+  <nd ref="953823546"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="-1"/>
+  <tag k="lit" v="24/7"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+  <tag k="tunnel:name" v="Gorla Est"/>
+  <tag k="wikidata" v="Q109351522"/>
+ </way>
+ <way id="356780558" visible="true" version="8" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954026268"/>
+  <nd ref="3321391005"/>
+  <nd ref="954025735"/>
+  <nd ref="4366494462"/>
+  <nd ref="954026276"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="356780559" visible="true" version="11" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="11368268818"/>
+  <nd ref="3321389041"/>
+  <nd ref="954025903"/>
+  <nd ref="2547952449"/>
+  <nd ref="4609589430"/>
+  <tag k="destination" v="MILANO"/>
+  <tag k="destination:colour" v="green"/>
+  <tag k="destination:ref" v="A8"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="80"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="413399863" visible="true" version="4" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025776"/>
+  <nd ref="954025952"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="no"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="413399873" visible="true" version="4" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4147320656"/>
+  <nd ref="5391462508"/>
+  <nd ref="5391462507"/>
+  <nd ref="4147320657"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="layer" v="1"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="413399884" visible="true" version="3" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4147320990"/>
+  <nd ref="5391462514"/>
+  <nd ref="5391462513"/>
+  <nd ref="4147321391"/>
+  <tag k="bridge" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="layer" v="1"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="413399894" visible="true" version="4" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4147321391"/>
+  <nd ref="5391462512"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="413399905" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="952369297"/>
+  <nd ref="8480302964"/>
+  <nd ref="8480302966"/>
+  <nd ref="1654566177"/>
+  <nd ref="952167569"/>
+  <nd ref="8480302967"/>
+  <nd ref="8480302968"/>
+  <nd ref="4147320391"/>
+  <nd ref="4147321189"/>
+  <nd ref="8480302969"/>
+  <nd ref="4147319329"/>
+  <nd ref="8480302970"/>
+  <nd ref="4147321289"/>
+  <tag k="cutting" v="right"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="558946456" visible="true" version="8" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="3627072317"/>
+  <nd ref="1654594537"/>
+  <nd ref="4147321692"/>
+  <nd ref="1654594552"/>
+  <nd ref="5391421926"/>
+  <nd ref="1654594603"/>
+  <nd ref="5391442803"/>
+  <nd ref="5391442804"/>
+  <nd ref="5391442805"/>
+  <nd ref="1654594626"/>
+  <nd ref="5391442806"/>
+  <nd ref="1654594649"/>
+  <nd ref="5391443743"/>
+  <nd ref="5391443742"/>
+  <nd ref="5391443741"/>
+  <nd ref="1654594640"/>
+  <nd ref="5391443740"/>
+  <nd ref="5391443739"/>
+  <nd ref="1654594651"/>
+  <nd ref="1654594599"/>
+  <nd ref="4147320991"/>
+  <nd ref="4147321393"/>
+  <nd ref="1654594652"/>
+  <nd ref="5391443738"/>
+  <nd ref="1654627439"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="558951303" visible="true" version="2" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="5391462511"/>
+  <nd ref="5391462510"/>
+  <nd ref="5391462509"/>
+  <nd ref="4147320656"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="558951304" visible="true" version="2" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4147321289"/>
+  <nd ref="5391462511"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="layer" v="-1"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="558951305" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="1654566175"/>
+  <nd ref="4147320510"/>
+  <nd ref="11519302944"/>
+  <nd ref="8481126247"/>
+  <nd ref="8481126248"/>
+  <nd ref="4346965348"/>
+  <nd ref="8480356731"/>
+  <nd ref="952167482"/>
+  <nd ref="8480356739"/>
+  <nd ref="952369279"/>
+  <tag k="cutting" v="right"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="558951306" visible="true" version="2" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="5391462512"/>
+  <nd ref="1654566175"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="layer" v="-1"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="tunnel" v="yes"/>
+ </way>
+ <way id="781914628" visible="true" version="8" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953823518"/>
+  <nd ref="14119419683"/>
+  <nd ref="14119449807"/>
+  <nd ref="14119343468"/>
+  <nd ref="14119449808"/>
+  <nd ref="3321508647"/>
+  <nd ref="4147370042"/>
+  <nd ref="14119419679"/>
+  <nd ref="953823579"/>
+  <nd ref="14119419678"/>
+  <nd ref="3321508642"/>
+  <nd ref="11039565869"/>
+  <nd ref="953823541"/>
+  <nd ref="11039565870"/>
+  <nd ref="14119343469"/>
+  <nd ref="953823527"/>
+  <nd ref="4147370148"/>
+  <nd ref="14120093967"/>
+  <nd ref="14119423134"/>
+  <nd ref="14119423139"/>
+  <nd ref="953823522"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781914629" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954629515"/>
+  <nd ref="14119343473"/>
+  <nd ref="14119343472"/>
+  <nd ref="14120175784"/>
+  <nd ref="14120093968"/>
+  <nd ref="14119343474"/>
+  <nd ref="4147319543"/>
+  <nd ref="953823567"/>
+  <nd ref="14120175785"/>
+  <nd ref="4147371291"/>
+  <nd ref="953823521"/>
+  <nd ref="11039565871"/>
+  <nd ref="953823529"/>
+  <nd ref="11039565872"/>
+  <nd ref="3321509461"/>
+  <nd ref="953823570"/>
+  <nd ref="4147371294"/>
+  <nd ref="3321508646"/>
+  <nd ref="4755304836"/>
+  <nd ref="14119343460"/>
+  <nd ref="14119343461"/>
+  <nd ref="953823581"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781914630" visible="true" version="4" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953823522"/>
+  <nd ref="4755310340"/>
+  <nd ref="953823582"/>
+  <nd ref="4755310339"/>
+  <nd ref="4755310338"/>
+  <nd ref="954629504"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781914631" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954629504"/>
+  <nd ref="4755310351"/>
+  <nd ref="2392156286"/>
+  <nd ref="2392156285"/>
+  <nd ref="953823531"/>
+  <nd ref="3321460444"/>
+  <nd ref="13823733059"/>
+  <nd ref="953823550"/>
+  <nd ref="14120175780"/>
+  <nd ref="4356703013"/>
+  <nd ref="14120175781"/>
+  <nd ref="11514132611"/>
+  <nd ref="3321460443"/>
+  <nd ref="953823573"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781914632" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953823546"/>
+  <nd ref="953823560"/>
+  <nd ref="11514132612"/>
+  <nd ref="4147319308"/>
+  <nd ref="14120175782"/>
+  <nd ref="4366494463"/>
+  <nd ref="14120175783"/>
+  <nd ref="953823540"/>
+  <nd ref="3321461191"/>
+  <nd ref="953823545"/>
+  <nd ref="954629515"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781915047" visible="true" version="6" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="953788988"/>
+  <nd ref="8481110582"/>
+  <nd ref="953788859"/>
+  <nd ref="953788881"/>
+  <nd ref="14120221605"/>
+  <nd ref="14120221604"/>
+  <nd ref="953788816"/>
+  <nd ref="954629430"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781915048" visible="true" version="5" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954632389"/>
+  <nd ref="3321505775"/>
+  <nd ref="3321509113"/>
+  <nd ref="953788873"/>
+  <nd ref="8481109444"/>
+  <nd ref="953788884"/>
+  <nd ref="8481109445"/>
+  <nd ref="11519302943"/>
+  <nd ref="953788943"/>
+  <nd ref="953788830"/>
+  <nd ref="8481109446"/>
+  <nd ref="953788856"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781917517" visible="true" version="3" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4147320657"/>
+  <nd ref="4366494466"/>
+  <nd ref="11519302945"/>
+  <nd ref="4346965350"/>
+  <nd ref="5391462517"/>
+  <nd ref="5391462516"/>
+  <nd ref="5391462515"/>
+  <nd ref="4346965351"/>
+  <nd ref="4147321390"/>
+  <nd ref="1654627444"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="781917518" visible="true" version="4" changeset="189995421" timestamp="2026-10-04T18:18:10Z" user="LiudmilaBareika" uid="23318824">
+  <nd ref="1654627439"/>
+  <nd ref="14249463194"/>
+  <nd ref="5391443747"/>
+  <nd ref="5391443748"/>
+  <nd ref="5391443749"/>
+  <nd ref="5391443750"/>
+  <nd ref="1654594645"/>
+  <nd ref="5391443751"/>
+  <nd ref="5391443752"/>
+  <nd ref="4147321392"/>
+  <nd ref="5391443753"/>
+  <nd ref="1654594586"/>
+  <nd ref="5391443841"/>
+  <nd ref="5391443842"/>
+  <nd ref="1654594598"/>
+  <nd ref="5391443843"/>
+  <nd ref="5391443844"/>
+  <nd ref="5391443845"/>
+  <nd ref="5391443846"/>
+  <nd ref="5391443847"/>
+  <nd ref="5391443854"/>
+  <nd ref="1654627440"/>
+  <nd ref="1654594539"/>
+  <nd ref="5391462520"/>
+  <nd ref="4346965353"/>
+  <nd ref="5391462519"/>
+  <nd ref="4346965352"/>
+  <nd ref="5391462518"/>
+  <nd ref="11519302946"/>
+  <nd ref="4356703010"/>
+  <nd ref="4147320990"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="932835857" visible="true" version="3" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="8647072669"/>
+  <nd ref="3755708941"/>
+  <nd ref="1654594642"/>
+  <nd ref="5391421951"/>
+  <nd ref="5391421952"/>
+  <nd ref="5391421953"/>
+  <nd ref="5391421954"/>
+  <nd ref="5391421955"/>
+  <nd ref="5391421944"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="932835860" visible="true" version="4" changeset="178950954" timestamp="2026-02-23T16:14:43Z" user="ja+" uid="11242131">
+  <nd ref="1654594678"/>
+  <nd ref="8484180792"/>
+  <nd ref="1654594689"/>
+  <nd ref="1654594656"/>
+  <nd ref="5391421687"/>
+  <nd ref="5391421686"/>
+  <nd ref="171910068"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="expressway" v="yes"/>
+  <tag k="highway" v="trunk"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="no"/>
+ </way>
+ <way id="1225869351" visible="true" version="4" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="954025863"/>
+  <nd ref="11833303098"/>
+  <nd ref="954026221"/>
+  <nd ref="11368268818"/>
+  <tag k="destination" v="MILANO"/>
+  <tag k="destination:colour" v="green"/>
+  <tag k="destination:ref" v="A8"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="120"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="1225869564" visible="true" version="7" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4609589430"/>
+  <nd ref="11701100791"/>
+  <nd ref="4609589428"/>
+  <nd ref="4609589427"/>
+  <nd ref="954025814"/>
+  <tag k="destination" v="MILANO"/>
+  <tag k="destination:colour" v="green"/>
+  <tag k="destination:ref" v="A8"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="60"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="turn:lanes" v="merge_to_right|none"/>
+ </way>
+ <way id="1239921054" visible="true" version="2" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="3755708930"/>
+  <nd ref="8484175937"/>
+  <nd ref="5391421933"/>
+  <nd ref="5391421934"/>
+  <nd ref="5391421935"/>
+  <nd ref="5391421936"/>
+  <nd ref="5391421937"/>
+  <nd ref="5391421938"/>
+  <nd ref="5391421939"/>
+  <nd ref="11519302947"/>
+  <nd ref="5391421940"/>
+  <nd ref="8484175938"/>
+  <nd ref="1654594647"/>
+  <nd ref="8647072669"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="1239921055" visible="true" version="2" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="171910068"/>
+  <nd ref="5391421685"/>
+  <nd ref="5391421684"/>
+  <nd ref="3627072320"/>
+  <nd ref="5391421690"/>
+  <nd ref="5391421691"/>
+  <nd ref="1654594686"/>
+  <nd ref="5391421692"/>
+  <nd ref="5391421693"/>
+  <nd ref="1654594545"/>
+  <nd ref="5391421694"/>
+  <nd ref="5391421695"/>
+  <nd ref="4147321690"/>
+  <nd ref="1654594600"/>
+  <nd ref="5391421925"/>
+  <nd ref="5391421924"/>
+  <nd ref="5391421923"/>
+  <nd ref="5391421922"/>
+  <nd ref="3627072317"/>
+  <tag k="cutting" v="yes"/>
+  <tag k="highway" v="motorway_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="130"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <way id="1274450144" visible="true" version="3" changeset="189027821" timestamp="2026-09-14T19:11:00Z" user="AlexTies" uid="3579653">
+  <nd ref="4609589415"/>
+  <nd ref="4609589418"/>
+  <nd ref="4609589423"/>
+  <nd ref="954026196"/>
+  <tag k="highway" v="motorway"/>
+  <tag k="lane_markings" v="yes"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="110"/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda S.p.A ."/>
+  <tag k="ref" v="A36"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+ <relation id="4543247" visible="true" version="20" changeset="150271070" timestamp="2024-04-20T16:23:30Z" user="Fra00" uid="7022493">
+  <member type="way" ref="81750664" role=""/>
+  <member type="way" ref="932835860" role=""/>
+  <member type="way" ref="1239921055" role=""/>
+  <member type="way" ref="558946456" role=""/>
+  <member type="way" ref="781917518" role=""/>
+  <member type="way" ref="413399884" role=""/>
+  <member type="way" ref="413399894" role=""/>
+  <member type="way" ref="558951306" role=""/>
+  <member type="way" ref="558951305" role=""/>
+  <member type="way" ref="81750676" role=""/>
+  <member type="way" ref="81750709" role=""/>
+  <member type="way" ref="325189352" role=""/>
+  <member type="way" ref="81811875" role=""/>
+  <member type="way" ref="81811878" role=""/>
+  <member type="way" ref="325189345" role=""/>
+  <member type="way" ref="81750663" role=""/>
+  <member type="way" ref="81750655" role=""/>
+  <member type="way" ref="413399905" role=""/>
+  <member type="way" ref="781914632" role=""/>
+  <member type="way" ref="781914629" role=""/>
+  <member type="way" ref="81811880" role=""/>
+  <member type="way" ref="781915048" role=""/>
+  <member type="way" ref="781915047" role=""/>
+  <member type="way" ref="81811874" role=""/>
+  <member type="way" ref="781914628" role=""/>
+  <member type="way" ref="781914630" role=""/>
+  <member type="way" ref="781914631" role=""/>
+  <member type="way" ref="558951304" role=""/>
+  <member type="way" ref="558951303" role=""/>
+  <member type="way" ref="413399873" role=""/>
+  <member type="way" ref="781917517" role=""/>
+  <member type="way" ref="81750686" role=""/>
+  <member type="way" ref="1239921054" role=""/>
+  <member type="way" ref="932835857" role=""/>
+  <member type="way" ref="325494358" role=""/>
+  <member type="way" ref="81813964" role=""/>
+  <member type="way" ref="81813959" role=""/>
+  <member type="way" ref="81813961" role=""/>
+  <member type="way" ref="81813960" role=""/>
+  <member type="way" ref="325490229" role=""/>
+  <member type="way" ref="81813958" role=""/>
+  <member type="way" ref="325490236" role=""/>
+  <member type="way" ref="81816532" role=""/>
+  <member type="way" ref="81816535" role=""/>
+  <member type="way" ref="413399863" role=""/>
+  <member type="way" ref="81816539" role=""/>
+  <member type="way" ref="81816538" role=""/>
+  <member type="way" ref="81816525" role=""/>
+  <member type="way" ref="81816528" role=""/>
+  <member type="way" ref="81816526" role=""/>
+  <member type="way" ref="1225869351" role=""/>
+  <member type="way" ref="356780559" role=""/>
+  <member type="way" ref="1225869564" role=""/>
+  <member type="way" ref="81816540" role=""/>
+  <member type="way" ref="356780558" role=""/>
+  <member type="way" ref="81816533" role=""/>
+  <member type="way" ref="81816529" role=""/>
+  <member type="way" ref="81816527" role=""/>
+  <member type="way" ref="1274450144" role=""/>
+  <tag k="name" v="Autostrada Pedemontana Lombarda"/>
+  <tag k="network" v="IT:A-road"/>
+  <tag k="operator" v="Autostrada Pedemontana Lombarda SpA"/>
+  <tag k="ref" v="A36"/>
+  <tag k="route" v="road"/>
+  <tag k="short_name" v="Pedemontana"/>
+  <tag k="start_date" v="2015"/>
+  <tag k="type" v="route"/>
+  <tag k="wikidata" v="Q789169"/>
+  <tag k="wikipedia" v="it:Autostrada A36 (Italia)"/>
+ </relation>
+</osm>
