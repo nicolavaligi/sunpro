@@ -1192,5 +1192,17 @@
     "inclinazione_ottimale": 30,
     "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
     "cached": false
+  },
+  "45.02,9.75": {
+    "lat": 45.02,
+    "lon": 9.75,
+    "kwh_kwp_anno": 1336.1,
+    "kwh_m2_anno": 1726.0,
+    "kwh_kwp_tracker": 1592.7,
+    "kwh_m2_tracker": 2057.4,
+    "boost_tracker_pct": 19.2,
+    "inclinazione_ottimale": 30,
+    "fonte": "PVGIS_JRC_COMMISSIONE_EUROPEA_v5.2",
+    "cached": false
   }
 }
