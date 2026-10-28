@@ -180,11 +180,11 @@ def build_piacentino_html():
     <input type="number" id="thresholdInput" value="8.00" step="0.25" min="3.00" max="20.00">
   </div>
 
-  <a href="Terreni_FV_Piacentino_A1_A21_Esteso.xlsx" download class="nav-btn excel" title="Scarica il foglio di calcolo esteso con tutti i 116 lotti, formule e parametri">
-    📊 Excel Esteso (116 Lotti)
+  <a href="Quotazioni_Mercato_Reale_e_Comparabili_Piacentino_A1_A21.xlsx" download class="nav-btn excel" title="Scarica il Workbook Excel a 5 fogli con Quotazioni Reali dei 13 Comuni, Pertiche Piacentine, Rogiti CREA, Portali, Zona D e i 116 Lotti">
+    📊 Excel Mercato Reale & 116 Lotti (5 Fogli)
   </a>
-  <a href="data/Terreni_FV_Piacentino_A1_A21.xlsx" download class="nav-btn" title="Scarica il foglio Excel originale a 50 terreni + riserve">
-    📄 Excel 50 Terreni
+  <a href="Terreni_FV_Piacentino_A1_A21_Esteso.xlsx" download class="nav-btn" title="Scarica il foglio di calcolo esteso con tutti i 116 lotti">
+    📄 Excel Esteso
   </a>
   <a href="SunPro_Piacentino_A1_A21.kml" download class="nav-btn" title="Scarica KML per Google Earth">
     🌍 KML 3D
@@ -606,8 +606,8 @@ function renderAll() {{
 
       <div class="dists">
         <div class="d-row" style="background:rgba(16,185,129,.1);padding:3px 6px;border-radius:4px;border:1px solid rgba(16,185,129,.25)">
-          <span style="color:#34d399;font-weight:700">📐 Superficie Catastale vs Fascia ≤300m:</span>
-          <b style="color:#34d399">${{s.sup_tot_ha}} ha tot · ${{s.sup_300m_ha}} ha ≤300m (${{s.quota_300m_pct}}%)</b>
+          <span style="color:#34d399;font-weight:700">📐 Sup. (Ettari & Pertiche 762mq):</span>
+          <b style="color:#34d399">${{s.sup_tot_ha}} ha (${{(s.pertiche_tot || (s.sup_tot_ha*13.123)).toFixed(1)}} pert.) · ${{s.sup_300m_ha}} ha ≤300m</b>
         </div>
         <div class="d-row">
           <span>⚡ Linea AT più vicina (OSM):</span>
@@ -625,13 +625,21 @@ function renderAll() {{
           <span>☀️ Potenza & Producibilità PVGIS Tracker:</span>
           <b>${{s.mwp_tot}} MWp (${{s.mwp_300m}} MWp ≤300m) · ~${{s.mwh_tracker.toLocaleString('it-IT')}} MWh/a</b>
         </div>
-        <div class="d-row" style="background:rgba(56,189,248,.08);padding:3px 6px;border-radius:4px;border:1px solid rgba(56,189,248,.22)">
-          <span style="color:#38bdf8;font-weight:700">💶 Spesa Max a ${{thr.toFixed(2)}} €/mq (VAM ${{s.vam_2026_mq.toFixed(2)}}€):</span>
-          <b style="color:#38bdf8">€ ${{spendTot.toLocaleString('it-IT')}} (€ ${{spend300.toLocaleString('it-IT')}} ≤300m)</b>
+        <div class="d-row" style="background:rgba(37,99,235,.14);padding:3px 6px;border-radius:4px;border:1px solid rgba(59,130,246,.3)">
+          <span style="color:#93c5fd;font-weight:700">🤝 Rogito Reale Agricolo (${{s.comune}}):</span>
+          <b style="color:#93c5fd">${{(s.rogito_med_mq || 5.55).toFixed(2)}} €/mq (${{(s.rogito_pertica_eur || 4230).toLocaleString('it-IT')}} €/pert. · € ${{(s.valore_rogito_reale_eur || Math.round(s.sup_tot_ha*55500)).toLocaleString('it-IT')}})</b>
         </div>
         <div class="d-row">
-          <span>🌱 Alternativa Diritto Superficie (30y):</span>
-          <b>€ ${{s.canone_dds_tot_eur.toLocaleString('it-IT')}}/anno (€ ${{s.canone_dds_300m_eur.toLocaleString('it-IT')}}/a ≤300m)</b>
+          <span>🏘️ Portali Immobiliari vs Zona D Ind.:</span>
+          <b>Portali ${{s.asking_range_mq || '5.20–6.60'}} €/mq · Zona D ${{s.ind_range_mq || '70–100'}} €/mq</b>
+        </div>
+        <div class="d-row" style="background:rgba(56,189,248,.08);padding:3px 6px;border-radius:4px;border:1px solid rgba(56,189,248,.22)">
+          <span style="color:#38bdf8;font-weight:700">💶 Offerta Cons. ${{(s.fv_buy_cons_mq || 7.30).toFixed(2)}}€ (${{(s.fv_buy_pertica_eur || 5560).toLocaleString('it-IT')}} €/pert.):</span>
+          <b style="color:#38bdf8">Max ${{thr.toFixed(2)}}€: € ${{spendTot.toLocaleString('it-IT')}} (VAM ${{s.vam_2026_mq.toFixed(2)}}€)</b>
+        </div>
+        <div class="d-row">
+          <span>🌱 DDS 30y (Esente Prelazione) vs Affitto:</span>
+          <b>€ ${{s.canone_dds_tot_eur.toLocaleString('it-IT')}}/a (3.000 €/ha vs ${{s.affitto_agr_ha || 620}} €/ha agr.)</b>
         </div>
       </div>
 
