@@ -418,12 +418,230 @@ def style_range(ws, min_col, min_row, max_col, max_row, font=None, fill=None, bo
                 cell.number_format = num_format
 
 
+def populate_synthetic_summary_sheet(ws, lots: List[Dict[str, Any]]):
+    """Popola un foglio Excel super-sintetico, leggibile in una sola schermata (8 colonne) senza scroll orizzontale."""
+    ws.views.sheetView[0].showGridLines = True
+    navy_fill = PatternFill("solid", fgColor="0B1528")
+    emerald_fill = PatternFill("solid", fgColor="059669")
+    emerald_soft = PatternFill("solid", fgColor="D1FAE5")
+    blue_soft = PatternFill("solid", fgColor="DBEAFE")
+    amber_soft = PatternFill("solid", fgColor="FEF3C7")
+    rose_soft = PatternFill("solid", fgColor="FFE4E6")
+    gray_soft = PatternFill("solid", fgColor="F8FAFC")
+
+    title_font = Font(name="Calibri", size=14, bold=True, color="0B1528")
+    sub_font = Font(name="Calibri", size=10, italic=True, color="334155")
+    sec_font = Font(name="Calibri", size=11, bold=True, color="059669")
+    hdr_font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
+    bold_font = Font(name="Calibri", size=10, bold=True, color="0F172A")
+    reg_font = Font(name="Calibri", size=10, bold=False, color="0F172A")
+    blue_bold = Font(name="Calibri", size=10, bold=True, color="1D4ED8")
+    green_bold = Font(name="Calibri", size=10, bold=True, color="047857")
+
+    thin_border = Border(
+        left=Side(style="thin", color="CBD5E1"),
+        right=Side(style="thin", color="CBD5E1"),
+        top=Side(style="thin", color="CBD5E1"),
+        bottom=Side(style="thin", color="CBD5E1"),
+    )
+    thick_bottom = Border(
+        left=Side(style="thin", color="CBD5E1"),
+        right=Side(style="thin", color="CBD5E1"),
+        top=Side(style="medium", color="0B1528"),
+        bottom=Side(style="double", color="0B1528"),
+    )
+    center_align = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    left_align = Alignment(horizontal="left", vertical="center", wrap_text=True)
+    right_align = Alignment(horizontal="right", vertical="center", wrap_text=True)
+
+    ws["A1"] = "RIEPILOGO SINTETICO — QUOTAZIONI REALI TERRENI PIACENTINO (A1 & A21)"
+    ws["A1"].font = title_font
+    ws["A2"] = "Unità locale: 1 Pertica Piacentina = 762 mq (1 Ettaro = 13,12 Pertiche) · Fonti: Rogiti CREA/CCIAA, Idealista/Immobiliare.it, Sviluppatori FV"
+    ws["A2"].font = sub_font
+
+    # TABELLA 1: RIEPILOGO SINTETICO 13 COMUNI (9 COLONNE COMPATTE)
+    ws["A4"] = "1. TABELLA SINTETICA COMUNE PER COMUNE (116 LOTTI IN MAPPA)"
+    ws["A4"].font = sec_font
+
+    headers_syn = [
+        "Comune",
+        "Asse",
+        "Lotti Aperta / Tot",
+        "Ettari ≤300m (ha)",
+        "ROGITO AGRICOLO REALE (€/mq)",
+        "ROGITO AGRICOLO (€/Pertica 762mq)",
+        "Annunci Portali (€/mq)",
+        "Terreno Industriale Zona D (€/mq)",
+        "OFFERTA FV CONSIGLIATA (€/mq)",
+        "OFFERTA FV (€/Pertica 762mq)",
+        "Priorità",
+    ]
+    for col_idx, h in enumerate(headers_syn, 1):
+        c = ws.cell(5, col_idx, h)
+        c.fill = emerald_fill if col_idx in (9, 10) else navy_fill
+        c.font = hdr_font
+        c.alignment = center_align
+        c.border = thin_border
+    ws.row_dimensions[5].height = 30
+
+    order_comuni = [
+        "San Pietro in Cerro",
+        "Cadeo",
+        "Caorso",
+        "Rottofreno",
+        "Pontenure",
+        "Fiorenzuola d'Arda",
+        "Castelvetro Piacentino",
+        "Monticelli d'Ongina",
+        "Calendasco",
+        "Alseno",
+        "Sarmato",
+        "Castel San Giovanni",
+        "Piacenza",
+    ]
+
+    for idx, cm in enumerate(order_comuni, 1):
+        r = 5 + idx
+        ws.row_dimensions[r].height = 22
+        m = COMUNE_MARKET_DATA[cm]
+        sub = [x for x in lots if x["comune"] == cm]
+        ap = [x for x in sub if x["gruppo"] == "APERTA_CAMPAGNA"]
+        ha_300 = round(sum(x["sup_300m_ha"] for x in sub), 1)
+        prio_short = (
+            "TOP (Priorità 1)"
+            if cm in ("San Pietro in Cerro", "Cadeo", "Caorso", "Rottofreno", "Pontenure")
+            else ("Verifica CDU / DDS" if cm in ("Castel San Giovanni", "Piacenza") else "Alta")
+        )
+
+        row_vals = [
+            cm,
+            m["asse"],
+            f"{len(ap)} / {len(sub)}",
+            ha_300,
+            m["rogito_med_mq"],
+            f"=E{r}*{PERTICA_PIACENTINA_MQ:.2f}",
+            f"{m['asking_min_mq']:.2f} – {m['asking_max_mq']:.2f} €",
+            f"{int(m['ind_min_mq'])} – {int(m['ind_max_mq'])} €",
+            m["fv_buy_cons_mq"],
+            f"=I{r}*{PERTICA_PIACENTINA_MQ:.2f}",
+            prio_short,
+        ]
+        for c_idx, val in enumerate(row_vals, 1):
+            c = ws.cell(r, c_idx, val)
+            c.border = thin_border
+            c.font = bold_font if c_idx in (1, 5, 6, 9, 10, 11) else reg_font
+            c.alignment = left_align if c_idx in (1, 11) else (right_align if c_idx in (4, 5, 6, 9, 10) else center_align)
+            if c_idx == 4:
+                c.number_format = "#,##0.0"
+            elif c_idx in (5, 9):
+                c.number_format = '#,##0.00 "€/mq"'
+            elif c_idx in (6, 10):
+                c.number_format = '#,##0 "€/pert."'
+            if c_idx in (5, 6):
+                c.fill = blue_soft
+                c.font = blue_bold
+            elif c_idx in (9, 10):
+                c.fill = emerald_soft
+                c.font = green_bold
+            elif c_idx == 8:
+                c.fill = rose_soft
+
+    tot_r = 5 + len(order_comuni) + 1
+    ws.row_dimensions[tot_r].height = 25
+    ws.cell(tot_r, 1, "MEDIA / TOTALE CLUSTER").font = bold_font
+    ws.cell(tot_r, 3, "90 / 116").alignment = center_align
+    ws.cell(tot_r, 4, f"=SUM(D6:D{tot_r-1})").number_format = "#,##0.0"
+    ws.cell(tot_r, 5, f"=AVERAGE(E6:E{tot_r-1})").number_format = '#,##0.00 "€/mq"'
+    ws.cell(tot_r, 6, f"=AVERAGE(F6:F{tot_r-1})").number_format = '#,##0 "€/pert."'
+    ws.cell(tot_r, 7, "5,35 – 6,65 €").alignment = center_align
+    ws.cell(tot_r, 8, "75 – 105 €").alignment = center_align
+    ws.cell(tot_r, 9, f"=AVERAGE(I6:I{tot_r-1})").number_format = '#,##0.00 "€/mq"'
+    ws.cell(tot_r, 10, f"=AVERAGE(J6:J{tot_r-1})").number_format = '#,##0 "€/pert."'
+    ws.cell(tot_r, 11, "+32% su Rogito Reale").alignment = left_align
+    style_range(ws, 1, tot_r, 11, tot_r, font=bold_font, fill=gray_soft, border=thick_bottom)
+
+    # TABELLA 2: I 3 PARAMETRI CHIAVE DA RICORDARE IN TRATTATIVA
+    r2 = tot_r + 3
+    ws.cell(r2, 1, "2. I 3 PARAMETRI CHIAVE PER LA TRATTATIVA CON I PROPRIETARI").font = sec_font
+    h_k = [
+        "Formula / Parametro",
+        "Al Metro Quadro (€/mq)",
+        "A Ettaro (10.000 mq)",
+        "A Pertica Piacentina (762 mq)",
+        "Su 10 Ettari (131 Pertiche)",
+        "Rischio Prelazione Confinanti",
+    ]
+    for idx, h in enumerate(h_k, 1):
+        c = ws.cell(r2 + 1, idx, h)
+        c.fill = navy_fill
+        c.font = hdr_font
+        c.alignment = center_align
+        c.border = thin_border
+    ws.row_dimensions[r2 + 1].height = 26
+
+    k_rows = [
+        (
+            "Valore Reale Terreno Agricolo (Rogito CREA/CCIAA)",
+            "5,05 – 6,15 €/mq",
+            "50.500 – 61.500 €/ha",
+            "3.850 – 4.685 €/pertica",
+            "505.000 – 615.000 €",
+            "Baseline agricola attuale",
+        ),
+        (
+            "Affitto Agrario Tradizionale (Mais / Pomodoro)",
+            "0,06 €/mq/anno",
+            "580 – 700 €/ha/anno",
+            "44 – 53 €/pertica/anno",
+            "6.200 €/anno",
+            "—",
+        ),
+        (
+            "Diritto di Superficie FV 30 Anni (Terreno resta al proprietario)",
+            "0,30 €/mq/anno",
+            "3.000 €/ha/anno (4,8x affitto)",
+            "229 €/pertica/anno",
+            "30.000 €/anno (900.000 € in 30a)",
+            "NESSUNA PRELAZIONE (Esente)",
+        ),
+        (
+            "Acquisto Piena Proprietà Fotovoltaico SunPro (Tetto ≤ 8,00 €/mq)",
+            "6,85 – 8,00 €/mq (+32%)",
+            "68.500 – 80.000 €/ha",
+            "5.220 – 6.095 €/pertica",
+            "685.000 – 800.000 € subito",
+            "Sì (30 gg confinanti CD/IAP)",
+        ),
+    ]
+    for i, vals in enumerate(k_rows, 1):
+        rr = r2 + 1 + i
+        ws.row_dimensions[rr].height = 24
+        for c_idx, v in enumerate(vals, 1):
+            c = ws.cell(rr, c_idx, v)
+            c.border = thin_border
+            c.font = bold_font if c_idx in (1, 2, 3, 4) else reg_font
+            c.alignment = left_align if c_idx in (1, 6) else center_align
+            if i == 1:
+                c.fill = blue_soft
+            elif i == 3:
+                c.fill = amber_soft
+            elif i == 4:
+                c.fill = emerald_soft
+
+    widths = [24, 10, 16, 16, 20, 22, 18, 22, 20, 22, 22]
+    for idx, w in enumerate(widths, 1):
+        ws.column_dimensions[get_column_letter(idx)].width = w
+
+
 def build_comprehensive_market_excel(lots: List[Dict[str, Any]], out_paths: List[Path]):
     wb = openpyxl.Workbook()
 
-    # Fogli del Workbook
-    ws_comuni = wb.active
-    ws_comuni.title = "1_Quadro_Mercato_13_Comuni"
+    # Fogli del Workbook (Il primo foglio è il Riepilogo Sintetico immediato!)
+    ws_syn = wb.active
+    ws_syn.title = "0_Riepilogo_Sintetico"
+    populate_synthetic_summary_sheet(ws_syn, lots)
+
+    ws_comuni = wb.create_sheet("1_Quadro_Mercato_13_Comuni")
     ws_fasce = wb.create_sheet("2_Fasce_Prezzo_e_Contratti")
     ws_aperta = wb.create_sheet("3_Aperta_Campagna_90_Lotti")
     ws_peri = wb.create_sheet("4_Riserve_Periurbane_26_Lotti")
@@ -1246,3 +1464,16 @@ if __name__ == "__main__":
         DESKTOP_DIR / "Quotazioni_Mercato_Reale_e_Comparabili_Piacentino_A1_A21.xlsx",
     ]
     build_comprehensive_market_excel(lots, target_paths)
+
+    # Genera anche il file Excel 1-foglio Riepilogo Sintetico puro
+    wb_syn_only = openpyxl.Workbook()
+    ws_only = wb_syn_only.active
+    ws_only.title = "Riepilogo_Sintetico_Piacentino"
+    populate_synthetic_summary_sheet(ws_only, lots)
+    for p_syn in [
+        BASE_DIR / "Riepilogo_Sintetico_Prezzi_Piacentino_A1_A21.xlsx",
+        WEB_DIR / "Riepilogo_Sintetico_Prezzi_Piacentino_A1_A21.xlsx",
+        DESKTOP_DIR / "Riepilogo_Sintetico_Prezzi_Piacentino_A1_A21.xlsx",
+    ]:
+        wb_syn_only.save(p_syn)
+        print(f"  ✓ Salvato Excel Riepilogo Sintetico (1 foglio): {p_syn}")
