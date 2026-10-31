@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunPro: esplora e filtra la pipeline di terreni per il fotovoltaico, con mappa interattiva, dati catastali e dossier.">
 <title>Geo-Intelligence 3D — SunPro | Nicola Valigi Engine System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -188,6 +189,26 @@
     filter: drop-shadow(0 14px 24px rgba(37,99,235,0.95));
   }
   .card.shortlist { border-color: #2563eb; }
+
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .card[hidden]{display:none}
+  #mapStatus{position:absolute;bottom:35px;left:12px;z-index:5;max-width:320px;background:var(--panel);padding:10px;border:1px solid var(--amber);border-radius:8px;font-size:12px}
+  #mapStatus:empty{display:none}
+  #emptyResults{padding:24px 12px;color:var(--muted);line-height:1.6}
+  @media(max-width:760px){
+    body{height:auto;min-height:100dvh;overflow:auto}
+    header{height:auto;min-height:64px;flex-wrap:wrap;padding:10px;gap:8px}
+    header .sub{font-size:8px;letter-spacing:.5px}
+    header .badge{font-size:9px;padding:5px 8px;white-space:normal}
+    #kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .kpi{padding:10px 12px}.kpi .v{font-size:16px}
+    main{flex-direction:column;flex:none}
+    #map{flex:none;height:55dvh;min-height:360px}
+    aside{width:100%;overflow:visible;padding:12px}
+    #tools{max-width:calc(100% - 55px);max-height:130px;overflow-y:auto}
+    footer{height:auto;flex-wrap:wrap;padding:10px;gap:8px}
+  }
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -212,7 +233,7 @@
   </div>
   <div class="sp"></div>
   <a href="piacentino.html" class="badge glow" style="text-decoration:none; cursor:pointer; background:linear-gradient(135deg,#059669,#2563eb); color:#ffffff; border-color:#38bdf8; font-weight:800; box-shadow:0 0 14px rgba(56,189,248,.45);" title="Apri la Mappa Dedicata Cluster Piacentino A1 & A21 (90 Lotti Aperta Campagna + 26 Riserve)">🎯 Mappa Piacentino A1–A21 (116 Lotti)</a>
-  <a href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" class="badge glow" style="text-decoration:none; cursor:pointer;" title="Documento Ufficiale: Come Lavora il Crawler">📘 Come Lavora il Crawler</a>
+  <a href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" rel="noopener noreferrer" class="badge glow" style="text-decoration:none; cursor:pointer;" title="Documento Ufficiale: Come Lavora il Crawler">📘 Come Lavora il Crawler</a>
   <div class="badge">Aree Idonee Ex Lege (WMS AdE)</div>
   <div class="badge">Target: ≤ 8.00 €/mq (VAM 2026)</div>
   <div class="badge mono" id="clock">--:--:-- CET</div>
@@ -239,16 +260,17 @@
       <button class="tool" id="tReset"><svg class="ic" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 2 6"/><path d="M4 10V5M4 10h5"/></svg>Reset Vista</button>
       <button class="tool" onclick="downloadKml()" title="Scarica file KML per Google Earth 3D"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Google Earth (KML)</button>
       <button class="tool" onclick="downloadFinancialCsv()" title="Scarica Modello Finanziario Esecutivo CSV"><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Modello Finanziario (CSV)</button>
-      <a class="tool" href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" style="text-decoration:none;" title="Apri documento: Come Lavora il Crawler SunPro"><svg class="ic" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Doc Crawler</a>
+      <a class="tool" href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" rel="noopener noreferrer" style="text-decoration:none;" title="Apri documento: Come Lavora il Crawler SunPro"><svg class="ic" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Doc Crawler</a>
     </div>
     <div id="orbitHint"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="m15 11 6-3v8l-6-3"/></svg>Sopralluogo 3D in corso — clicca sulla mappa per interrompere</div>
     <div id="siteTip"></div>
+    <div id="mapStatus" role="status" aria-live="polite"></div>
   </div>
 
   <aside>
     <div class="lbl">
       <span>Ranking Aree Idonee</span>
-      <span class="mono" id="sitesCount" style="color:var(--brand)">60 siti</span>
+      <span class="mono" id="sitesCount" role="status" aria-live="polite" style="color:var(--brand)">60 siti</span>
     </div>
 
     <!-- Filtri Regione & Corridoio Autostradale -->
@@ -268,11 +290,12 @@
     <!-- Barra di ricerca rapida -->
     <div class="search-box">
       <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" id="searchInput" placeholder="Cerca comune, foglio, particella, Belfiore o autostrada (es. Cadeo, B332, A1)...">
+      <input type="search" id="searchInput" aria-label="Cerca nei terreni" placeholder="Cerca comune, foglio, particella, Belfiore o autostrada (es. Cadeo, B332, A1)...">
     </div>
 
     <!-- Lista Schede -->
     <div id="cards"></div>
+    <p id="emptyResults" hidden>Nessun terreno corrisponde ai filtri. Prova un altro comune o seleziona Tutte.</p>
 
     <!-- Box Canoni Diritto di Superficie -->
     <div class="card pink">
@@ -2952,7 +2975,7 @@ const GRID_BENCHMARK = [
 function updateClock(){
   const d=new Date();
   const pad=n=>n<10?'0'+n:n;
-  document.getElementById('clock').textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+' CET';
+  document.getElementById('clock').textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+' '+Intl.DateTimeFormat('it-IT',{timeZoneName:'short'}).formatToParts(d).find(p=>p.type==='timeZoneName').value;
 }
 setInterval(updateClock,1000); updateClock();
 
@@ -2976,6 +2999,7 @@ const map = new maplibregl.Map({
       }
     },
     layers: [
+      { id: 'carto-layer', type: 'raster', source: 'carto-dark' },
       {
         id: 'satellite-layer',
         type: 'raster',
@@ -2996,6 +3020,16 @@ let activeOrbit = false;
 let orbitRaf = null;
 let currentLead = null;
 const markers = [];
+const cardCache = new Map();
+const searchIndex = new Map(SITES.map(s => [s.id,
+  [s.name,s.comune,s.tipo,s.prov,s.reg,s.catasto,s.belfiore,s.hwy_name].join(' ').toLocaleLowerCase('it-IT')
+]));
+function currentFilter() {
+  return document.querySelector('.pill.active')?.dataset.reg || 'TUTTE';
+}
+function showMapStatus(message) { document.getElementById('mapStatus').textContent = message; }
+map.on('error', () => showMapStatus('Alcuni dati della mappa non sono disponibili. Puoi continuare a consultare e cercare i terreni.'));
+document.addEventListener('visibilitychange', () => { if (document.hidden) stopOrbit(); });
 
 /* ============ RENDER CARDS & KPIS ============ */
 function isShortlist(s) {
@@ -3017,7 +3051,7 @@ function fitShortlist() {
 
 function renderCards(filterReg = "TUTTE", searchStr = "") {
   const container = document.getElementById("cards");
-  container.innerHTML = "";
+  const q = searchStr.trim().toLocaleLowerCase("it-IT");
 
   const filtered = SITES.filter(s => {
     let matchReg = false;
@@ -3030,24 +3064,21 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
     } else {
       matchReg = s.reg.toLowerCase() === filterReg.toLowerCase();
     }
-    const q = (searchStr || "").toLowerCase();
-    const matchSearch = !q ||
-      s.name.toLowerCase().includes(q) ||
-      s.comune.toLowerCase().includes(q) ||
-      s.tipo.toLowerCase().includes(q) ||
-      s.prov.toLowerCase().includes(q) ||
-      (s.catasto && s.catasto.toLowerCase().includes(q)) ||
-      (s.belfiore && s.belfiore.toLowerCase().includes(q)) ||
-      (s.hwy_name && s.hwy_name.toLowerCase().includes(q));
+    const matchSearch = !q || searchIndex.get(s.id).includes(q);
     return matchReg && matchSearch;
   });
 
   document.getElementById("sitesCount").textContent = `${filtered.length} siti`;
 
+  document.getElementById('emptyResults').hidden = filtered.length > 0;
+  const visibleIds = new Set(filtered.map(s => s.id));
+  cardCache.forEach((card, id) => { card.hidden = !visibleIds.has(id); });
   filtered.forEach(s => {
+    if (cardCache.has(s.id)) { cardCache.get(s.id).hidden = false; return; }
     const card = document.createElement("div");
     card.className = isShortlist(s) ? "card shortlist" : "card";
     card.id = `card-${s.id}`;
+    cardCache.set(s.id, card);
 
     const scoreClass = s.score >= 90 ? "s-high" : (s.score >= 75 ? "s-mid" : "s-low");
     const leaseAnnuo = Math.round(s.ha * 3000);
@@ -3075,7 +3106,7 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
        </div>`;
 
     card.innerHTML = `
-      <div class="row" onclick="focusSite('${s.id}')">
+      <div class="row" role="button" tabindex="0" aria-label="Mostra ${s.name} sulla mappa" onclick="focusSite('${s.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();focusSite('${s.id}')}">
         <div>
           <div class="name">${s.name}</div>
           <div class="subtag">📍 ${s.comune} (${s.prov}, ${s.reg}) · <span class="mono">${s.id}</span>${shortBadge}${hwyBadge}${wmsBadge}</div>
@@ -3109,7 +3140,7 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
         <button class="btn brand" onclick="start3DOrbit('${s.id}')">
           <svg class="ic" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>3D Orbit
         </button>
-        <a class="btn" href="${s.wms_url || '#'}" target="_blank" style="text-decoration:none" title="Interroga live il server WMS Catasto dell'Agenzia delle Entrate su queste coordinate">
+        <a class="btn" href="${s.wms_url || '#'}" target="_blank" rel="noopener noreferrer" style="text-decoration:none" title="Interroga live il server WMS Catasto dell'Agenzia delle Entrate su queste coordinate">
           🗺️ WMS AdE
         </a>
         <button class="btn" onclick="openPdf('${s.id}')">
@@ -3135,7 +3166,6 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
   });
 
   // Sincronizza visibilità marker sulla mappa
-  const visibleIds = new Set(filtered.map(s => s.id));
   markers.forEach(mObj => {
     if (mObj.el) {
       mObj.el.style.display = visibleIds.has(mObj.id) ? "flex" : "none";
@@ -3194,9 +3224,11 @@ function initMarkers() {
 
 map.on('load', () => {
   initMarkers();
-  renderBenchmarkBoxes();
-  renderCards();
+  renderCards(currentFilter(), document.getElementById("searchInput").value);
 });
+
+renderBenchmarkBoxes();
+renderCards();
 
 /* ============ FOCUS SITO & GUIDE AVATAR ============ */
 function focusSite(id) {
@@ -3242,10 +3274,12 @@ function start3DOrbit(id) {
   document.getElementById("orbitHint").style.display = "flex";
   activeOrbit = true;
 
-  let currentBearing = 45;
-  function rotate() {
+  let currentBearing = map.getBearing();
+  let lastFrame = null;
+  function rotate(timestamp) {
     if (!activeOrbit) return;
-    currentBearing = (currentBearing + 0.35) % 360;
+    if (lastFrame !== null) currentBearing = (currentBearing + Math.min(timestamp - lastFrame, 100) * 0.021) % 360;
+    lastFrame = timestamp;
     map.setBearing(currentBearing);
     orbitRaf = requestAnimationFrame(rotate);
   }
@@ -3300,10 +3334,10 @@ function showGuideTip(s) {
         <button class="btn brand" style="padding:5px 10px;font-size:11px" onclick="openPdf('${s.id}')">
           📄 Scarica Dossier PDF
         </button>
-        <a href="${s.wms_url || '#'}" target="_blank" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
+        <a href="${s.wms_url || '#'}" target="_blank" rel="noopener noreferrer" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
           🗺️ Verifica WMS AdE
         </a>
-        <a href="https://www.google.com/maps/@${s.ll[0]},${s.ll[1]},18m/data=!3m1!1e3" target="_blank" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
+        <a href="https://www.google.com/maps/@${s.ll[0]},${s.ll[1]},18m/data=!3m1!1e3" target="_blank" rel="noopener noreferrer" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
           🛰️ Ortofoto Satellite HD
         </a>
       </div>
@@ -3402,43 +3436,53 @@ document.querySelectorAll(".pill").forEach(btn => {
   });
 });
 
+let searchTimer;
 document.getElementById("searchInput").addEventListener("input", (e) => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
   const activePill = document.querySelector(".pill.active");
   const reg = activePill ? activePill.getAttribute("data-reg") : "TUTTE";
   renderCards(reg, e.target.value);
+  }, 140);
 });
 
 /* ============ TOOLBAR MAPPA ============ */
 let satOn = true;
 document.getElementById("tSat").addEventListener("click", (e) => {
+  if (!map.isStyleLoaded()) { showMapStatus('Attendi il caricamento della mappa, poi riprova.'); return; }
   satOn = !satOn;
   e.currentTarget.classList.toggle("on", satOn);
-  if (satOn) {
-    if (!map.getLayer('satellite-layer')) {
-      map.addLayer({ id: 'satellite-layer', type: 'raster', source: 'esri-satellite' }, 'carto-layer');
-    }
-  } else {
-    if (map.getLayer('satellite-layer')) map.removeLayer('satellite-layer');
-  }
+  e.currentTarget.setAttribute('aria-pressed', String(satOn));
+  map.setLayoutProperty('satellite-layer', 'visibility', satOn ? 'visible' : 'none');
 });
 
 let agriOn = false;
 let agriLoaded = false;
+let agriLoading = false;
 document.getElementById("tAgri").addEventListener("click", async (e) => {
+  const button = e.currentTarget;
+  if (!map.isStyleLoaded()) { showMapStatus('Attendi il caricamento della mappa, poi riprova.'); return; }
+  if (agriLoading) return;
   agriOn = !agriOn;
   e.currentTarget.classList.toggle("on", agriOn);
+  try {
   if (agriOn && !agriLoaded) {
+    agriLoading = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    showMapStatus('Caricamento suoli attigui…');
     const response = await fetch("terreni_attigui_lombardia_veneto.geojson");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    map.addSource("attigui", { type: "geojson", data });
-    map.addLayer({
+    if (!map.getSource("attigui")) map.addSource("attigui", { type: "geojson", data });
+    if (!map.getLayer("attigui-fill")) map.addLayer({
       id: "attigui-fill",
       type: "fill",
       source: "attigui",
       filter: ["==", ["get", "layer"], "seminativo"],
       paint: { "fill-color": "#4ade80", "fill-opacity": 0.5, "fill-outline-color": "#14532d" }
     });
-    map.addLayer({
+    if (!map.getLayer("attigui-axis")) map.addLayer({
       id: "attigui-axis",
       type: "line",
       source: "attigui",
@@ -3459,10 +3503,21 @@ document.getElementById("tAgri").addEventListener("click", async (e) => {
     map.on("mouseenter", "attigui-fill", () => { map.getCanvas().style.cursor = "pointer"; });
     map.on("mouseleave", "attigui-fill", () => { map.getCanvas().style.cursor = ""; });
     agriLoaded = true;
+    showMapStatus('');
   }
   ["attigui-fill", "attigui-axis"].forEach((id) => {
     if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", agriOn ? "visible" : "none");
   });
+  } catch (error) {
+    agriOn = false;
+    button.classList.remove('on');
+    showMapStatus('Impossibile caricare i suoli attigui. Premi di nuovo il pulsante per riprovare.');
+  } finally {
+    agriLoading = false;
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+    button.setAttribute('aria-pressed', String(agriOn));
+  }
 });
 
 document.getElementById("tReset").addEventListener("click", () => {
@@ -3494,3 +3549,4 @@ function renderBenchmarkBoxes() {
 </script>
 </body>
 </html>
+
