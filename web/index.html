@@ -234,19 +234,19 @@
   <div class="sp"></div>
   <a href="piacentino.html" class="badge glow" style="text-decoration:none; cursor:pointer; background:linear-gradient(135deg,#059669,#2563eb); color:#ffffff; border-color:#38bdf8; font-weight:800; box-shadow:0 0 14px rgba(56,189,248,.45);" title="Apri la Mappa Dedicata Cluster Piacentino A1 & A21 (90 Lotti Aperta Campagna + 26 Riserve)">🎯 Mappa Piacentino A1–A21 (116 Lotti)</a>
   <a href="https://github.com/nicolavaligi/sunpro/blob/main/COME_LAVORA_IL_CRAWLER_SUNPRO.md" target="_blank" rel="noopener noreferrer" class="badge glow" style="text-decoration:none; cursor:pointer;" title="Documento Ufficiale: Come Lavora il Crawler">📘 Come Lavora il Crawler</a>
-  <div class="badge">Aree Idonee Ex Lege (WMS AdE)</div>
+  <div class="badge">Pipeline preliminare · verifica richiesta</div>
   <div class="badge">Target: ≤ 8.00 €/mq (VAM 2026)</div>
   <div class="badge mono" id="clock">--:--:-- CET</div>
 </header>
 
 <!-- ===== Striscia KPI ===== -->
 <div id="kpis">
-  <div class="kpi" style="--kc:var(--green)"><div class="v" id="kpiCount">60</div><div class="l">Aree qualificate (100% WMS AdE)</div></div>
-  <div class="kpi" style="--kc:var(--accent)"><div class="v" id="kpiPower">971.8 MWp</div><div class="l">Potenza stimata (~1274 GWh/a)</div></div>
-  <div class="kpi" style="--kc:var(--amber)"><div class="v" id="kpiArea">1166.2 ha</div><div class="l">Superficie censita (11662k mq)</div></div>
+  <div class="kpi" style="--kc:var(--green)"><div class="v" id="kpiCount">60</div><div class="l">Siti censiti · dati da verificare</div></div>
+  <div class="kpi" style="--kc:var(--accent)"><div class="v" id="kpiPower">971.8 MWp</div><div class="l">Potenza teorica dichiarata</div></div>
+  <div class="kpi" style="--kc:var(--amber)"><div class="v" id="kpiArea">1166.2 ha</div><div class="l">Superficie dichiarata</div></div>
   <div class="kpi" style="--kc:var(--brand)"><div class="v" id="kpiPrice">7.04 €/mq</div><div class="l">Prezzo target medio (≤ 8,00 €/mq)</div></div>
   <div class="kpi" style="--kc:var(--pink)"><div class="v" id="kpiDist">2768 m</div><div class="l">Distanza media cabina AT/MT</div></div>
-  <div class="kpi" style="--kc:#a78bfa"><div class="v" id="kpiVal">€ 81.57M</div><div class="l">Valore pipeline acquisto</div></div>
+  <div class="kpi" style="--kc:#a78bfa"><div class="v" id="kpiVal">€ 81.57M</div><div class="l">Valore teorico dichiarato</div></div>
 </div>
 
 <main>
@@ -269,15 +269,16 @@
 
   <aside>
     <div class="lbl">
-      <span>Ranking Aree Idonee</span>
+      <span>Pipeline da verificare</span>
       <span class="mono" id="sitesCount" role="status" aria-live="polite" style="color:var(--brand)">60 siti</span>
     </div>
 
     <!-- Filtri Regione & Corridoio Autostradale -->
     <div id="filters">
       <button class="pill active" data-reg="TUTTE">Tutte</button>
-      <button class="pill" data-reg="SHORTLIST" style="border-color:#2563eb;color:#60a5fa;font-weight:700">★ Shortlist visura</button>
+      <button class="pill" data-reg="SHORTLIST" style="border-color:#2563eb;color:#60a5fa;font-weight:700">★ Candidati visura</button>
       <button class="pill" data-reg="AUTOSTRADE" style="border-color:#10b981;color:#34d399;font-weight:700">🛣️ Autostrade (≤300m)</button>
+      <button class="pill" data-reg="ANOMALIE">⚠ Anomalie</button>
       <button class="pill" data-reg="Lombardia">Lombardia</button>
       <button class="pill" data-reg="Emilia-Romagna">Emilia-R.</button>
       <button class="pill" data-reg="Veneto">Veneto</button>
@@ -293,6 +294,11 @@
       <input type="search" id="searchInput" aria-label="Cerca nei terreni" placeholder="Cerca comune, foglio, particella, Belfiore o autostrada (es. Cadeo, B332, A1)...">
     </div>
 
+    <div class="card" role="note" style="border-color:var(--amber);line-height:1.5;font-size:12px">
+      <b style="color:var(--amber)">Verifica catastale richiesta</b><br>
+      I pin indicano punti dichiarati, non confini di proprietà. Il link WMS interroga il punto: non certifica particelle, ettari, uso del suolo o idoneità. Score e stime restano preliminari.
+      <div id="auditSummary" style="margin-top:6px"></div>
+    </div>
     <!-- Lista Schede -->
     <div id="cards"></div>
     <p id="emptyResults" hidden>Nessun terreno corrisponde ai filtri. Prova un altro comune o seleziona Tutte.</p>
@@ -322,7 +328,7 @@
           <text x="50" y="49" font-family="'JetBrains Mono', sans-serif" font-size="21" font-weight="900" fill="#0F172A" text-anchor="middle" dominant-baseline="central">98</text>
           <circle cx="50" cy="8" r="4.5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="1.2"/>
         </svg>
-        <div><b>Shortlist visura WMS</b> · Pin blu. Entro 300 m da autostrada, almeno 2 ha, prezzo ≤ 8,00 €/mq, mappale WMS AdE verificato, score ≥ 80.</div>
+        <div><b>Candidati per verifica catastale</b> · Pin blu. Entro 300 m da autostrada, almeno 2 ha, prezzo ≤ 8,00 €/mq, riferimenti catastali dichiarati; anomalie escluse, score ≥ 80.</div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin:8px 0 6px 0;">
         <svg width="22" height="31" viewBox="0 0 100 142">
@@ -346,7 +352,7 @@
         <div><b>75–89</b> · Qualificato D.Lgs. 199/2021</div>
       </div>
       <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-size:10.5px;line-height:1.4">
-        📌 <b>Puntatore ad Ago 3D</b>: calibrato su baricentro catastale reale.<br>
+        📌 <b>Punto dichiarato</b>: posizione da confrontare con i confini catastali.<br>
         🚁 <b>Sopralluogo 3D</b>: orbita ad alta quota attorno al sito.<br>
         <span style="color:#4ade80">■</span> <b>Suoli attigui</b>: seminativi nella fascia di 300 m da autostrada o Pedemontana. Lombardia da DUSAF 2015, Veneto da OpenStreetMap. Si accendono dal pulsante in mappa.
       </div>
@@ -372,7 +378,7 @@ console.log("%c ☀️ SUNPRO GEO-INTELLIGENCE 3D %c PROPRIETÀ INTELLETTUALE ES
   "background:#10b981;color:#070c18;font-weight:900;font-size:12px;padding:4px 8px;border-radius:4px;",
   "color:#38bdf8;font-weight:700;font-size:11px;");
 
-/* ============ DATI QUALIFICATI NICOLA VALIGI ENGINE SYSTEM (60 SITI REALI VERIFICATI WMS) ============ */
+/* ============ DATI QUALIFICATI NICOLA VALIGI ENGINE SYSTEM (DATI DICHIARATI, DA VALIDARE) ============ */
 const SITES = [
   {
     "id": "FV-AGRI-PG-001",
@@ -381,7 +387,7 @@ const SITES = [
     "belfiore": "E959",
     "foglio": "144",
     "particella": "450, 418",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PG",
     "reg": "Umbria",
     "ll": [
@@ -405,7 +411,7 @@ const SITES = [
     "catasto": "Fg. 144 · Part. 450, 418 (Cod. E959)",
     "interferenze_osm": "Terreno pianeggiante a campo aperto in Valle Umbra; nessun vincolo boschivo.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=42.912100,12.338600,42.912700,12.339200&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (Fg. 144 Part. 450, 418): 16 ha pianeggianti, CP Marsciano a 690m, target 6,50 €/mq. Interferenze OSM: Terreno pianeggiante a campo aperto in Valle Umbra; nessun vincolo boschivo.",
@@ -415,6 +421,11 @@ const SITES = [
       "price": 100,
       "yield": 93,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -424,7 +435,7 @@ const SITES = [
     "belfiore": "D897",
     "foglio": "14",
     "particella": "70, 72 (contigue Fg. 18 Part. 218, 79)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VI",
     "reg": "Veneto",
     "ll": [
@@ -448,7 +459,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 70, 72 (contigue Fg. 18 Part. 218, 79) (Cod. D897)",
     "interferenze_osm": "Seminativo aperto in fascia 190m da A4; nessun manufatto edilizio.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.447700,11.341700,45.448300,11.342300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D897_001400.70): 23 ha seminativi aperti a 190m da A4, CP Gambellara a 810m. Interferenze OSM: Seminativo aperto in fascia 190m da A4; nessun manufatto edilizio.",
@@ -458,6 +469,11 @@ const SITES = [
       "price": 100,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -467,7 +483,7 @@ const SITES = [
     "belfiore": "C360",
     "foglio": "4",
     "particella": "1278, 825",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PV",
     "reg": "Lombardia",
     "ll": [
@@ -491,7 +507,7 @@ const SITES = [
     "catasto": "Fg. 4 · Part. 1278, 825 (Cod. C360)",
     "interferenze_osm": "Seminativo aperto contiguo al raccordo autostradale A53 (buffer 290m); zero edifici.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.141700,9.111700,45.142300,9.112300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (C360_000400.1278): 12,5 ha in fascia ≤300m, VAM 4,25 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Seminativo aperto contiguo al raccordo autostradale A53 (buffer 290m); zero edifici.",
@@ -501,6 +517,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -510,7 +531,7 @@ const SITES = [
     "belfiore": "A569",
     "foglio": "20",
     "particella": "78, 93",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -534,7 +555,7 @@ const SITES = [
     "catasto": "Fg. 20 · Part. 78, 93 (Cod. A569)",
     "interferenze_osm": "Fascia agricola contigua a zona produttiva (150m), priva di manufatti edili.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.420700,10.177700,45.421300,10.178300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (A569_002000.78): 13 ha in campo aperto, VAM 5,45 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Fascia agricola contigua a zona produttiva (150m), priva di manufatti edili.",
@@ -544,6 +565,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -553,7 +579,7 @@ const SITES = [
     "belfiore": "L469",
     "foglio": "13",
     "particella": "30, 145",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "LO",
     "reg": "Lombardia",
     "ll": [
@@ -577,7 +603,7 @@ const SITES = [
     "catasto": "Fg. 13 · Part. 30, 145 (Cod. L469)",
     "interferenze_osm": "Campo aperto seminativo privo di manufatti edili.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.240700,9.614700,45.241300,9.615300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (L469_001300.30): 17 ha in Zona E agricola, VAM 5,10 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Campo aperto seminativo privo di manufatti edili.",
@@ -587,6 +613,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -596,7 +627,7 @@ const SITES = [
     "belfiore": "F656",
     "foglio": "6",
     "particella": "757, 531",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AR",
     "reg": "Toscana",
     "ll": [
@@ -620,7 +651,7 @@ const SITES = [
     "catasto": "Fg. 6 · Part. 757, 531 (Cod. F656)",
     "interferenze_osm": "Bacino estrattivo a cielo aperto con fondo livellato; zero fabbricati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=43.530900,11.564200,43.531500,11.564800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "PERSONA_GIURIDICA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (F656_000600.757): 6,8 ha ex cava a 190m da A1, target acquisto 7,20 €/mq. Interferenze OSM: Bacino estrattivo a cielo aperto con fondo livellato; zero fabbricati.",
@@ -630,6 +661,11 @@ const SITES = [
       "price": 100,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -639,7 +675,7 @@ const SITES = [
     "belfiore": "F921",
     "foglio": "24",
     "particella": "54, 48, 47",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VR",
     "reg": "Veneto",
     "ll": [
@@ -663,7 +699,7 @@ const SITES = [
     "catasto": "Fg. 24 · Part. 54, 48, 47 (Cod. F921)",
     "interferenze_osm": "Seminativo veronese a 220m dall'asse A22; prossimità diretta a CP Nogarole Rocca (556m).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.284000,10.887500,45.284600,10.888100&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (F921_002400.54): 29 ha su Fg. 24 Part. 54-48-47 a 220m da A22, target ≤ 8,00 €/mq. Interferenze OSM: Seminativo veronese a 220m dall'asse A22; prossimità diretta a CP Nogarole Rocca (556m).",
@@ -673,6 +709,11 @@ const SITES = [
       "price": 100,
       "yield": 93,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -682,7 +723,7 @@ const SITES = [
     "belfiore": "M172",
     "foglio": "15",
     "particella": "485",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VR",
     "reg": "Veneto",
     "ll": [
@@ -706,7 +747,7 @@ const SITES = [
     "catasto": "Fg. 15 · Part. 485 (Cod. M172)",
     "interferenze_osm": "Ex cava di ghiaia a cielo aperto con fondo piatto; zero manufatti.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.372200,11.134700,45.372800,11.135300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "PERSONA_GIURIDICA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (M172_001500.485): 9,5 ha idonei ex lege (ex cava), CP Zevio a 890m, target 7,20 €/mq. Interferenze OSM: Ex cava di ghiaia a cielo aperto con fondo piatto; zero manufatti.",
@@ -716,6 +757,11 @@ const SITES = [
       "price": 100,
       "yield": 83,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -725,7 +771,7 @@ const SITES = [
     "belfiore": "H541",
     "foglio": "29",
     "particella": "311, 227",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MN",
     "reg": "Lombardia",
     "ll": [
@@ -749,7 +795,7 @@ const SITES = [
     "catasto": "Fg. 29 · Part. 311, 227 (Cod. H541)",
     "interferenze_osm": "Area ripristinata a prato stabile a terra; nessun manufatto edilizio.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.131700,10.951700,45.132300,10.952300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "PERSONA_GIURIDICA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (H541_002900.311): 8 ha idonei ex lege (sito bonificato/ripristinato), target 7,50 €/mq. Interferenze OSM: Area ripristinata a prato stabile a terra; nessun manufatto edilizio.",
@@ -759,6 +805,11 @@ const SITES = [
       "price": 100,
       "yield": 77,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -768,7 +819,7 @@ const SITES = [
     "belfiore": "A059",
     "foglio": "28",
     "particella": "114, 118",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "RO",
     "reg": "Veneto",
     "ll": [
@@ -792,7 +843,7 @@ const SITES = [
     "catasto": "Fg. 28 · Part. 114, 118 (Cod. A059)",
     "interferenze_osm": "Pianura polesana di bonifica; scoli consortili perimetrali da rispettare con fascia 10m.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.067700,12.051700,45.068300,12.052300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Mappale in Comune di Adria (Cod. A059, Fg. 28): 21 ha in buffer Z.I. 90m, VAM 3,90 €/mq, target 6,50 €/mq. Interferenze OSM: Pianura polesana di bonifica; scoli consortili perimetrali da rispettare con fascia 10m.",
@@ -802,6 +853,11 @@ const SITES = [
       "price": 100,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -811,7 +867,7 @@ const SITES = [
     "belfiore": "A470",
     "foglio": "42",
     "particella": "302, 304",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MN",
     "reg": "Lombardia",
     "ll": [
@@ -835,7 +891,7 @@ const SITES = [
     "catasto": "Fg. 42 · Part. 302, 304 (Cod. A470)",
     "interferenze_osm": "Campo aperto seminativo in buffer 180m da zona produttiva.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.214700,10.411700,45.215300,10.412300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (A470_004200.302): 26 ha di campo aperto seminativo, VAM 4,85 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Campo aperto seminativo in buffer 180m da zona produttiva.",
@@ -845,6 +901,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -854,7 +915,7 @@ const SITES = [
     "belfiore": "D685",
     "foglio": "3",
     "particella": "34, 274 (contigue Fg. 4 Part. 153, 78)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PR",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -878,7 +939,7 @@ const SITES = [
     "catasto": "Fg. 3 · Part. 34, 274 (contigue Fg. 4 Part. 153, 78) (Cod. D685)",
     "interferenze_osm": "Terreno pianeggiante aperto lungo corridoio A1; nessun capannone né elettrodotto AT ostativo.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.859200,10.184700,44.859800,10.185300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D685_000300.34): seminativo irriguo a 170m dall'asse A1, CP Fontevivo a ~1 km. Interferenze OSM: Terreno pianeggiante aperto lungo corridoio A1; nessun capannone né elettrodotto AT ostativo.",
@@ -888,6 +949,11 @@ const SITES = [
       "price": 100,
       "yield": 96,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -897,7 +963,7 @@ const SITES = [
     "belfiore": "L123",
     "foglio": "55",
     "particella": "26 (contigue Fg. 47 Part. 70, 52)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AR",
     "reg": "Toscana",
     "ll": [
@@ -921,7 +987,7 @@ const SITES = [
     "catasto": "Fg. 55 · Part. 26 (contigue Fg. 47 Part. 70, 52) (Cod. L123)",
     "interferenze_osm": "Fondo-valle Arno pianeggiante a 210m da A1; fuori da aree boscate e perimetri edificati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=43.535300,11.581700,43.535900,11.582300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (L123_005500.26): insolazione toscana 1.420 kWh/kWp, VAM 3,20 €/mq, target acquisto 6,50 €/mq. Interferenze OSM: Fondo-valle Arno pianeggiante a 210m da A1; fuori da aree boscate e perimetri edificati.",
@@ -931,6 +997,11 @@ const SITES = [
       "price": 100,
       "yield": 96,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -940,7 +1011,7 @@ const SITES = [
     "belfiore": "I821",
     "foglio": "14",
     "particella": "84, 112",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VR",
     "reg": "Veneto",
     "ll": [
@@ -964,7 +1035,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 84, 112 (Cod. I821)",
     "interferenze_osm": "Coordinate ricalibrate a ridosso dell'asse A4 (220m), fuori dal sedime aeroportuale di Villafranca.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.413900,10.811900,45.414500,10.812500&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Mappale in Comune di Sommacampagna (Cod. I821, Fg. 14) a 220m reali dall'asse A4, VAM 5,20 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Coordinate ricalibrate a ridosso dell'asse A4 (220m), fuori dal sedime aeroportuale di Villafranca.",
@@ -974,6 +1045,11 @@ const SITES = [
       "price": 100,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -983,7 +1059,7 @@ const SITES = [
     "belfiore": "B394",
     "foglio": "31",
     "particella": "515, 619, 538",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -1007,7 +1083,7 @@ const SITES = [
     "catasto": "Fg. 31 · Part. 515, 619, 538 (Cod. B394)",
     "interferenze_osm": "Campo aperto verificato a 220m dall'asse A4 (UTM 236m); zero fabbricati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.461700,10.417700,45.462300,10.418300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B394_003100.515): 25 ha seminativo aperto, CP Calcinato a 1,2 km, target ≤ 8,00 €/mq. Interferenze OSM: Campo aperto verificato a 220m dall'asse A4 (UTM 236m); zero fabbricati.",
@@ -1017,6 +1093,11 @@ const SITES = [
       "price": 95,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1026,7 +1107,7 @@ const SITES = [
     "belfiore": "G721",
     "foglio": "26",
     "particella": "23",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "CR",
     "reg": "Lombardia",
     "ll": [
@@ -1050,7 +1131,7 @@ const SITES = [
     "catasto": "Fg. 26 · Part. 23 (Cod. G721)",
     "interferenze_osm": "Campo aperto pianeggiante con accesso diretto da strada provinciale asfaltata.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.184700,9.774700,45.185300,9.775300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (G721_002600.23): 14 ha a campo aperto senza ostacoli né caseggiati. Interferenze OSM: Campo aperto pianeggiante con accesso diretto da strada provinciale asfaltata.",
@@ -1060,6 +1141,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1069,7 +1155,7 @@ const SITES = [
     "belfiore": "E884",
     "foglio": "27",
     "particella": "6",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -1093,7 +1179,7 @@ const SITES = [
     "catasto": "Fg. 27 · Part. 6 (Cod. E884)",
     "interferenze_osm": "Appezzamento agricolo rettangolare uniforme in buffer Z.I. (120m).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.351700,10.140700,45.352300,10.141300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E884_002700.6): 19 ha seminativo aperto, VAM 5,55 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Appezzamento agricolo rettangolare uniforme in buffer Z.I. (120m).",
@@ -1103,6 +1189,11 @@ const SITES = [
       "price": 95,
       "yield": 84,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1112,7 +1203,7 @@ const SITES = [
     "belfiore": "G535",
     "foglio": "26",
     "particella": "1051, 232 (contigua Fg. 73 Part. 993)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -1136,7 +1227,7 @@ const SITES = [
     "catasto": "Fg. 26 · Part. 1051, 232 (contigua Fg. 73 Part. 993) (Cod. G535)",
     "interferenze_osm": "Pianura aperta a est di Piacenza lungo A21 (180m), fuori da svincoli autostradali.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.048700,9.757700,45.049300,9.758300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (G535_002600.1051): seminativo irriguo a campo aperto, CP Piacenza Est a ~1 km, target ≤ 8,00 €/mq. Interferenze OSM: Pianura aperta a est di Piacenza lungo A21 (180m), fuori da svincoli autostradali.",
@@ -1146,6 +1237,11 @@ const SITES = [
       "price": 95,
       "yield": 100,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1155,7 +1251,7 @@ const SITES = [
     "belfiore": "E388",
     "foglio": "23",
     "particella": "269, 517 (contigue Fg. 37 Part. 912, 548)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AN",
     "reg": "Marche",
     "ll": [
@@ -1179,7 +1275,7 @@ const SITES = [
     "catasto": "Fg. 23 · Part. 269, 517 (contigue Fg. 37 Part. 912, 548) (Cod. E388)",
     "interferenze_osm": "Seminativo pianeggiante lungo asse SS76/A14 (150m); zero fabbricati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=43.541700,13.267700,43.542300,13.268300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E388_002300.269): 15 ha verificati su Fg. 23 Part. 269-517 (sostituito il vecchio Fg. 40 Part. 317-318). Interferenze OSM: Seminativo pianeggiante lungo asse SS76/A14 (150m); zero fabbricati.",
@@ -1189,6 +1285,11 @@ const SITES = [
       "price": 100,
       "yield": 93,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1198,7 +1299,7 @@ const SITES = [
     "belfiore": "D872",
     "foglio": "52",
     "particella": "4813 (contigue Fg. 29 Part. 155, 160)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "NO",
     "reg": "Piemonte",
     "ll": [
@@ -1222,7 +1323,7 @@ const SITES = [
     "catasto": "Fg. 52 · Part. 4813 (contigue Fg. 29 Part. 155, 160) (Cod. D872)",
     "interferenze_osm": "Pianura irrigua aperta a 220m dall'asse A4; prossimità immediata a Cabina Primaria.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.475700,8.691700,45.476300,8.692300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D872_005200.4813): seminativo pianeggiante a 220m da A4, VAM 4,30 €/mq, target acquisto ≤ 8,00 €/mq. Interferenze OSM: Pianura irrigua aperta a 220m dall'asse A4; prossimità immediata a Cabina Primaria.",
@@ -1232,6 +1333,11 @@ const SITES = [
       "price": 100,
       "yield": 92,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1241,7 +1347,7 @@ const SITES = [
     "belfiore": "D528",
     "foglio": "18",
     "particella": "396, 386",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AL",
     "reg": "Piemonte",
     "ll": [
@@ -1265,7 +1371,7 @@ const SITES = [
     "catasto": "Fg. 18 · Part. 396, 386 (Cod. D528)",
     "interferenze_osm": "Ricalibrato sul vero Fg. 18 a 185m dall'A21 a nord della ferrovia (escluso il vecchio Fg. 27 che distava >1 km verso il Tanaro).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.904200,8.454700,44.904800,8.455300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D528_001800.396): risolto il difetto del vecchio Fg. 27; Fg. 18 Part. 396-386 è a 185m reali dall'A21. Interferenze OSM: Ricalibrato sul vero Fg. 18 a 185m dall'A21 a nord della ferrovia (escluso il vecchio Fg. 27 che distava >1 km verso il Tanaro).",
@@ -1275,6 +1381,11 @@ const SITES = [
       "price": 100,
       "yield": 92,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1284,7 +1395,7 @@ const SITES = [
     "belfiore": "L304",
     "foglio": "24",
     "particella": "156 (contigue Fg. 26 Part. 71, 10)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AL",
     "reg": "Piemonte",
     "ll": [
@@ -1308,7 +1419,7 @@ const SITES = [
     "catasto": "Fg. 24 · Part. 156 (contigue Fg. 26 Part. 71, 10) (Cod. L304)",
     "interferenze_osm": "Ricalibrato sul Fg. 24 in pieno campo agricolo aperto a nord dello svincolo (escluso il Fg. 45 occupato da svincolo A7 e alveo Scrivia).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.921700,8.851700,44.922300,8.852300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (L304_002400.156): risolto il difetto del Fg. 45; Fg. 24 Part. 156 è 100% seminativo libero a 195m da A7. Interferenze OSM: Ricalibrato sul Fg. 24 in pieno campo agricolo aperto a nord dello svincolo (escluso il Fg. 45 occupato da svincolo A7 e alveo Scrivia).",
@@ -1318,6 +1429,11 @@ const SITES = [
       "price": 100,
       "yield": 92,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1327,7 +1443,7 @@ const SITES = [
     "belfiore": "L304",
     "foglio": "46",
     "particella": "204, 208 (contigue Fg. 43 Part. 1320, 969)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AL",
     "reg": "Piemonte",
     "ll": [
@@ -1351,7 +1467,7 @@ const SITES = [
     "catasto": "Fg. 46 · Part. 204, 208 (contigue Fg. 43 Part. 1320, 969) (Cod. L304)",
     "interferenze_osm": "Ricalibrato sul Fg. 46 in campo aperto esterno allo svincolo e al polo logistico; zero ostacoli idraulici.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.901200,8.838700,44.901800,8.839300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (L304_004600.204): 18,5 ha seminativo aperto su Fg. 46 (distinto dal Fg. 24), VAM 3,65 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Ricalibrato sul Fg. 46 in campo aperto esterno allo svincolo e al polo logistico; zero ostacoli idraulici.",
@@ -1361,6 +1477,11 @@ const SITES = [
       "price": 100,
       "yield": 92,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1370,7 +1491,7 @@ const SITES = [
     "belfiore": "B910",
     "foglio": "21",
     "particella": "518 (blocco contiguo Fg. 23 Part. 713, 436)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "LO",
     "reg": "Lombardia",
     "ll": [
@@ -1394,7 +1515,7 @@ const SITES = [
     "catasto": "Fg. 21 · Part. 518 (blocco contiguo Fg. 23 Part. 713, 436) (Cod. B910)",
     "interferenze_osm": "Suolo seminativo irriguo aperto privo di fabbricati; verificare buffer rispetto a linea AV parallela.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.181700,9.634700,45.182300,9.635300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B910_002100.518): blocco agricolo a 180m da A1, idoneità ex lege D.Lgs. 199/2021 c. 8-ter. Interferenze OSM: Suolo seminativo irriguo aperto privo di fabbricati; verificare buffer rispetto a linea AV parallela.",
@@ -1404,6 +1525,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1413,7 +1539,7 @@ const SITES = [
     "belfiore": "E884",
     "foglio": "14",
     "particella": "28, 110 (contigua Fg. 10 Part. 21)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -1437,7 +1563,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 28, 110 (contigua Fg. 10 Part. 21) (Cod. E884)",
     "interferenze_osm": "Appezzamento agricolo rettangolare a 195m dall'asse A21; zero manufatti.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.363700,10.166200,45.364300,10.166800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E884_001400.28): 26 ha seminativo irriguo a 195m da A21, CP Manerbio a 750m. Interferenze OSM: Appezzamento agricolo rettangolare a 195m dall'asse A21; zero manufatti.",
@@ -1447,6 +1573,11 @@ const SITES = [
       "price": 95,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1456,7 +1587,7 @@ const SITES = [
     "belfiore": "F754",
     "foglio": "35",
     "particella": "1227, 974",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PV",
     "reg": "Lombardia",
     "ll": [
@@ -1480,7 +1611,7 @@ const SITES = [
     "catasto": "Fg. 35 · Part. 1227, 974 (Cod. F754)",
     "interferenze_osm": "Pianura lomellina perfettamente orizzontale; zero alberature, zero capannoni.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.244700,8.741700,45.245300,8.742300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (F754_003500.1227): 25 ha aperti in Lomellina, VAM 4,30 €/mq, target 6,80 €/mq. Interferenze OSM: Pianura lomellina perfettamente orizzontale; zero alberature, zero capannoni.",
@@ -1490,6 +1621,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1499,7 +1635,7 @@ const SITES = [
     "belfiore": "B898",
     "foglio": "25",
     "particella": "136, 24",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "CR",
     "reg": "Lombardia",
     "ll": [
@@ -1523,7 +1659,7 @@ const SITES = [
     "catasto": "Fg. 25 · Part. 136, 24 (Cod. B898)",
     "interferenze_osm": "Campagna pianeggiante aperta; zero elettrodotti aerei ostativi.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.991700,10.427700,44.992300,10.428300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B898_002500.136): 22 ha contigui, ideale per agrivoltaico a tracker monoassiali. Interferenze OSM: Campagna pianeggiante aperta; zero elettrodotti aerei ostativi.",
@@ -1533,6 +1669,11 @@ const SITES = [
       "price": 100,
       "yield": 84,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1542,7 +1683,7 @@ const SITES = [
     "belfiore": "C312",
     "foglio": "23",
     "particella": "867, 906",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MN",
     "reg": "Lombardia",
     "ll": [
@@ -1566,7 +1707,7 @@ const SITES = [
     "catasto": "Fg. 23 · Part. 867, 906 (Cod. C312)",
     "interferenze_osm": "Fascia agricola aperta extra-centro abitato, contigua a polo industriale (130m).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.377700,10.494700,45.378300,10.495300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (C312_002300.867): 14,5 ha in buffer industriale 130m, target ≤ 8,00 €/mq. Interferenze OSM: Fascia agricola aperta extra-centro abitato, contigua a polo industriale (130m).",
@@ -1576,6 +1717,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1585,7 +1731,7 @@ const SITES = [
     "belfiore": "F423",
     "foglio": "5",
     "particella": "719, 66",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "LO",
     "reg": "Lombardia",
     "ll": [
@@ -1609,7 +1755,7 @@ const SITES = [
     "catasto": "Fg. 5 · Part. 719, 66 (Cod. F423)",
     "interferenze_osm": "Prossimità a corridoio energetico di Montanaso; terreno orizzontale aperto.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.333700,9.470700,45.334300,9.471300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (F423_000500.719): 13 ha in buffer industriale 120m, target ≤ 8,00 €/mq. Interferenze OSM: Prossimità a corridoio energetico di Montanaso; terreno orizzontale aperto.",
@@ -1619,6 +1765,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1628,7 +1779,7 @@ const SITES = [
     "belfiore": "D458",
     "foglio": "64",
     "particella": "306, 269 (contigue Fg. 115 Part. 744, 624)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "RA",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -1652,7 +1803,7 @@ const SITES = [
     "catasto": "Fg. 64 · Part. 306, 269 (contigue Fg. 115 Part. 744, 624) (Cod. D458)",
     "interferenze_osm": "Area a cielo aperto livellata a 180m dall'asse A14; zero edifici.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.326200,11.900700,44.326800,11.901300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "PERSONA_GIURIDICA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D458_006400.306): 11 ha a 180m da A14, target acquisto 7,20 €/mq (≤ 8,00 €/mq). Interferenze OSM: Area a cielo aperto livellata a 180m dall'asse A14; zero edifici.",
@@ -1662,6 +1813,11 @@ const SITES = [
       "price": 100,
       "yield": 93,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1671,7 +1827,7 @@ const SITES = [
     "belfiore": "B539",
     "foglio": "34",
     "particella": "73, 72",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MO",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -1695,7 +1851,7 @@ const SITES = [
     "catasto": "Fg. 34 · Part. 73, 72 (Cod. B539)",
     "interferenze_osm": "Pianura aperta a 220m dall'asse A22, a nord dello svincolo A1/A22.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.669700,10.845600,44.670300,10.846200&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B539_003400.73): 25 ha pianeggianti a 220m da A22, CP Campogalliano a 946m. Interferenze OSM: Pianura aperta a 220m dall'asse A22, a nord dello svincolo A1/A22.",
@@ -1705,6 +1861,11 @@ const SITES = [
       "price": 100,
       "yield": 100,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1714,7 +1875,7 @@ const SITES = [
     "belfiore": "E202",
     "foglio": "72",
     "particella": "960, 1103",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "GR",
     "reg": "Toscana",
     "ll": [
@@ -1738,7 +1899,7 @@ const SITES = [
     "catasto": "Fg. 72 · Part. 960, 1103 (Cod. E202)",
     "interferenze_osm": "Pianura maremmana aperta; insolazione record 1.560 kWh/kWp/anno.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=42.781700,11.123700,42.782300,11.124300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E202_007200.960): 32 ha in Maremma, VAM 2,80 €/mq, target acquisto 6,50 €/mq. Interferenze OSM: Pianura maremmana aperta; insolazione record 1.560 kWh/kWp/anno.",
@@ -1748,6 +1909,11 @@ const SITES = [
       "price": 100,
       "yield": 100,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1757,7 +1923,7 @@ const SITES = [
     "belfiore": "F471",
     "foglio": "40",
     "particella": "3, 264",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -1781,7 +1947,7 @@ const SITES = [
     "catasto": "Fg. 40 · Part. 3, 264 (Cod. F471)",
     "interferenze_osm": "Cava esaurita a cielo aperto con fondo stabilizzato; fuori dal sedime aeroportuale.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.417900,10.384200,45.418500,10.384800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "PERSONA_GIURIDICA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (F471_004000.3): 8,5 ha ex cava a cielo aperto, target acquisto 7,20 €/mq. Interferenze OSM: Cava esaurita a cielo aperto con fondo stabilizzato; fuori dal sedime aeroportuale.",
@@ -1791,6 +1957,11 @@ const SITES = [
       "price": 100,
       "yield": 77,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1800,7 +1971,7 @@ const SITES = [
     "belfiore": "B395",
     "foglio": "8",
     "particella": "432, 528 (contigue Fg. 3 Part. 153, 89)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BG",
     "reg": "Lombardia",
     "ll": [
@@ -1824,7 +1995,7 @@ const SITES = [
     "catasto": "Fg. 8 · Part. 432, 528 (contigue Fg. 3 Part. 153, 89) (Cod. B395)",
     "interferenze_osm": "Campagna aperta pianeggiante a 190m dall'asse A35 BreBeMi; zero fabbricati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.505700,9.844700,45.506300,9.845300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B395_000800.432): Codice Belfiore B395, Fg. 8 Part. 432-528 a 190m da A35, CP Calcio a 945m. Interferenze OSM: Campagna aperta pianeggiante a 190m dall'asse A35 BreBeMi; zero fabbricati.",
@@ -1834,6 +2005,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1843,7 +2019,7 @@ const SITES = [
     "belfiore": "E512",
     "foglio": "42",
     "particella": "604, 547",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VR",
     "reg": "Veneto",
     "ll": [
@@ -1867,7 +2043,7 @@ const SITES = [
     "catasto": "Fg. 42 · Part. 604, 547 (Cod. E512)",
     "interferenze_osm": "Fronte infrastrutturale SS434 Transpolesana; terreno agricolo privo di costruzioni.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.183700,11.311700,45.184300,11.312300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E512_004200.604): 23 ha in buffer Z.I. 120m, target ≤ 8,00 €/mq. Interferenze OSM: Fronte infrastrutturale SS434 Transpolesana; terreno agricolo privo di costruzioni.",
@@ -1877,6 +2053,11 @@ const SITES = [
       "price": 100,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -1886,7 +2067,7 @@ const SITES = [
     "belfiore": "L777",
     "foglio": "20",
     "particella": "51",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -1910,7 +2091,7 @@ const SITES = [
     "catasto": "Fg. 20 · Part. 51 (Cod. L777)",
     "interferenze_osm": "Canalizzazione irrigua perimetrale ordinata; zero attraversamenti aerei.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.323700,10.070700,45.324300,10.071300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (L777_002000.51): 24 ha seminativo pianeggiante in Zona E, target ≤ 8,00 €/mq. Interferenze OSM: Canalizzazione irrigua perimetrale ordinata; zero attraversamenti aerei.",
@@ -1920,16 +2101,21 @@ const SITES = [
       "price": 100,
       "yield": 84,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
     "id": "FV-AGRI-MN-005",
-    "name": "Compendio Agricolo Seminativo Aperto — Suzzara (Fg. 48 Part. 55, 1753)",
+    "name": "Suzzara — posizione da verificare (Fg. 48 Part. 55, 1753)",
     "comune": "Suzzara",
     "belfiore": "L020",
     "foglio": "48",
     "particella": "55, 1753",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MN",
     "reg": "Lombardia",
     "ll": [
@@ -1951,18 +2137,23 @@ const SITES = [
     "hwy_dist": 600,
     "hwy_name": "A22 Modena-Brennero (casello Pegognaga)",
     "catasto": "Fg. 48 · Part. 55, 1753 (Cod. L020)",
-    "interferenze_osm": "Seminativo irriguo aperto senza fabbricati; prossimità diretta a CP Suzzara.",
+    "interferenze_osm": "Possibile incongruenza tra punto e uso del suolo. Assenza di fabbricati non confermata.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.984700,10.740700,44.985300,10.741300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
-    "note": "Verificato su WMS AdE (L020_004800.55): 17 ha a campo aperto, VAM 4,85 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Seminativo irriguo aperto senza fabbricati; prossimità diretta a CP Suzzara.",
+    "note": "Segnalazione visiva: punto presso area residenziale con piscina. Superficie e riferimenti catastali dichiarati non ancora riconciliati.",
     "bars": {
       "norm": 96,
       "cab": 32,
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "ANOMALIA_SEGNALATA",
+      "motivo": "Nella schermata segnalata il punto appare presso una casa con piscina, in contrasto con la descrizione di 17 ha senza fabbricati. Coordinate e particelle da riconciliare; il lotto effettivo non è identificato.",
+      "fonte": "Segnalazione visiva utente 2026-10-31"
     }
   },
   {
@@ -1972,7 +2163,7 @@ const SITES = [
     "belfiore": "B034",
     "foglio": "27",
     "particella": "11 (contigue Fg. 69 Part. 152)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PR",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -1996,7 +2187,7 @@ const SITES = [
     "catasto": "Fg. 27 · Part. 11 (contigue Fg. 69 Part. 152) (Cod. B034)",
     "interferenze_osm": "Campo aperto pianeggiante a sud dell'asse A1, fuori da svincoli e alvei fluviali.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.891000,10.062400,44.891600,10.063000&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B034_002700.11): compendio agricolo in fascia 210m da A1, VAM Fidenza 5,15 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Campo aperto pianeggiante a sud dell'asse A1, fuori da svincoli e alvei fluviali.",
@@ -2006,6 +2197,11 @@ const SITES = [
       "price": 100,
       "yield": 100,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2015,7 +2211,7 @@ const SITES = [
     "belfiore": "D704",
     "foglio": "52",
     "particella": "338 (contigua Fg. 90 Part. 79)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "FC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2039,7 +2235,7 @@ const SITES = [
     "catasto": "Fg. 52 · Part. 338 (contigua Fg. 90 Part. 79) (Cod. D704)",
     "interferenze_osm": "Giacitura perfettamente piana a 190m dall'asse A14 (Pieve Acquedotto); zero fabbricati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.253700,12.087700,44.254300,12.088300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D704_005200.338): 26 ha seminativi lungo A14 (190m), VAM 4,35 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Giacitura perfettamente piana a 190m dall'asse A14 (Pieve Acquedotto); zero fabbricati.",
@@ -2049,6 +2245,11 @@ const SITES = [
       "price": 100,
       "yield": 100,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2058,7 +2259,7 @@ const SITES = [
     "belfiore": "E675",
     "foglio": "9",
     "particella": "1175, 1201 (contigua Fg. 20 Part. 1054)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "FC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2082,7 +2283,7 @@ const SITES = [
     "catasto": "Fg. 9 · Part. 1175, 1201 (contigua Fg. 20 Part. 1054) (Cod. E675)",
     "interferenze_osm": "Pianura irrigua tra Cesena e Rimini a 210m dall'asse A14; nessuna interferenza ferroviaria AV.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.105700,12.357700,44.106300,12.358300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E675_000900.1175): 22 ha seminativo irriguo a 210m da A14, CP Longiano a 970m. Interferenze OSM: Pianura irrigua tra Cesena e Rimini a 210m dall'asse A14; nessuna interferenza ferroviaria AV.",
@@ -2092,6 +2293,11 @@ const SITES = [
       "price": 100,
       "yield": 96,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2101,7 +2307,7 @@ const SITES = [
     "belfiore": "G184",
     "foglio": "44",
     "particella": "169",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "FE",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2125,7 +2331,7 @@ const SITES = [
     "catasto": "Fg. 44 · Part. 169 (Cod. G184)",
     "interferenze_osm": "Piattezza assoluta nel Mezzano/Ostellato; zero edifici, ampie maglie fondiarie.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.731700,11.941700,44.732300,11.942300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (G184_004400.169): 38 ha continui a campo aperto, VAM 3,70 €/mq, target 6,50 €/mq. Interferenze OSM: Piattezza assoluta nel Mezzano/Ostellato; zero edifici, ampie maglie fondiarie.",
@@ -2135,6 +2341,11 @@ const SITES = [
       "price": 100,
       "yield": 100,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2144,7 +2355,7 @@ const SITES = [
     "belfiore": "I337",
     "foglio": "12",
     "particella": "333, 351 (blocco risaie contigue)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VC",
     "reg": "Piemonte",
     "ll": [
@@ -2168,7 +2379,7 @@ const SITES = [
     "catasto": "Fg. 12 · Part. 333, 351 (blocco risaie contigue) (Cod. I337)",
     "interferenze_osm": "Ricalibrato sul vero Fg. 12 a 190m dall'asse A4 (escluso il Fg. 25 oltre Canale Depretis e linea AV). Appezzamenti risicoli contigui.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.391200,8.151700,45.391800,8.152300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (I337_001200.333): corretto il difetto del vecchio Fg. 25; il Fg. 12 Part. 333-351 è realmente entro 190m dall'A4. Interferenze OSM: Ricalibrato sul vero Fg. 12 a 190m dall'asse A4 (escluso il Fg. 25 oltre Canale Depretis e linea AV). Appezzamenti risicoli contigui.",
@@ -2178,6 +2389,11 @@ const SITES = [
       "price": 100,
       "yield": 92,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2187,7 +2403,7 @@ const SITES = [
     "belfiore": "D611",
     "foglio": "16",
     "particella": "48, 340 (contigue Fg. 24 Part. 278, 315)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2211,7 +2427,7 @@ const SITES = [
     "catasto": "Fg. 16 · Part. 48, 340 (contigue Fg. 24 Part. 278, 315) (Cod. D611)",
     "interferenze_osm": "Campo aperto seminativo entro fascia 220m A1; zero fabbricati e viabilità poderale di accesso.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.951200,9.925800,44.951800,9.926400&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D611_001600.48): coordinate ricalibrate sull'asse A1 reale (220m), VAM 5,35 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Campo aperto seminativo entro fascia 220m A1; zero fabbricati e viabilità poderale di accesso.",
@@ -2221,6 +2437,11 @@ const SITES = [
       "price": 95,
       "yield": 96,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2230,7 +2451,7 @@ const SITES = [
     "belfiore": "A182",
     "foglio": "203",
     "particella": "766",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "AL",
     "reg": "Piemonte",
     "ll": [
@@ -2254,7 +2475,7 @@ const SITES = [
     "catasto": "Fg. 203 · Part. 766 (Cod. A182)",
     "interferenze_osm": "Campo aperto pianeggiante nella Fraschetta; vicino a CP Spinetta Marengo (590m).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.891700,8.683700,44.892300,8.684300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (A182_020300.766): 31 ha aperti, VAM 3,50 €/mq, target acquisto 6,50 €/mq. Interferenze OSM: Campo aperto pianeggiante nella Fraschetta; vicino a CP Spinetta Marengo (590m).",
@@ -2264,6 +2485,11 @@ const SITES = [
       "price": 100,
       "yield": 96,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2273,7 +2499,7 @@ const SITES = [
     "belfiore": "B954",
     "foglio": "14",
     "particella": "145, 175",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PV",
     "reg": "Lombardia",
     "ll": [
@@ -2297,7 +2523,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 145, 175 (Cod. B954)",
     "interferenze_osm": "Pianura cerealicola aperta a 180m dall'asse A7; nessun corso d'acqua né svincolo sul mappale.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.014200,8.927700,45.014800,8.928300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B954_001400.145): 28 ha pianeggianti adiacenti A7 (180m), VAM 4,35 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Pianura cerealicola aperta a 180m dall'asse A7; nessun corso d'acqua né svincolo sul mappale.",
@@ -2307,6 +2533,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2316,7 +2547,7 @@ const SITES = [
     "belfiore": "B731",
     "foglio": "15",
     "particella": "11373, 14911 (Sez. 9 Fg. 15)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BG",
     "reg": "Lombardia",
     "ll": [
@@ -2340,7 +2571,7 @@ const SITES = [
     "catasto": "Fg. 15 · Part. 11373, 14911 (Sez. 9 Fg. 15) (Cod. B731)",
     "interferenze_osm": "Fascia agricola a 160m da A35 BreBeMi; verificare fascia di rispetto linea AV Torino-Milano-Venezia parallela.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.509600,9.645200,45.510200,9.645800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (B731_091500.11373): 27 ha seminativo irriguo a 160m da A35 BreBeMi, target ≤ 8,00 €/mq. Interferenze OSM: Fascia agricola a 160m da A35 BreBeMi; verificare fascia di rispetto linea AV Torino-Milano-Venezia parallela.",
@@ -2350,6 +2581,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2359,7 +2595,7 @@ const SITES = [
     "belfiore": "B332",
     "foglio": "7",
     "particella": "77 (contigue 97, 63)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2383,7 +2619,7 @@ const SITES = [
     "catasto": "Fg. 7 · Part. 77 (contigue 97, 63) (Cod. B332)",
     "interferenze_osm": "Linea elettrica aerea OSM attraversa il lotto in diagonale (limita layout pannelli ma garantisce prossimità rete). Fuori fascia AV.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.993700,9.827200,44.994300,9.827800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Lotto 1 verificato su WMS Agenzia Entrate (B332_000700.77): 13,1 ha confinanti con l'asse A1 a sud del Torrente Riglio. VAM 2026 Cadeo: 5,45 €/mq; target ≤ 8,00 €/mq. Interferenze OSM: Linea elettrica aerea OSM attraversa il lotto in diagonale (limita layout pannelli ma garantisce prossimità rete). Fuori fascia AV.",
@@ -2393,6 +2629,11 @@ const SITES = [
       "price": 95,
       "yield": 93,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2402,7 +2643,7 @@ const SITES = [
     "belfiore": "E349",
     "foglio": "46",
     "particella": "619, 82",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "VR",
     "reg": "Veneto",
     "ll": [
@@ -2426,7 +2667,7 @@ const SITES = [
     "catasto": "Fg. 46 · Part. 619, 82 (Cod. E349)",
     "interferenze_osm": "Terreno risicolo/seminativo continuo in buffer 170m da Z.I.; zero fabbricati.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.270700,11.014700,45.271300,11.015300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E349_004600.619): 27 ha continui, CP Isola della Scala a 490m, target ≤ 8,00 €/mq. Interferenze OSM: Terreno risicolo/seminativo continuo in buffer 170m da Z.I.; zero fabbricati.",
@@ -2436,6 +2677,11 @@ const SITES = [
       "price": 100,
       "yield": 93,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2445,7 +2691,7 @@ const SITES = [
     "belfiore": "B332",
     "foglio": "7",
     "particella": "149",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2469,7 +2715,7 @@ const SITES = [
     "catasto": "Fg. 7 · Part. 149 (Cod. B332)",
     "interferenze_osm": "Situato a nord tra Autostrada A1 e Ferrovia AV Milano-Bologna: parziale sovrapposizione di due fasce di rispetto da verificare in progetto.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.996200,9.828200,44.996800,9.828800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Lotto 2 verificato su WMS Agenzia Entrate (B332_000700.149): 8,1 ha a 70m dall'asse A1. VAM 2026 Cadeo: 5,45 €/mq; target ≤ 8,00 €/mq. Interferenze OSM: Situato a nord tra Autostrada A1 e Ferrovia AV Milano-Bologna: parziale sovrapposizione di due fasce di rispetto da verificare in progetto.",
@@ -2479,6 +2725,11 @@ const SITES = [
       "price": 95,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2488,7 +2739,7 @@ const SITES = [
     "belfiore": "G852",
     "foglio": "14",
     "particella": "134 (contigua a 21)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2512,7 +2763,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 134 (contigua a 21) (Cod. G852)",
     "interferenze_osm": "Linea elettrica aerea OSM attraversa in diagonale (rete MT/AT adiacente). Contiguo alla Part. 21 (insieme formano blocco unico da 10,5 ha).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.996200,9.820700,44.996800,9.821300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Lotto 3 verificato su WMS Agenzia Entrate (G852_001400.134): 6,3 ha confinanti con A1 (10,5 ha accorpati con Part. 21). VAM 2026 Pontenure: 5,85 €/mq; target ≤ 8,00 €/mq. Interferenze OSM: Linea elettrica aerea OSM attraversa in diagonale (rete MT/AT adiacente). Contiguo alla Part. 21 (insieme formano blocco unico da 10,5 ha).",
@@ -2522,6 +2773,11 @@ const SITES = [
       "price": 95,
       "yield": 90,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2531,7 +2787,7 @@ const SITES = [
     "belfiore": "E526",
     "foglio": "28",
     "particella": "596, 640",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -2555,7 +2811,7 @@ const SITES = [
     "catasto": "Fg. 28 · Part. 596, 640 (Cod. E526)",
     "interferenze_osm": "Suolo pianeggiante privo di alberature o costruzioni; linea MT a <800m.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.367700,10.223700,45.368300,10.224300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "SOCIETA_SEMPLICE_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E526_002800.596): 28 ha a campo aperto nella Bassa Bresciana, target ≤ 8,00 €/mq. Interferenze OSM: Suolo pianeggiante privo di alberature o costruzioni; linea MT a <800m.",
@@ -2565,6 +2821,11 @@ const SITES = [
       "price": 100,
       "yield": 88,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2574,7 +2835,7 @@ const SITES = [
     "belfiore": "L826",
     "foglio": "92",
     "particella": "359, 941",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MN",
     "reg": "Lombardia",
     "ll": [
@@ -2598,7 +2859,7 @@ const SITES = [
     "catasto": "Fg. 92 · Part. 359, 941 (Cod. L826)",
     "interferenze_osm": "Zero abitazioni né capannoni presenti nel fondo (buffer Z.I. 110m).",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.934700,10.527700,44.935300,10.528300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (L826_009200.359): 18 ha in Zona E agricola, target ≤ 8,00 €/mq. Interferenze OSM: Zero abitazioni né capannoni presenti nel fondo (buffer Z.I. 110m).",
@@ -2608,6 +2869,11 @@ const SITES = [
       "price": 100,
       "yield": 84,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2617,7 +2883,7 @@ const SITES = [
     "belfiore": "G852",
     "foglio": "14",
     "particella": "21 (contigua a 134)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2641,7 +2907,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 21 (contigua a 134) (Cod. G852)",
     "interferenze_osm": "Nessun elettrodotto aereo sul mappale; contiguo a Fg. 14 Part. 134 per accorpamento cantiere unico da 10,5 ha.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.996900,9.818200,44.997500,9.818800&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Lotto 4 verificato su WMS Agenzia Entrate (G852_001400.21): 4,2 ha a 80m dall'asse A1, contiguo a Part. 134. VAM 2026 Pontenure: 5,85 €/mq; target ≤ 8,00 €/mq. Interferenze OSM: Nessun elettrodotto aereo sul mappale; contiguo a Fg. 14 Part. 134 per accorpamento cantiere unico da 10,5 ha.",
@@ -2651,6 +2917,11 @@ const SITES = [
       "price": 95,
       "yield": 83,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2660,7 +2931,7 @@ const SITES = [
     "belfiore": "G852",
     "foglio": "14",
     "particella": "86 (contigua 44)",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PC",
     "reg": "Emilia-Romagna",
     "ll": [
@@ -2684,7 +2955,7 @@ const SITES = [
     "catasto": "Fg. 14 · Part. 86 (contigua 44) (Cod. G852)",
     "interferenze_osm": "Situato a nord tra Autostrada A1 e Ferrovia AV Milano-Bologna: verificare in sede tecnica la sovrapposizione delle fasce di rispetto.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=44.998700,9.821700,44.999300,9.822300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Lotto 5 verificato su WMS Agenzia Entrate (G852_001400.86): 3,2 ha a 85m dall'asse A1. VAM 2026 Pontenure: 5,85 €/mq; target ≤ 8,00 €/mq. Interferenze OSM: Situato a nord tra Autostrada A1 e Ferrovia AV Milano-Bologna: verificare in sede tecnica la sovrapposizione delle fasce di rispetto.",
@@ -2694,6 +2965,11 @@ const SITES = [
       "price": 95,
       "yield": 83,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2703,7 +2979,7 @@ const SITES = [
     "belfiore": "I849",
     "foglio": "22",
     "particella": "265, 277",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "CR",
     "reg": "Lombardia",
     "ll": [
@@ -2727,7 +3003,7 @@ const SITES = [
     "catasto": "Fg. 22 · Part. 265, 277 (Cod. I849)",
     "interferenze_osm": "Seminativo irriguo aperto contiguo a polo produttivo (140m); nessun edificio.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.284700,9.870700,45.285300,9.871300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (I849_002200.265): 16 ha in buffer Z.I. 140m, VAM 5,20 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Seminativo irriguo aperto contiguo a polo produttivo (140m); nessun edificio.",
@@ -2737,6 +3013,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2746,7 +3027,7 @@ const SITES = [
     "belfiore": "I906",
     "foglio": "6",
     "particella": "266, 507",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "CR",
     "reg": "Lombardia",
     "ll": [
@@ -2770,7 +3051,7 @@ const SITES = [
     "catasto": "Fg. 6 · Part. 266, 507 (Cod. I906)",
     "interferenze_osm": "Perimetro esterno a zona produttiva (80m); linea MT di distribuzione su strada adiacente.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.147700,9.931700,45.148300,9.932300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (I906_000600.266): 11,5 ha in buffer industriale 80m, target ≤ 8,00 €/mq. Interferenze OSM: Perimetro esterno a zona produttiva (80m); linea MT di distribuzione su strada adiacente.",
@@ -2780,6 +3061,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2789,7 +3075,7 @@ const SITES = [
     "belfiore": "G149",
     "foglio": "17",
     "particella": "726, 744",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "BS",
     "reg": "Lombardia",
     "ll": [
@@ -2813,7 +3099,7 @@ const SITES = [
     "catasto": "Fg. 17 · Part. 726, 744 (Cod. G149)",
     "interferenze_osm": "Seminativo irriguo aperto; Cabina Primaria a distanza ravvicinata.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.397700,9.923700,45.398300,9.924300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (G149_001700.726): 17,5 ha in buffer Z.I. 90m, target ≤ 8,00 €/mq. Interferenze OSM: Seminativo irriguo aperto; Cabina Primaria a distanza ravvicinata.",
@@ -2823,6 +3109,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2832,7 +3123,7 @@ const SITES = [
     "belfiore": "E922",
     "foglio": "33",
     "particella": "200, 643",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "MN",
     "reg": "Lombardia",
     "ll": [
@@ -2856,7 +3147,7 @@ const SITES = [
     "catasto": "Fg. 33 · Part. 200, 643 (Cod. E922)",
     "interferenze_osm": "Terreno pianeggiante aperto lungo asse SS10; zero vincoli paesaggistici.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.117700,10.533700,45.118300,10.534300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (E922_003300.200): 15 ha pianeggianti a seminativo, vicinanza CP Marcaria. Interferenze OSM: Terreno pianeggiante aperto lungo asse SS10; zero vincoli paesaggistici.",
@@ -2866,6 +3157,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2875,7 +3171,7 @@ const SITES = [
     "belfiore": "C816",
     "foglio": "22",
     "particella": "21",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "LO",
     "reg": "Lombardia",
     "ll": [
@@ -2899,7 +3195,7 @@ const SITES = [
     "catasto": "Fg. 22 · Part. 21 (Cod. C816)",
     "interferenze_osm": "Seminativo irriguo libero in buffer industriale 90m; nessun capannone.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.151700,9.687700,45.152300,9.688300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (C816_002200.21): 16,5 ha a campo aperto, VAM 5,20 €/mq, target ≤ 8,00 €/mq. Interferenze OSM: Seminativo irriguo libero in buffer industriale 90m; nessun capannone.",
@@ -2909,6 +3205,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   },
   {
@@ -2918,7 +3219,7 @@ const SITES = [
     "belfiore": "D552",
     "foglio": "4",
     "particella": "8, 12",
-    "catasto_stato": "VERIFICATO_WMS_ADE",
+    "catasto_stato": "DA_VERIFICARE",
     "prov": "PV",
     "reg": "Lombardia",
     "ll": [
@@ -2942,7 +3243,7 @@ const SITES = [
     "catasto": "Fg. 4 · Part. 8, 12 (Cod. D552)",
     "interferenze_osm": "Campo aperto adiacente a polo energetico/industriale (140m); elevata hosting capacity.",
     "wms_url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=CP.CadastralParcel,CP.CadastralZoning&QUERY_LAYERS=CP.CadastralParcel,CP.CadastralZoning&CRS=EPSG:4258&BBOX=45.120700,8.874700,45.121300,8.875300&WIDTH=51&HEIGHT=51&I=25&J=25&INFO_FORMAT=text/html",
-    "owner": "Da estrarre da Visura Sister (Mappale WMS Verificato)",
+    "owner": "Da estrarre da Visura Sister",
     "owner_tipo": "AZIENDA_AGRICOLA",
     "contact": "Da estrarre da Visura Sister",
     "note": "Verificato su WMS AdE (D552_000400.8): 15,5 ha seminativo aperto, VAM 4,30 €/mq, target 6,80 €/mq. Interferenze OSM: Campo aperto adiacente a polo energetico/industriale (140m); elevata hosting capacity.",
@@ -2952,6 +3253,11 @@ const SITES = [
       "price": 100,
       "yield": 81,
       "owner": 85
+    },
+    "verifica": {
+      "stato": "DA_VERIFICARE",
+      "motivo": "Riferimenti catastali dichiarati: manca una verifica documentata della corrispondenza tra punto, confini delle particelle e superficie.",
+      "fonte": "Audit qualità dati 2026-10-31"
     }
   }
 ];
@@ -2970,6 +3276,15 @@ const GRID_BENCHMARK = [
   { tech: "Stallo Cabina Primaria", costo: "45.000 €", lead_time: "4-6 mesi" },
   { tech: "Iter TICA / STMG", costo: "Standard Enel", lead_time: "45 gg" }
 ];
+
+// Le rigenerazioni del dataset non costituiscono una validazione catastale.
+SITES.forEach(s => {
+  s.verifica = s.verifica || {stato: 'DA_VERIFICARE', motivo: 'Corrispondenza tra punto, particelle, superficie e uso del suolo da documentare.'};
+  if (s.id === 'FV-AGRI-MN-005') {
+    s.verifica = {stato: 'ANOMALIA_SEGNALATA', motivo: 'Punto segnalato presso una casa con piscina: coordinate, particelle e 17 ha dichiarati da riconciliare.'};
+  }
+  s.catasto_stato = s.verifica.stato;
+});
 
 /* ============ CLOCK ============ */
 function updateClock(){
@@ -3033,7 +3348,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) stopO
 
 /* ============ RENDER CARDS & KPIS ============ */
 function isShortlist(s) {
-  return s.hwy_dist <= 300
+  return s.verifica?.stato !== "ANOMALIA_SEGNALATA" && s.hwy_dist <= 300
     && s.ha >= 2
     && s.price_mq <= 8.0
     && s.sub_dist >= 1
@@ -3057,6 +3372,8 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
     let matchReg = false;
     if (filterReg === "TUTTE") {
       matchReg = true;
+    } else if (filterReg === "ANOMALIE") {
+      matchReg = s.verifica?.stato === "ANOMALIA_SEGNALATA";
     } else if (filterReg === "SHORTLIST") {
       matchReg = isShortlist(s);
     } else if (filterReg === "AUTOSTRADE") {
@@ -3089,15 +3406,15 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
     const hasWarnInterf = interfStr.includes("⚠️");
 
     const shortBadge = isShortlist(s) ?
-      `<span style="margin-left:6px;background:rgba(37,99,235,0.2);color:#93c5fd;border:1px solid #2563eb;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">★ SHORTLIST VISURA</span>` : '';
+      `<span style="margin-left:6px;background:rgba(37,99,235,0.2);color:#93c5fd;border:1px solid #2563eb;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">CANDIDATO · DA VERIFICARE</span>` : '';
     const hwyBadge = isHighwayCorridor ?
-      `<span style="margin-left:6px;background:rgba(16,185,129,0.18);color:#34d399;border:1px solid #10b981;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">🛣️ EX LEGE ≤300m</span>` : '';
-    const wmsBadge = `<span style="margin-left:4px;background:rgba(56,189,248,0.16);color:#38bdf8;border:1px solid #0284c7;padding:1px 5px;border-radius:4px;font-size:9px;font-weight:700">✓ WMS AdE</span>`;
+      `<span style="margin-left:6px;background:rgba(16,185,129,0.18);color:#34d399;border:1px solid #10b981;padding:1px 6px;border-radius:4px;font-size:9.5px;font-weight:700">🛣️ DISTANZA DICHIARATA ≤300m</span>` : '';
+    const wmsBadge = `<span style="margin-left:4px;background:rgba(56,189,248,0.16);color:#38bdf8;border:1px solid #0284c7;padding:1px 5px;border-radius:4px;font-size:9px;font-weight:700">${s.verifica.stato === "ANOMALIA_SEGNALATA" ? "⚠ ANOMALIA" : "DA VERIFICARE"}</span>`;
 
     const hwyRow = isHighwayCorridor ?
       `<div class="d-row" style="background:rgba(16,185,129,0.1);padding:3px 6px;border-radius:4px;border:1px solid rgba(16,185,129,0.25);margin:2px 0;">
          <span style="color:#34d399;font-weight:700">🛣️ Corridoio Autostrada:</span>
-         <b style="color:#34d399">${s.hwy_name} (${s.hwy_dist} m · Ex Lege 199/21)</b>
+         <b style="color:#34d399">${s.hwy_name} (${s.hwy_dist} m · dato dichiarato)</b>
        </div>` :
       `<div class="d-row"><span>🛣️ Asse Viario:</span><b>${s.hwy_name} (${s.hwy_dist} m)</b></div>`;
 
@@ -3113,18 +3430,19 @@ function renderCards(filterReg = "TUTTE", searchStr = "") {
         </div>
         <div class="score ${scoreClass}">${s.score}</div>
       </div>
-      <div class="note">${s.note}</div>
+      <div class="note" style="color:var(--amber)">${s.verifica.motivo}</div>
+      <details class="note"><summary>Descrizione originale · non validata</summary>${s.note}</details>
 
       <div class="bars">
-        <div class="bar-row"><span>Idoneità 199/21</span><div class="bar"><i style="width:${s.bars.norm}%"></i></div><span class="n">${s.bars.norm}%</span></div>
+        <div class="bar-row"><span>Score normativo preliminare</span><div class="bar"><i style="width:${s.bars.norm}%"></i></div><span class="n">${s.bars.norm}%</span></div>
         <div class="bar-row"><span>Vicinanza Rete</span><div class="bar"><i style="width:${s.bars.cab}%"></i></div><span class="n">${s.bars.cab}%</span></div>
         <div class="bar-row"><span>Target ≤ 8 €/mq</span><div class="bar"><i style="width:${s.bars.price}%"></i></div><span class="n">${s.bars.price}%</span></div>
       </div>
 
       <div class="dists">
         <div class="d-row" style="background:rgba(56,189,248,0.1);padding:3px 6px;border-radius:4px;border:1px solid rgba(56,189,248,0.28);">
-          <span style="color:#38bdf8;font-weight:700">🗂️ Mappale WMS AdE:</span>
-          <b style="color:#eaf0fa">${s.catasto || 'Verificato WMS'}</b>
+          <span style="color:#38bdf8;font-weight:700">🗂️ Riferimenti dichiarati:</span>
+          <b style="color:#eaf0fa">${s.catasto || 'Non disponibili'}</b>
         </div>
         <div class="d-row"><span>🌐 Coordinate GPS (WGS84):</span><b>${gpsStr}</b></div>
         ${hwyRow}
@@ -3179,7 +3497,7 @@ function initMarkers() {
     const isTop = s.score >= 90;
     const short = isShortlist(s);
     // Colori calibrati sul modello originale https://www.pngall.com/pin-png/download/38365/
-    const outerColor = short ? "#2563EB" : (isTop ? "#E11D48" : "#C64142");
+    const outerColor = s.verifica.stato === "ANOMALIA_SEGNALATA" ? "#f59e0b" : short ? "#2563EB" : (isTop ? "#E11D48" : "#C64142");
     const ringColor = short ? "#1E3A8A" : (isTop ? "#BE123C" : "#B72D2D");
     const badgeStroke = short
       ? 'stroke="#38BDF8" stroke-width="3"'
@@ -3191,7 +3509,7 @@ function initMarkers() {
     const el = document.createElement("div");
     el.className = `map-pin-wrap${short ? " shortlist" : ""}${isTop ? " top-lead" : ""}`;
     el.id = `pin-${s.id}`;
-    el.title = `${s.name} · Score ${s.score}/100\n📍 ${s.comune} (${s.ha} ha) · ${s.catasto}\n🌐 GPS: ${s.ll[0].toFixed(5)}, ${s.ll[1].toFixed(5)}\n⚡ CP: ${s.substation} (${s.sub_dist} m)\n💶 Target: ${s.price_mq.toFixed(2)} €/mq (€ ${(s.price_tot).toLocaleString('it-IT')})`;
+    el.title = `${s.verifica.stato} · ${s.name} · Score preliminare ${s.score}/100\n📍 ${s.comune} (${s.ha} ha) · ${s.catasto}\n🌐 GPS: ${s.ll[0].toFixed(5)}, ${s.ll[1].toFixed(5)}\n⚡ CP: ${s.substation} (${s.sub_dist} m)\n💶 Target: ${s.price_mq.toFixed(2)} €/mq (€ ${(s.price_tot).toLocaleString('it-IT')})`;
     
     el.innerHTML = `
       <svg viewBox="0 0 100 142" xmlns="http://www.w3.org/2000/svg">
@@ -3227,6 +3545,7 @@ map.on('load', () => {
   renderCards(currentFilter(), document.getElementById("searchInput").value);
 });
 
+document.getElementById('auditSummary').textContent = `${SITES.filter(s => s.verifica.stato === 'ANOMALIA_SEGNALATA').length} anomalia segnalata · ${SITES.length} siti senza validazione documentata.`;
 renderBenchmarkBoxes();
 renderCards();
 
@@ -3320,22 +3639,23 @@ function showGuideTip(s) {
     </div>
     <div class="tcontent">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-        <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--brand);font-weight:700">Dossier Sopralluogo Virtuale · WMS AdE Verificato</span>
+        <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--brand);font-weight:700">Scheda preliminare · ${s.verifica.stato === "ANOMALIA_SEGNALATA" ? "⚠ Anomalia segnalata" : "Da verificare"}</span>
         <button onclick="document.getElementById('siteTip').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px">&times;</button>
       </div>
       <div style="font-size:14px;font-weight:800;color:#fff">${s.name} (${s.comune}, ${s.prov})</div>
+      <p style="color:var(--amber);font-size:12px;line-height:1.5;margin-top:8px">${s.verifica.motivo}</p>
       <div style="font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45">
-        Mappale WMS AdE: <b style="color:#38bdf8">${s.catasto}</b> · GPS: <b class="mono">${gpsStr}</b>.<br>
-        Area <b>${s.ha} ha</b> idonea D.Lgs. 199/2021 per <b>~${s.mwp} MWp</b> (Cabina MT a <b>${s.sub_dist} m</b>).<br>
+        Riferimenti dichiarati: <b style="color:#38bdf8">${s.catasto}</b> · GPS: <b class="mono">${gpsStr}</b>.<br>
+        Area <b>${s.ha} ha</b> dichiarati · potenza teorica <b>~${s.mwp} MWp</b> (Cabina MT a <b>${s.sub_dist} m</b>).<br>
         VAM 2026: <b>${vamStr}</b> · Target acquisto: <b style="color:#34d399">${s.price_mq.toFixed(2)} €/mq</b> (€ ${s.price_tot.toLocaleString('it-IT')}) o DDS <b>~€ ${leaseAnnuo.toLocaleString('it-IT')}/anno</b>.<br>
-        <span style="color:#fbbf24">🔎 ${s.interferenze_osm || ''}</span>
+        <span style="color:#fbbf24">🔎 Descrizione non validata: ${s.interferenze_osm || ''}</span>
       </div>
       <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
         <button class="btn brand" style="padding:5px 10px;font-size:11px" onclick="openPdf('${s.id}')">
-          📄 Scarica Dossier PDF
+          📄 Dossier · verifica richiesta
         </button>
         <a href="${s.wms_url || '#'}" target="_blank" rel="noopener noreferrer" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
-          🗺️ Verifica WMS AdE
+          🗺️ Interroga punto WMS
         </a>
         <a href="https://www.google.com/maps/@${s.ll[0]},${s.ll[1]},18m/data=!3m1!1e3" target="_blank" rel="noopener noreferrer" class="btn" style="padding:5px 10px;font-size:11px;text-decoration:none">
           🛰️ Ortofoto Satellite HD
@@ -3410,6 +3730,11 @@ const PDF_MAP = {
 };
 
 function openPdf(id) {
+  const site = SITES.find(s => s.id === id);
+  if (!site || site.verifica?.stato !== 'VALIDATO') {
+    showMapStatus('Dossier sospeso: occorre documentare la corrispondenza tra coordinate, particelle e superficie, e verificare l’uso del suolo.');
+    return;
+  }
   if (PDF_MAP[id]) {
     window.open(PDF_MAP[id], '_blank');
   } else {
