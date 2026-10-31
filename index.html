@@ -299,6 +299,14 @@
       I pin indicano punti dichiarati, non confini di proprietà. Il link WMS interroga il punto: non certifica particelle, ettari, uso del suolo o idoneità. Score e stime restano preliminari.
       <div id="auditSummary" style="margin-top:6px"></div>
     </div>
+    <section class="card" aria-label="Ricerca settimanale" style="line-height:1.5;font-size:12px">
+      <b>Ricerca settimanale · nuovi candidati OSM</b>
+      <p id="weeklyStatus" role="status">Caricamento report…</p>
+      <a href="weekly/report.html" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Report aggiornato</a> ·
+      <a href="https://github.com/nicolavaligi/sunpro/issues" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Segnalazioni settimanali</a> ·
+      <a href="weekly/candidates.geojson" style="color:var(--accent)">Poligoni GeoJSON</a>
+      <div id="weeklyCandidates"></div>
+    </section>
     <!-- Lista Schede -->
     <div id="cards"></div>
     <p id="emptyResults" hidden>Nessun terreno corrisponde ai filtri. Prova un altro comune o seleziona Tutte.</p>
@@ -3872,6 +3880,7 @@ function renderBenchmarkBoxes() {
   `).join("");
 }
 </script>
+<script src="weekly.js" defer></script>
 </body>
 </html>
 
