@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-10-31T20:28:25.104806+00:00",
+  "week": "2026-W44",
+  "status": "errore",
+  "regions_checked": [],
+  "regions_failed": [
+    "Lombardia",
+    "Veneto",
+    "Emilia-Romagna",
+    "Piemonte",
+    "Toscana",
+    "Umbria",
+    "Marche"
+  ],
+  "new_ids": [],
+  "changed_ids": [],
+  "no_longer_matching_ids": [],
+  "total_candidates": 0,
+  "disclaimer": "Screening preliminare OpenStreetMap: poligoni di uso agricolo, non particelle catastali. Superficie geometrica stimata; nessuna conferma di disponibilità, prezzo, connessione, assenza di edifici o idoneità normativa. Sono considerate le sole way chiuse landuse=farmland entro circa 300 m da autostrade OSM; relazioni multipoligono, terreni non mappati e altre tipologie non sono coperti. Nuovo significa rilevato per la prima volta da questo monitoraggio."
+}
