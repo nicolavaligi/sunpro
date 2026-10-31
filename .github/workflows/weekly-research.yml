@@ -1,0 +1,81 @@
+name: SunPro weekly research
+on:
+  schedule:
+    - cron: '23 7 * * 1'
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/weekly-research.yml'
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+concurrency:
+  group: sunpro-weekly-research
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    outputs:
+      pages_type: ${{ steps.pages.outputs.type }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'shapely==2.1.2' 'pyproj==3.7.2'
+      - run: python -m unittest discover -s tests -p 'test_weekly_research.py'
+      - run: python scripts/weekly_research.py
+      - name: Verify interface
+        run: node tests/test_web.cjs
+      - name: Save map and report
+        run: |
+          git config user.name 'SunPro weekly bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add weekly web/weekly
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update weekly candidates and research report'
+            git push
+          fi
+      - name: Weekly notification and Pages mode
+        id: pages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('weekly/latest.json', 'utf8'));
+            const body = fs.readFileSync('weekly/latest.md', 'utf8') + '\n\n[Mappa e report](https://nicolavaligi.github.io/sunpro/weekly/report.html)';
+            const title = `SunPro · Report settimanale ${report.week}`;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {...context.repo, state:'all', creator:'github-actions[bot]', per_page:100});
+            const prior = issues.find(i => !i.pull_request && i.title === title);
+            if (prior) await github.rest.issues.update({...context.repo, issue_number:prior.number, body});
+            else await github.rest.issues.create({...context.repo, title, body});
+            const pages = await github.rest.repos.getPages(context.repo);
+            core.setOutput('type', pages.data.build_type || 'legacy');
+            if (pages.data.build_type !== 'workflow') await github.rest.repos.requestPagesBuild(context.repo);
+      - name: Stage public files
+        if: steps.pages.outputs.type == 'workflow'
+        run: |
+          mkdir -p /tmp/sunpro-public
+          cp -R web/. /tmp/sunpro-public/
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.pages.outputs.type == 'workflow'
+        with:
+          path: /tmp/sunpro-public
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: weekly-research-report
+          path: weekly/
+  deploy:
+    needs: research
+    if: needs.research.outputs.pages_type == 'workflow'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
