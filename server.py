@@ -5,6 +5,7 @@ Autore: Nicola Valigi Engine System
 """
 
 import os
+from contextlib import asynccontextmanager
 from pathlib import Path
 from starlette.applications import Starlette
 from starlette.responses import FileResponse, JSONResponse, HTMLResponse
@@ -12,7 +13,7 @@ from starlette.routing import Route, Mount
 from starlette.staticfiles import StaticFiles
 import uvicorn
 
-from data.storage import get_all_leads, get_lead
+from data.storage import get_all_leads, get_lead, init_db
 from reports.generator import generate_pdf_dossier
 from sync_to_drive import sync_prototype_to_drive
 
@@ -63,9 +64,15 @@ routes = [
     Route("/api/leads/{lead_id}", api_lead_detail),
     Route("/api/dossier/{lead_id}", api_download_dossier),
     Route("/api/sync-drive", api_sync_drive_endpoint, methods=["POST", "GET"]),
+    Mount("/", app=StaticFiles(directory=WEB_DIR), name="static"),
 ]
 
-app = Starlette(routes=routes)
+@asynccontextmanager
+async def lifespan(app):
+    init_db()
+    yield
+
+app = Starlette(routes=routes, lifespan=lifespan)
 
 def run():
     print("☀️ Avvio Geo-Intelligence 3D su http://localhost:8503...")
@@ -73,3 +80,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+

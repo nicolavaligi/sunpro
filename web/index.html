@@ -3659,6 +3659,8 @@ function showGuideTip(s) {
         <span style="color:#fbbf24">🔎 Descrizione non validata: ${s.interferenze_osm || ''}</span>
       </div>
       <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+        <button class="btn" onclick="exportPreselection('${s.id}', 'html')">Scheda preliminare HTML</button>
+        <button class="btn" onclick="exportPreselection('${s.id}', 'json')">Dati e verifiche JSON</button>
         <button class="btn brand" style="padding:5px 10px;font-size:11px" onclick="openPdf('${s.id}')">
           📄 Dossier · verifica richiesta
         </button>
@@ -3736,6 +3738,21 @@ const PDF_MAP = {
   "FV-AGRI-LO-001": "dossier_pdf/dossier_FV-AGRI-LO-001_codogno.pdf",
   "FV-AGRI-PV-002": "dossier_pdf/dossier_FV-AGRI-PV-002_ferrera_erbognone.pdf"
 };
+
+function exportPreselection(id, format) {
+  const site = SITES.find(s => s.id === id);
+  if (!site || !['html', 'json'].includes(format)) return;
+  const report = SunProPreselection.assess(site);
+  const content = format === 'html' ? SunProPreselection.html(report) : JSON.stringify(report, null, 2);
+  const url = URL.createObjectURL(new Blob([content], {type: format === 'html' ? 'text/html;charset=utf-8' : 'application/json'}));
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = `sunpro_preselezione_${site.id.replace(/[^a-zA-Z0-9_-]/g, '_')}.${format}`;
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
 
 function openPdf(id) {
   const site = SITES.find(s => s.id === id);
@@ -3880,7 +3897,9 @@ function renderBenchmarkBoxes() {
   `).join("");
 }
 </script>
+<script src="preselection.js"></script>
 <script src="weekly.js" defer></script>
 </body>
 </html>
+
 

@@ -736,37 +736,40 @@ with tab_analytics:
 
     df_full = pd.DataFrame(get_all_leads())
 
-    with col_an1:
-        # MWp per Regione
-        fig_reg = px.bar(
-            df_full,
-            x="regione",
-            y="mwp_stimati",
-            color="tipologia",
-            title="Potenza Stimata (MWp) per Regione e Tipologia",
-            labels={"mwp_stimati": "Potenza (MWp)", "regione": "Regione"},
-            color_discrete_sequence=px.colors.qualitative.Prism
-        )
-        fig_reg.update_layout(plot_bgcolor='rgba(0,0,0,0)', margin=dict(l=20, r=20, t=40, b=20))
-        st.plotly_chart(fig_reg, use_container_width=True)
+    if df_full.empty:
+        st.info("Nessun terreno nel database. Importa i dati o usa Sync DB per caricare i candidati curati.")
+    else:
+        with col_an1:
+            # MWp per Regione
+            fig_reg = px.bar(
+                df_full,
+                x="regione",
+                y="mwp_stimati",
+                color="tipologia",
+                title="Potenza Stimata (MWp) per Regione e Tipologia",
+                labels={"mwp_stimati": "Potenza (MWp)", "regione": "Regione"},
+                color_discrete_sequence=px.colors.qualitative.Prism
+            )
+            fig_reg.update_layout(plot_bgcolor='rgba(0,0,0,0)', margin=dict(l=20, r=20, t=40, b=20))
+            st.plotly_chart(fig_reg, use_container_width=True)
 
-    with col_an2:
-        # Scatter: Distanza Cabina vs Prezzo al mq
-        fig_scat = px.scatter(
-            df_full,
-            x="distanza_cabina_m",
-            y="prezzo_mq_eur",
-            size="superficie_ha",
-            color="score_totale",
-            hover_name="title",
-            title="Distanza Cabina (m) vs Prezzo al Mq (€/mq)",
-            labels={"distanza_cabina_m": "Distanza Cabina MT (metri)", "prezzo_mq_eur": "Prezzo (€/mq)", "score_totale": "Score"},
-            color_continuous_scale="Viridis"
-        )
-        # Add target price band
-        fig_scat.add_hrect(y0=8.0, y1=9.0, line_width=0, fillcolor="green", opacity=0.15, annotation_text="Target Benchmark (8-9 €/mq)")
-        fig_scat.update_layout(plot_bgcolor='rgba(0,0,0,0)', margin=dict(l=20, r=20, t=40, b=20))
-        st.plotly_chart(fig_scat, use_container_width=True)
+        with col_an2:
+            # Scatter: Distanza Cabina vs Prezzo al mq
+            fig_scat = px.scatter(
+                df_full,
+                x="distanza_cabina_m",
+                y="prezzo_mq_eur",
+                size="superficie_ha",
+                color="score_totale",
+                hover_name="title",
+                title="Distanza Cabina (m) vs Prezzo al Mq (€/mq)",
+                labels={"distanza_cabina_m": "Distanza Cabina MT (metri)", "prezzo_mq_eur": "Prezzo (€/mq)", "score_totale": "Score"},
+                color_continuous_scale="Viridis"
+            )
+            # Add target price band
+            fig_scat.add_hrect(y0=8.0, y1=9.0, line_width=0, fillcolor="green", opacity=0.15, annotation_text="Target Benchmark (8-9 €/mq)")
+            fig_scat.update_layout(plot_bgcolor='rgba(0,0,0,0)', margin=dict(l=20, r=20, t=40, b=20))
+            st.plotly_chart(fig_scat, use_container_width=True)
 
 # -------------------------------------------------------------
 # TAB 6: GOOGLE DRIVE & EXPORT HUB
@@ -804,3 +807,4 @@ with tab_drive:
 
         st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
         st.markdown("[📁 Apri Cartella Locale Progetto](file:///Users/houdinick/solar-land-acquisition-crawler)")
+

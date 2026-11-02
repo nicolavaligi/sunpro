@@ -1,0 +1,15 @@
+const {assess, html} = require('../preselection.js');
+const assert = require('node:assert/strict');
+const site = {id:'TEST',name:'<script>alert(1)</script>',ha:5,sub_dist:0,score:90,verifica:{stato:'ANOMALIA_SEGNALATA',motivo:'Coordinate discordanti'}};
+const report = assess(site, new Date('2026-11-02T00:00:00Z'));
+assert.equal(report.status,'ANOMALIA_SEGNALATA');
+assert(report.warnings.some(w=>w.includes('pari a zero')));
+assert(report.pending.includes('Capacità di rete pubblicata (MW)'));
+assert(!html(report).includes('<script>'));
+assert(html(report).includes('&lt;script&gt;'));
+assert.equal(assess({...site,grid_capacity_mw:12}).checks[3].value,'Da verificare');
+assert.equal(assess({...site,grid_capacity_mw:0,grid_source:'Terna',grid_updated_at:'2026-11-01'}).checks[3].value,0);
+assert.equal(assess({...site,ha:NaN,sub_dist:-1}).checks[0].value,'Da verificare');
+assert.equal(assess({...site,ha:NaN,sub_dist:-1}).checks[2].value,'Da verificare');
+assert.equal(assess({...site,suitable_area_status:'IDONEA'}).checks[4].value,'Da verificare');
+console.log('PASS: missing evidence, zero capacity, invalid numbers, cadastral anomaly and HTML escaping');
