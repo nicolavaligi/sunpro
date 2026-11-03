@@ -25,7 +25,10 @@ assert.equal(get('cards').children.filter(c=>!c.hidden).length,1);
 run("showGuideTip(SITES.find(s => s.id === 'FV-AGRI-MN-005'))");
 assert.match(get('siteTip').innerHTML,/Anomalia segnalata/);
 assert.doesNotMatch(get('siteTip').innerHTML,/WMS AdE Verificato/);
+assert.match(get('siteTip').innerHTML, /Scheda preliminare HTML/);
+assert.match(get('siteTip').innerHTML, /Dati e verifiche JSON/);
 run("openPdf('FV-AGRI-MN-005')");assert.match(get('mapStatus').textContent,/Dossier sospeso/);
 run("openPdf(SITES[0].id)");assert.match(get('mapStatus').textContent,/Dossier sospeso/);
 assert.equal(run("SITES.filter(s => s.catasto_stato === 'VERIFICATO_WMS_ADE').length"),0);
 console.log('PASS: cadastral anomaly, candidate exclusion, anomaly filter, popup labels and unvalidated dossier blocking');
+

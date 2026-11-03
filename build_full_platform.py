@@ -211,6 +211,7 @@ def build_platform():
 
     INDEX_HTML.write_text(html_content, encoding="utf-8")
     WEB_INDEX_HTML.write_text(html_content, encoding="utf-8")
+    shutil.copy2(BASE_DIR / "preselection.js", BASE_DIR / "web" / "preselection.js")
     print(f"  ✓ index.html e web/index.html aggiornati con successo!")
 
     # 3b. Esportazione KML (Google Earth), GeoJSON e Modello Finanziario CSV
@@ -239,3 +240,4 @@ def build_platform():
 
 if __name__ == "__main__":
     build_platform()
+
